@@ -1,0 +1,218 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://politicianwatch.grokforum.site/schemas/profile.schema.json",
+  "title": "PoliticianWatch SA public-role profile",
+  "description": "A sourced, labelled profile of an elected representative in their public role only. No ID numbers, home addresses, personal phones or emails, private family, or health information. Unknown fields are explicit nulls with label Unknown. Every adverse item requires a right_of_reply object.",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "name",
+    "party",
+    "seat_type",
+    "ward_number",
+    "council",
+    "positions",
+    "education",
+    "career",
+    "court_matters",
+    "scandals"
+  ],
+  "properties": {
+    "name": {
+      "$ref": "#/$defs/fact"
+    },
+    "party": {
+      "$ref": "#/$defs/fact"
+    },
+    "seat_type": {
+      "$ref": "#/$defs/fact"
+    },
+    "ward_number": {
+      "$ref": "#/$defs/fact"
+    },
+    "council": {
+      "$ref": "#/$defs/fact"
+    },
+    "positions": {
+      "$ref": "#/$defs/fact"
+    },
+    "education": {
+      "$ref": "#/$defs/fact"
+    },
+    "career": {
+      "$ref": "#/$defs/fact"
+    },
+    "ward_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "pr_list_rank": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "court_matters": {
+      "type": "array",
+      "description": "Adverse court or criminal matters. Empty if none recorded yet. Each item requires right_of_reply.",
+      "items": {
+        "$ref": "#/$defs/adverse_item"
+      }
+    },
+    "scandals": {
+      "type": "array",
+      "description": "Adverse scandal or allegation items. Empty if none recorded yet. Each item requires right_of_reply.",
+      "items": {
+        "$ref": "#/$defs/adverse_item"
+      }
+    }
+  },
+  "$defs": {
+    "label": {
+      "type": "string",
+      "enum": [
+        "Confirmed",
+        "Reported",
+        "Alleged",
+        "Disputed",
+        "Unknown"
+      ]
+    },
+    "fact": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "value",
+        "label",
+        "source_url",
+        "source_date",
+        "retrieved_at"
+      ],
+      "properties": {
+        "value": {
+          "type": [
+            "string",
+            "integer",
+            "null"
+          ]
+        },
+        "label": {
+          "$ref": "#/$defs/label"
+        },
+        "source_url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "source_date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+        },
+        "retrieved_at": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "source_page": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        }
+      }
+    },
+    "adverse_item": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/fact"
+        },
+        {
+          "type": "object",
+          "required": [
+            "right_of_reply"
+          ],
+          "properties": {
+            "right_of_reply": {
+              "$ref": "#/$defs/right_of_reply"
+            },
+            "matter_status": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "enum": [
+                "investigation",
+                "charged",
+                "convicted",
+                "acquitted",
+                "withdrawn",
+                "cleared",
+                "unknown",
+                null
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "right_of_reply": {
+      "type": "object",
+      "required": [
+        "status",
+        "draft_path",
+        "deadline",
+        "sent_at",
+        "reply_text",
+        "recorded_by"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "pending",
+            "sent",
+            "replied",
+            "no_response"
+          ]
+        },
+        "draft_path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "deadline": {
+          "type": "string",
+          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+        },
+        "sent_at": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reply_text": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Blank (null) until the owner records a reply. Profiles show an empty reply field while pending."
+        },
+        "recorded_by": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Must be 'owner' when status is sent, replied, or no_response. The bot never records a send or reply."
+        }
+      }
+    }
+  }
+}

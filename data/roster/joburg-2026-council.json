@@ -1,0 +1,41 @@
+{
+  "council": "City of Johannesburg",
+  "municipality_id": "JHB",
+  "province": "Gauteng",
+  "election": "2026 Local Government Elections",
+  "seats": 270,
+  "wards": 135,
+  "majority": 136,
+  "roster_rows": 270,
+  "roster_ward_seats": 135,
+  "roster_pr_seats": 135,
+  "executive_mayor": {
+    "value": null,
+    "label": "Unknown",
+    "note": "The council elects an executive mayor at its first sitting, expected around 19 November 2026. No mayor had been elected as of 15 November 2026.",
+    "source_url": null,
+    "source_date": null,
+    "retrieved_at": "2026-11-15T16:10:03+00:00"
+  },
+  "coalition_status": {
+    "value": "hung",
+    "label": "Confirmed",
+    "note": "No party reached 136 seats. Largest party in the IEC seat calculation is the Democratic Alliance with 91 seats.",
+    "source_url": "https://results.elections.org.za/home/LGEPublicReports/1887/Seat%20Calculation%20Detail/GP/JHB.pdf",
+    "source_date": "2026-11-13",
+    "retrieved_at": "2026-11-15T16:10:03+00:00"
+  },
+  "primary_sources": {
+    "gazette": {
+      "url": "https://www.gazettefinder.co.za/gazettes/government-gazette/2026/55741/government-gazette-55741-2026-11-13.pdf",
+      "sha256": "cd544faf2a703a81eb4466bbfcd3618f5ade03c7b456538116b385c266058798",
+      "date": "2026-11-13",
+      "pages": "43-47"
+    },
+    "iec_seat_calculation": {
+      "url": "https://results.elections.org.za/home/LGEPublicReports/1887/Seat%20Calculation%20Detail/GP/JHB.pdf",
+      "sha256": "6cc25c2d0814b9dfa88e1066129df2c65b34cf0dc9ba36d497f18c4d21347aac",
+      "printed_at_sast": "2026-11-13T15:55:11+02:00"
+    }
+  }
+}

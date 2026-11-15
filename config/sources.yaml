@@ -1,0 +1,41 @@
+# Configuration items: data sources. See itil/registers/ci-register.md.
+# ElectionSePush is listed only as a link target. It must never be fetched or scraped.
+
+sources:
+  iec_gazette:
+    id: iec_gazette
+    name: Government Gazette 55741 — Publication of the List of Elected Councillors
+    authority: Electoral Commission of South Africa
+    notice: "8183"
+    date: 2026-11-13
+    url: https://www.gazettefinder.co.za/gazettes/government-gazette/2026/55741/government-gazette-55741-2026-11-13.pdf
+    landing_page: https://www.gazettefinder.co.za/gazettes/government-gazette/2026/55741/
+    format: PDF
+    sha256: cd544faf2a703a81eb4466bbfcd3618f5ade03c7b456538116b385c266058798
+    role: canonical councillor roster (name, party, seat type, ward or PR rank)
+    fetch: allowed
+  iec_results:
+    id: iec_results
+    name: IEC LGE 2026 seat calculation detail — JHB
+    authority: Electoral Commission of South Africa
+    event_id: "1887"
+    url: https://results.elections.org.za/home/LGEPublicReports/1887/Seat%20Calculation%20Detail/GP/JHB.pdf
+    results_home: https://results.elections.org.za/home/
+    format: PDF
+    sha256: 6cc25c2d0814b9dfa88e1066129df2c65b34cf0dc9ba36d497f18c4d21347aac
+    printed_at_sast: 2026-11-13T15:55:11+02:00
+    role: official party seat totals (ward / PR / total) for cross-check
+    fetch: allowed
+  electionsepush:
+    id: electionsepush
+    name: ElectionSePush
+    url: https://esp.info/elections
+    licence: personal or internal use only; no redistribution; no derivative works
+    role: link only
+    fetch: forbidden
+  saflii:
+    id: saflii
+    name: SAFLII
+    url: https://www.saflii.org/
+    role: manual citation of court judgments only
+    fetch: forbidden_automated
