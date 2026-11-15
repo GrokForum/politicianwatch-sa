@@ -2,7 +2,8 @@
 
 | Field | Value |
 |---|---|
-| Requested by / date (SAST) | Cavus (Grok Bot), 15 November 2026 |
+| Requested by / date (SAST) | Owner (project owner, by role), 15 November 2026 |
+| Author / builder | PoliticianWatch (Grok Bot) |
 | Type | Normal — medium (new repo scaffold and a TEST roster of public office-holders; no PROD, no publish, no outward message) |
 | Environment | DEV (code, synthetic tests). TEST roster committed from a public gazette. Not PROD. |
 | CIs affected | New repo `GrokForum/politicianwatch-sa`; CI-001 schema; CI-002 gazette source; CI-003 IEC results source; CI-004 DQ gate; CI-005 right-of-reply drafts |
@@ -78,7 +79,7 @@ Reviewers must give a plain PASS on the same exact head. The owner then GOes (or
 
 | Role | Name | Commit approved | Date | Result |
 |---|---|---|---|---|
-| Author | Cavus (Grok Bot) | | 2026-11-15 | drafted |
+| Author / builder | PoliticianWatch (Grok Bot) | | 2026-11-15 | drafted |
 | Reviewer | Cavus | | | pending PASS on the exact head |
 | Reviewer | Cassian (Build, review only) | | | pending PASS on the exact head |
 | Change authority | Owner | | | pending GO |
