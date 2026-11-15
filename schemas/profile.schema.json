@@ -67,6 +67,36 @@
       "items": {
         "$ref": "#/$defs/adverse_item"
       }
+    },
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+$",
+      "description": "File slug derived from the gazetted name."
+    },
+    "change": {
+      "type": "string",
+      "description": "Change record that added or last changed this profile, e.g. CHG-PW-002."
+    },
+    "known_as": {
+      "$ref": "#/$defs/fact",
+      "description": "Public name used in reporting, when it differs from the gazetted name. Optional."
+    },
+    "cv": {
+      "type": "array",
+      "description": "CV-style public-role entries (positions, career, candidacy, education). Each entry is a labelled, sourced fact. Optional; empty if none sourced.",
+      "items": {
+        "$ref": "#/$defs/cv_item"
+      }
+    },
+    "identity_match": {
+      "$ref": "#/$defs/identity_match"
+    },
+    "unknown_fields": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Fields deliberately left Unknown (shown as visible placeholders)."
     }
   },
   "$defs": {
@@ -158,6 +188,19 @@
                 "unknown",
                 null
               ]
+            },
+            "outcome": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "Current outcome or status as reported, in neutral words."
+            },
+            "category": {
+              "type": [
+                "string",
+                "null"
+              ]
             }
           }
         }
@@ -189,8 +232,12 @@
           "minLength": 1
         },
         "deadline": {
-          "type": "string",
-          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$",
+          "description": "Null while pending and unsent: the owner sets it on sending (see deadline_rule). Required once status is sent, replied or no_response."
         },
         "sent_at": {
           "type": [
@@ -211,6 +258,65 @@
             "null"
           ],
           "description": "Must be 'owner' when status is sent, replied, or no_response. The bot never records a send or reply."
+        },
+        "deadline_rule": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "How the deadline is set, e.g. '14 days after the owner sends'."
+        }
+      }
+    },
+    "cv_item": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/fact"
+        },
+        {
+          "type": "object",
+          "required": [
+            "field"
+          ],
+          "properties": {
+            "field": {
+              "type": "string",
+              "enum": [
+                "position",
+                "career",
+                "candidacy",
+                "education"
+              ]
+            },
+            "period": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "identity_match": {
+      "type": "object",
+      "description": "How non-gazette sources were linked to this gazetted person. At least two independent details must match (CHG-PW-002 rule).",
+      "required": [
+        "matched_details"
+      ],
+      "properties": {
+        "matched_details": {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "type": "string"
+          }
+        },
+        "note": {
+          "type": [
+            "string",
+            "null"
+          ]
         }
       }
     }

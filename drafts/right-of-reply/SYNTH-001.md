@@ -1,3 +1,5 @@
+DRAFT: NOT SENT. The owner sends personally. The bot never sends.
+
 # Right-of-reply draft (SYNTHETIC FIXTURE — do not send)
 
 This file exists so tests can resolve `drafts/right-of-reply/SYNTH-001.md` from the repo root. It is not a real invitation and must never be sent.

@@ -1,0 +1,186 @@
+{
+  "slug": "thapelo-kenneth-kunene",
+  "change": "CHG-PW-002",
+  "name": {
+    "value": "THAPELO KENNETH KUNENE",
+    "label": "Confirmed",
+    "source_url": "https://www.gazettefinder.co.za/gazettes/government-gazette/2026/55741/government-gazette-55741-2026-11-13.pdf",
+    "source_date": "2026-11-13",
+    "retrieved_at": "2026-11-15T16:10:03+00:00",
+    "source_page": 47
+  },
+  "party": {
+    "value": "PATRIOTIC ALLIANCE",
+    "label": "Confirmed",
+    "source_url": "https://www.gazettefinder.co.za/gazettes/government-gazette/2026/55741/government-gazette-55741-2026-11-13.pdf",
+    "source_date": "2026-11-13",
+    "retrieved_at": "2026-11-15T16:10:03+00:00",
+    "source_page": 47
+  },
+  "seat_type": {
+    "value": "PR",
+    "label": "Confirmed",
+    "source_url": "https://www.gazettefinder.co.za/gazettes/government-gazette/2026/55741/government-gazette-55741-2026-11-13.pdf",
+    "source_date": "2026-11-13",
+    "retrieved_at": "2026-11-15T16:10:03+00:00",
+    "source_page": 47
+  },
+  "ward_number": {
+    "value": null,
+    "label": "Confirmed",
+    "source_url": "https://www.gazettefinder.co.za/gazettes/government-gazette/2026/55741/government-gazette-55741-2026-11-13.pdf",
+    "source_date": "2026-11-13",
+    "retrieved_at": "2026-11-15T16:10:03+00:00",
+    "source_page": 47
+  },
+  "council": {
+    "value": "City of Johannesburg",
+    "label": "Confirmed",
+    "source_url": "https://www.gazettefinder.co.za/gazettes/government-gazette/2026/55741/government-gazette-55741-2026-11-13.pdf",
+    "source_date": "2026-11-13",
+    "retrieved_at": "2026-11-15T16:10:03+00:00",
+    "source_page": 47
+  },
+  "ward_id": null,
+  "pr_list_rank": 1,
+  "known_as": {
+    "value": "Kenny Kunene",
+    "label": "Reported",
+    "source_url": "https://iol.co.za/news/politics/2026-09-06-meet-the-men-and-women-who-want-to-be-your-next-mayor-local-government-elections-2026/",
+    "source_date": "2026-09-06",
+    "retrieved_at": "2026-11-15T20:15:00+02:00"
+  },
+  "positions": {
+    "value": "City of Johannesburg MMC for Transport and Patriotic Alliance deputy president (as described in September 2026)",
+    "label": "Reported",
+    "source_url": "https://iol.co.za/news/politics/2026-09-06-meet-the-men-and-women-who-want-to-be-your-next-mayor-local-government-elections-2026/",
+    "source_date": "2026-09-06",
+    "retrieved_at": "2026-11-15T20:15:00+02:00"
+  },
+  "career": {
+    "value": null,
+    "label": "Unknown",
+    "source_url": null,
+    "source_date": null,
+    "retrieved_at": null
+  },
+  "education": {
+    "value": null,
+    "label": "Unknown",
+    "source_url": null,
+    "source_date": null,
+    "retrieved_at": null
+  },
+  "cv": [
+    {
+      "value": "Appointed City of Johannesburg MMC for Transport by Mayor Thapelo Amad, sworn in first as a councillor",
+      "label": "Reported",
+      "source_url": "https://www.dailymaverick.co.za/article/2023-02-08-joburg-should-be-grateful-they-have-me-kenny-kunene/",
+      "source_date": "2023-02-08",
+      "retrieved_at": "2026-11-15T20:15:00+02:00",
+      "field": "position",
+      "period": "2023-02"
+    },
+    {
+      "value": "Sworn in again as a Johannesburg PR councillor after an external review",
+      "label": "Reported",
+      "source_url": "https://www.ewn.co.za/2025/09/26/after-suspension-and-probe-patriotic-alliances-kenny-kunene-returns-to-johannesburg-council",
+      "source_date": "2025-09-26",
+      "retrieved_at": "2026-11-15T20:15:00+02:00",
+      "field": "position",
+      "period": "2025-09-26"
+    },
+    {
+      "value": "Deputy president of the Patriotic Alliance",
+      "label": "Reported",
+      "source_url": "https://iol.co.za/news/politics/2026-09-06-meet-the-men-and-women-who-want-to-be-your-next-mayor-local-government-elections-2026/",
+      "source_date": "2026-09-06",
+      "retrieved_at": "2026-11-15T20:15:00+02:00",
+      "field": "position",
+      "period": null
+    },
+    {
+      "value": "Patriotic Alliance mayoral candidate for Johannesburg",
+      "label": "Reported",
+      "source_url": "https://iol.co.za/news/politics/2026-09-06-meet-the-men-and-women-who-want-to-be-your-next-mayor-local-government-elections-2026/",
+      "source_date": "2026-09-06",
+      "retrieved_at": "2026-11-15T20:15:00+02:00",
+      "field": "candidacy",
+      "period": "2026"
+    },
+    {
+      "value": "Co-founded the Patriotic Alliance in 2013",
+      "label": "Reported",
+      "source_url": "https://www.dailymaverick.co.za/article/2023-02-08-joburg-should-be-grateful-they-have-me-kenny-kunene/",
+      "source_date": "2023-02-08",
+      "retrieved_at": "2026-11-15T20:15:00+02:00",
+      "field": "career",
+      "period": null
+    },
+    {
+      "value": "Owner of the online publication African News Global (as reported in 2025)",
+      "label": "Reported",
+      "source_url": "https://mg.co.za/politics/2025-09-23-kunene-has-no-links-to-katiso-tk-molefe-report-finds/",
+      "source_date": "2025-09-23",
+      "retrieved_at": "2026-11-15T20:15:00+02:00",
+      "field": "career",
+      "period": null
+    }
+  ],
+  "identity_match": {
+    "matched_details": [
+      "Surname KUNENE with given name KENNETH; reported as 'Kenny Kunene' (Kenny read as the short form of Kenneth — an inference, see note).",
+      "Party: PATRIOTIC ALLIANCE PR rank 1 in the gazette; reported as PA deputy president and PA Johannesburg mayoral candidate (IOL 2026-09-06).",
+      "Council role: Johannesburg councillor and Transport MMC (DM 2023-02-08; EWN 2025-09-26)."
+    ],
+    "note": "The match rests on surname + party + council role; 'Kenny' as a form of 'Kenneth' is an inference, not a sourced fact."
+  },
+  "court_matters": [
+    {
+      "value": "Daily Maverick reported that Kunene was convicted of fraud for running a Ponzi scheme and served six years in jail, giving 1997 as the year.",
+      "label": "Reported",
+      "source_url": "https://www.dailymaverick.co.za/article/2023-02-08-joburg-should-be-grateful-they-have-me-kenny-kunene/",
+      "source_date": "2023-02-08",
+      "retrieved_at": "2026-11-15T20:15:00+02:00",
+      "matter_status": "convicted",
+      "category": "Criminal conviction (historical)",
+      "outcome": "Sentence served (six years, as reported). No further detail from an allowed source was collected.",
+      "right_of_reply": {
+        "status": "pending",
+        "draft_path": "drafts/right-of-reply/CHG-PW-002/thapelo-kenneth-kunene.md",
+        "deadline": null,
+        "deadline_rule": "14 days after the owner sends the draft; the owner sets the date on sending",
+        "sent_at": null,
+        "reply_text": null,
+        "recorded_by": null
+      }
+    }
+  ],
+  "scandals": [
+    {
+      "value": "In July 2025 the Patriotic Alliance suspended Kunene after he was present at a private home when police arrested its owner in a murder investigation. Kunene said he had accompanied a journalist from his publication to arrange an interview. He resigned from the council pending an external review.",
+      "label": "Reported",
+      "source_url": "https://mg.co.za/politics/2025-09-23-kunene-has-no-links-to-katiso-tk-molefe-report-finds/",
+      "source_date": "2025-09-23",
+      "retrieved_at": "2026-11-15T20:15:00+02:00",
+      "matter_status": "cleared",
+      "category": "Party disciplinary matter",
+      "outcome": "A report by law firm Cliffe Dekker Hofmeyr found no evidence refuting Kunene's account and said it was not aware of any criminal or civil proceedings against him related to his presence (M&G, 23 September 2025). The PA reinstated him and he was sworn in again as a councillor on 26 September 2025 (EWN).",
+      "right_of_reply": {
+        "status": "pending",
+        "draft_path": "drafts/right-of-reply/CHG-PW-002/thapelo-kenneth-kunene.md",
+        "deadline": null,
+        "deadline_rule": "14 days after the owner sends the draft; the owner sets the date on sending",
+        "sent_at": null,
+        "reply_text": null,
+        "recorded_by": null
+      }
+    }
+  ],
+  "unknown_fields": [
+    "career",
+    "education",
+    "Council office or portfolio for the 2026–2031 term (executive mayor and mayoral committee not yet elected; first sitting expected around 19 November 2026 — not guessed)",
+    "Official council contact channel (owner to confirm from the City's published councillor directory)"
+  ]
+}

@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from typing import Any
 
-from pwatch.settings import ADVERSE_FIELDS, LABELS, SEAT_TYPES
+from pwatch.settings import ADVERSE_FIELDS, CV_FIELDS, LABELS, OPTIONAL_FACT_FIELDS, SEAT_TYPES
 
 SCALAR_FACT_FIELDS = ("name", "party", "seat_type", "ward_number", "council", "positions", "education", "career")
 
@@ -54,6 +54,8 @@ def fact_failures(obj: Any, locator: str) -> list[str]:
         failures.append(f"{locator}: fact labelled {label} is missing a source URL")
     if not obj.get("source_date"):
         failures.append(f"{locator}: fact labelled {label} is missing a source date")
+    if not obj.get("retrieved_at"):
+        failures.append(f"{locator}: fact labelled {label} is missing retrieved_at")
     return failures
 
 
@@ -63,6 +65,11 @@ def iter_facts(profile: dict[str, Any]) -> list[tuple[str, dict[str, Any]]]:
     for key in SCALAR_FACT_FIELDS:
         if key in profile:
             found.append((key, profile[key]))
+    for key in OPTIONAL_FACT_FIELDS:
+        if key in profile:
+            found.append((key, profile[key]))
+    for i, item in enumerate(profile.get("cv") or []):
+        found.append((f"cv[{i}]", item))
     for key in ADVERSE_FIELDS:
         items = profile.get(key) or []
         if isinstance(items, list):
@@ -94,6 +101,18 @@ def validate_profile_shape(profile: dict[str, Any], locator: str = "profile") ->
     if is_fact(seat) and seat.get("label") != "Unknown":
         if seat.get("value") not in SEAT_TYPES:
             failures.append(f"{locator}.seat_type: value must be one of {SEAT_TYPES}")
+    for key in OPTIONAL_FACT_FIELDS:
+        if key in profile:
+            failures.extend(fact_failures(profile[key], f"{locator}.{key}"))
+    cv = profile.get("cv")
+    if cv is not None:
+        if not isinstance(cv, list):
+            failures.append(f"{locator}.cv: must be a list")
+        else:
+            for i, item in enumerate(cv):
+                failures.extend(fact_failures(item, f"{locator}.cv[{i}]"))
+                if isinstance(item, dict) and item.get("field") not in CV_FIELDS:
+                    failures.append(f"{locator}.cv[{i}]: field must be one of {CV_FIELDS}")
     for key in ADVERSE_FIELDS:
         if key not in profile:
             failures.append(f"{locator}: missing field {key}")

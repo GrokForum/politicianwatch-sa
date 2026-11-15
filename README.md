@@ -14,6 +14,7 @@ This repository is private. Nothing here is published until a named change is re
 | `schemas/profile.schema.json` | Profile contract, including `right_of_reply` on adverse items |
 | `data/roster/joburg-2026.csv` | TEST roster from Gazette 55741 (public office-holders, public-role fields only) |
 | `data/raw/` | Provenance (`manifest.jsonl`, `.sha256`). Raw PDFs are gitignored |
+| `data/profiles/joburg-2026/` | CV-style public-role profiles (CHG-PW-002), JSON plus generated markdown (`pwatch render`) |
 | `drafts/right-of-reply/` | Unsent right-of-reply drafts. **The bot never sends these. The owner sends them personally.** |
 | `docs/adr/` | Architecture decision records (ADR-0001: stack reuse from PublicFunds) |
 | `docs/sources-joburg-lge-2026.md` | Gazette and IEC URLs, hashes, 270-row counts, ⚠ secondary-source discrepancies |
@@ -26,7 +27,8 @@ This repository is private. Nothing here is published until a named change is re
 ```bash
 uv sync                          # Python 3.13; pinned deps in uv.lock
 uv run pytest -q                 # synthetic fixture tests
-uv run pwatch dq                 # DQ gate on the committed Joburg roster (exit 2 = not releasable)
+uv run pwatch dq                 # DQ gate on the Joburg roster and CV profiles (exit 2 = not releasable)
+uv run pwatch render --check     # CV profile markdown renderings are current
 ```
 
 Exit code 2 means a data-quality check failed and the result is not releasable.

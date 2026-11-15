@@ -63,6 +63,13 @@ def synthetic_profiles(repo_root: Path) -> list[dict]:
         "party": sourced("SYNTHETIC PARTY"),
         "seat_type": sourced("ward"),
         "ward_number": sourced(2),
+        "identity_match": {
+            "matched_details": [
+                "full name as gazetted (synthetic)",
+                "party and ward number named in the synthetic report",
+            ],
+            "note": "synthetic fixture",
+        },
         "scandals": [
             {
                 **fact(

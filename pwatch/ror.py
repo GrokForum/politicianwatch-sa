@@ -11,7 +11,7 @@ from datetime import date, datetime
 from pathlib import Path
 from typing import Any
 
-from pwatch.settings import ROR_RECORDED_BY_OWNER, ROR_STATUSES
+from pwatch.settings import DRAFT_MARKER, ROR_RECORDED_BY_OWNER, ROR_STATUSES
 
 DISPLAY_PREFIX = "Right of reply: "
 
@@ -71,10 +71,19 @@ def check_right_of_reply(
             path = drafts_root / path
         if not path.is_file():
             failures.append(f"{locator}: right_of_reply draft does not exist: {draft_path}")
+        elif DRAFT_MARKER not in path.read_text(encoding="utf-8")[:2000]:
+            failures.append(f"{locator}: right_of_reply draft must start with the marker {DRAFT_MARKER!r}")
 
-    deadline = _parse_date(ror.get("deadline"))
-    if deadline is None:
-        failures.append(f"{locator}: right_of_reply.deadline is missing or not a date")
+    deadline_invalid = False
+    try:
+        deadline = _parse_date(ror.get("deadline"))
+    except ValueError:
+        deadline = None
+        deadline_invalid = True
+        failures.append(f"{locator}: right_of_reply.deadline is not a date")
+    # While pending and unsent, the owner sets the deadline on sending; a null deadline is allowed.
+    if deadline is None and status != "pending" and not deadline_invalid:
+        failures.append(f"{locator}: right_of_reply.deadline is required once status is {status!r}")
 
     sent_at = ror.get("sent_at")
     reply_text = ror.get("reply_text")

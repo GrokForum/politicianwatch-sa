@@ -6,6 +6,10 @@ Checks:
 - every adverse item (court/criminal matter, scandal, allegation) has a right_of_reply
   object, a draft, and owner-recorded fields that match its status
 - no_response is only allowed after the deadline
+- every right-of-reply draft starts with the DRAFT: NOT SENT marker (CHG-PW-002)
+- every non-Unknown fact has retrieved_at (CHG-PW-002)
+- a profile that links non-gazette sources records at least two matching identity details (CHG-PW-002)
+- a CV profile matches its gazetted roster row (CHG-PW-002, when a roster index is given)
 """
 
 from __future__ import annotations
@@ -14,6 +18,7 @@ from datetime import date
 from pathlib import Path
 from typing import Any
 
+from pwatch.profiles import check_against_roster, check_identity
 from pwatch.ror import check_right_of_reply
 from pwatch.schema import iter_adverse_items, validate_profile_shape
 
@@ -27,6 +32,7 @@ def check_profile(
     drafts_root: Path | None = None,
     as_of: date | None = None,
     locator: str = "profile",
+    roster: dict[str, Any] | None = None,
 ) -> list[str]:
     """Return DQ failure messages for one profile. Empty means pass."""
     as_of = as_of or date.today()
@@ -39,6 +45,10 @@ def check_profile(
     # Re-tag shape failures with the name when we have it
     if name and locator == "profile":
         failures = [f.replace(locator, loc, 1) if f.startswith(locator) else f for f in failures]
+    if isinstance(profile, dict):
+        failures.extend(check_identity(profile, loc))
+        if roster is not None:
+            failures.extend(check_against_roster(profile, roster, loc))
     for item_loc, item in iter_adverse_items(profile if isinstance(profile, dict) else {}):
         failures.extend(
             check_right_of_reply(
@@ -56,13 +66,21 @@ def run(
     *,
     drafts_root: Path | None = None,
     as_of: date | None = None,
+    roster: dict[str, Any] | None = None,
+    locator_prefix: str = "profile",
 ) -> dict[str, Any]:
     """Run the gate on a list of profiles. status is pass or fail."""
     as_of = as_of or date.today()
     all_failures: list[str] = []
     for i, profile in enumerate(profiles):
         all_failures.extend(
-            check_profile(profile, drafts_root=drafts_root, as_of=as_of, locator=f"profile[{i}]")
+            check_profile(
+                profile,
+                drafts_root=drafts_root,
+                as_of=as_of,
+                locator=f"{locator_prefix}[{i}]",
+                roster=roster,
+            )
         )
     status = "pass" if not all_failures else "fail"
     return {

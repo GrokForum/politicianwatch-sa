@@ -10,3 +10,4 @@
 | RSK-006 | ElectionSePush licence breach (redistribution / derivative works) | Low | High | Fetch forbidden; link only | Open |
 | RSK-007 | Automated SAFLII access against its terms | Low | Medium | Automated fetch forbidden; manual citation only | Open |
 | RSK-008 | IEC reuse terms not yet confirmed | Medium | Low | Official public records used; enquiry drafted only after an owner GO (not in this change) | Open |
+| RSK-009 | A news or court item is linked to the wrong person (gazetted legal name differs from public name) | Medium | High | DQ requires ≥ 2 matching identity details; reasoning recorded per profile; uncertain links left out and listed in batch notes | Open |

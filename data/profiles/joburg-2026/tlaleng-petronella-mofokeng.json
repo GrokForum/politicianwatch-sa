@@ -1,0 +1,120 @@
+{
+  "slug": "tlaleng-petronella-mofokeng",
+  "change": "CHG-PW-002",
+  "name": {
+    "value": "TLALENG PETRONELLA MOFOKENG",
+    "label": "Confirmed",
+    "source_url": "https://www.gazettefinder.co.za/gazettes/government-gazette/2026/55741/government-gazette-55741-2026-11-13.pdf",
+    "source_date": "2026-11-13",
+    "retrieved_at": "2026-11-15T16:10:03+00:00",
+    "source_page": 46
+  },
+  "party": {
+    "value": "ECONOMIC FREEDOM FIGHTERS",
+    "label": "Confirmed",
+    "source_url": "https://www.gazettefinder.co.za/gazettes/government-gazette/2026/55741/government-gazette-55741-2026-11-13.pdf",
+    "source_date": "2026-11-13",
+    "retrieved_at": "2026-11-15T16:10:03+00:00",
+    "source_page": 46
+  },
+  "seat_type": {
+    "value": "PR",
+    "label": "Confirmed",
+    "source_url": "https://www.gazettefinder.co.za/gazettes/government-gazette/2026/55741/government-gazette-55741-2026-11-13.pdf",
+    "source_date": "2026-11-13",
+    "retrieved_at": "2026-11-15T16:10:03+00:00",
+    "source_page": 46
+  },
+  "ward_number": {
+    "value": null,
+    "label": "Confirmed",
+    "source_url": "https://www.gazettefinder.co.za/gazettes/government-gazette/2026/55741/government-gazette-55741-2026-11-13.pdf",
+    "source_date": "2026-11-13",
+    "retrieved_at": "2026-11-15T16:10:03+00:00",
+    "source_page": 46
+  },
+  "council": {
+    "value": "City of Johannesburg",
+    "label": "Confirmed",
+    "source_url": "https://www.gazettefinder.co.za/gazettes/government-gazette/2026/55741/government-gazette-55741-2026-11-13.pdf",
+    "source_date": "2026-11-13",
+    "retrieved_at": "2026-11-15T16:10:03+00:00",
+    "source_page": 46
+  },
+  "ward_id": null,
+  "pr_list_rank": 1,
+  "known_as": {
+    "value": "Dr Tlaleng Mofokeng",
+    "label": "Reported",
+    "source_url": "https://iol.co.za/news/politics/2026-09-06-meet-the-men-and-women-who-want-to-be-your-next-mayor-local-government-elections-2026/",
+    "source_date": "2026-09-06",
+    "retrieved_at": "2026-11-15T20:15:00+02:00"
+  },
+  "positions": {
+    "value": null,
+    "label": "Unknown",
+    "source_url": null,
+    "source_date": null,
+    "retrieved_at": null
+  },
+  "career": {
+    "value": "Medical doctor",
+    "label": "Reported",
+    "source_url": "https://iol.co.za/news/politics/2026-09-06-meet-the-men-and-women-who-want-to-be-your-next-mayor-local-government-elections-2026/",
+    "source_date": "2026-09-06",
+    "retrieved_at": "2026-11-15T20:15:00+02:00"
+  },
+  "education": {
+    "value": null,
+    "label": "Unknown",
+    "source_url": null,
+    "source_date": null,
+    "retrieved_at": null
+  },
+  "cv": [
+    {
+      "value": "EFF mayoral candidate for Johannesburg",
+      "label": "Reported",
+      "source_url": "https://iol.co.za/news/politics/2026-09-06-meet-the-men-and-women-who-want-to-be-your-next-mayor-local-government-elections-2026/",
+      "source_date": "2026-09-06",
+      "retrieved_at": "2026-11-15T20:15:00+02:00",
+      "field": "candidacy",
+      "period": "2026"
+    },
+    {
+      "value": "Former United Nations special rapporteur",
+      "label": "Reported",
+      "source_url": "https://iol.co.za/news/politics/2026-09-06-meet-the-men-and-women-who-want-to-be-your-next-mayor-local-government-elections-2026/",
+      "source_date": "2026-09-06",
+      "retrieved_at": "2026-11-15T20:15:00+02:00",
+      "field": "position",
+      "period": null
+    },
+    {
+      "value": "Campaign platform as reported: expanded public healthcare, 24-hour clinics, municipal debt relief for registered indigent households, insourcing municipal workers",
+      "label": "Reported",
+      "source_url": "https://mg.co.za/politics/2026-09-03-battle-for-joburg-heats-up/",
+      "source_date": "2026-09-04",
+      "retrieved_at": "2026-11-15T20:15:00+02:00",
+      "field": "candidacy",
+      "period": "2026"
+    }
+  ],
+  "identity_match": {
+    "matched_details": [
+      "Name: gazette TLALENG PETRONELLA MOFOKENG matches 'Dr Tlaleng Mofokeng' (given name and surname).",
+      "Party: ECONOMIC FREEDOM FIGHTERS PR rank 1 in the gazette; reported as the EFF's Johannesburg mayoral candidate (IOL 2026-09-06; M&G 2026-09-04).",
+      "Council: City of Johannesburg (candidacy) in both."
+    ],
+    "note": null
+  },
+  "court_matters": [],
+  "scandals": [],
+  "unknown_fields": [
+    "positions",
+    "education",
+    "Prior municipal office (none found in allowed sources; not assumed to be none)",
+    "Council office or portfolio for the 2026–2031 term (executive mayor and mayoral committee not yet elected; first sitting expected around 19 November 2026 — not guessed)",
+    "Official council contact channel (owner to confirm from the City's published councillor directory)"
+  ]
+}
