@@ -46,6 +46,6 @@ DRAFT PROFILE — not published. Public role only. Every item carries an evidenc
 
 ## Identity match (how sources were linked)
 
-- Name: gazette MARGERET SHERON ARNOLDS vs 'Margaret Arnolds' (one-letter difference in the given name — the gazette is an OCR scan; not resolved).
+- Name: spelled as gazetted (MARGERET SHERON ARNOLDS); reported as Margaret Arnolds (News24 2023-11-20, EWN 2025-09-26, SABC 2025-09-26).
 - Party: AFRICAN INDEPENDENT CONGRESS PR rank 1 in the gazette; AIC councillor (News24 2023-11-20; M&G 2026-09-04).
 - Council role: Johannesburg council speaker (News24 2023-11-20; EWN 2025-09-26; M&G 2026-09-04).

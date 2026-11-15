@@ -118,10 +118,10 @@
       "period": null
     },
     {
-      "value": "Owner of the online publication African News Global (as reported in 2025)",
+      "value": "Runs an online news agency (\"his online news agency\", as reported in 2025)",
       "label": "Reported",
-      "source_url": "https://mg.co.za/politics/2025-09-23-kunene-has-no-links-to-katiso-tk-molefe-report-finds/",
-      "source_date": "2025-09-23",
+      "source_url": "https://www.ewn.co.za/2025/09/26/after-suspension-and-probe-patriotic-alliances-kenny-kunene-returns-to-johannesburg-council",
+      "source_date": "2025-09-26",
       "retrieved_at": "2026-11-15T20:15:00+02:00",
       "field": "career",
       "period": null
@@ -129,11 +129,11 @@
   ],
   "identity_match": {
     "matched_details": [
-      "Surname KUNENE with given name KENNETH; reported as 'Kenny Kunene' (Kenny read as the short form of Kenneth — an inference, see note).",
+      "Full name: SABC News (2025-09-26) reports his council oath as 'I, Thapelo Kenneth Kunene, swear…' at his swearing-in as a City of Johannesburg PR councillor, matching the gazette exactly; reported publicly as 'Kenny Kunene'.",
       "Party: PATRIOTIC ALLIANCE PR rank 1 in the gazette; reported as PA deputy president and PA Johannesburg mayoral candidate (IOL 2026-09-06).",
       "Council role: Johannesburg councillor and Transport MMC (DM 2023-02-08; EWN 2025-09-26)."
     ],
-    "note": "The match rests on surname + party + council role; 'Kenny' as a form of 'Kenneth' is an inference, not a sourced fact."
+    "note": "Full name, party and council role all match; the full-name link is Reported (SABC oath quote)."
   },
   "court_matters": [
     {
@@ -158,14 +158,22 @@
   ],
   "scandals": [
     {
-      "value": "In July 2025 the Patriotic Alliance suspended Kunene after he was present at a private home when police arrested its owner in a murder investigation. Kunene said he had accompanied a journalist from his publication to arrange an interview. He resigned from the council pending an external review.",
+      "value": "In July 2025 Kunene resigned as Transport MMC and as a councillor, and the Patriotic Alliance suspended him from party activities, after he was found at the home of a person accused of murder during a police operation. Kunene said he was there to accompany a journalist from his online news agency for an interview.",
       "label": "Reported",
-      "source_url": "https://mg.co.za/politics/2025-09-23-kunene-has-no-links-to-katiso-tk-molefe-report-finds/",
-      "source_date": "2025-09-23",
+      "source_url": "https://www.sabcnews.com/sabcnews/kunene-sworn-in-as-pr-councillor-after-being-cleared/",
+      "source_date": "2025-09-26",
       "retrieved_at": "2026-11-15T20:15:00+02:00",
       "matter_status": "cleared",
       "category": "Party disciplinary matter",
-      "outcome": "A report by law firm Cliffe Dekker Hofmeyr found no evidence refuting Kunene's account and said it was not aware of any criminal or civil proceedings against him related to his presence (M&G, 23 September 2025). The PA reinstated him and he was sworn in again as a councillor on 26 September 2025 (EWN).",
+      "outcome": "An external law firm cleared him of wrongdoing; reinstated and sworn in 26 Sep 2025.",
+      "also_sourced": [
+        {
+          "source_url": "https://www.ewn.co.za/2025/09/26/after-suspension-and-probe-patriotic-alliances-kenny-kunene-returns-to-johannesburg-council",
+          "source_date": "2025-09-26",
+          "retrieved_at": "2026-11-15T20:15:00+02:00",
+          "publisher": "EWN"
+        }
+      ],
       "right_of_reply": {
         "status": "pending",
         "draft_path": "drafts/right-of-reply/CHG-PW-002/thapelo-kenneth-kunene.md",

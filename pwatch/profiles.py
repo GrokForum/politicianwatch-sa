@@ -84,7 +84,10 @@ def _src(f: dict[str, Any]) -> str:
     if f.get("label") == "Unknown":
         return ""
     page = f" p.{f['source_page']}" if f.get("source_page") else ""
-    return f" — [source]({f.get('source_url')}){page}, {f.get('source_date')} (retrieved {f.get('retrieved_at')})"
+    out = f" — [source]({f.get('source_url')}){page}, {f.get('source_date')} (retrieved {f.get('retrieved_at')})"
+    for a in f.get("also_sourced") or []:
+        out += f"; also [source]({a.get('source_url')}), {a.get('source_date')}"
+    return out
 
 
 def _fact_line(title: str, f: dict[str, Any]) -> str:
@@ -109,6 +112,10 @@ def render_markdown(profile: dict[str, Any]) -> str:
     ]
     if "known_as" in profile:
         lines.append(_fact_line("Known as", profile["known_as"]))
+    if "given_names" in profile:
+        lines.append(_fact_line("Given names", profile["given_names"]))
+    if "full_name_surname" in profile:
+        lines.append(_fact_line("Surname in full legal name", profile["full_name_surname"]))
     lines += [
         _fact_line("Party", profile["party"]),
         _fact_line("Seat type", profile["seat_type"]),

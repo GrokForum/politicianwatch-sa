@@ -19,7 +19,7 @@ DRAFT: NOT SENT. The owner sends personally. The bot never sends.
 >
 > **Items in the profile:**
 > - City of Johannesburg MMC for Human Settlements (as described in September 2026) (Reported; 2026-09-06, https://iol.co.za/news/politics/2026-09-06-meet-the-men-and-women-who-want-to-be-your-next-mayor-local-government-elections-2026/)
-> - Appointed MMC for Housing in Mayor Mpho Phalatse's mayoral committee (Confirmed; 2021-12-13, https://www.da.org.za/2021/12/da-congratulates-johannesburg-mayor-mpho-phalatse-on-her-mayoral-committee)
+> - Appointed MMC for Housing in Mayor Mpho Phalatse's mayoral committee (Reported; 2021-12-13, https://www.da.org.za/2021/12/da-congratulates-johannesburg-mayor-mpho-phalatse-on-her-mayoral-committee)
 > - MMC for Human Settlements (as described in September 2026) (Reported; 2026-09-06, https://iol.co.za/news/politics/2026-09-06-meet-the-men-and-women-who-want-to-be-your-next-mayor-local-government-elections-2026/)
 > - IFP mayoral candidate for Johannesburg (Reported; 2026-09-06, https://iol.co.za/news/politics/2026-09-06-meet-the-men-and-women-who-want-to-be-your-next-mayor-local-government-elections-2026/)
 

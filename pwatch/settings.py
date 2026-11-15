@@ -50,6 +50,6 @@ ROR_RECORDED_BY_OWNER = "owner"
 # Every right-of-reply draft must carry this line at the top (CHG-PW-002).
 DRAFT_MARKER = "DRAFT: NOT SENT. The owner sends personally. The bot never sends."
 CV_FIELDS = ("position", "career", "candidacy", "education")
-OPTIONAL_FACT_FIELDS = ("known_as",)
+OPTIONAL_FACT_FIELDS = ("known_as", "given_names", "full_name_surname")
 # Minimum independent details that must match before a non-gazette source is linked to a person.
 IDENTITY_MIN_DETAILS = 2

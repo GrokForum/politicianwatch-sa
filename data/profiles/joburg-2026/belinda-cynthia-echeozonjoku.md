@@ -14,13 +14,13 @@ DRAFT PROFILE — not published. Public role only. Every item carries an evidenc
 
 ## Summary
 
-- **Positions:** Former City of Johannesburg MMC for Development Planning · `Confirmed` — [source](https://www.da.org.za/2021/12/da-congratulates-johannesburg-mayor-mpho-phalatse-on-her-mayoral-committee), 2021-12-13 (retrieved 2026-11-15T20:15:00+02:00)
+- **Positions:** Former City of Johannesburg MMC for Development Planning · `Reported` — [source](https://www.da.org.za/2021/12/da-congratulates-johannesburg-mayor-mpho-phalatse-on-her-mayoral-committee), 2021-12-13 (retrieved 2026-11-15T20:15:00+02:00)
 - **Career:** Unknown — not yet sourced (placeholder) · `Unknown`
 - **Education:** Unknown — not yet sourced (placeholder) · `Unknown`
 
 ## CV (public role)
 
-- **Position (2021-12):** Appointed MMC for Development Planning in Mayor Mpho Phalatse's mayoral committee · `Confirmed` — [source](https://www.da.org.za/2021/12/da-congratulates-johannesburg-mayor-mpho-phalatse-on-her-mayoral-committee), 2021-12-13 (retrieved 2026-11-15T20:15:00+02:00)
+- **Position (2021-12):** Appointed MMC for Development Planning in Mayor Mpho Phalatse's mayoral committee · `Reported` — [source](https://www.da.org.za/2021/12/da-congratulates-johannesburg-mayor-mpho-phalatse-on-her-mayoral-committee), 2021-12-13 (retrieved 2026-11-15T20:15:00+02:00)
 - **Position (2023-06-05):** Elected unopposed as DA Johannesburg caucus leader; also shadow MMC for development planning · `Reported` — [source](https://www.timeslive.co.za/politics/2023-06-05-belinda-echeozonjoku-elected-new-da-joburg-caucus-leader/), 2023-06-05 (retrieved 2026-11-15T20:15:00+02:00)
 - **Position (2023):** Serving a second term as a Johannesburg councillor (as at June 2023) · `Reported` — [source](https://www.timeslive.co.za/politics/2023-06-05-belinda-echeozonjoku-elected-new-da-joburg-caucus-leader/), 2023-06-05 (retrieved 2026-11-15T20:15:00+02:00)
 

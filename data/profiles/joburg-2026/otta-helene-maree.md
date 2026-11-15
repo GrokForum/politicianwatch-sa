@@ -7,6 +7,8 @@ DRAFT PROFILE — not published. Public role only. Every item carries an evidenc
 
 - **Name as gazetted:** OTTA HELENE MAREE · `Confirmed` — [source](https://www.gazettefinder.co.za/gazettes/government-gazette/2026/55741/government-gazette-55741-2026-11-13.pdf) p.46, 2026-11-13 (retrieved 2026-11-15T16:10:03+00:00)
 - **Known as:** Helen Zille · `Reported` — [source](https://www.news24.com/politics/bye-bye-dada-overhang-scuppers-morero-loyiso-masukus-return-to-joburg-council-20261108-0629), 2026-11-08 (retrieved 2026-11-15T20:15:00+02:00)
+- **Given names:** Otta Helene · `Reported` — [source](https://www.britannica.com/biography/Helen-Zille), 2026-11-13 (retrieved 2026-11-15T20:15:00+02:00)
+- **Surname in full legal name:** Unknown — not yet sourced (placeholder) · `Unknown`
 - **Party:** DEMOCRATIC ALLIANCE · `Confirmed` — [source](https://www.gazettefinder.co.za/gazettes/government-gazette/2026/55741/government-gazette-55741-2026-11-13.pdf) p.46, 2026-11-13 (retrieved 2026-11-15T16:10:03+00:00)
 - **Seat type:** PR · `Confirmed` — [source](https://www.gazettefinder.co.za/gazettes/government-gazette/2026/55741/government-gazette-55741-2026-11-13.pdf) p.46, 2026-11-13 (retrieved 2026-11-15T16:10:03+00:00)
 - **Ward:** — (none) · `Confirmed` — [source](https://www.gazettefinder.co.za/gazettes/government-gazette/2026/55741/government-gazette-55741-2026-11-13.pdf) p.46, 2026-11-13 (retrieved 2026-11-15T16:10:03+00:00)
@@ -22,14 +24,14 @@ DRAFT PROFILE — not published. Public role only. Every item carries an evidenc
 ## CV (public role)
 
 - **Candidacy (2026):** DA mayoral candidate for the City of Johannesburg, 2026 local government elections · `Reported` — [source](https://iol.co.za/news/politics/2026-09-06-meet-the-men-and-women-who-want-to-be-your-next-mayor-local-government-elections-2026/), 2026-09-06 (retrieved 2026-11-15T20:15:00+02:00)
-- **Position:** Chairperson of the DA Federal Council (as described by IOL on 6 September 2026) · `Reported` — [source](https://iol.co.za/news/politics/2026-09-06-meet-the-men-and-women-who-want-to-be-your-next-mayor-local-government-elections-2026/), 2026-09-06 (retrieved 2026-11-15T20:15:00+02:00)
+- **Position (2019–2026):** Chairperson of the DA Federal Council — former (2019–2026). Stepped down in April 2026; Ashor Sarupen was elected chairperson of the Federal Council on 12 April 2026 · `Reported` — [source](https://witness.co.za/news/2026/04/13/change-sweeps-across-da-federal-leadership-as-kzns-sarupen-rises/), 2026-04-13 (retrieved 2026-11-15T20:15:00+02:00); also [source](https://www.da.org.za/2026/04/da-announces-leadership-election-results), 2026-04-12; also [source](https://www.britannica.com/biography/Helen-Zille), 2026-11-13
 - **Position:** Mayor of Cape Town (former) · `Reported` — [source](https://mg.co.za/politics/2026-09-03-battle-for-joburg-heats-up/), 2026-09-04 (retrieved 2026-11-15T20:15:00+02:00)
 - **Position:** Premier of the Western Cape (former) · `Reported` — [source](https://mg.co.za/politics/2026-09-03-battle-for-joburg-heats-up/), 2026-09-04 (retrieved 2026-11-15T20:15:00+02:00)
 
 ## Court matters
 
-- **Item:** The Public Protector found that 2017 tweets by Zille about colonialism, made while she was Western Cape premier, violated the Constitution and the Executive Ethics Code. Zille applied for a review of the report; the High Court dismissed it, and she appealed. · `Disputed` — [source](https://www.citizen.co.za/news/south-africa/courts/sca-rules-against-mkhwebane-zille-colonialism-tweets/), 2022-02-07 (retrieved 2026-11-15T20:15:00+02:00)
-  - **Status / outcome:** The Supreme Court of Appeal upheld Zille's appeal with costs and set aside the High Court's dismissal of her review, on 7 February 2022 (Premier of the Western Cape Province v The Public Protector & Another (771/2020) [2022] ZASCA 16, as cited in The Citizen). Zille said she had apologised for the tweets and was entitled to make them. (matter_status: `cleared`)
+- **Item:** The Public Protector found that tweets on colonialism made by Zille on 15 March 2017, while she was Western Cape premier, breached the Executive Ethics Code and the Constitution, and recommended remedial action (Report No. 5 of 2018/19). Zille's review application was dismissed by the Gauteng Division of the High Court, Pretoria, and she appealed. · `Confirmed` — [source](https://lawlibrary.org.za/akn/za/judgment/zasca/2022/16/eng@2022-02-07), 2022-02-07 (retrieved 2026-11-15T20:15:00+02:00); also [source](https://www.supremecourtofappeal.org.za/images/Media_Summaries_2022/sca2022-16ms.pdf), 2022-02-07; also [source](https://www.citizen.co.za/news/south-africa/courts/sca-rules-against-mkhwebane-zille-colonialism-tweets/), 2022-02-07
+  - **Status / outcome:** The SCA upheld the appeal and reviewed and set aside the Public Protector's findings and remedial action (Report No. 5 of 2018/19), 7 Feb 2022 (Premier of the Western Cape Province v The Public Protector & Another (771/2020) [2022] ZASCA 16). (matter_status: `cleared`)
   - **Right of reply: pending**
   - **Reply:** _(blank — no reply recorded)_
 
@@ -49,4 +51,5 @@ DRAFT PROFILE — not published. Public role only. Every item carries an evidenc
 - Party: DEMOCRATIC ALLIANCE in the gazette; reported as the DA's Johannesburg mayoral candidate (IOL 2026-09-06; EWN 2026-09-21).
 - List position: gazette DA PR rank 1, City of Johannesburg; News24 (2026-11-08) reports the DA PR list as 'topped by Helen Zille'.
 - Council: City of Johannesburg in both the gazette and the reporting.
-- Note: The gazetted name (OTTA HELENE MAREE) differs from the public name (Helen Zille). The link rests on party + PR rank 1 + council, not on the name. No source on the allowed list stating the legal name was found; encyclopaedia and aggregator pages were not used. Reviewers should confirm.
+- Given names: gazette OTTA HELENE matches Britannica's 'Otta Helene' as Helen Zille's given names (Britannica, updated 2026-11-13). The surname MAREE in the gazetted name is not confirmed by an allowed source and is recorded as Unknown.
+- Note: The gazetted name is kept exactly as printed (OTTA HELENE MAREE). The link to Helen Zille rests on party + DA PR rank 1 + council, plus the given names Otta Helene (Britannica). Whether 'Maree' forms part of her full name is Unknown: no allowed source confirms it, and it is not recorded as a fact. No family details are recorded.

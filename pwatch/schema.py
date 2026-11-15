@@ -56,6 +56,15 @@ def fact_failures(obj: Any, locator: str) -> list[str]:
         failures.append(f"{locator}: fact labelled {label} is missing a source date")
     if not obj.get("retrieved_at"):
         failures.append(f"{locator}: fact labelled {label} is missing retrieved_at")
+    extra = obj.get("also_sourced")
+    if extra is not None:
+        if not isinstance(extra, list):
+            failures.append(f"{locator}.also_sourced: must be a list")
+        else:
+            for i, src in enumerate(extra):
+                for key in ("source_url", "source_date", "retrieved_at"):
+                    if not isinstance(src, dict) or not src.get(key):
+                        failures.append(f"{locator}.also_sourced[{i}]: missing {key}")
     return failures
 
 

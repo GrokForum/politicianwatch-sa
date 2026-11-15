@@ -26,7 +26,7 @@ DRAFT PROFILE — not published. Public role only. Every item carries an evidenc
 - **Position:** Deputy president of the Patriotic Alliance · `Reported` — [source](https://iol.co.za/news/politics/2026-09-06-meet-the-men-and-women-who-want-to-be-your-next-mayor-local-government-elections-2026/), 2026-09-06 (retrieved 2026-11-15T20:15:00+02:00)
 - **Candidacy (2026):** Patriotic Alliance mayoral candidate for Johannesburg · `Reported` — [source](https://iol.co.za/news/politics/2026-09-06-meet-the-men-and-women-who-want-to-be-your-next-mayor-local-government-elections-2026/), 2026-09-06 (retrieved 2026-11-15T20:15:00+02:00)
 - **Career:** Co-founded the Patriotic Alliance in 2013 · `Reported` — [source](https://www.dailymaverick.co.za/article/2023-02-08-joburg-should-be-grateful-they-have-me-kenny-kunene/), 2023-02-08 (retrieved 2026-11-15T20:15:00+02:00)
-- **Career:** Owner of the online publication African News Global (as reported in 2025) · `Reported` — [source](https://mg.co.za/politics/2025-09-23-kunene-has-no-links-to-katiso-tk-molefe-report-finds/), 2025-09-23 (retrieved 2026-11-15T20:15:00+02:00)
+- **Career:** Runs an online news agency ("his online news agency", as reported in 2025) · `Reported` — [source](https://www.ewn.co.za/2025/09/26/after-suspension-and-probe-patriotic-alliances-kenny-kunene-returns-to-johannesburg-council), 2025-09-26 (retrieved 2026-11-15T20:15:00+02:00)
 
 ## Court matters
 
@@ -37,8 +37,8 @@ DRAFT PROFILE — not published. Public role only. Every item carries an evidenc
 
 ## Scandals and allegations
 
-- **Item:** In July 2025 the Patriotic Alliance suspended Kunene after he was present at a private home when police arrested its owner in a murder investigation. Kunene said he had accompanied a journalist from his publication to arrange an interview. He resigned from the council pending an external review. · `Reported` — [source](https://mg.co.za/politics/2025-09-23-kunene-has-no-links-to-katiso-tk-molefe-report-finds/), 2025-09-23 (retrieved 2026-11-15T20:15:00+02:00)
-  - **Status / outcome:** A report by law firm Cliffe Dekker Hofmeyr found no evidence refuting Kunene's account and said it was not aware of any criminal or civil proceedings against him related to his presence (M&G, 23 September 2025). The PA reinstated him and he was sworn in again as a councillor on 26 September 2025 (EWN). (matter_status: `cleared`)
+- **Item:** In July 2025 Kunene resigned as Transport MMC and as a councillor, and the Patriotic Alliance suspended him from party activities, after he was found at the home of a person accused of murder during a police operation. Kunene said he was there to accompany a journalist from his online news agency for an interview. · `Reported` — [source](https://www.sabcnews.com/sabcnews/kunene-sworn-in-as-pr-councillor-after-being-cleared/), 2025-09-26 (retrieved 2026-11-15T20:15:00+02:00); also [source](https://www.ewn.co.za/2025/09/26/after-suspension-and-probe-patriotic-alliances-kenny-kunene-returns-to-johannesburg-council), 2025-09-26
+  - **Status / outcome:** An external law firm cleared him of wrongdoing; reinstated and sworn in 26 Sep 2025. (matter_status: `cleared`)
   - **Right of reply: pending**
   - **Reply:** _(blank — no reply recorded)_
 
@@ -51,7 +51,7 @@ DRAFT PROFILE — not published. Public role only. Every item carries an evidenc
 
 ## Identity match (how sources were linked)
 
-- Surname KUNENE with given name KENNETH; reported as 'Kenny Kunene' (Kenny read as the short form of Kenneth — an inference, see note).
+- Full name: SABC News (2025-09-26) reports his council oath as 'I, Thapelo Kenneth Kunene, swear…' at his swearing-in as a City of Johannesburg PR councillor, matching the gazette exactly; reported publicly as 'Kenny Kunene'.
 - Party: PATRIOTIC ALLIANCE PR rank 1 in the gazette; reported as PA deputy president and PA Johannesburg mayoral candidate (IOL 2026-09-06).
 - Council role: Johannesburg councillor and Transport MMC (DM 2023-02-08; EWN 2025-09-26).
-- Note: The match rests on surname + party + council role; 'Kenny' as a form of 'Kenneth' is an inference, not a sourced fact.
+- Note: Full name, party and council role all match; the full-name link is Reported (SABC oath quote).

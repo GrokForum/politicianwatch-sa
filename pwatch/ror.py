@@ -40,6 +40,14 @@ def display(ror: dict[str, Any] | None) -> dict[str, str]:
     }
 
 
+def first_nonempty_line(text: str) -> str:
+    """The first line with content, stripped (used to check the NOT SENT marker opens the draft)."""
+    for line in text.splitlines():
+        if line.strip():
+            return line.strip()
+    return ""
+
+
 def _parse_date(value: str | None) -> date | None:
     if not value:
         return None
@@ -71,8 +79,11 @@ def check_right_of_reply(
             path = drafts_root / path
         if not path.is_file():
             failures.append(f"{locator}: right_of_reply draft does not exist: {draft_path}")
-        elif DRAFT_MARKER not in path.read_text(encoding="utf-8")[:2000]:
-            failures.append(f"{locator}: right_of_reply draft must start with the marker {DRAFT_MARKER!r}")
+        elif first_nonempty_line(path.read_text(encoding="utf-8")) != DRAFT_MARKER:
+            failures.append(
+                f"{locator}: right_of_reply draft must start with the marker {DRAFT_MARKER!r} "
+                "(first non-empty line)"
+            )
 
     deadline_invalid = False
     try:

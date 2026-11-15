@@ -27,13 +27,13 @@ DRAFT PROFILE — not published. Public role only. Every item carries an evidenc
 ## Court matters
 
 - **Item:** Gwamanda handed himself over to police on 18 October 2024 and appeared in the Protea Magistrate's Court on fraud charges linked to the scheme. · `Alleged` — [source](https://www.citizen.co.za/news/south-africa/courts/state-provisionally-withdraws-charges-kabelo-gwamanda/), 2025-02-25 (retrieved 2026-11-15T20:15:00+02:00)
-  - **Status / outcome:** On 25 February 2025 the National Prosecuting Authority provisionally withdrew all charges against him and a co-accused, saying more complainants had come forward and further investigation was needed, after which proceedings would be re-instituted. Gwamanda said the state had no evidence. No re-instituted charges were found in allowed sources as of 15 November 2026. (matter_status: `withdrawn`)
+  - **Status / outcome:** On 25 February 2025 the National Prosecuting Authority provisionally withdrew all charges against him and a co-accused, saying more complainants had come forward and further investigation was needed; the NPA said that once these investigations were finalised, criminal proceedings would be re-instituted (provisionally withdrawn; NPA said it would re-institute). Gwamanda said the state had no evidence. No re-instituted charges were found in allowed sources as of 15 November 2026. (matter_status: `withdrawn`)
   - **Right of reply: pending**
   - **Reply:** _(blank — no reply recorded)_
 
 ## Scandals and allegations
 
-- **Item:** The Sunday Times reported in June 2023 that, according to the Financial Sector Conduct Authority (FSCA), Gwamanda's funeral and burial scheme entity iThemba Lama Afrika was not registered with the FSCA as required, and that it was alleged Soweto residents who contributed to the scheme from 2012 were not paid when they claimed. Gwamanda said the business had failed and that the matter was being used to cast aspersions on him. · `Alleged` — [source](https://www.sundaytimes.timeslive.co.za/sunday-times/news/politics/2023-06-18-joburg-mayor-gwamanda-ran-illegal-funeral-scheme-fsca/), 2023-06-18 (retrieved 2026-11-15T20:15:00+02:00)
+- **Item:** The Sunday Times reported in June 2023 that, according to the Financial Sector Conduct Authority (FSCA), Gwamanda's funeral and burial scheme entity iThemba Lama Afrika was not registered with the FSCA as required, and that it was alleged Soweto residents were drawn into contributing to the scheme in 2012 and were not paid when they claimed. Gwamanda said the business had failed and that the matter was being used to cast aspersions on him. · `Alleged` — [source](https://www.sundaytimes.timeslive.co.za/sunday-times/news/politics/2023-06-18-joburg-mayor-gwamanda-ran-illegal-funeral-scheme-fsca/), 2023-06-18 (retrieved 2026-11-15T20:15:00+02:00)
   - **Status / outcome:** The FSCA confirmed an investigation in June 2023 (Citizen, 2025-02-25). A final FSCA outcome was not found in allowed sources as of 15 November 2026: Unknown. (matter_status: `unknown`)
   - **Right of reply: pending**
   - **Reply:** _(blank — no reply recorded)_

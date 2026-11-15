@@ -119,7 +119,15 @@
       "retrieved_at": "2026-11-15T20:15:00+02:00",
       "matter_status": "cleared",
       "category": "Public Protector finding (review)",
-      "outcome": "The Gauteng High Court set the Public Protector's findings aside as unconstitutional, unlawful and invalid (reported by TimesLIVE on 2 February 2023). Mashaba said the ruling vindicated him.",
+      "outcome": "The High Court in Pretoria set the Public Protector's findings aside as unconstitutional, unlawful and invalid on 31 January 2023 (Pretoria) (TimesLIVE, 2 February 2023; ActionSA statement, 31 January 2023). No appeal found in allowed sources as of 15 November 2026. Mashaba said the ruling vindicated him.",
+      "also_sourced": [
+        {
+          "source_url": "https://www.actionsa.org.za/pretoria-high-court-vindicates-herman-mashaba-by-setting-aside-frivolous-public-protector-report/",
+          "source_date": "2023-01-31",
+          "retrieved_at": "2026-11-15T20:15:00+02:00",
+          "publisher": "ActionSA (party statement)"
+        }
+      ],
       "right_of_reply": {
         "status": "pending",
         "draft_path": "drafts/right-of-reply/CHG-PW-002/herman-samtseu-philip-mashaba.md",

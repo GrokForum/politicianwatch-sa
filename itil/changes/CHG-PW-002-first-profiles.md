@@ -42,7 +42,7 @@ Allowed list only: Gazette 55741; City of Johannesburg official statement; a par
 
 ## Risks
 
-- **Defamation (RSK-004).** Six adverse items. Each is attributed, labelled (Disputed ×2, Alleged ×2, Reported ×2), carries its outcome (two were set aside by courts, one cleared by an external review, one charge provisionally withdrawn), and has RoR `pending` with a blank reply. Not published. Four-eyes + owner GO required.
+- **Defamation (RSK-004).** Six adverse items. Each is attributed, labelled (as of review round 1: Confirmed ×1 court judgment, Disputed ×1, Alleged ×2, Reported ×2), carries its outcome (two were set aside by courts, one cleared by an external review, one charge provisionally withdrawn), and has RoR `pending` with a blank reply. Not published. Four-eyes + owner GO required.
 - **Identity error (new RSK-009).** Gazette legal names differ from public names for Zille (Otta Helene Maree), Kunene and Arnolds. Mitigation: ≥ 2-detail rule enforced by DQ; reasoning recorded per profile; reviewers asked to confirm.
 - **POPIA special personal information (criminal behaviour, s26).** The Kunene conviction and the Gwamanda charges are criminal-behaviour information about public office-holders, drawn from reputable reporting and relevant to public office. Flagged for reviewer judgement before any publish.
 - **Stale facts.** Roles change at the first sitting (~19 Nov 2026). Profiles mark 2026–2031 roles Unknown.
@@ -63,7 +63,7 @@ Allowed list only: Gazette 55741; City of Johannesburg official statement; a par
 4. **Public figures:** all ten are elected councillors; content is kept to the public role and public record.
 5. **Companies:** iThemba Lama Afrika and a law firm are named only as they appear in reputable reporting, as attributed reports, not as findings.
 6. **Storage:** private repo, local branch only. The builder script lives in the bot's scratch space, outside the repo.
-7. **Flag (not a block):** two items are criminal-behaviour information (Kunene conviction; Gwamanda charges). They are public, reported and relevant to public office; reviewers and the owner should confirm before any publish. The Kunene item's M&G URL slug contains a third party's name (required for the citation).
+7. **Flag (not a block):** two items are criminal-behaviour information (Kunene conviction; Gwamanda charges). They are public, reported and relevant to public office; reviewers and the owner should confirm before any publish. (Round 1: the M&G link whose URL named a third party was removed.)
 
 ## Implementation plan
 
@@ -85,6 +85,28 @@ Rollback is git. The branch is local and unmerged: delete it, or reset it to `ed
 | Reviewer | Cavus | | | pending PASS on the exact head |
 | Reviewer | Cassian (review only) | | | pending PASS on the exact head |
 | Change authority | Owner | | | pending GO |
+
+## Review round 1 (Cavus, PASS_WITH_CONCERNS on `5ab0b6e`) — fixes in one new commit
+
+Every source below was fetched and read on 15 Nov 2026 (~20:20–20:35 SAST). Nothing was amended or force-pushed; nothing was pushed.
+
+| # | Concern | Outcome |
+|---|---|---|
+| 1 | Zille PP outcome wording and citation | Done. Outcome now: "The SCA upheld the appeal and reviewed and set aside the Public Protector's findings and remedial action (Report No. 5 of 2018/19), 7 Feb 2022". Cited to [2022] ZASCA 16 on lawlibrary.org.za (order text verified, incl. "Report No. 5 of 2018/19") plus the SCA media summary on supremecourtofappeal.org.za; label Confirmed. The Citizen kept as a secondary source. SAFLII not used. |
+| 2 | Kunene M&G link | Done. M&G link removed; item sourced to SABC (verified: "a law firm has cleared Kunene of any wrongdoing", re-sworn Friday 26 Sep 2025) and EWN. Outcome wording as requested. "African News Global" dropped; re-sourced to EWN ("his online news agency"). |
+| 3 | Kenny→Kenneth inference | Done. SABC page carries the oath "I, Thapelo Kenneth Kunene, swear…"; recorded as Reported identity detail. |
+| 4 | Zille Federal Council chair stale | Done. Now "former (2019–2026)": DA statement 12 Apr 2026 (Sarupen elected chair, verified; it does not name Zille), The Witness 13 Apr 2026 (Sarupen replaces Zille, who stepped down — verified), Britannica (2019–26, elected Oct 2019 — verified). Reported. |
+| 5 | Zille given-name match | Done, with the owner's clarification: given names "Otta Helene" (Britannica, Reported) as the third identity detail; gazetted name kept as printed; "Maree" in the full name recorded as Unknown (`full_name_surname`, null). No family details. |
+| 6 | Arnolds OCR claim | Done. "Spelled as gazetted; reported as Margaret (News24, EWN, SABC)" — all three verified. |
+| 7 | Mashaba date / appeal | Done. "31 January 2023 (Pretoria)" verified via ActionSA's 31 Jan 2023 statement and TimesLIVE ("this week"); "no appeal found in allowed sources" after a search. Note: the exact date rests on a party statement (Reported). |
+| 8 | Gwamanda "from 2012" | Done ("in 2012", Sunday Times wording). Withdrawal wording checked against The Citizen's NPA quote ("criminal proceedings will be re-instituted"). NPA primary statement not added (only a Facebook copy found). |
+| 9 | DA press release labelled Confirmed | Done. Downgraded to Reported (Echeozonjoku ×2, Mabaso ×1). The City's 13 Dec 2021 statement was found only on a third-party host, so not cited. |
+| 10 | NOT SENT check | Done. `ror.py` now tests the first non-empty line; new test `test_marker_must_be_first_nonempty_line`. |
+| 11 | POPIA s26 note | Done in the batch notes: criminal-matter items are special personal information and must be re-verified on the day of any publish. |
+
+Also added: `also_sourced` on facts (each entry DQ-checked for URL, date and retrieved_at; schema + test), optional `given_names` / `full_name_surname` facts (schema + render + test).
+
+Evidence after the fixes: `uv run pytest -q` **32 passed**; `uv run pwatch dq` **pass** (270 + 10, 0 failures, exit 0); `pwatch render --check` exit 0; JSON Schema validation 0 errors; popia-review **PASS** (scan of added lines: no IDs, phones, emails, addresses; no private person named in text or URLs; the only "Molefe" in the repo is a gazetted councillor surname in the roster; no family details). Labels now: Confirmed 53, Reported 51, Unknown 21, Disputed 1, Alleged 2 (128).
 
 ## Post-implementation review
 

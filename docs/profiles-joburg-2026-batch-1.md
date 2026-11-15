@@ -27,34 +27,40 @@ Files: `data/profiles/joburg-2026/<slug>.json` (+ generated `<slug>.md`), drafts
 
 | Label | Used for |
 |---|---|
-| Confirmed | Government Gazette 55741; City of Johannesburg official media statement; a party's official statement |
-| Reported | A fact stated by reputable news on the allowed list (News24, Daily Maverick, M&G, TimesLIVE/Sunday Times, EWN, IOL, The Citizen) |
+| Confirmed | Government Gazette 55741; a City of Johannesburg official media statement; a court judgment (SCA [2022] ZASCA 16, from LawLibrary and the SCA's own site) |
+| Reported | Reputable news on the allowed list (News24, Daily Maverick, M&G, TimesLIVE/Sunday Times, EWN, IOL, The Citizen, SABC); **party press statements** (DA, ActionSA) — a party statement is not an official City record (fix round 1) |
 | Alleged | An allegation or charge not decided by a court (Gwamanda ×2) |
-| Disputed | An official adverse finding that the person challenged and a court set aside (Zille, Mashaba) |
+| Disputed | An official adverse finding that the person challenged and a court set aside, where only news reporting was available (Mashaba) |
 | Unknown | Not found in an allowed source; value `null`, shown as a visible placeholder |
 
-Fact counts across the 10 profiles (seat facts, summary fields, known-as, CV entries and adverse items): **Confirmed 55, Reported 47, Unknown 20, Disputed 2, Alleged 2 — 126 facts.** Of the Confirmed facts, 50 are gazette seat facts (5 per profile) and 5 are official City or party statements.
+Fact counts across the 10 profiles (seat facts, summary fields, known-as / given-names / surname, CV entries and adverse items), after fix round 1: **Confirmed 53, Reported 51, Unknown 21, Disputed 1, Alleged 2 — 128 facts.** Of the Confirmed facts, 50 are gazette seat facts (5 per profile), 2 come from the City of Johannesburg's February 2023 statement (Mnisi), and 1 is the SCA judgment (Zille).
+
+**Sources outside the default list, used at reviewer request or as party records:** Encyclopaedia Britannica (Zille's given names and Federal Council dates), The Witness (Media24; Sarupen replacing Zille), DA and ActionSA party statements. All are labelled Reported.
 
 ## Adverse items (6, all "Right of reply: pending", reply field blank)
 
 | Profile | Type | Label | matter_status | Outcome as reported |
 |---|---|---|---|---|
-| Maree (Zille) | Public Protector finding on 2017 tweets | Disputed | cleared | SCA upheld her appeal, 7 Feb 2022 |
-| Mashaba | Public Protector findings on his mayoral term | Disputed | cleared | Gauteng High Court set findings aside (reported 2 Feb 2023) |
+| Maree (Zille) | Public Protector finding on 2017 tweets (Report No. 5 of 2018/19) | Confirmed (SCA judgment) | cleared | SCA upheld the appeal and reviewed and set aside the findings and remedial action, 7 Feb 2022 |
+| Mashaba | Public Protector findings on his mayoral term | Disputed | cleared | High Court, Pretoria, set findings aside on 31 Jan 2023; no appeal found in allowed sources |
 | Kunene | Historical fraud conviction (1997, per DM) | Reported | convicted | Sentence served |
-| Kunene | 2025 PA suspension after presence at an arrest | Reported | cleared | External law-firm report; reinstated, re-sworn 26 Sep 2025 |
-| Gwamanda | FSCA / funeral-scheme allegations (2023) | Alleged | unknown | FSCA investigation confirmed; final outcome not found |
-| Gwamanda | Fraud charges (2024) | Alleged | withdrawn | Provisionally withdrawn 25 Feb 2025; NPA said it may re-institute |
+| Kunene | 2025 PA suspension after presence at an arrest | Reported (SABC, EWN) | cleared | An external law firm cleared him of wrongdoing; reinstated and sworn in 26 Sep 2025 |
+| Gwamanda | FSCA / funeral-scheme allegations (scheme in 2012; reported 2023) | Alleged | unknown | FSCA investigation confirmed; final outcome not found |
+| Gwamanda | Fraud charges (2024) | Alleged | withdrawn | Provisionally withdrawn 25 Feb 2025; NPA said it would re-institute once investigations were finalised |
 
-Third parties are not named unless they are public office-holders (e.g. a former mayor). The person arrested in the Kunene item and the co-accused in the Gwamanda case are not named in the profiles. (The M&G URL slug cited for the Kunene item contains a third party's name; it is kept because the source URL is required.)
+Third parties are not named unless they are public office-holders (e.g. a former mayor). The person arrested in the Kunene item and the co-accused in the Gwamanda case are not named in any profile, draft or URL. Fix round 1 removed the M&G link whose URL named a private person; the Kunene item now cites SABC and EWN.
+
+### POPIA: special personal information — re-verify on the day of any publish
+
+The criminal-matter items — **Kunene's 1997 fraud conviction** and **Gwamanda's 2024 fraud charges (provisionally withdrawn) and the related FSCA allegations** — are information about criminal behaviour, which is *special personal information* under POPIA s26. They are kept because they are public, reported and relevant to public office, but each must be **re-verified against its sources on the day of any publish** (status, outcome, any reinstated charge, appeal or expungement), and must pass four-eyes review and an owner GO first.
 
 ## Identity matching
 
 Every profile has `identity_match.matched_details` with at least two details (the DQ gate enforces ≥ 2 whenever a non-gazette source is linked). Points for reviewers:
 
-- **OTTA HELENE MAREE → Helen Zille.** The gazetted name is not the public name. The link rests on **party (DA) + DA PR rank 1 + council**: News24 (8 Nov 2026) reports the DA's Johannesburg PR list as "topped by Helen Zille". No allowed-list source stating her legal name was found. Wikipedia, Wikidata and aggregator sites say the same but were **not used as sources**.
-- **THAPELO KENNETH KUNENE → Kenny Kunene.** Surname + party (PA PR rank 1, PA deputy president) + council role (Transport MMC). "Kenny" as a form of "Kenneth" is an inference, recorded as such.
-- **MARGERET SHERON ARNOLDS → Margaret Arnolds.** One-letter difference in the given name (the gazette is an OCR scan). Linked on party (AIC PR rank 1) + council speaker role.
+- **OTTA HELENE MAREE → Helen Zille.** The gazetted name is kept exactly as printed. The link rests on **party (DA) + DA PR rank 1 + council** (News24, 8 Nov 2026: DA PR list "topped by Helen Zille") plus a third detail: the **given names "Otta Helene"** (Britannica, Reported). Per the owner's instruction, **"Maree" as part of her full name is recorded as Unknown** (`full_name_surname`, value null): no allowed source confirms it. No family details are recorded.
+- **THAPELO KENNETH KUNENE → Kenny Kunene.** SABC News (26 Sep 2025) quotes his oath: "I, Thapelo Kenneth Kunene, swear…" (Reported). This replaces the earlier Kenny→Kenneth inference. Plus party (PA PR rank 1) and council role (Transport MMC).
+- **MARGERET SHERON ARNOLDS → Margaret Arnolds.** Spelled as gazetted; reported as Margaret (News24 2023-11-20, EWN 2025-09-26, SABC 2025-09-26 — all three verified). Linked on party (AIC PR rank 1) + council speaker role.
 - **NOMOYA DAPHNEY MNISI.** Exact full name + council role (City statement). The City statement does not name her party; party is from the gazette only.
 
 ## Not linked, insufficient match, or deliberately left out
@@ -67,6 +73,10 @@ Every profile has `identity_match.matched_details` with at least two details (th
 | Mlungisi Mabaso — 2022 reports about a Lufhereng housing report and Fleurhof allocations (IOL / The Star, Polity) | The search summaries attribute claims to unnamed sources and do not clearly state an allegation against him personally; not opened in full this session. Left out pending a full read (insufficient basis to link an allegation to the person) |
 | Herman Mashaba — 2025 News24 / City Press report on a dispute with Paul O'Sullivan; 2025 Citizen report on parliamentary questions about the City's forensic unit | Not read in full; not clearly an allegation against him with a status. Left out |
 | Kunene — details of the third party at whose home he was found | Third party not named; not needed for the public-role record |
+| Kunene — M&G 23 Sep 2025 (law-firm report details) and the "African News Global" naming | Removed in fix round 1: its URL names a private person. The job entry is re-sourced to EWN ("his online news agency") |
+| Gwamanda — NPA statement as a primary source | The only copy found was an NPA Facebook post; not added. The Citizen quotes the NPA statement. An EWN follow-up was read but not added because its text names the co-accused |
+| Echeozonjoku, Mabaso — City of Johannesburg's 13 Dec 2021 mayoral committee statement | Found only as a PDF hosted by a third-party association, not on joburg.org.za; not used. The DA statement is kept, labelled Reported |
+| Mashaba — Sunday World (31 Jan 2023) | Not on the allowed list; the date is sourced to ActionSA's 31 Jan 2023 statement ("today the High Court in Pretoria…") and TimesLIVE ("this week") |
 | Gwamanda — co-accused's name | Private individual; not needed |
 | Dada Morero, Loyiso Masuku, Frank Chikane | Not in the gazetted Joburg roster (ANC PR list unused — overhang). Out of scope |
 | Ennie Makhafola (EFF PR 14) and Jack Sekwaila (ANC ward 64), both 2023 MMCs | Candidates for a later batch; not researched here |
@@ -79,5 +89,5 @@ Every profile has `identity_match.matched_details` with at least two details (th
 - **Official contact channels** are not filled in. Each draft says "[official channel, owner to confirm]".
 - Mnisi's MMC end date and Echeozonjoku's current caucus role are Unknown.
 - Gwamanda: final FSCA outcome and whether charges were re-instituted: Unknown as of 15 Nov 2026.
-- The News24 report on Zille's SCA appeal timed out; The Citizen was used instead. The SCA judgment is cited only as named in The Citizen. SAFLII was not fetched.
+- The SCA judgment is cited from LawLibrary and the SCA's own media summary (both fetched and read). SAFLII was not fetched.
 - ESP was not used or fetched.

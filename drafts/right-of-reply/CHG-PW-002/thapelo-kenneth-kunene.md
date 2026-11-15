@@ -27,13 +27,14 @@ Daily Maverick reported that Kunene was convicted of fraud for running a Ponzi s
 
 ### 2. Scandal / allegation — labelled Reported
 
-In July 2025 the Patriotic Alliance suspended Kunene after he was present at a private home when police arrested its owner in a murder investigation. Kunene said he had accompanied a journalist from his publication to arrange an interview. He resigned from the council pending an external review.
+In July 2025 Kunene resigned as Transport MMC and as a councillor, and the Patriotic Alliance suspended him from party activities, after he was found at the home of a person accused of murder during a police operation. Kunene said he was there to accompany a journalist from his online news agency for an interview.
 
-**Current status / outcome (as reported):** A report by law firm Cliffe Dekker Hofmeyr found no evidence refuting Kunene's account and said it was not aware of any criminal or civil proceedings against him related to his presence (M&G, 23 September 2025). The PA reinstated him and he was sworn in again as a councillor on 26 September 2025 (EWN).
+**Current status / outcome (as reported):** An external law firm cleared him of wrongdoing; reinstated and sworn in 26 Sep 2025.
 
 | Source | Date | URL |
 |---|---|---|
-| Mail & Guardian | 2025-09-23 | https://mg.co.za/politics/2025-09-23-kunene-has-no-links-to-katiso-tk-molefe-report-finds/ |
+| SABC News | 2025-09-26 | https://www.sabcnews.com/sabcnews/kunene-sworn-in-as-pr-councillor-after-being-cleared/ |
+| EWN | 2025-09-26 | https://www.ewn.co.za/2025/09/26/after-suspension-and-probe-patriotic-alliances-kenny-kunene-returns-to-johannesburg-council |
 
 ## Proposed wording to the councillor
 
@@ -43,9 +44,9 @@ In July 2025 the Patriotic Alliance suspended Kunene after he was present at a p
 >
 > **Source:** 2023-02-08, https://www.dailymaverick.co.za/article/2023-02-08-joburg-should-be-grateful-they-have-me-kenny-kunene/
 >
-> **Item 2 (labelled Reported):** In July 2025 the Patriotic Alliance suspended Kunene after he was present at a private home when police arrested its owner in a murder investigation. Kunene said he had accompanied a journalist from his publication to arrange an interview. He resigned from the council pending an external review. Current status as reported: A report by law firm Cliffe Dekker Hofmeyr found no evidence refuting Kunene's account and said it was not aware of any criminal or civil proceedings against him related to his presence (M&G, 23 September 2025). The PA reinstated him and he was sworn in again as a councillor on 26 September 2025 (EWN).
+> **Item 2 (labelled Reported):** In July 2025 Kunene resigned as Transport MMC and as a councillor, and the Patriotic Alliance suspended him from party activities, after he was found at the home of a person accused of murder during a police operation. Kunene said he was there to accompany a journalist from his online news agency for an interview. Current status as reported: An external law firm cleared him of wrongdoing; reinstated and sworn in 26 Sep 2025.
 >
-> **Source:** 2025-09-23, https://mg.co.za/politics/2025-09-23-kunene-has-no-links-to-katiso-tk-molefe-report-finds/
+> **Source:** 2025-09-26, https://www.sabcnews.com/sabcnews/kunene-sworn-in-as-pr-councillor-after-being-cleared/
 >
 > If we do not receive a response by the deadline, the profile will record "Right of reply: no_response" and the item will still show a blank reply field.
 

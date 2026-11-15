@@ -18,8 +18,8 @@ DRAFT: NOT SENT. The owner sends personally. The bot never sends.
 > We are preparing a public-role profile of you as an elected councillor of the City of Johannesburg on PoliticianWatch SA, a sourced register of South African elected representatives. The profile records only your public role, each item with its source. If any item is inaccurate or out of date, you are welcome to send a correction, with a source if possible, through this official channel by **[owner sets on sending — 14 days after sending]**. No reply is required.
 >
 > **Items in the profile:**
-> - Former City of Johannesburg MMC for Development Planning (Confirmed; 2021-12-13, https://www.da.org.za/2021/12/da-congratulates-johannesburg-mayor-mpho-phalatse-on-her-mayoral-committee)
-> - Appointed MMC for Development Planning in Mayor Mpho Phalatse's mayoral committee (Confirmed; 2021-12-13, https://www.da.org.za/2021/12/da-congratulates-johannesburg-mayor-mpho-phalatse-on-her-mayoral-committee)
+> - Former City of Johannesburg MMC for Development Planning (Reported; 2021-12-13, https://www.da.org.za/2021/12/da-congratulates-johannesburg-mayor-mpho-phalatse-on-her-mayoral-committee)
+> - Appointed MMC for Development Planning in Mayor Mpho Phalatse's mayoral committee (Reported; 2021-12-13, https://www.da.org.za/2021/12/da-congratulates-johannesburg-mayor-mpho-phalatse-on-her-mayoral-committee)
 > - Elected unopposed as DA Johannesburg caucus leader; also shadow MMC for development planning (Reported; 2023-06-05, https://www.timeslive.co.za/politics/2023-06-05-belinda-echeozonjoku-elected-new-da-joburg-caucus-leader/)
 > - Serving a second term as a Johannesburg councillor (as at June 2023) (Reported; 2023-06-05, https://www.timeslive.co.za/politics/2023-06-05-belinda-echeozonjoku-elected-new-da-joburg-caucus-leader/)
 

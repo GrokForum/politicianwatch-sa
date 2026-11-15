@@ -15,23 +15,25 @@ DRAFT: NOT SENT. The owner sends personally. The bot never sends.
 
 ## The claims
 
-### 1. Court matter — labelled Disputed
+### 1. Court matter — labelled Confirmed
 
-The Public Protector found that 2017 tweets by Zille about colonialism, made while she was Western Cape premier, violated the Constitution and the Executive Ethics Code. Zille applied for a review of the report; the High Court dismissed it, and she appealed.
+The Public Protector found that tweets on colonialism made by Zille on 15 March 2017, while she was Western Cape premier, breached the Executive Ethics Code and the Constitution, and recommended remedial action (Report No. 5 of 2018/19). Zille's review application was dismissed by the Gauteng Division of the High Court, Pretoria, and she appealed.
 
-**Current status / outcome (as reported):** The Supreme Court of Appeal upheld Zille's appeal with costs and set aside the High Court's dismissal of her review, on 7 February 2022 (Premier of the Western Cape Province v The Public Protector & Another (771/2020) [2022] ZASCA 16, as cited in The Citizen). Zille said she had apologised for the tweets and was entitled to make them.
+**Current status / outcome (as reported):** The SCA upheld the appeal and reviewed and set aside the Public Protector's findings and remedial action (Report No. 5 of 2018/19), 7 Feb 2022 (Premier of the Western Cape Province v The Public Protector & Another (771/2020) [2022] ZASCA 16).
 
 | Source | Date | URL |
 |---|---|---|
+| Supreme Court of Appeal judgment [2022] ZASCA 16 (LawLibrary) | 2022-02-07 | https://lawlibrary.org.za/akn/za/judgment/zasca/2022/16/eng@2022-02-07 |
+| Supreme Court of Appeal media summary | 2022-02-07 | https://www.supremecourtofappeal.org.za/images/Media_Summaries_2022/sca2022-16ms.pdf |
 | The Citizen | 2022-02-07 | https://www.citizen.co.za/news/south-africa/courts/sca-rules-against-mkhwebane-zille-colonialism-tweets/ |
 
 ## Proposed wording to the councillor
 
 > We are preparing a public-role profile of you as an elected councillor of the City of Johannesburg on PoliticianWatch SA, a sourced register of South African elected representatives. Before publishing the items below, we invite your response. Please reply by **[owner sets on sending — 14 days after sending]** through this official channel. Your response will be published in full next to the item, subject only to the removal of personal contact details or other private information.
 >
-> **Item 1 (labelled Disputed):** The Public Protector found that 2017 tweets by Zille about colonialism, made while she was Western Cape premier, violated the Constitution and the Executive Ethics Code. Zille applied for a review of the report; the High Court dismissed it, and she appealed. Current status as reported: The Supreme Court of Appeal upheld Zille's appeal with costs and set aside the High Court's dismissal of her review, on 7 February 2022 (Premier of the Western Cape Province v The Public Protector & Another (771/2020) [2022] ZASCA 16, as cited in The Citizen). Zille said she had apologised for the tweets and was entitled to make them.
+> **Item 1 (labelled Confirmed):** The Public Protector found that tweets on colonialism made by Zille on 15 March 2017, while she was Western Cape premier, breached the Executive Ethics Code and the Constitution, and recommended remedial action (Report No. 5 of 2018/19). Zille's review application was dismissed by the Gauteng Division of the High Court, Pretoria, and she appealed. Current status as reported: The SCA upheld the appeal and reviewed and set aside the Public Protector's findings and remedial action (Report No. 5 of 2018/19), 7 Feb 2022 (Premier of the Western Cape Province v The Public Protector & Another (771/2020) [2022] ZASCA 16).
 >
-> **Source:** 2022-02-07, https://www.citizen.co.za/news/south-africa/courts/sca-rules-against-mkhwebane-zille-colonialism-tweets/
+> **Source:** 2022-02-07, https://lawlibrary.org.za/akn/za/judgment/zasca/2022/16/eng@2022-02-07
 >
 > If we do not receive a response by the deadline, the profile will record "Right of reply: no_response" and the item will still show a blank reply field.
 

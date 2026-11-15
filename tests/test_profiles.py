@@ -94,3 +94,30 @@ def test_render_shows_pending_blank_reply_and_unknown_placeholders(synthetic_pro
     assert BLANK_REPLY in md
     assert UNKNOWN_PLACEHOLDER in md
     assert "`Alleged`" in md
+
+
+def test_marker_must_be_first_nonempty_line(synthetic_profiles, tmp_path):
+    d = tmp_path / "drafts" / "right-of-reply"
+    d.mkdir(parents=True)
+    marker = "DRAFT: NOT SENT. The owner sends personally. The bot never sends."
+    (d / "SYNTH-001.md").write_text(f"# Title first\n\n{marker}\n", encoding="utf-8")
+    failures = check_profile(synthetic_profiles[2], drafts_root=tmp_path, as_of=AS_OF)
+    assert any("first non-empty line" in f for f in failures)
+    (d / "SYNTH-001.md").write_text(f"\n\n{marker}\n\n# Title\n", encoding="utf-8")
+    assert check_profile(synthetic_profiles[2], drafts_root=tmp_path, as_of=AS_OF) == []
+
+
+def test_also_sourced_entries_need_url_date_and_retrieved_at(synthetic_profiles, repo_root):
+    p = _cv_profile(synthetic_profiles)
+    p["cv"][0]["also_sourced"] = [{"source_url": NEWS, "source_date": "2026-09-06"}]
+    failures = check_profile(p, drafts_root=repo_root, as_of=AS_OF)
+    assert any("also_sourced[0]: missing retrieved_at" in f for f in failures)
+    p["cv"][0]["also_sourced"][0]["retrieved_at"] = "2026-11-15T20:00:00+02:00"
+    assert check_profile(p, drafts_root=repo_root, as_of=AS_OF) == []
+
+
+def test_unknown_surname_placeholder_renders(synthetic_profiles):
+    p = _cv_profile(synthetic_profiles)
+    p["full_name_surname"] = fact(None, "Unknown")
+    assert check_profile(p, drafts_root=None, as_of=AS_OF) == []
+    assert f"**Surname in full legal name:** {UNKNOWN_PLACEHOLDER}" in render_markdown(p)
