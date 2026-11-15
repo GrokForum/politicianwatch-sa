@@ -1,0 +1,30 @@
+# Secrets
+.env
+.env.*
+*.pem
+*.key
+secrets/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+
+# Warehouses and bulky generated artefacts
+*.duckdb
+*.duckdb.wal
+*.parquet
+dist/
+
+# Raw source binaries (re-downloadable). Provenance files are committed.
+data/raw/**/*.pdf
+data/raw/**/*.PDF
+data/raw/**/*.xlsx
+data/raw/**/*.xls
+data/raw/**/*.zip
+data/raw/**/*.csv
+
+# OS
+.DS_Store
+.popia-names.local
