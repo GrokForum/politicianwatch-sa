@@ -14,19 +14,19 @@ DRAFT PROFILE — not published. Public role only. Every item carries an evidenc
 
 ## Summary
 
-- **Positions:** Former Executive Mayor of Johannesburg (May 2023 – August 2024) · `Reported` — [source](https://iol.co.za/the-star/news/2024-08-14-timeline-of-joburg-mayors/), 2024-08-14 (retrieved 2026-11-15T20:15:00+02:00)
+- **Positions:** Former Executive Mayor of Johannesburg (May 2023 – August 2024) · `Reported` — [source](https://iol.co.za/the-star/news/2024-08-14-timeline-of-joburg-mayors/), 2024-08-14 (retrieved 2026-11-15, time not logged)
 - **Career:** Unknown — not yet sourced (placeholder) · `Unknown`
 - **Education:** Unknown — not yet sourced (placeholder) · `Unknown`
 
 ## CV (public role)
 
-- **Position (2023-05-05):** Elected Executive Mayor of Johannesburg with ANC, EFF and minority-party support (139 votes of 266) · `Reported` — [source](https://iol.co.za/news/politics/2023-05-05-al-jama-ahs-councillor-kabelo-gwamanda-elected-as-new-city-of-joburg-mayor/), 2023-05-05 (retrieved 2026-11-15T20:15:00+02:00)
-- **Position (2024-08):** Stepped down as Executive Mayor · `Reported` — [source](https://iol.co.za/the-star/news/2024-08-14-timeline-of-joburg-mayors/), 2024-08-14 (retrieved 2026-11-15T20:15:00+02:00)
-- **Position (as at 2025-02):** Al Jama-ah councillor, City of Johannesburg · `Reported` — [source](https://www.citizen.co.za/news/south-africa/courts/state-provisionally-withdraws-charges-kabelo-gwamanda/), 2025-02-25 (retrieved 2026-11-15T20:15:00+02:00)
+- **Position (2023-05-05):** Elected Executive Mayor of Johannesburg with ANC, EFF and minority-party support (139 votes of 266) · `Reported` — [source](https://iol.co.za/news/politics/2023-05-05-al-jama-ahs-councillor-kabelo-gwamanda-elected-as-new-city-of-joburg-mayor/), 2023-05-05 (retrieved 2026-11-15, time not logged)
+- **Position (2024-08):** Stepped down as Executive Mayor · `Reported` — [source](https://iol.co.za/the-star/news/2024-08-14-timeline-of-joburg-mayors/), 2024-08-14 (retrieved 2026-11-15, time not logged)
+- **Position (as at 2025-02):** Al Jama-ah councillor, City of Johannesburg · `Reported` — [source](https://www.citizen.co.za/news/south-africa/courts/state-provisionally-withdraws-charges-kabelo-gwamanda/), 2025-02-25 (retrieved 2026-11-15, time not logged)
 
 ## Court matters
 
-- **Item:** Gwamanda handed himself over to police on 18 October 2024 and appeared in the Protea Magistrate's Court on fraud charges linked to the scheme. · `Alleged` — [source](https://www.citizen.co.za/news/south-africa/courts/state-provisionally-withdraws-charges-kabelo-gwamanda/), 2025-02-25 (retrieved 2026-11-15T20:15:00+02:00)
+- **Item:** Gwamanda handed himself over to police on 18 October 2024 and appeared in the Protea Magistrate's Court on fraud charges linked to the scheme. · `Alleged` — [source](https://www.citizen.co.za/news/south-africa/courts/state-provisionally-withdraws-charges-kabelo-gwamanda/), 2025-02-25 (retrieved 2026-11-15, time not logged)
   - **Status / outcome:** On 25 February 2025 the National Prosecuting Authority provisionally withdrew all charges against him and a co-accused, saying more complainants had come forward and further investigation was needed; the NPA said that once these investigations were finalised, criminal proceedings would be re-instituted. Gwamanda said the state had no evidence. No re-instituted charges were found in allowed sources as of 15 November 2026. (matter_status: `withdrawn`)
   - **Identity link to the gazetted person:** Reported
   - **Right of reply: pending**
@@ -34,7 +34,7 @@ DRAFT PROFILE — not published. Public role only. Every item carries an evidenc
 
 ## Scandals and allegations
 
-- **Item:** The Sunday Times reported in June 2023 that, according to the Financial Sector Conduct Authority (FSCA), Gwamanda's funeral and burial scheme entity iThemba Lama Afrika was not registered with the FSCA as required, and that it was alleged Soweto residents were drawn into contributing to the scheme in 2012 and were not paid when they claimed. Gwamanda said the business had failed and that the matter was being used to cast aspersions on him. · `Alleged` — [source](https://www.sundaytimes.timeslive.co.za/sunday-times/news/politics/2023-06-18-joburg-mayor-gwamanda-ran-illegal-funeral-scheme-fsca/), 2023-06-18 (retrieved 2026-11-15T20:15:00+02:00)
+- **Item:** The Sunday Times reported in June 2023 that, according to the Financial Sector Conduct Authority (FSCA), Gwamanda's funeral and burial scheme entity iThemba Lama Afrika was not registered with the FSCA as required, and that it was alleged Soweto residents were drawn into contributing to the scheme in 2012 and were not paid when they claimed. Gwamanda said the business had failed and that the matter was being used to cast aspersions on him. · `Alleged` — [source](https://www.sundaytimes.timeslive.co.za/sunday-times/news/politics/2023-06-18-joburg-mayor-gwamanda-ran-illegal-funeral-scheme-fsca/), 2023-06-18 (retrieved 2026-11-15, time not logged)
   - **Status / outcome:** The FSCA confirmed an investigation in June 2023 (Citizen, 2025-02-25). A final FSCA outcome was not found in allowed sources as of 15 November 2026: Unknown. (matter_status: `unknown`)
   - **Identity link to the gazetted person:** Reported
   - **Right of reply: pending**

@@ -48,14 +48,14 @@
     "label": "Reported",
     "source_url": "https://iol.co.za/news/politics/2026-09-06-meet-the-men-and-women-who-want-to-be-your-next-mayor-local-government-elections-2026/",
     "source_date": "2026-09-06",
-    "retrieved_at": "2026-11-15T20:15:00+02:00"
+    "retrieved_at": "2026-11-15"
   },
   "positions": {
     "value": "City of Johannesburg MMC for Transport and Patriotic Alliance deputy president (as described in September 2026)",
     "label": "Reported",
     "source_url": "https://iol.co.za/news/politics/2026-09-06-meet-the-men-and-women-who-want-to-be-your-next-mayor-local-government-elections-2026/",
     "source_date": "2026-09-06",
-    "retrieved_at": "2026-11-15T20:15:00+02:00"
+    "retrieved_at": "2026-11-15"
   },
   "career": {
     "value": null,
@@ -77,7 +77,7 @@
       "label": "Reported",
       "source_url": "https://www.dailymaverick.co.za/article/2023-02-08-joburg-should-be-grateful-they-have-me-kenny-kunene/",
       "source_date": "2023-02-08",
-      "retrieved_at": "2026-11-15T20:15:00+02:00",
+      "retrieved_at": "2026-11-15",
       "field": "position",
       "period": "2023-02"
     },
@@ -86,7 +86,7 @@
       "label": "Reported",
       "source_url": "https://www.ewn.co.za/2025/09/26/after-suspension-and-probe-patriotic-alliances-kenny-kunene-returns-to-johannesburg-council",
       "source_date": "2025-09-26",
-      "retrieved_at": "2026-11-15T20:15:00+02:00",
+      "retrieved_at": "2026-11-15",
       "field": "position",
       "period": "2025-09-26"
     },
@@ -95,7 +95,7 @@
       "label": "Reported",
       "source_url": "https://iol.co.za/news/politics/2026-09-06-meet-the-men-and-women-who-want-to-be-your-next-mayor-local-government-elections-2026/",
       "source_date": "2026-09-06",
-      "retrieved_at": "2026-11-15T20:15:00+02:00",
+      "retrieved_at": "2026-11-15",
       "field": "position",
       "period": null
     },
@@ -104,7 +104,7 @@
       "label": "Reported",
       "source_url": "https://iol.co.za/news/politics/2026-09-06-meet-the-men-and-women-who-want-to-be-your-next-mayor-local-government-elections-2026/",
       "source_date": "2026-09-06",
-      "retrieved_at": "2026-11-15T20:15:00+02:00",
+      "retrieved_at": "2026-11-15",
       "field": "candidacy",
       "period": "2026"
     },
@@ -113,7 +113,7 @@
       "label": "Reported",
       "source_url": "https://www.dailymaverick.co.za/article/2023-02-08-joburg-should-be-grateful-they-have-me-kenny-kunene/",
       "source_date": "2023-02-08",
-      "retrieved_at": "2026-11-15T20:15:00+02:00",
+      "retrieved_at": "2026-11-15",
       "field": "career",
       "period": null
     },
@@ -122,7 +122,7 @@
       "label": "Reported",
       "source_url": "https://www.ewn.co.za/2025/09/26/after-suspension-and-probe-patriotic-alliances-kenny-kunene-returns-to-johannesburg-council",
       "source_date": "2025-09-26",
-      "retrieved_at": "2026-11-15T20:15:00+02:00",
+      "retrieved_at": "2026-11-15",
       "field": "career",
       "period": null
     }
@@ -141,7 +141,7 @@
       "label": "Reported",
       "source_url": "https://www.dailymaverick.co.za/article/2023-02-08-joburg-should-be-grateful-they-have-me-kenny-kunene/",
       "source_date": "2023-02-08",
-      "retrieved_at": "2026-11-15T20:15:00+02:00",
+      "retrieved_at": "2026-11-15",
       "matter_status": "reported_conviction",
       "category": "Criminal conviction (historical, reported)",
       "outcome": "Reported: convicted (no judgment citation found). Daily Maverick reports a 1997 fraud conviction and six years served; no case number or judgment citation was found in allowed sources (SAFLII not searched).",
@@ -163,7 +163,7 @@
       "label": "Reported",
       "source_url": "https://www.sabcnews.com/sabcnews/kunene-sworn-in-as-pr-councillor-after-being-cleared/",
       "source_date": "2025-09-26",
-      "retrieved_at": "2026-11-15T20:15:00+02:00",
+      "retrieved_at": "2026-11-15",
       "matter_status": "cleared",
       "category": "Party disciplinary matter",
       "outcome": "An external law firm cleared him of wrongdoing; reinstated and sworn in 26 Sep 2025.",
@@ -171,7 +171,7 @@
         {
           "source_url": "https://www.ewn.co.za/2025/09/26/after-suspension-and-probe-patriotic-alliances-kenny-kunene-returns-to-johannesburg-council",
           "source_date": "2025-09-26",
-          "retrieved_at": "2026-11-15T20:15:00+02:00",
+          "retrieved_at": "2026-11-15",
           "publisher": "EWN"
         }
       ],

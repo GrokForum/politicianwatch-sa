@@ -1,7 +1,7 @@
 # City of Johannesburg — CV profiles, batch 1 (CHG-PW-002)
 
 **Environment:** DEV / TEST data on branch `dev/chg-pw-002-first-profiles`. Not published. Nothing sent to anyone.
-**Researched:** 15 November 2026, about 20:05–20:20 SAST. `retrieved_at` on news facts is the session time (`2026-11-15T20:15:00+02:00`); gazette facts keep the CHG-PW-001 roster retrieval time.
+**Researched:** 15 November 2026, about 20:05–20:20 SAST. `retrieved_at` on news facts is the date only, `2026-11-15` (time not logged; changed in CHG-PW-003 from a hand-typed `2026-11-15T20:15:00+02:00`); gazette facts keep the CHG-PW-001 roster retrieval time.
 **Executive mayor:** Unknown. The council elects the mayor and the mayoral committee at its first sitting, expected around 19 November 2026. No 2026–2031 mayoral or MMC role is guessed in any profile.
 
 ## The ten profiles

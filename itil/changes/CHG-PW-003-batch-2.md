@@ -127,7 +127,7 @@ Finding: setting the batch-2 `retrieved_at` values to `11:09:00` invents a preci
 
 Tests after fix 3: `uv run pytest -q` 40 passed; `uv run pwatch dq` pass (270 roster + 24 CV profiles, 1 on hold, 0 failures); `uv run pwatch render --check` exit 0. popia-review on the fix-3 diff: **PASS** (code, schema, tests, timestamps and records; no personal information; fetched pages are kept out of git by the new ignore rule). Label counts unchanged: batch 2 Confirmed 81, Reported 43, Unknown 26 (150); all 24 active, Confirmed 133, Reported 95, Unknown 47, Alleged 2, Disputed 1 (278).
 
-**Seen, not touched (owner to decide):** batch 1 (CHG-PW-002, PR #2) carries `retrieved_at` `2026-11-15T20:15:00+02:00` on 63 values. That is a round time, very likely typed by hand, although it is before its commit (`5ab0b6e`, 20:15:47 SAST). Under the new rule it should become `2026-11-15`. That change belongs on the PR #2 branch, not here, and was not made.
+**Batch-1 retrieved_at (follow-up commit, Cavus direction 17 Nov 2026):** batch 1 (CHG-PW-002) carried `retrieved_at` `2026-11-15T20:15:00+02:00` on 63 values in 10 profiles. That round time was very likely typed by hand, so it states a precision we do not have (AGENTS.md rule 11). All 63 are now the date only, `2026-11-15` (renders show "time not logged"). Fixed here in CHG-PW-003, not on the PR #2 branch, because PR #2 (`4a341fe`) is pushed, frozen with Cavus's PASS and under Cassian's review; CHG-PW-003 is stacked on it, so merging PR #2 then CHG-PW-003 lands the correction. Gazette roster times are real and unchanged.
 
 ## Rollback
 

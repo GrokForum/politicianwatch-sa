@@ -48,7 +48,7 @@
     "label": "Reported",
     "source_url": "https://www.citizen.co.za/news/south-africa/elections/mk-party-bongani-baloyi-joburg-mayoral-candidate/",
     "source_date": "2026-08-28",
-    "retrieved_at": "2026-11-15T20:15:00+02:00"
+    "retrieved_at": "2026-11-15"
   },
   "career": {
     "value": null,
@@ -70,7 +70,7 @@
       "label": "Reported",
       "source_url": "https://www.citizen.co.za/news/south-africa/elections/mk-party-bongani-baloyi-joburg-mayoral-candidate/",
       "source_date": "2026-08-28",
-      "retrieved_at": "2026-11-15T20:15:00+02:00",
+      "retrieved_at": "2026-11-15",
       "field": "position",
       "period": "2013–2021"
     },
@@ -79,7 +79,7 @@
       "label": "Reported",
       "source_url": "https://www.citizen.co.za/news/south-africa/elections/mk-party-bongani-baloyi-joburg-mayoral-candidate/",
       "source_date": "2026-08-28",
-      "retrieved_at": "2026-11-15T20:15:00+02:00",
+      "retrieved_at": "2026-11-15",
       "field": "position",
       "period": null
     },
@@ -88,7 +88,7 @@
       "label": "Reported",
       "source_url": "https://www.citizen.co.za/news/south-africa/elections/mk-party-bongani-baloyi-joburg-mayoral-candidate/",
       "source_date": "2026-08-28",
-      "retrieved_at": "2026-11-15T20:15:00+02:00",
+      "retrieved_at": "2026-11-15",
       "field": "candidacy",
       "period": "2026"
     }

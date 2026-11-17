@@ -48,7 +48,7 @@
     "label": "Reported",
     "source_url": "https://iol.co.za/the-star/news/2024-08-14-timeline-of-joburg-mayors/",
     "source_date": "2024-08-14",
-    "retrieved_at": "2026-11-15T20:15:00+02:00"
+    "retrieved_at": "2026-11-15"
   },
   "career": {
     "value": null,
@@ -70,7 +70,7 @@
       "label": "Reported",
       "source_url": "https://iol.co.za/news/politics/2023-05-05-al-jama-ahs-councillor-kabelo-gwamanda-elected-as-new-city-of-joburg-mayor/",
       "source_date": "2023-05-05",
-      "retrieved_at": "2026-11-15T20:15:00+02:00",
+      "retrieved_at": "2026-11-15",
       "field": "position",
       "period": "2023-05-05"
     },
@@ -79,7 +79,7 @@
       "label": "Reported",
       "source_url": "https://iol.co.za/the-star/news/2024-08-14-timeline-of-joburg-mayors/",
       "source_date": "2024-08-14",
-      "retrieved_at": "2026-11-15T20:15:00+02:00",
+      "retrieved_at": "2026-11-15",
       "field": "position",
       "period": "2024-08"
     },
@@ -88,7 +88,7 @@
       "label": "Reported",
       "source_url": "https://www.citizen.co.za/news/south-africa/courts/state-provisionally-withdraws-charges-kabelo-gwamanda/",
       "source_date": "2025-02-25",
-      "retrieved_at": "2026-11-15T20:15:00+02:00",
+      "retrieved_at": "2026-11-15",
       "field": "position",
       "period": "as at 2025-02"
     }
@@ -107,7 +107,7 @@
       "label": "Alleged",
       "source_url": "https://www.citizen.co.za/news/south-africa/courts/state-provisionally-withdraws-charges-kabelo-gwamanda/",
       "source_date": "2025-02-25",
-      "retrieved_at": "2026-11-15T20:15:00+02:00",
+      "retrieved_at": "2026-11-15",
       "matter_status": "withdrawn",
       "category": "Criminal charge",
       "outcome": "On 25 February 2025 the National Prosecuting Authority provisionally withdrew all charges against him and a co-accused, saying more complainants had come forward and further investigation was needed; the NPA said that once these investigations were finalised, criminal proceedings would be re-instituted. Gwamanda said the state had no evidence. No re-instituted charges were found in allowed sources as of 15 November 2026.",
@@ -129,7 +129,7 @@
       "label": "Alleged",
       "source_url": "https://www.sundaytimes.timeslive.co.za/sunday-times/news/politics/2023-06-18-joburg-mayor-gwamanda-ran-illegal-funeral-scheme-fsca/",
       "source_date": "2023-06-18",
-      "retrieved_at": "2026-11-15T20:15:00+02:00",
+      "retrieved_at": "2026-11-15",
       "matter_status": "unknown",
       "category": "Regulatory allegation",
       "outcome": "The FSCA confirmed an investigation in June 2023 (Citizen, 2025-02-25). A final FSCA outcome was not found in allowed sources as of 15 November 2026: Unknown.",

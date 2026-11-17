@@ -48,7 +48,7 @@
     "label": "Reported",
     "source_url": "https://iol.co.za/news/politics/2026-09-06-meet-the-men-and-women-who-want-to-be-your-next-mayor-local-government-elections-2026/",
     "source_date": "2026-09-06",
-    "retrieved_at": "2026-11-15T20:15:00+02:00"
+    "retrieved_at": "2026-11-15"
   },
   "positions": {
     "value": null,
@@ -62,7 +62,7 @@
     "label": "Reported",
     "source_url": "https://iol.co.za/news/politics/2026-09-06-meet-the-men-and-women-who-want-to-be-your-next-mayor-local-government-elections-2026/",
     "source_date": "2026-09-06",
-    "retrieved_at": "2026-11-15T20:15:00+02:00"
+    "retrieved_at": "2026-11-15"
   },
   "education": {
     "value": null,
@@ -77,7 +77,7 @@
       "label": "Reported",
       "source_url": "https://iol.co.za/news/politics/2026-09-06-meet-the-men-and-women-who-want-to-be-your-next-mayor-local-government-elections-2026/",
       "source_date": "2026-09-06",
-      "retrieved_at": "2026-11-15T20:15:00+02:00",
+      "retrieved_at": "2026-11-15",
       "field": "candidacy",
       "period": "2026"
     },
@@ -86,7 +86,7 @@
       "label": "Reported",
       "source_url": "https://iol.co.za/news/politics/2026-09-06-meet-the-men-and-women-who-want-to-be-your-next-mayor-local-government-elections-2026/",
       "source_date": "2026-09-06",
-      "retrieved_at": "2026-11-15T20:15:00+02:00",
+      "retrieved_at": "2026-11-15",
       "field": "position",
       "period": null
     },
@@ -95,7 +95,7 @@
       "label": "Reported",
       "source_url": "https://mg.co.za/politics/2026-09-03-battle-for-joburg-heats-up/",
       "source_date": "2026-09-04",
-      "retrieved_at": "2026-11-15T20:15:00+02:00",
+      "retrieved_at": "2026-11-15",
       "field": "candidacy",
       "period": "2026"
     }

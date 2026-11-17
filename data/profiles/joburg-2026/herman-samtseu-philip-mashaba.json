@@ -48,7 +48,7 @@
     "label": "Reported",
     "source_url": "https://iol.co.za/the-star/news/2024-08-14-timeline-of-joburg-mayors/",
     "source_date": "2024-08-14",
-    "retrieved_at": "2026-11-15T20:15:00+02:00"
+    "retrieved_at": "2026-11-15"
   },
   "career": {
     "value": null,
@@ -70,7 +70,7 @@
       "label": "Reported",
       "source_url": "https://iol.co.za/the-star/news/2024-08-14-timeline-of-joburg-mayors/",
       "source_date": "2024-08-14",
-      "retrieved_at": "2026-11-15T20:15:00+02:00",
+      "retrieved_at": "2026-11-15",
       "field": "position",
       "period": "2016–2019"
     },
@@ -79,7 +79,7 @@
       "label": "Reported",
       "source_url": "https://mg.co.za/politics/2026-09-03-battle-for-joburg-heats-up/",
       "source_date": "2026-09-04",
-      "retrieved_at": "2026-11-15T20:15:00+02:00",
+      "retrieved_at": "2026-11-15",
       "field": "position",
       "period": null
     },
@@ -88,7 +88,7 @@
       "label": "Reported",
       "source_url": "https://www.ewn.co.za/lge-2026-zille-challenges-parties-over-single-name-proportional-representation-list/",
       "source_date": "2026-09-21",
-      "retrieved_at": "2026-11-15T20:15:00+02:00",
+      "retrieved_at": "2026-11-15",
       "field": "candidacy",
       "period": "2026"
     },
@@ -97,7 +97,7 @@
       "label": "Reported",
       "source_url": "https://iol.co.za/lge2026/2026-11-11-mashaba-offers-to-drop-johannesburg-mayoral-bid-if-zille-also-steps-aside/",
       "source_date": "2026-11-11",
-      "retrieved_at": "2026-11-15T20:15:00+02:00",
+      "retrieved_at": "2026-11-15",
       "field": "candidacy",
       "period": "2026-11"
     }
@@ -116,7 +116,7 @@
       "label": "Disputed",
       "source_url": "https://www.timeslive.co.za/politics/2023-02-01-mashaba-welcomes-court-ruling-against-mkhwebanes-damning-report-during-his-term-mayor/",
       "source_date": "2023-02-02",
-      "retrieved_at": "2026-11-15T20:15:00+02:00",
+      "retrieved_at": "2026-11-15",
       "matter_status": "cleared",
       "category": "Public Protector finding (review)",
       "outcome": "The High Court in Pretoria set the Public Protector's findings aside as unconstitutional, unlawful and invalid on 31 January 2023 (TimesLIVE, 2 February 2023; ActionSA statement, 31 January 2023). No appeal found in allowed sources as of 15 November 2026. Mashaba said the ruling vindicated him.",
@@ -124,7 +124,7 @@
         {
           "source_url": "https://www.actionsa.org.za/pretoria-high-court-vindicates-herman-mashaba-by-setting-aside-frivolous-public-protector-report/",
           "source_date": "2023-01-31",
-          "retrieved_at": "2026-11-15T20:15:00+02:00",
+          "retrieved_at": "2026-11-15",
           "publisher": "ActionSA (party statement)"
         }
       ],

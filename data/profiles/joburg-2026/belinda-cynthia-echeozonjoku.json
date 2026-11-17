@@ -48,7 +48,7 @@
     "label": "Reported",
     "source_url": "https://www.da.org.za/2021/12/da-congratulates-johannesburg-mayor-mpho-phalatse-on-her-mayoral-committee",
     "source_date": "2021-12-13",
-    "retrieved_at": "2026-11-15T20:15:00+02:00"
+    "retrieved_at": "2026-11-15"
   },
   "career": {
     "value": null,
@@ -70,7 +70,7 @@
       "label": "Reported",
       "source_url": "https://www.da.org.za/2021/12/da-congratulates-johannesburg-mayor-mpho-phalatse-on-her-mayoral-committee",
       "source_date": "2021-12-13",
-      "retrieved_at": "2026-11-15T20:15:00+02:00",
+      "retrieved_at": "2026-11-15",
       "field": "position",
       "period": "2021-12"
     },
@@ -79,7 +79,7 @@
       "label": "Reported",
       "source_url": "https://www.timeslive.co.za/politics/2023-06-05-belinda-echeozonjoku-elected-new-da-joburg-caucus-leader/",
       "source_date": "2023-06-05",
-      "retrieved_at": "2026-11-15T20:15:00+02:00",
+      "retrieved_at": "2026-11-15",
       "field": "position",
       "period": "2023-06-05"
     },
@@ -88,7 +88,7 @@
       "label": "Reported",
       "source_url": "https://www.timeslive.co.za/politics/2023-06-05-belinda-echeozonjoku-elected-new-da-joburg-caucus-leader/",
       "source_date": "2023-06-05",
-      "retrieved_at": "2026-11-15T20:15:00+02:00",
+      "retrieved_at": "2026-11-15",
       "field": "position",
       "period": "2023"
     }
