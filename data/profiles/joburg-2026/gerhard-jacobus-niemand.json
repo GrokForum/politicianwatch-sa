@@ -1,0 +1,102 @@
+{
+  "slug": "gerhard-jacobus-niemand",
+  "change": "CHG-PW-003",
+  "name": {
+    "value": "GERHARD JACOBUS NIEMAND",
+    "label": "Confirmed",
+    "source_url": "https://www.gazettefinder.co.za/gazettes/government-gazette/2026/55741/government-gazette-55741-2026-11-13.pdf",
+    "source_date": "2026-11-13",
+    "retrieved_at": "2026-11-15T16:10:03+00:00",
+    "source_page": 46
+  },
+  "party": {
+    "value": "DEMOCRATIC ALLIANCE",
+    "label": "Confirmed",
+    "source_url": "https://www.gazettefinder.co.za/gazettes/government-gazette/2026/55741/government-gazette-55741-2026-11-13.pdf",
+    "source_date": "2026-11-13",
+    "retrieved_at": "2026-11-15T16:10:03+00:00",
+    "source_page": 46
+  },
+  "seat_type": {
+    "value": "PR",
+    "label": "Confirmed",
+    "source_url": "https://www.gazettefinder.co.za/gazettes/government-gazette/2026/55741/government-gazette-55741-2026-11-13.pdf",
+    "source_date": "2026-11-13",
+    "retrieved_at": "2026-11-15T16:10:03+00:00",
+    "source_page": 46
+  },
+  "ward_number": {
+    "value": null,
+    "label": "Confirmed",
+    "source_url": "https://www.gazettefinder.co.za/gazettes/government-gazette/2026/55741/government-gazette-55741-2026-11-13.pdf",
+    "source_date": "2026-11-13",
+    "retrieved_at": "2026-11-15T16:10:03+00:00",
+    "source_page": 46
+  },
+  "council": {
+    "value": "City of Johannesburg",
+    "label": "Confirmed",
+    "source_url": "https://www.gazettefinder.co.za/gazettes/government-gazette/2026/55741/government-gazette-55741-2026-11-13.pdf",
+    "source_date": "2026-11-13",
+    "retrieved_at": "2026-11-15T16:10:03+00:00",
+    "source_page": 46
+  },
+  "ward_id": null,
+  "pr_list_rank": 2,
+  "positions": {
+    "value": "DA councillor in Johannesburg; DA spokesperson on the council's ethics committee (from July 2024)",
+    "label": "Reported",
+    "source_url": "https://dagauteng.org.za/2024/07/fit-for-purpose-da-shadow-cabinet-to-hold-anc-eff-pa-al-jama-ah-accountable",
+    "source_date": "2024-07-23",
+    "retrieved_at": "2026-11-17"
+  },
+  "career": {
+    "value": null,
+    "label": "Unknown",
+    "source_url": null,
+    "source_date": null,
+    "retrieved_at": null
+  },
+  "education": {
+    "value": null,
+    "label": "Unknown",
+    "source_url": null,
+    "source_date": null,
+    "retrieved_at": null
+  },
+  "cv": [
+    {
+      "value": "Named DA committee spokesperson for Ethics ('Gert Niemand')",
+      "label": "Reported",
+      "source_url": "https://dagauteng.org.za/2024/07/fit-for-purpose-da-shadow-cabinet-to-hold-anc-eff-pa-al-jama-ah-accountable",
+      "source_date": "2024-07-23",
+      "retrieved_at": "2026-11-17",
+      "field": "position",
+      "period": "2024-07-23"
+    },
+    {
+      "value": "Announced in council that the DA would withdraw from the September 2025 chief-whip election, which it considered unlawful",
+      "label": "Reported",
+      "source_url": "https://iol.co.za/news/south-africa/2025-09-03-joburg-council-finally-elects-new-chief-whip-amid-withdrawal-legal-threats/",
+      "source_date": "2025-09-03",
+      "retrieved_at": "2026-11-17",
+      "field": "position",
+      "period": "2025-09-02"
+    }
+  ],
+  "identity_match": {
+    "matched_details": [
+      "Name: 'DA councillor Gerhard Niemand' (IOL 2025-09-03) matches the gazette's first given name and surname (no other NIEMAND in the roster).",
+      "Party and council: DA councillor in the City of Johannesburg in the gazette and both sources."
+    ],
+    "note": "The DA statement uses 'Gert Niemand'; it is linked through the unique surname, party and council, not through the short form."
+  },
+  "court_matters": [],
+  "scandals": [],
+  "unknown_fields": [
+    "career",
+    "education",
+    "Council office or portfolio for the 2026–2031 term (executive mayor and mayoral committee not yet elected; first sitting expected around 19 November 2026 — not guessed)",
+    "Official council contact channel (owner to confirm from the City's published councillor directory)"
+  ]
+}

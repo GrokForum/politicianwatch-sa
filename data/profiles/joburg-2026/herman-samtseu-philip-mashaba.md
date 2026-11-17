@@ -14,21 +14,21 @@ DRAFT PROFILE — not published. Public role only. Every item carries an evidenc
 
 ## Summary
 
-- **Positions:** Former Executive Mayor of Johannesburg (2016–2019) · `Reported` — [source](https://iol.co.za/the-star/news/2024-08-14-timeline-of-joburg-mayors/), 2024-08-14 (retrieved 2026-11-15T20:15:00+02:00)
+- **Positions:** Former Executive Mayor of Johannesburg (2016–2019) · `Reported` — [source](https://iol.co.za/the-star/news/2024-08-14-timeline-of-joburg-mayors/), 2024-08-14 (retrieved 2026-11-15, time not logged)
 - **Career:** Unknown — not yet sourced (placeholder) · `Unknown`
 - **Education:** Unknown — not yet sourced (placeholder) · `Unknown`
 
 ## CV (public role)
 
-- **Position (2016–2019):** Executive Mayor of Johannesburg as the DA's candidate; resigned in 2019 after a clash with the DA · `Reported` — [source](https://iol.co.za/the-star/news/2024-08-14-timeline-of-joburg-mayors/), 2024-08-14 (retrieved 2026-11-15T20:15:00+02:00)
-- **Position:** Founded ActionSA after resigning from the DA; ActionSA leader · `Reported` — [source](https://mg.co.za/politics/2026-09-03-battle-for-joburg-heats-up/), 2026-09-04 (retrieved 2026-11-15T20:15:00+02:00)
-- **Candidacy (2026):** ActionSA mayoral candidate for Johannesburg; ActionSA's Johannesburg PR list initially held only his name · `Reported` — [source](https://www.ewn.co.za/lge-2026-zille-challenges-parties-over-single-name-proportional-representation-list/), 2026-09-21 (retrieved 2026-11-15T20:15:00+02:00)
-- **Candidacy (2026-11):** Offered in a letter dated 7 November 2026 to withdraw from the mayoral race if the DA's candidate also stepped aside (as reported) · `Reported` — [source](https://iol.co.za/lge2026/2026-11-11-mashaba-offers-to-drop-johannesburg-mayoral-bid-if-zille-also-steps-aside/), 2026-11-11 (retrieved 2026-11-15T20:15:00+02:00)
+- **Position (2016–2019):** Executive Mayor of Johannesburg as the DA's candidate; resigned in 2019 after a clash with the DA · `Reported` — [source](https://iol.co.za/the-star/news/2024-08-14-timeline-of-joburg-mayors/), 2024-08-14 (retrieved 2026-11-15, time not logged)
+- **Position:** Founded ActionSA after resigning from the DA; ActionSA leader · `Reported` — [source](https://mg.co.za/politics/2026-09-03-battle-for-joburg-heats-up/), 2026-09-04 (retrieved 2026-11-15, time not logged)
+- **Candidacy (2026):** ActionSA mayoral candidate for Johannesburg; ActionSA's Johannesburg PR list initially held only his name · `Reported` — [source](https://www.ewn.co.za/lge-2026-zille-challenges-parties-over-single-name-proportional-representation-list/), 2026-09-21 (retrieved 2026-11-15, time not logged)
+- **Candidacy (2026-11):** Offered in a letter dated 7 November 2026 to withdraw from the mayoral race if the DA's candidate also stepped aside (as reported) · `Reported` — [source](https://iol.co.za/lge2026/2026-11-11-mashaba-offers-to-drop-johannesburg-mayoral-bid-if-zille-also-steps-aside/), 2026-11-11 (retrieved 2026-11-15, time not logged)
 
 ## Court matters
 
-- **Item:** The Public Protector investigated allegations of maladministration during Mashaba's term as mayor (irregular appointments, irregular salary increases, financial mismanagement, procurement irregularities and conflicts of interest) and made adverse findings against him, which he challenged in court. · `Disputed` — [source](https://www.timeslive.co.za/politics/2023-02-01-mashaba-welcomes-court-ruling-against-mkhwebanes-damning-report-during-his-term-mayor/), 2023-02-02 (retrieved 2026-11-15T20:15:00+02:00); also [source](https://www.actionsa.org.za/pretoria-high-court-vindicates-herman-mashaba-by-setting-aside-frivolous-public-protector-report/), 2023-01-31
-  - **Status / outcome:** The High Court in Pretoria set the Public Protector's findings aside as unconstitutional, unlawful and invalid on 31 January 2023 (Pretoria) (TimesLIVE, 2 February 2023; ActionSA statement, 31 January 2023). No appeal found in allowed sources as of 15 November 2026. Mashaba said the ruling vindicated him. (matter_status: `cleared`)
+- **Item:** The Public Protector investigated allegations of maladministration during Mashaba's term as mayor (irregular appointments, irregular salary increases, financial mismanagement, procurement irregularities and conflicts of interest) and made adverse findings against him, which he challenged in court. · `Disputed` — [source](https://www.timeslive.co.za/politics/2023-02-01-mashaba-welcomes-court-ruling-against-mkhwebanes-damning-report-during-his-term-mayor/), 2023-02-02 (retrieved 2026-11-15, time not logged); also [source](https://www.actionsa.org.za/pretoria-high-court-vindicates-herman-mashaba-by-setting-aside-frivolous-public-protector-report/), 2023-01-31
+  - **Status / outcome:** The High Court in Pretoria set the Public Protector's findings aside as unconstitutional, unlawful and invalid on 31 January 2023 (TimesLIVE, 2 February 2023; ActionSA statement, 31 January 2023). No appeal found in allowed sources as of 15 November 2026. Mashaba said the ruling vindicated him. (matter_status: `cleared`)
   - **Identity link to the gazetted person:** Reported
   - **Right of reply: pending**
   - **Reply:** _(blank — no reply recorded)_

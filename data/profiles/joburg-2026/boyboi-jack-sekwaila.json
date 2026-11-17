@@ -1,0 +1,129 @@
+{
+  "slug": "boyboi-jack-sekwaila",
+  "change": "CHG-PW-003",
+  "name": {
+    "value": "BOYBOI JACK SEKWAILA",
+    "label": "Confirmed",
+    "source_url": "https://www.gazettefinder.co.za/gazettes/government-gazette/2026/55741/government-gazette-55741-2026-11-13.pdf",
+    "source_date": "2026-11-13",
+    "retrieved_at": "2026-11-15T16:10:03+00:00",
+    "source_page": 44
+  },
+  "party": {
+    "value": "AFRICAN NATIONAL CONGRESS",
+    "label": "Confirmed",
+    "source_url": "https://www.gazettefinder.co.za/gazettes/government-gazette/2026/55741/government-gazette-55741-2026-11-13.pdf",
+    "source_date": "2026-11-13",
+    "retrieved_at": "2026-11-15T16:10:03+00:00",
+    "source_page": 44
+  },
+  "seat_type": {
+    "value": "ward",
+    "label": "Confirmed",
+    "source_url": "https://www.gazettefinder.co.za/gazettes/government-gazette/2026/55741/government-gazette-55741-2026-11-13.pdf",
+    "source_date": "2026-11-13",
+    "retrieved_at": "2026-11-15T16:10:03+00:00",
+    "source_page": 44
+  },
+  "ward_number": {
+    "value": 64,
+    "label": "Confirmed",
+    "source_url": "https://www.gazettefinder.co.za/gazettes/government-gazette/2026/55741/government-gazette-55741-2026-11-13.pdf",
+    "source_date": "2026-11-13",
+    "retrieved_at": "2026-11-15T16:10:03+00:00",
+    "source_page": 44
+  },
+  "council": {
+    "value": "City of Johannesburg",
+    "label": "Confirmed",
+    "source_url": "https://www.gazettefinder.co.za/gazettes/government-gazette/2026/55741/government-gazette-55741-2026-11-13.pdf",
+    "source_date": "2026-11-13",
+    "retrieved_at": "2026-11-15T16:10:03+00:00",
+    "source_page": 44
+  },
+  "ward_id": "79800064",
+  "pr_list_rank": null,
+  "known_as": {
+    "value": "Jack Sekwaila",
+    "label": "Confirmed",
+    "source_url": "https://joburg.org.za/media_/Pages/Media/Media%20Statements/2023%20Media%20Statements/February/Joburg-Executive-Mayor-announces-new-MMCs.aspx",
+    "source_date": "2023-02-02",
+    "retrieved_at": "2026-11-17",
+    "note": "The City's statements name him 'Cllr. Jack Sekwaila'; JACK is the second given name in the gazette."
+  },
+  "positions": {
+    "value": "City of Johannesburg MMC for Environment and Infrastructure Services (in office as at 7 January 2026)",
+    "label": "Confirmed",
+    "source_url": "https://joburg.org.za/media_/Newsroom/Pages/2026-News-Articles/Joburg-probes-acquisition-of-Kelvin%2c-Egoli-Gas-to-secure-energy-future.aspx",
+    "source_date": "2026-01-07",
+    "retrieved_at": "2026-11-17"
+  },
+  "career": {
+    "value": null,
+    "label": "Unknown",
+    "source_url": null,
+    "source_date": null,
+    "retrieved_at": null
+  },
+  "education": {
+    "value": null,
+    "label": "Unknown",
+    "source_url": null,
+    "source_date": null,
+    "retrieved_at": null
+  },
+  "cv": [
+    {
+      "value": "Appointed MMC for Environment and Infrastructure Services by Executive Mayor Thapelo Amad",
+      "label": "Confirmed",
+      "source_url": "https://joburg.org.za/media_/Pages/Media/Media%20Statements/2023%20Media%20Statements/February/Joburg-Executive-Mayor-announces-new-MMCs.aspx",
+      "source_date": "2023-02-02",
+      "retrieved_at": "2026-11-17",
+      "field": "position",
+      "period": "2023-02-02"
+    },
+    {
+      "value": "Kept the Environment and Infrastructure portfolio in Mayor Dada Morero's mayoral committee",
+      "label": "Reported",
+      "source_url": "https://www.ewn.co.za/2024/08/17/former-joburg-mayor-gwamanda-appointed-as-community-development-mmc",
+      "source_date": "2024-08-17",
+      "retrieved_at": "2026-11-17",
+      "field": "position",
+      "period": "2024-08-16"
+    },
+    {
+      "value": "As MMC, urged residents to use water sparingly during Johannesburg water shortages",
+      "label": "Reported",
+      "source_url": "https://iol.co.za/news/south-africa/gauteng/2023-09-22-water-crisis-it-must-be-a-new-norm-to-use-water-sparingly-sekwaila/",
+      "source_date": "2023-09-22",
+      "retrieved_at": "2026-11-17",
+      "field": "position",
+      "period": "2023-09-22"
+    },
+    {
+      "value": "As MMC, presented the City's exploratory feasibility study on acquiring Kelvin Power Station and Egoli Gas",
+      "label": "Confirmed",
+      "source_url": "https://joburg.org.za/media_/Newsroom/Pages/2026-News-Articles/Joburg-probes-acquisition-of-Kelvin%2c-Egoli-Gas-to-secure-energy-future.aspx",
+      "source_date": "2026-01-07",
+      "retrieved_at": "2026-11-17",
+      "field": "position",
+      "period": "2026-01"
+    }
+  ],
+  "identity_match": {
+    "matched_details": [
+      "Name: City of Johannesburg statements (2023-02-02; 2026-01-07) name 'Cllr. Jack Sekwaila'; the gazette lists BOYBOI JACK SEKWAILA (second given name and surname match; no other SEKWAILA in the roster).",
+      "Council role: City of Johannesburg councillor and MMC in both City statements, EWN (2024-08-17) and IOL (2023-09-22)."
+    ],
+    "note": "Party (ANC) and ward 64 come from the gazette only; none of the sources used names his party or ward. BOYBOI is not used in any source found."
+  },
+  "court_matters": [],
+  "scandals": [],
+  "unknown_fields": [
+    "career",
+    "education",
+    "Whether he remains MMC until the new council's first sitting (not checked after 7 January 2026)",
+    "Council office or portfolio for the 2026–2031 term (executive mayor and mayoral committee not yet elected; first sitting expected around 19 November 2026 — not guessed)",
+    "Official council contact channel (owner to confirm from the City's published councillor directory)"
+  ]
+}

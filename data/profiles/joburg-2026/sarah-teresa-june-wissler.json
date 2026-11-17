@@ -1,0 +1,109 @@
+{
+  "slug": "sarah-teresa-june-wissler",
+  "change": "CHG-PW-003",
+  "name": {
+    "value": "SARAH TERESA JUNE WISSLER",
+    "label": "Confirmed",
+    "source_url": "https://www.gazettefinder.co.za/gazettes/government-gazette/2026/55741/government-gazette-55741-2026-11-13.pdf",
+    "source_date": "2026-11-13",
+    "retrieved_at": "2026-11-15T16:10:03+00:00",
+    "source_page": 43
+  },
+  "party": {
+    "value": "ACTIONSA",
+    "label": "Confirmed",
+    "source_url": "https://www.gazettefinder.co.za/gazettes/government-gazette/2026/55741/government-gazette-55741-2026-11-13.pdf",
+    "source_date": "2026-11-13",
+    "retrieved_at": "2026-11-15T16:10:03+00:00",
+    "source_page": 43
+  },
+  "seat_type": {
+    "value": "PR",
+    "label": "Confirmed",
+    "source_url": "https://www.gazettefinder.co.za/gazettes/government-gazette/2026/55741/government-gazette-55741-2026-11-13.pdf",
+    "source_date": "2026-11-13",
+    "retrieved_at": "2026-11-15T16:10:03+00:00",
+    "source_page": 43
+  },
+  "ward_number": {
+    "value": null,
+    "label": "Confirmed",
+    "source_url": "https://www.gazettefinder.co.za/gazettes/government-gazette/2026/55741/government-gazette-55741-2026-11-13.pdf",
+    "source_date": "2026-11-13",
+    "retrieved_at": "2026-11-15T16:10:03+00:00",
+    "source_page": 43
+  },
+  "council": {
+    "value": "City of Johannesburg",
+    "label": "Confirmed",
+    "source_url": "https://www.gazettefinder.co.za/gazettes/government-gazette/2026/55741/government-gazette-55741-2026-11-13.pdf",
+    "source_date": "2026-11-13",
+    "retrieved_at": "2026-11-15T16:10:03+00:00",
+    "source_page": 43
+  },
+  "ward_id": null,
+  "pr_list_rank": 23,
+  "known_as": {
+    "value": "Sarah Wissler",
+    "label": "Reported",
+    "source_url": "https://www.actionsa.org.za/actionsa-joburg-caucus-congratulates-cllr-sarah-wissler-on-her-appointment-as-the-chairperson-of-section-79-public-safety-committee-approves-r2-8-billion-dbsa-loan/",
+    "source_date": "2025-01-31",
+    "retrieved_at": "2026-11-17"
+  },
+  "positions": {
+    "value": "Former chairperson of the council's Section 79 Public Safety Committee (elected January 2025; removed August 2025)",
+    "label": "Reported",
+    "source_url": "https://iol.co.za/news/south-africa/2025-08-29-failed-vote-leaves-johannesburg-council-scrambling-for-new-chief-whip/",
+    "source_date": "2025-08-29",
+    "retrieved_at": "2026-11-17"
+  },
+  "career": {
+    "value": null,
+    "label": "Unknown",
+    "source_url": null,
+    "source_date": null,
+    "retrieved_at": null
+  },
+  "education": {
+    "value": null,
+    "label": "Unknown",
+    "source_url": null,
+    "source_date": null,
+    "retrieved_at": null
+  },
+  "cv": [
+    {
+      "value": "Elected chairperson of the Section 79 Public Safety Committee (party statement)",
+      "label": "Reported",
+      "source_url": "https://www.actionsa.org.za/actionsa-joburg-caucus-congratulates-cllr-sarah-wissler-on-her-appointment-as-the-chairperson-of-section-79-public-safety-committee-approves-r2-8-billion-dbsa-loan/",
+      "source_date": "2025-01-31",
+      "retrieved_at": "2026-11-17",
+      "field": "position",
+      "period": "2025-01"
+    },
+    {
+      "value": "Removed as Public Safety committee chairperson in a council motion of no confidence, one of three ActionSA committee chairs removed that day",
+      "label": "Reported",
+      "source_url": "https://iol.co.za/news/south-africa/2025-08-29-failed-vote-leaves-johannesburg-council-scrambling-for-new-chief-whip/",
+      "source_date": "2025-08-29",
+      "retrieved_at": "2026-11-17",
+      "field": "position",
+      "period": "2025-08-28"
+    }
+  ],
+  "identity_match": {
+    "matched_details": [
+      "Name: 'Cllr Sarah Wissler' (ActionSA 2025-01-31) and 'Sarah Wissler' (IOL 2025-08-29) match the gazette's first given name and surname.",
+      "Party and council: ActionSA, City of Johannesburg council, in both."
+    ],
+    "note": "The removal was a political council vote, not a finding of wrongdoing, so it is recorded as a CV entry, not an adverse item. The party statement's personal descriptions are not recorded."
+  },
+  "court_matters": [],
+  "scandals": [],
+  "unknown_fields": [
+    "career",
+    "education",
+    "Council office or portfolio for the 2026–2031 term (executive mayor and mayoral committee not yet elected; first sitting expected around 19 November 2026 — not guessed)",
+    "Official council contact channel (owner to confirm from the City's published councillor directory)"
+  ]
+}

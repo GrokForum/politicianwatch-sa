@@ -6,7 +6,7 @@ DRAFT PROFILE — not published. Public role only. Every item carries an evidenc
 ## Seat (Government Gazette 55741)
 
 - **Name as gazetted:** MARGERET SHERON ARNOLDS · `Confirmed` — [source](https://www.gazettefinder.co.za/gazettes/government-gazette/2026/55741/government-gazette-55741-2026-11-13.pdf) p.44, 2026-11-13 (retrieved 2026-11-15T16:10:03+00:00)
-- **Known as:** Margaret Arnolds · `Reported` — [source](https://www.news24.com/politics/african-independent-congress-councillor-margaret-arnolds-is-the-new-johannesburg-speaker-20231120), 2023-11-20 (retrieved 2026-11-15T20:15:00+02:00)
+- **Known as:** Margaret Arnolds · `Reported` — [source](https://www.news24.com/politics/african-independent-congress-councillor-margaret-arnolds-is-the-new-johannesburg-speaker-20231120), 2023-11-20 (retrieved 2026-11-15, time not logged)
 - **Party:** AFRICAN INDEPENDENT CONGRESS · `Confirmed` — [source](https://www.gazettefinder.co.za/gazettes/government-gazette/2026/55741/government-gazette-55741-2026-11-13.pdf) p.44, 2026-11-13 (retrieved 2026-11-15T16:10:03+00:00)
 - **Seat type:** PR · `Confirmed` — [source](https://www.gazettefinder.co.za/gazettes/government-gazette/2026/55741/government-gazette-55741-2026-11-13.pdf) p.44, 2026-11-13 (retrieved 2026-11-15T16:10:03+00:00)
 - **Ward:** — (none) · `Confirmed` — [source](https://www.gazettefinder.co.za/gazettes/government-gazette/2026/55741/government-gazette-55741-2026-11-13.pdf) p.44, 2026-11-13 (retrieved 2026-11-15T16:10:03+00:00)
@@ -15,18 +15,18 @@ DRAFT PROFILE — not published. Public role only. Every item carries an evidenc
 
 ## Summary
 
-- **Positions:** Speaker of the City of Johannesburg council (elected 20 November 2023; described as current speaker in September 2026) · `Reported` — [source](https://www.news24.com/politics/african-independent-congress-councillor-margaret-arnolds-is-the-new-johannesburg-speaker-20231120), 2023-11-20 (retrieved 2026-11-15T20:15:00+02:00)
+- **Positions:** Speaker of the City of Johannesburg council (elected 20 November 2023; described as current speaker in September 2026) · `Reported` — [source](https://www.news24.com/politics/african-independent-congress-councillor-margaret-arnolds-is-the-new-johannesburg-speaker-20231120), 2023-11-20 (retrieved 2026-11-15, time not logged)
 - **Career:** Unknown — not yet sourced (placeholder) · `Unknown`
 - **Education:** Unknown — not yet sourced (placeholder) · `Unknown`
 
 ## CV (public role)
 
-- **Position (2023-11-20):** Elected unopposed as Speaker of the Johannesburg council at a special council meeting · `Reported` — [source](https://www.news24.com/politics/african-independent-congress-councillor-margaret-arnolds-is-the-new-johannesburg-speaker-20231120), 2023-11-20 (retrieved 2026-11-15T20:15:00+02:00)
-- **Position (to 2023-11):** Chairperson of the council's Section 77 committee before becoming speaker · `Reported` — [source](https://www.news24.com/politics/african-independent-congress-councillor-margaret-arnolds-is-the-new-johannesburg-speaker-20231120), 2023-11-20 (retrieved 2026-11-15T20:15:00+02:00)
-- **Position (2016–2021):** Mayoral committee member in the council term that ended in 2021 · `Reported` — [source](https://www.news24.com/politics/african-independent-congress-councillor-margaret-arnolds-is-the-new-johannesburg-speaker-20231120), 2023-11-20 (retrieved 2026-11-15T20:15:00+02:00)
-- **Position:** Johannesburg councillor for three terms (as at November 2023) · `Reported` — [source](https://www.news24.com/politics/african-independent-congress-councillor-margaret-arnolds-is-the-new-johannesburg-speaker-20231120), 2023-11-20 (retrieved 2026-11-15T20:15:00+02:00)
-- **Position (2025-09-26):** Presided as council speaker over a councillor swearing-in on 26 September 2025 · `Reported` — [source](https://www.ewn.co.za/2025/09/26/after-suspension-and-probe-patriotic-alliances-kenny-kunene-returns-to-johannesburg-council), 2025-09-26 (retrieved 2026-11-15T20:15:00+02:00)
-- **Candidacy (2026):** African Independent Congress mayoral candidate for Johannesburg · `Reported` — [source](https://mg.co.za/politics/2026-09-03-battle-for-joburg-heats-up/), 2026-09-04 (retrieved 2026-11-15T20:15:00+02:00)
+- **Position (2023-11-20):** Elected unopposed as Speaker of the Johannesburg council at a special council meeting · `Reported` — [source](https://www.news24.com/politics/african-independent-congress-councillor-margaret-arnolds-is-the-new-johannesburg-speaker-20231120), 2023-11-20 (retrieved 2026-11-15, time not logged)
+- **Position (to 2023-11):** Chairperson of the council's Section 77 committee before becoming speaker · `Reported` — [source](https://www.news24.com/politics/african-independent-congress-councillor-margaret-arnolds-is-the-new-johannesburg-speaker-20231120), 2023-11-20 (retrieved 2026-11-15, time not logged)
+- **Position (2016–2021):** Mayoral committee member in the council term that ended in 2021 · `Reported` — [source](https://www.news24.com/politics/african-independent-congress-councillor-margaret-arnolds-is-the-new-johannesburg-speaker-20231120), 2023-11-20 (retrieved 2026-11-15, time not logged)
+- **Position:** Johannesburg councillor for three terms (as at November 2023) · `Reported` — [source](https://www.news24.com/politics/african-independent-congress-councillor-margaret-arnolds-is-the-new-johannesburg-speaker-20231120), 2023-11-20 (retrieved 2026-11-15, time not logged)
+- **Position (2025-09-26):** Presided as council speaker over a councillor swearing-in on 26 September 2025 · `Reported` — [source](https://www.ewn.co.za/2025/09/26/after-suspension-and-probe-patriotic-alliances-kenny-kunene-returns-to-johannesburg-council), 2025-09-26 (retrieved 2026-11-15, time not logged)
+- **Candidacy (2026):** African Independent Congress mayoral candidate for Johannesburg · `Reported` — [source](https://mg.co.za/politics/2026-09-03-battle-for-joburg-heats-up/), 2026-09-04 (retrieved 2026-11-15, time not logged)
 
 ## Court matters
 

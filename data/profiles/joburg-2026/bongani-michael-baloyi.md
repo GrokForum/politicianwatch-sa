@@ -14,15 +14,15 @@ DRAFT PROFILE — not published. Public role only. Every item carries an evidenc
 
 ## Summary
 
-- **Positions:** Former mayor of Midvaal (2013–2021) · `Reported` — [source](https://www.citizen.co.za/news/south-africa/elections/mk-party-bongani-baloyi-joburg-mayoral-candidate/), 2026-08-28 (retrieved 2026-11-15T20:15:00+02:00)
+- **Positions:** Former mayor of Midvaal (2013–2021) · `Reported` — [source](https://www.citizen.co.za/news/south-africa/elections/mk-party-bongani-baloyi-joburg-mayoral-candidate/), 2026-08-28 (retrieved 2026-11-15, time not logged)
 - **Career:** Unknown — not yet sourced (placeholder) · `Unknown`
 - **Education:** Unknown — not yet sourced (placeholder) · `Unknown`
 
 ## CV (public role)
 
-- **Position (2013–2021):** Mayor of Midvaal · `Reported` — [source](https://www.citizen.co.za/news/south-africa/elections/mk-party-bongani-baloyi-joburg-mayoral-candidate/), 2026-08-28 (retrieved 2026-11-15T20:15:00+02:00)
-- **Position:** Former leader of the Xiluva party · `Reported` — [source](https://www.citizen.co.za/news/south-africa/elections/mk-party-bongani-baloyi-joburg-mayoral-candidate/), 2026-08-28 (retrieved 2026-11-15T20:15:00+02:00)
-- **Candidacy (2026):** MK Party mayoral candidate for Johannesburg, named on 28 August 2026 · `Reported` — [source](https://www.citizen.co.za/news/south-africa/elections/mk-party-bongani-baloyi-joburg-mayoral-candidate/), 2026-08-28 (retrieved 2026-11-15T20:15:00+02:00)
+- **Position (2013–2021):** Mayor of Midvaal · `Reported` — [source](https://www.citizen.co.za/news/south-africa/elections/mk-party-bongani-baloyi-joburg-mayoral-candidate/), 2026-08-28 (retrieved 2026-11-15, time not logged)
+- **Position:** Former leader of the Xiluva party · `Reported` — [source](https://www.citizen.co.za/news/south-africa/elections/mk-party-bongani-baloyi-joburg-mayoral-candidate/), 2026-08-28 (retrieved 2026-11-15, time not logged)
+- **Candidacy (2026):** MK Party mayoral candidate for Johannesburg, named on 28 August 2026 · `Reported` — [source](https://www.citizen.co.za/news/south-africa/elections/mk-party-bongani-baloyi-joburg-mayoral-candidate/), 2026-08-28 (retrieved 2026-11-15, time not logged)
 
 ## Court matters
 

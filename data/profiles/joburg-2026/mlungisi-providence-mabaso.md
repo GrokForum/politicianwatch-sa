@@ -14,15 +14,15 @@ DRAFT PROFILE — not published. Public role only. Every item carries an evidenc
 
 ## Summary
 
-- **Positions:** City of Johannesburg MMC for Human Settlements (as described in September 2026) · `Reported` — [source](https://iol.co.za/news/politics/2026-09-06-meet-the-men-and-women-who-want-to-be-your-next-mayor-local-government-elections-2026/), 2026-09-06 (retrieved 2026-11-15T20:15:00+02:00)
+- **Positions:** City of Johannesburg MMC for Human Settlements (as described in September 2026) · `Reported` — [source](https://iol.co.za/news/politics/2026-09-06-meet-the-men-and-women-who-want-to-be-your-next-mayor-local-government-elections-2026/), 2026-09-06 (retrieved 2026-11-15, time not logged)
 - **Career:** Unknown — not yet sourced (placeholder) · `Unknown`
 - **Education:** Unknown — not yet sourced (placeholder) · `Unknown`
 
 ## CV (public role)
 
-- **Position (2021-12):** Appointed MMC for Housing in Mayor Mpho Phalatse's mayoral committee · `Reported` — [source](https://www.da.org.za/2021/12/da-congratulates-johannesburg-mayor-mpho-phalatse-on-her-mayoral-committee), 2021-12-13 (retrieved 2026-11-15T20:15:00+02:00)
-- **Position (2026):** MMC for Human Settlements (as described in September 2026) · `Reported` — [source](https://iol.co.za/news/politics/2026-09-06-meet-the-men-and-women-who-want-to-be-your-next-mayor-local-government-elections-2026/), 2026-09-06 (retrieved 2026-11-15T20:15:00+02:00)
-- **Candidacy (2026):** IFP mayoral candidate for Johannesburg · `Reported` — [source](https://iol.co.za/news/politics/2026-09-06-meet-the-men-and-women-who-want-to-be-your-next-mayor-local-government-elections-2026/), 2026-09-06 (retrieved 2026-11-15T20:15:00+02:00)
+- **Position (2021-12):** Appointed MMC for Housing in Mayor Mpho Phalatse's mayoral committee · `Reported` — [source](https://www.da.org.za/2021/12/da-congratulates-johannesburg-mayor-mpho-phalatse-on-her-mayoral-committee), 2021-12-13 (retrieved 2026-11-15, time not logged)
+- **Position (2026):** MMC for Human Settlements (as described in September 2026) · `Reported` — [source](https://iol.co.za/news/politics/2026-09-06-meet-the-men-and-women-who-want-to-be-your-next-mayor-local-government-elections-2026/), 2026-09-06 (retrieved 2026-11-15, time not logged)
+- **Candidacy (2026):** IFP mayoral candidate for Johannesburg · `Reported` — [source](https://iol.co.za/news/politics/2026-09-06-meet-the-men-and-women-who-want-to-be-your-next-mayor-local-government-elections-2026/), 2026-09-06 (retrieved 2026-11-15, time not logged)
 
 ## Court matters
 

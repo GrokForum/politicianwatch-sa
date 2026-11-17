@@ -6,7 +6,7 @@ DRAFT PROFILE — not published. Public role only. Every item carries an evidenc
 ## Seat (Government Gazette 55741)
 
 - **Name as gazetted:** TLALENG PETRONELLA MOFOKENG · `Confirmed` — [source](https://www.gazettefinder.co.za/gazettes/government-gazette/2026/55741/government-gazette-55741-2026-11-13.pdf) p.46, 2026-11-13 (retrieved 2026-11-15T16:10:03+00:00)
-- **Known as:** Dr Tlaleng Mofokeng · `Reported` — [source](https://iol.co.za/news/politics/2026-09-06-meet-the-men-and-women-who-want-to-be-your-next-mayor-local-government-elections-2026/), 2026-09-06 (retrieved 2026-11-15T20:15:00+02:00)
+- **Known as:** Dr Tlaleng Mofokeng · `Reported` — [source](https://iol.co.za/news/politics/2026-09-06-meet-the-men-and-women-who-want-to-be-your-next-mayor-local-government-elections-2026/), 2026-09-06 (retrieved 2026-11-15, time not logged)
 - **Party:** ECONOMIC FREEDOM FIGHTERS · `Confirmed` — [source](https://www.gazettefinder.co.za/gazettes/government-gazette/2026/55741/government-gazette-55741-2026-11-13.pdf) p.46, 2026-11-13 (retrieved 2026-11-15T16:10:03+00:00)
 - **Seat type:** PR · `Confirmed` — [source](https://www.gazettefinder.co.za/gazettes/government-gazette/2026/55741/government-gazette-55741-2026-11-13.pdf) p.46, 2026-11-13 (retrieved 2026-11-15T16:10:03+00:00)
 - **Ward:** — (none) · `Confirmed` — [source](https://www.gazettefinder.co.za/gazettes/government-gazette/2026/55741/government-gazette-55741-2026-11-13.pdf) p.46, 2026-11-13 (retrieved 2026-11-15T16:10:03+00:00)
@@ -16,14 +16,14 @@ DRAFT PROFILE — not published. Public role only. Every item carries an evidenc
 ## Summary
 
 - **Positions:** Unknown — not yet sourced (placeholder) · `Unknown`
-- **Career:** Medical doctor · `Reported` — [source](https://iol.co.za/news/politics/2026-09-06-meet-the-men-and-women-who-want-to-be-your-next-mayor-local-government-elections-2026/), 2026-09-06 (retrieved 2026-11-15T20:15:00+02:00)
+- **Career:** Medical doctor · `Reported` — [source](https://iol.co.za/news/politics/2026-09-06-meet-the-men-and-women-who-want-to-be-your-next-mayor-local-government-elections-2026/), 2026-09-06 (retrieved 2026-11-15, time not logged)
 - **Education:** Unknown — not yet sourced (placeholder) · `Unknown`
 
 ## CV (public role)
 
-- **Candidacy (2026):** EFF mayoral candidate for Johannesburg · `Reported` — [source](https://iol.co.za/news/politics/2026-09-06-meet-the-men-and-women-who-want-to-be-your-next-mayor-local-government-elections-2026/), 2026-09-06 (retrieved 2026-11-15T20:15:00+02:00)
-- **Position:** Former United Nations special rapporteur · `Reported` — [source](https://iol.co.za/news/politics/2026-09-06-meet-the-men-and-women-who-want-to-be-your-next-mayor-local-government-elections-2026/), 2026-09-06 (retrieved 2026-11-15T20:15:00+02:00)
-- **Candidacy (2026):** Campaign platform as reported: expanded public healthcare, 24-hour clinics, municipal debt relief for registered indigent households, insourcing municipal workers · `Reported` — [source](https://mg.co.za/politics/2026-09-03-battle-for-joburg-heats-up/), 2026-09-04 (retrieved 2026-11-15T20:15:00+02:00)
+- **Candidacy (2026):** EFF mayoral candidate for Johannesburg · `Reported` — [source](https://iol.co.za/news/politics/2026-09-06-meet-the-men-and-women-who-want-to-be-your-next-mayor-local-government-elections-2026/), 2026-09-06 (retrieved 2026-11-15, time not logged)
+- **Position:** Former United Nations special rapporteur · `Reported` — [source](https://iol.co.za/news/politics/2026-09-06-meet-the-men-and-women-who-want-to-be-your-next-mayor-local-government-elections-2026/), 2026-09-06 (retrieved 2026-11-15, time not logged)
+- **Candidacy (2026):** Campaign platform as reported: expanded public healthcare, 24-hour clinics, municipal debt relief for registered indigent households, insourcing municipal workers · `Reported` — [source](https://mg.co.za/politics/2026-09-03-battle-for-joburg-heats-up/), 2026-09-04 (retrieved 2026-11-15, time not logged)
 
 ## Court matters
 

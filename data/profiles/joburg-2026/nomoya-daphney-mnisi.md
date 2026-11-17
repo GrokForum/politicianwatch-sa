@@ -14,13 +14,13 @@ DRAFT PROFILE — not published. Public role only. Every item carries an evidenc
 
 ## Summary
 
-- **Positions:** Former City of Johannesburg MMC for Economic Development (appointed February 2023) · `Confirmed` — [source](https://joburg.org.za/media_/Pages/Media/Media%20Statements/2023%20Media%20Statements/February/Joburg-Executive-Mayor-announces-new-MMCs.aspx), 2023-02-02 (retrieved 2026-11-15T20:15:00+02:00)
+- **Positions:** Former City of Johannesburg MMC for Economic Development (appointed February 2023) · `Confirmed` — [source](https://joburg.org.za/media_/Pages/Media/Media%20Statements/2023%20Media%20Statements/February/Joburg-Executive-Mayor-announces-new-MMCs.aspx), 2023-02-02 (retrieved 2026-11-15, time not logged)
 - **Career:** Unknown — not yet sourced (placeholder) · `Unknown`
 - **Education:** Unknown — not yet sourced (placeholder) · `Unknown`
 
 ## CV (public role)
 
-- **Position (2023-02-02):** Appointed MMC for Economic Development by Executive Mayor Thapelo Amad · `Confirmed` — [source](https://joburg.org.za/media_/Pages/Media/Media%20Statements/2023%20Media%20Statements/February/Joburg-Executive-Mayor-announces-new-MMCs.aspx), 2023-02-02 (retrieved 2026-11-15T20:15:00+02:00)
+- **Position (2023-02-02):** Appointed MMC for Economic Development by Executive Mayor Thapelo Amad · `Confirmed` — [source](https://joburg.org.za/media_/Pages/Media/Media%20Statements/2023%20Media%20Statements/February/Joburg-Executive-Mayor-announces-new-MMCs.aspx), 2023-02-02 (retrieved 2026-11-15, time not logged)
 
 ## Court matters
 

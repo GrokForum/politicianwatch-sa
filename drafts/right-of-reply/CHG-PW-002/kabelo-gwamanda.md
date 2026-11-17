@@ -19,7 +19,7 @@ DRAFT: NOT SENT. The owner sends personally. The bot never sends.
 
 Gwamanda handed himself over to police on 18 October 2024 and appeared in the Protea Magistrate's Court on fraud charges linked to the scheme.
 
-**Current status / outcome (as reported):** On 25 February 2025 the National Prosecuting Authority provisionally withdrew all charges against him and a co-accused, saying more complainants had come forward and further investigation was needed; the NPA said that once these investigations were finalised, criminal proceedings would be re-instituted (provisionally withdrawn; NPA said it would re-institute). Gwamanda said the state had no evidence. No re-instituted charges were found in allowed sources as of 15 November 2026.
+**Current status / outcome (as reported):** On 25 February 2025 the National Prosecuting Authority provisionally withdrew all charges against him and a co-accused, saying more complainants had come forward and further investigation was needed; the NPA said that once these investigations were finalised, criminal proceedings would be re-instituted. Gwamanda said the state had no evidence. No re-instituted charges were found in allowed sources as of 15 November 2026.
 
 | Source | Date | URL |
 |---|---|---|
@@ -39,7 +39,7 @@ The Sunday Times reported in June 2023 that, according to the Financial Sector C
 
 > We are preparing a public-role profile of you as an elected councillor of the City of Johannesburg on PoliticianWatch SA, a sourced register of South African elected representatives. Before publishing the items below, we invite your response. Please reply by **[owner sets on sending — 14 days after sending]** through this official channel. Your response will be published in full next to the item, subject only to the removal of personal contact details or other private information.
 >
-> **Item 1 (labelled Alleged):** Gwamanda handed himself over to police on 18 October 2024 and appeared in the Protea Magistrate's Court on fraud charges linked to the scheme. Current status as reported: On 25 February 2025 the National Prosecuting Authority provisionally withdrew all charges against him and a co-accused, saying more complainants had come forward and further investigation was needed; the NPA said that once these investigations were finalised, criminal proceedings would be re-instituted (provisionally withdrawn; NPA said it would re-institute). Gwamanda said the state had no evidence. No re-instituted charges were found in allowed sources as of 15 November 2026.
+> **Item 1 (labelled Alleged):** Gwamanda handed himself over to police on 18 October 2024 and appeared in the Protea Magistrate's Court on fraud charges linked to the scheme. Current status as reported: On 25 February 2025 the National Prosecuting Authority provisionally withdrew all charges against him and a co-accused, saying more complainants had come forward and further investigation was needed; the NPA said that once these investigations were finalised, criminal proceedings would be re-instituted. Gwamanda said the state had no evidence. No re-instituted charges were found in allowed sources as of 15 November 2026.
 >
 > **Source:** 2025-02-25, https://www.citizen.co.za/news/south-africa/courts/state-provisionally-withdraws-charges-kabelo-gwamanda/
 >

@@ -6,7 +6,7 @@ DRAFT PROFILE — not published. Public role only. Every item carries an evidenc
 ## Seat (Government Gazette 55741)
 
 - **Name as gazetted:** THAPELO KENNETH KUNENE · `Confirmed` — [source](https://www.gazettefinder.co.za/gazettes/government-gazette/2026/55741/government-gazette-55741-2026-11-13.pdf) p.47, 2026-11-13 (retrieved 2026-11-15T16:10:03+00:00)
-- **Known as:** Kenny Kunene · `Reported` — [source](https://iol.co.za/news/politics/2026-09-06-meet-the-men-and-women-who-want-to-be-your-next-mayor-local-government-elections-2026/), 2026-09-06 (retrieved 2026-11-15T20:15:00+02:00)
+- **Known as:** Kenny Kunene · `Reported` — [source](https://iol.co.za/news/politics/2026-09-06-meet-the-men-and-women-who-want-to-be-your-next-mayor-local-government-elections-2026/), 2026-09-06 (retrieved 2026-11-15, time not logged)
 - **Party:** PATRIOTIC ALLIANCE · `Confirmed` — [source](https://www.gazettefinder.co.za/gazettes/government-gazette/2026/55741/government-gazette-55741-2026-11-13.pdf) p.47, 2026-11-13 (retrieved 2026-11-15T16:10:03+00:00)
 - **Seat type:** PR · `Confirmed` — [source](https://www.gazettefinder.co.za/gazettes/government-gazette/2026/55741/government-gazette-55741-2026-11-13.pdf) p.47, 2026-11-13 (retrieved 2026-11-15T16:10:03+00:00)
 - **Ward:** — (none) · `Confirmed` — [source](https://www.gazettefinder.co.za/gazettes/government-gazette/2026/55741/government-gazette-55741-2026-11-13.pdf) p.47, 2026-11-13 (retrieved 2026-11-15T16:10:03+00:00)
@@ -15,22 +15,22 @@ DRAFT PROFILE — not published. Public role only. Every item carries an evidenc
 
 ## Summary
 
-- **Positions:** City of Johannesburg MMC for Transport and Patriotic Alliance deputy president (as described in September 2026) · `Reported` — [source](https://iol.co.za/news/politics/2026-09-06-meet-the-men-and-women-who-want-to-be-your-next-mayor-local-government-elections-2026/), 2026-09-06 (retrieved 2026-11-15T20:15:00+02:00)
+- **Positions:** City of Johannesburg MMC for Transport and Patriotic Alliance deputy president (as described in September 2026) · `Reported` — [source](https://iol.co.za/news/politics/2026-09-06-meet-the-men-and-women-who-want-to-be-your-next-mayor-local-government-elections-2026/), 2026-09-06 (retrieved 2026-11-15, time not logged)
 - **Career:** Unknown — not yet sourced (placeholder) · `Unknown`
 - **Education:** Unknown — not yet sourced (placeholder) · `Unknown`
 
 ## CV (public role)
 
-- **Position (2023-02):** Appointed City of Johannesburg MMC for Transport by Mayor Thapelo Amad, sworn in first as a councillor · `Reported` — [source](https://www.dailymaverick.co.za/article/2023-02-08-joburg-should-be-grateful-they-have-me-kenny-kunene/), 2023-02-08 (retrieved 2026-11-15T20:15:00+02:00)
-- **Position (2025-09-26):** Sworn in again as a Johannesburg PR councillor after an external review · `Reported` — [source](https://www.ewn.co.za/2025/09/26/after-suspension-and-probe-patriotic-alliances-kenny-kunene-returns-to-johannesburg-council), 2025-09-26 (retrieved 2026-11-15T20:15:00+02:00)
-- **Position:** Deputy president of the Patriotic Alliance · `Reported` — [source](https://iol.co.za/news/politics/2026-09-06-meet-the-men-and-women-who-want-to-be-your-next-mayor-local-government-elections-2026/), 2026-09-06 (retrieved 2026-11-15T20:15:00+02:00)
-- **Candidacy (2026):** Patriotic Alliance mayoral candidate for Johannesburg · `Reported` — [source](https://iol.co.za/news/politics/2026-09-06-meet-the-men-and-women-who-want-to-be-your-next-mayor-local-government-elections-2026/), 2026-09-06 (retrieved 2026-11-15T20:15:00+02:00)
-- **Career:** Co-founded the Patriotic Alliance in 2013 · `Reported` — [source](https://www.dailymaverick.co.za/article/2023-02-08-joburg-should-be-grateful-they-have-me-kenny-kunene/), 2023-02-08 (retrieved 2026-11-15T20:15:00+02:00)
-- **Career:** Runs an online news agency ("his online news agency", as reported in 2025) · `Reported` — [source](https://www.ewn.co.za/2025/09/26/after-suspension-and-probe-patriotic-alliances-kenny-kunene-returns-to-johannesburg-council), 2025-09-26 (retrieved 2026-11-15T20:15:00+02:00)
+- **Position (2023-02):** Appointed City of Johannesburg MMC for Transport by Mayor Thapelo Amad, sworn in first as a councillor · `Reported` — [source](https://www.dailymaverick.co.za/article/2023-02-08-joburg-should-be-grateful-they-have-me-kenny-kunene/), 2023-02-08 (retrieved 2026-11-15, time not logged)
+- **Position (2025-09-26):** Sworn in again as a Johannesburg PR councillor after an external review · `Reported` — [source](https://www.ewn.co.za/2025/09/26/after-suspension-and-probe-patriotic-alliances-kenny-kunene-returns-to-johannesburg-council), 2025-09-26 (retrieved 2026-11-15, time not logged)
+- **Position:** Deputy president of the Patriotic Alliance · `Reported` — [source](https://iol.co.za/news/politics/2026-09-06-meet-the-men-and-women-who-want-to-be-your-next-mayor-local-government-elections-2026/), 2026-09-06 (retrieved 2026-11-15, time not logged)
+- **Candidacy (2026):** Patriotic Alliance mayoral candidate for Johannesburg · `Reported` — [source](https://iol.co.za/news/politics/2026-09-06-meet-the-men-and-women-who-want-to-be-your-next-mayor-local-government-elections-2026/), 2026-09-06 (retrieved 2026-11-15, time not logged)
+- **Career:** Co-founded the Patriotic Alliance in 2013 · `Reported` — [source](https://www.dailymaverick.co.za/article/2023-02-08-joburg-should-be-grateful-they-have-me-kenny-kunene/), 2023-02-08 (retrieved 2026-11-15, time not logged)
+- **Career:** Runs an online news agency ("his online news agency", as reported in 2025) · `Reported` — [source](https://www.ewn.co.za/2025/09/26/after-suspension-and-probe-patriotic-alliances-kenny-kunene-returns-to-johannesburg-council), 2025-09-26 (retrieved 2026-11-15, time not logged)
 
 ## Court matters
 
-- **Item:** Daily Maverick reported that Kunene was convicted of fraud for running a Ponzi scheme and served six years in jail, giving 1997 as the year. · `Reported` — [source](https://www.dailymaverick.co.za/article/2023-02-08-joburg-should-be-grateful-they-have-me-kenny-kunene/), 2023-02-08 (retrieved 2026-11-15T20:15:00+02:00)
+- **Item:** Daily Maverick reported that Kunene was convicted of fraud for running a Ponzi scheme and served six years in jail, giving 1997 as the year. · `Reported` — [source](https://www.dailymaverick.co.za/article/2023-02-08-joburg-should-be-grateful-they-have-me-kenny-kunene/), 2023-02-08 (retrieved 2026-11-15, time not logged)
   - **Status / outcome:** Reported: convicted (no judgment citation found). Daily Maverick reports a 1997 fraud conviction and six years served; no case number or judgment citation was found in allowed sources (SAFLII not searched). (matter_status: `reported_conviction`)
   - **Identity link to the gazetted person:** Reported
   - **Right of reply: pending**
@@ -38,7 +38,7 @@ DRAFT PROFILE — not published. Public role only. Every item carries an evidenc
 
 ## Scandals and allegations
 
-- **Item:** In July 2025 Kunene resigned as Transport MMC and as a councillor, and the Patriotic Alliance suspended him from party activities, after he was found at the home of a person accused of murder during a police operation. Kunene said he was there to accompany a journalist from his online news agency for an interview. · `Reported` — [source](https://www.sabcnews.com/sabcnews/kunene-sworn-in-as-pr-councillor-after-being-cleared/), 2025-09-26 (retrieved 2026-11-15T20:15:00+02:00); also [source](https://www.ewn.co.za/2025/09/26/after-suspension-and-probe-patriotic-alliances-kenny-kunene-returns-to-johannesburg-council), 2025-09-26
+- **Item:** In July 2025 Kunene resigned as Transport MMC and as a councillor, and the Patriotic Alliance suspended him from party activities, after he was found at the home of a person accused of murder during a police operation. Kunene said he was there to accompany a journalist from his online news agency for an interview. · `Reported` — [source](https://www.sabcnews.com/sabcnews/kunene-sworn-in-as-pr-councillor-after-being-cleared/), 2025-09-26 (retrieved 2026-11-15, time not logged); also [source](https://www.ewn.co.za/2025/09/26/after-suspension-and-probe-patriotic-alliances-kenny-kunene-returns-to-johannesburg-council), 2025-09-26
   - **Status / outcome:** An external law firm cleared him of wrongdoing; reinstated and sworn in 26 Sep 2025. (matter_status: `cleared`)
   - **Identity link to the gazetted person:** Reported
   - **Right of reply: pending**

@@ -6,8 +6,8 @@ DRAFT PROFILE — not published. Public role only. Every item carries an evidenc
 ## Seat (Government Gazette 55741)
 
 - **Name as gazetted:** OTTA HELENE MAREE · `Confirmed` — [source](https://www.gazettefinder.co.za/gazettes/government-gazette/2026/55741/government-gazette-55741-2026-11-13.pdf) p.46, 2026-11-13 (retrieved 2026-11-15T16:10:03+00:00)
-- **Known as:** Helen Zille · `Reported` — [source](https://www.news24.com/politics/bye-bye-dada-overhang-scuppers-morero-loyiso-masukus-return-to-joburg-council-20261108-0629), 2026-11-08 (retrieved 2026-11-15T20:15:00+02:00)
-- **Given names:** Otta Helene · `Reported` — [source](https://www.britannica.com/biography/Helen-Zille), 2026-11-13 (retrieved 2026-11-15T20:15:00+02:00)
+- **Known as:** Helen Zille · `Reported` — [source](https://www.news24.com/politics/bye-bye-dada-overhang-scuppers-morero-loyiso-masukus-return-to-joburg-council-20261108-0629), 2026-11-08 (retrieved 2026-11-15, time not logged)
+- **Given names:** Otta Helene · `Reported` — [source](https://www.britannica.com/biography/Helen-Zille), 2026-11-13 (retrieved 2026-11-15, time not logged)
 - **Surname in full legal name:** Unknown — not yet sourced (placeholder) · `Unknown`
 - **Party:** DEMOCRATIC ALLIANCE · `Confirmed` — [source](https://www.gazettefinder.co.za/gazettes/government-gazette/2026/55741/government-gazette-55741-2026-11-13.pdf) p.46, 2026-11-13 (retrieved 2026-11-15T16:10:03+00:00)
 - **Seat type:** PR · `Confirmed` — [source](https://www.gazettefinder.co.za/gazettes/government-gazette/2026/55741/government-gazette-55741-2026-11-13.pdf) p.46, 2026-11-13 (retrieved 2026-11-15T16:10:03+00:00)
@@ -17,20 +17,20 @@ DRAFT PROFILE — not published. Public role only. Every item carries an evidenc
 
 ## Summary
 
-- **Positions:** Former mayor of Cape Town and former premier of the Western Cape · `Reported` — [source](https://mg.co.za/politics/2026-09-03-battle-for-joburg-heats-up/), 2026-09-04 (retrieved 2026-11-15T20:15:00+02:00)
+- **Positions:** Former mayor of Cape Town and former premier of the Western Cape · `Reported` — [source](https://mg.co.za/politics/2026-09-03-battle-for-joburg-heats-up/), 2026-09-04 (retrieved 2026-11-15, time not logged)
 - **Career:** Unknown — not yet sourced (placeholder) · `Unknown`
 - **Education:** Unknown — not yet sourced (placeholder) · `Unknown`
 
 ## CV (public role)
 
-- **Candidacy (2026):** DA mayoral candidate for the City of Johannesburg, 2026 local government elections · `Reported` — [source](https://iol.co.za/news/politics/2026-09-06-meet-the-men-and-women-who-want-to-be-your-next-mayor-local-government-elections-2026/), 2026-09-06 (retrieved 2026-11-15T20:15:00+02:00)
-- **Position (2019–2026):** Chairperson of the DA Federal Council — former (2019–2026). Stepped down in April 2026; Ashor Sarupen was elected chairperson of the Federal Council on 12 April 2026 · `Reported` — [source](https://witness.co.za/news/2026/04/13/change-sweeps-across-da-federal-leadership-as-kzns-sarupen-rises/), 2026-04-13 (retrieved 2026-11-15T20:15:00+02:00); also [source](https://www.da.org.za/2026/04/da-announces-leadership-election-results), 2026-04-12; also [source](https://www.britannica.com/biography/Helen-Zille), 2026-11-13
-- **Position:** Mayor of Cape Town (former) · `Reported` — [source](https://mg.co.za/politics/2026-09-03-battle-for-joburg-heats-up/), 2026-09-04 (retrieved 2026-11-15T20:15:00+02:00)
-- **Position:** Premier of the Western Cape (former) · `Reported` — [source](https://mg.co.za/politics/2026-09-03-battle-for-joburg-heats-up/), 2026-09-04 (retrieved 2026-11-15T20:15:00+02:00)
+- **Candidacy (2026):** DA mayoral candidate for the City of Johannesburg, 2026 local government elections · `Reported` — [source](https://iol.co.za/news/politics/2026-09-06-meet-the-men-and-women-who-want-to-be-your-next-mayor-local-government-elections-2026/), 2026-09-06 (retrieved 2026-11-15, time not logged)
+- **Position (2019–2026):** Chairperson of the DA Federal Council — former (2019–2026). Stepped down in April 2026; Ashor Sarupen was elected chairperson of the Federal Council on 12 April 2026 · `Reported` — [source](https://witness.co.za/news/2026/04/13/change-sweeps-across-da-federal-leadership-as-kzns-sarupen-rises/), 2026-04-13 (retrieved 2026-11-15, time not logged); also [source](https://www.da.org.za/2026/04/da-announces-leadership-election-results), 2026-04-12; also [source](https://www.britannica.com/biography/Helen-Zille), 2026-11-13
+- **Position:** Mayor of Cape Town (former) · `Reported` — [source](https://mg.co.za/politics/2026-09-03-battle-for-joburg-heats-up/), 2026-09-04 (retrieved 2026-11-15, time not logged)
+- **Position:** Premier of the Western Cape (former) · `Reported` — [source](https://mg.co.za/politics/2026-09-03-battle-for-joburg-heats-up/), 2026-09-04 (retrieved 2026-11-15, time not logged)
 
 ## Court matters
 
-- **Item:** The Public Protector found that tweets on colonialism made by Zille on 15 March 2017, while she was Western Cape premier, breached the Executive Ethics Code and the Constitution, and recommended remedial action (Report No. 5 of 2018/19). Zille's review application was dismissed by the Gauteng Division of the High Court, Pretoria, and she appealed. · `Reported` — [source](https://lawlibrary.org.za/akn/za/judgment/zasca/2022/16/eng@2022-02-07), 2022-02-07 (retrieved 2026-11-15T20:15:00+02:00); also [source](https://www.supremecourtofappeal.org.za/images/Media_Summaries_2022/sca2022-16ms.pdf), 2022-02-07; also [source](https://www.citizen.co.za/news/south-africa/courts/sca-rules-against-mkhwebane-zille-colonialism-tweets/), 2022-02-07
+- **Item:** The Public Protector found that tweets on colonialism made by Zille on 15 March 2017, while she was Western Cape premier, breached the Executive Ethics Code and the Constitution, and recommended remedial action (Report No. 5 of 2018/19). Zille's review application was dismissed by the Gauteng Division of the High Court, Pretoria, and she appealed. · `Reported` — [source](https://lawlibrary.org.za/akn/za/judgment/zasca/2022/16/eng@2022-02-07), 2022-02-07 (retrieved 2026-11-15, time not logged); also [source](https://www.supremecourtofappeal.org.za/images/Media_Summaries_2022/sca2022-16ms.pdf), 2022-02-07; also [source](https://www.citizen.co.za/news/south-africa/courts/sca-rules-against-mkhwebane-zille-colonialism-tweets/), 2022-02-07
   - **Status / outcome:** The SCA upheld the appeal and reviewed and set aside the Public Protector's findings and remedial action (Report No. 5 of 2018/19), 7 Feb 2022 (Premier of the Western Cape Province v The Public Protector & Another (771/2020) [2022] ZASCA 16). (matter_status: `cleared`)
   - **Identity link to the gazetted person:** Reported
   - **Right of reply: pending**

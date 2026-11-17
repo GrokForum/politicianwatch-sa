@@ -148,3 +148,141 @@ def test_reported_conviction_status_is_in_schema_and_renders(synthetic_profiles,
     md = render_markdown(p)
     assert "`reported_conviction`" in md
     assert "Identity link to the gazetted person:** Reported" in md
+
+
+def test_also_sourced_date_and_url_formats_are_checked(synthetic_profiles, repo_root):
+    p = _cv_profile(synthetic_profiles)
+    good = {"source_url": NEWS, "source_date": "2026-09-06", "retrieved_at": "2026-11-17T11:00:00+02:00"}
+    p["cv"][0]["also_sourced"] = [dict(good)]
+    assert check_profile(p, drafts_root=repo_root, as_of=AS_OF) == []
+    bad = [
+        ({"source_url": "example.test/no-scheme"}, "not a valid http(s) URL"),
+        ({"source_url": "ftp://example.test/x"}, "not a valid http(s) URL"),
+        ({"source_date": "6 Sep 2026"}, "source_date must be YYYY-MM-DD"),
+        ({"source_date": "2026-02-30"}, "source_date must be YYYY-MM-DD"),
+        ({"retrieved_at": "yesterday"}, "retrieved_at must be YYYY-MM-DD or an ISO 8601 datetime"),
+        ({"retrieved_at": "2026-02-30"}, "retrieved_at must be YYYY-MM-DD or an ISO 8601 datetime"),
+        ({"retrieved_at": "2026-11-17T11:00:00"}, "retrieved_at needs a UTC offset"),
+    ]
+    for change, message in bad:
+        p["cv"][0]["also_sourced"] = [{**good, **change}]
+        failures = check_profile(p, drafts_root=repo_root, as_of=AS_OF)
+        assert any(message in f for f in failures), (change, failures)
+
+
+def _write_profile(path, doc):
+    import json
+
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(doc), encoding="utf-8")
+
+
+def test_held_profiles_are_excluded_from_batch_dq_and_render(synthetic_profiles, tmp_path, capsys):
+    """CHG-PW-003 fix 1: a profile in _hold/ or with status on_hold is not counted, rendered or checked."""
+    from pwatch.cli import main
+    from pwatch.profiles import load_held_profiles, load_profile_dir
+
+    root = tmp_path / "profiles"
+    active = _cv_profile(synthetic_profiles)
+    _write_profile(root / "active.json", active)
+    (root / "active.md").write_text(render_markdown(active), encoding="utf-8")
+    held_dir = deepcopy(active)
+    held_dir["slug"] = "held-in-dir"
+    held_dir["identity_match"] = {"matched_details": ["surname only"], "note": None}  # would fail dq if checked
+    _write_profile(root / "_hold" / "held-in-dir.json", held_dir)
+    held_flag = deepcopy(held_dir)
+    held_flag["slug"] = "held-flag"
+    held_flag["status"] = "on_hold"
+    _write_profile(root / "held-flag.json", held_flag)  # no .md: render --check must not ask for one
+
+    assert [d["slug"] for _, d in load_profile_dir(root)] == ["thabo-testward"]
+    assert sorted(d["slug"] for _, d in load_held_profiles(root)) == ["held-flag", "held-in-dir"]
+    assert main(["render", "--check", "--profiles-dir", str(root)]) == 0
+    capsys.readouterr()
+    assert check_profile(held_dir, as_of=AS_OF) != []  # the held profile really would fail the gate
+
+
+def test_cli_dq_counts_active_and_held_profiles_in_repo(capsys):
+    """CHG-PW-003 fix 2: on the committed data, `pwatch dq` counts 24 active CV profiles and 1 on hold."""
+    import json
+
+    from pwatch.cli import main
+
+    code = main(["dq"])
+    out = json.loads(capsys.readouterr().out)
+    assert code == 0, out["failures"]
+    assert out["cv_profiles"] == 24
+    assert out["cv_profiles_on_hold"] == 1
+
+
+def test_retrieved_at_later_than_run_time_fails(synthetic_profiles, repo_root):
+    """CHG-PW-003 fix 2: no retrieved_at (fact, also_sourced or adverse item) may be later than the run time."""
+    from datetime import datetime, timezone
+
+    now = datetime(2026, 11, 17, 9, 30, tzinfo=timezone.utc)  # 11:30 SAST
+    roster = roster_index(synthetic_profiles)
+    p = _cv_profile(synthetic_profiles)
+    p["cv"][0]["retrieved_at"] = "2026-11-17T11:29:00+02:00"  # one minute before: fine
+    assert check_profile(p, drafts_root=repo_root, as_of=AS_OF, roster=roster, now=now) == []
+
+    future = deepcopy(p)
+    future["cv"][0]["retrieved_at"] = "2026-11-17T11:45:00+02:00"
+    fails = check_profile(future, drafts_root=repo_root, as_of=AS_OF, roster=roster, now=now)
+    assert any("later than the run time" in f and ".cv[0].retrieved_at" in f for f in fails)
+
+    nested = deepcopy(p)
+    nested["cv"][0]["also_sourced"] = [
+        {"source_url": NEWS, "source_date": "2026-09-06", "retrieved_at": "2026-11-17T09:31:00+00:00"}
+    ]
+    fails = check_profile(nested, drafts_root=repo_root, as_of=AS_OF, roster=roster, now=now)
+    assert any("also_sourced[0].retrieved_at" in f and "later than the run time" in f for f in fails)
+
+
+def test_date_only_retrieved_at_counts_as_end_of_day(synthetic_profiles, repo_root):
+    """CHG-PW-003 fix 3: a date-only retrieved_at (time not logged) is allowed; it is future only if its
+    date is after the run date in SAST."""
+    from datetime import datetime, timezone
+
+    roster = roster_index(synthetic_profiles)
+    p = _cv_profile(synthetic_profiles)
+    now = datetime(2026, 11, 17, 9, 30, tzinfo=timezone.utc)  # 11:30 SAST on 17 Nov
+    p["cv"][0]["retrieved_at"] = "2026-11-17"  # same day: allowed even though the day has not ended
+    p["cv"][0]["also_sourced"] = [{"source_url": NEWS, "source_date": "2026-09-06", "retrieved_at": "2026-11-16"}]
+    assert check_profile(p, drafts_root=repo_root, as_of=AS_OF, roster=roster, now=now) == []
+    assert "time not logged" in render_markdown(p)
+
+    future = deepcopy(p)
+    future["cv"][0]["also_sourced"][0]["retrieved_at"] = "2026-11-18"
+    fails = check_profile(future, drafts_root=repo_root, as_of=AS_OF, roster=roster, now=now)
+    assert any("also_sourced[0].retrieved_at: retrieved_at 2026-11-18 is later than the run time" in f for f in fails)
+
+    # 22:30 UTC on 17 Nov is already 18 Nov in SAST, so a value dated 18 Nov is not in the future.
+    late = datetime(2026, 11, 17, 22, 30, tzinfo=timezone.utc)
+    assert check_profile(future, drafts_root=repo_root, as_of=AS_OF, roster=roster, now=late) == []
+
+
+def test_fetch_source_logs_real_retrieved_at(tmp_path):
+    """CHG-PW-003 fix 3: the fetch helper writes the actual fetch time into the raw manifest and
+    returns it as retrieved_at (SAST with offset). Mock transport only, never a live source."""
+    from datetime import datetime, timezone
+
+    import httpx
+
+    from pwatch.http import Fetcher
+    from pwatch.provenance import fetch_source
+    from pwatch.raw import RawStore
+
+    times = iter([datetime(2026, 11, 17, 9, 29, 45, tzinfo=timezone.utc), datetime(2026, 11, 18, 6, 0, 0, tzinfo=timezone.utc)])
+    raw = RawStore(tmp_path / "raw", now=lambda: next(times), resume=False)
+    fetcher = Fetcher(transport=httpx.MockTransport(lambda r: httpx.Response(200, content=b"<html>x</html>")), retries=0, sleep=lambda _d: None)
+
+    first = fetch_source(NEWS, raw=raw, fetcher=fetcher)
+    assert first["retrieved_at"] == "2026-11-17T11:29:45+02:00"
+    assert first["status"] == "ok"
+    entry = raw.entries()[-1]
+    assert entry.url == NEWS and entry.checked_at_utc == "2026-11-17T09:29:45+00:00"
+
+    again = fetch_source(NEWS, raw=raw, fetcher=fetcher)  # same bytes: logged as unchanged, new check time
+    assert again["status"] == "unchanged"
+    assert again["retrieved_at"] == "2026-11-18T08:00:00+02:00"
+    assert len(raw.entries()) == 2

@@ -63,7 +63,7 @@ This is a draft change only. It does not merge to `main`, does not publish a sit
 
 ## Implementation plan
 
-1. Local initial commit on `main` (README + `.gitignore` only), recorded as the rollback SHA above. Not pushed until the owner GOes it.
+1. Local initial commit on `main` (README + `.gitignore` only), recorded as the rollback SHA above. Not pushed until the owner GOes it. (Pushed on the owner's GO, 15 Nov 2026 18:32 SAST.)
 2. Work on `dev/chg-pw-001-scaffold`. Commit the scaffold, schema, tests, provenance, roster and this record.
 3. Run pytest and the POPIA check.
 4. Stop. Reviewers Cavus and Cassian each give a plain PASS on the **same exact head**. `PASS_WITH_CONCERNS` does not count.
@@ -79,14 +79,14 @@ Reviewers must give a plain PASS on the same exact head. The owner then GOes (or
 
 | Role | Name | Commit approved | Date | Result |
 |---|---|---|---|---|
-| Author / builder | PoliticianWatch (Grok Bot) | | 2026-11-15 | drafted |
-| Reviewer | Cavus | | | pending PASS on the exact head |
-| Reviewer | Cassian (Build, review only) | | | pending PASS on the exact head |
-| Change authority | Owner | | | pending GO |
+| Author / builder | PoliticianWatch (Grok Bot) | | 2026-11-15 | drafted; pushed with draft PR #1 on the owner's GO, 15 Nov 2026 18:32 SAST |
+| Reviewer | Cavus | | | not recorded in this RFC; see PR #1 |
+| Reviewer | Cassian (Build, review only) | | | not recorded in this RFC; see PR #1 |
+| Change authority | Owner | `ed801b1` | 2026-11-17 | PR #1 merged into `main` as `3f3043a`, 17 Nov 2026 11:00 SAST (seen on `git fetch`); GO wording not recorded in this RFC |
 
 ## Post-implementation review
 
-- Outcome: pending reviews and owner GO. Not merged. Not published.
+- Outcome: draft PR #1 opened 15 Nov 2026; merged into `main` as `3f3043a` on 17 Nov 2026 11:00 SAST (head `ed801b1`). Not published.
 - Follow-ups: IEC CSV / reuse-terms enquiry (draft only, unsent); mayor and mayoral committee after the first sitting; CV research under a later RFC; public site ADRs.
 
 ## Seen, not touched

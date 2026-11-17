@@ -10,7 +10,7 @@ from pathlib import Path
 
 from pwatch import __version__
 from pwatch.dq import exit_code, run
-from pwatch.profiles import load_profile_dir, render_markdown, roster_index
+from pwatch.profiles import load_held_profiles, load_profile_dir, render_markdown, roster_index
 from pwatch.roster import load_csv, load_joburg_roster
 from pwatch.settings import PROFILES_DIR, REPO_ROOT
 
@@ -49,6 +49,7 @@ def cmd_dq(args: argparse.Namespace) -> int:
             "status": "pass" if result["status"] == "pass" and cv_result["status"] == "pass" else "fail",
             "profiles": result["profiles"],
             "cv_profiles": cv_result["profiles"],
+            "cv_profiles_on_hold": len(load_held_profiles(cv_dir)),
             "failures": result["failures"] + cv_result["failures"],
             "failure_count": result["failure_count"] + cv_result["failure_count"],
             "as_of": result["as_of"],
@@ -75,6 +76,21 @@ def cmd_render(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_fetch_source(args: argparse.Namespace) -> int:
+    from pwatch.http import Fetcher
+    from pwatch.provenance import fetch_source
+    from pwatch.raw import RawStore
+    from pwatch.settings import RAW_DIR
+
+    fetcher = Fetcher()
+    try:
+        out = [fetch_source(u, raw=RawStore(RAW_DIR, resume=False), fetcher=fetcher) for u in args.urls]
+    finally:
+        fetcher.close()
+    print(json.dumps(out, indent=2))
+    return 0
+
+
 def build_parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(prog="pwatch", description="PoliticianWatch SA pipeline")
     p.add_argument("--version", action="version", version=__version__)
@@ -89,6 +105,9 @@ def build_parser() -> argparse.ArgumentParser:
     rd.add_argument("--profiles-dir", help="CV profile JSON directory (default: data/profiles/joburg-2026)")
     rd.add_argument("--check", action="store_true", help="exit 2 if any rendering is missing or stale")
     rd.set_defaults(func=cmd_render)
+    fs = sub.add_parser("fetch-source", help="fetch profile source pages, log them in the raw manifest, print retrieved_at")
+    fs.add_argument("urls", nargs="+", help="source URL(s) to fetch")
+    fs.set_defaults(func=cmd_fetch_source)
     return p
 
 
