@@ -7,11 +7,11 @@
 | Reviewers | Cavus; Cassian |
 | Change authority | Owner (GO on the exact head) |
 | Type | Normal — medium (named people, public role only; no adverse items in this batch). Nothing is published by this change. |
-| Environment | DEV (code, synthetic tests). TEST data (profiles and unsent drafts) on a local branch. Not PROD. |
+| Environment | DEV (code, synthetic tests). TEST data (profiles and unsent drafts) on a branch (draft PR #3). Not PROD. |
 | CIs affected | CI-001 schema/DQ checks (`also_sourced` formats); CI-005 RoR drafts; CI-009 CV profiles |
 | Linked records | CHG-PW-002 (PR #2); `docs/profiles-joburg-2026-batch-2.md`; `docs/profiles-joburg-2026-batch-1.md` |
-| Branch | `dev/chg-pw-003-batch-2`, **stacked on CHG-PW-002 at `4a341fe`** (`dev/chg-pw-002-first-profiles`, PR #2), **not on `main`**. Merge order: PR #2 first, then batch 2. |
-| Pre-change commit (rollback SHA) | `4a341fedb1c0287b1e7a748d9b2163198b69544e` (local head of the PR #2 branch after review round 2; not yet pushed) |
+| Branch | `dev/chg-pw-003-batch-2`, **stacked on CHG-PW-002 at `4a341fe`** (`dev/chg-pw-002-first-profiles`, PR #2), **not on `main`**. Raised as draft PR #3 at `95426512` on 17 Nov 2026 11:46 SAST (base `dev/chg-pw-002-first-profiles`). Merge order: PR #2, then PR #3. |
+| Pre-change commit (rollback SHA) | `4a341fedb1c0287b1e7a748d9b2163198b69544e` (PR #2 head after review round 2; built on it locally before it was pushed; pushed to PR #2 and given a plain PASS by Cavus on 17 Nov 2026) |
 | Head to approve | The tip of `dev/chg-pw-003-batch-2`. Reviewers must PASS that exact head. |
 
 ## Request
@@ -20,7 +20,7 @@ Next batch of 15 Johannesburg councillor profiles from the 2026 roster, excludin
 
 ## Pre-check (17 Nov 2026, ~10:59 SAST)
 
-`git fetch` and `gh pr list`: PR #2 "CHG-PW-002: first 10 Joburg councillor profiles" is **open, draft**, head `dev/chg-pw-002-first-profiles` at `c352484`, base `dev/chg-pw-001-scaffold`, created 15 Nov 2026 20:28 SAST; no reviews or comments recorded on GitHub. PR #1 is open, draft. `origin/main` is `cfa7e22`. The PR #2 branch is frozen at `c352484` on the remote; the review-round-2 fix `4a341fe` exists only locally (not pushed by this change).
+At the start of this change (17 Nov 2026), `git fetch` and `gh pr list` showed: PR #2 "CHG-PW-002: first 10 Joburg councillor profiles" **open, draft**, head `dev/chg-pw-002-first-profiles` at `c352484`, base `dev/chg-pw-001-scaffold`, created 15 Nov 2026 20:28 SAST; no reviews or comments recorded on GitHub. PR #1 was open, draft, and `origin/main` was `cfa7e22`. The PR #2 branch was at `c352484` on the remote; the review-round-2 fix `4a341fe` then existed only locally (later pushed to PR #2; PR #1 was merged as `3f3043a` at 11:00 SAST).
 
 ## Commits in this change
 
@@ -75,7 +75,7 @@ Next batch of 15 Johannesburg councillor profiles from the 2026 roster, excludin
 
 ## Review round 1 — Cassian blind source check on `159542e` (17 Nov 2026)
 
-One fix commit on `dev/chg-pw-003-batch-2`, local only (no push, no amend). Every source below was fetched and read on 17 Nov 2026 at about 11:29–11:30 SAST (exact `retrieved_at` per source, corrected in fix 2; fix 1 had recorded a future time, 11:45); the publication date is the article's own dateline / `datePublished`.
+Fix 1 was made as one local commit on `dev/chg-pw-003-batch-2` (no amend), later pushed with PR #3. Every source below was fetched and read on 17 Nov 2026 at about 11:29–11:30 SAST (exact `retrieved_at` per source, corrected in fix 2; fix 1 had recorded a future time, 11:45); the publication date is the article's own dateline / `datePublished`.
 
 | # | Finding | Outcome |
 |---|---|---|
@@ -96,7 +96,7 @@ Tests after fix 1: `uv run pytest -q` 36 passed; `uv run pwatch dq` pass (270 ro
 
 ## Review round 2 — Cavus PASS_WITH_CONCERNS on `e1be3f6` (17 Nov 2026)
 
-One fix commit (fix 2) on `dev/chg-pw-003-batch-2`, local only (no push, no amend).
+Fix 2 was made as one local commit on `dev/chg-pw-003-batch-2` (no amend), later pushed with PR #3.
 
 | # | Sev. | Finding | Outcome |
 |---|---|---|---|
@@ -113,7 +113,7 @@ Records also corrected: STATUS and the change log said `main` was `cfa7e22` and 
 
 ## Review round 3 — Cavus on fix 2 (`8798354`, 17 Nov 2026)
 
-Finding: setting the batch-2 `retrieved_at` values to `11:09:00` invents a precise time we do not have. One fix commit (fix 3), local only.
+Finding: setting the batch-2 `retrieved_at` values to `11:09:00` invents a precise time we do not have. Fix 3 was made as one local commit (no amend), later pushed with PR #3.
 
 **Choice: date only.** Every batch-2 `retrieved_at` whose time was not logged is now `"2026-11-17"`: 51 values in 14 active profiles (52 at `159542e`; fix 2 removed Raphadu's line, which had one). The pages were fetched on 17 Nov 2026, on or before the `159542e` commit; no time is claimed. Date only was chosen over "timestamp + `retrieved_at_precision` flag" because a timestamp with a flag still prints a time people will read as real, and a date needs no extra field. The rendered profiles say "retrieved 2026-11-17, time not logged". The three fix-1 sources keep their real, logged times (11:29:45, 11:29:46 and 11:29:49 SAST, from the saved files' timestamps).
 
@@ -127,17 +127,21 @@ Finding: setting the batch-2 `retrieved_at` values to `11:09:00` invents a preci
 
 Tests after fix 3: `uv run pytest -q` 40 passed; `uv run pwatch dq` pass (270 roster + 24 CV profiles, 1 on hold, 0 failures); `uv run pwatch render --check` exit 0. popia-review on the fix-3 diff: **PASS** (code, schema, tests, timestamps and records; no personal information; fetched pages are kept out of git by the new ignore rule). Label counts unchanged: batch 2 Confirmed 81, Reported 43, Unknown 26 (150); all 24 active, Confirmed 133, Reported 95, Unknown 47, Alleged 2, Disputed 1 (278).
 
-**Batch-1 retrieved_at (follow-up commit, Cavus direction 17 Nov 2026):** batch 1 (CHG-PW-002) carried `retrieved_at` `2026-11-15T20:15:00+02:00` on 63 values in 10 profiles. That round time was very likely typed by hand, so it states a precision we do not have (AGENTS.md rule 11). All 63 are now the date only, `2026-11-15` (renders show "time not logged"). Fixed here in CHG-PW-003, not on the PR #2 branch, because PR #2 (`4a341fe`) is pushed, frozen with Cavus's PASS and under Cassian's review; CHG-PW-003 is stacked on it, so merging PR #2 then CHG-PW-003 lands the correction. Gazette roster times are real and unchanged.
+**Batch-1 retrieved_at (follow-up commit, Cavus direction 17 Nov 2026):** batch 1 (CHG-PW-002) carried `retrieved_at` `2026-11-15T20:15:00+02:00` on 63 values in 10 profiles. That round time was very likely typed by hand, so it states a precision we do not have (AGENTS.md rule 11). All 63 are now the date only, `2026-11-15` (renders show "time not logged"). Fixed here in CHG-PW-003, not on the PR #2 branch, because on 17 Nov 2026 PR #2 had been pushed at `4a341fe`, had Cavus's plain PASS and was in Cassian's review; CHG-PW-003 is stacked on it, so merging PR #2 then CHG-PW-003 lands the correction. Gazette roster times are real and unchanged.
 
 ## Rollback
 
-`git checkout dev/chg-pw-002-first-profiles` (or `git branch -D dev/chg-pw-003-batch-2`); pre-change SHA `4a341fedb1c0287b1e7a748d9b2163198b69544e`. Fix 1 alone: `git reset --hard 159542e1e2bc94e767a1ea48e047733089019c6f`; fix 2 alone: `git reset --hard e1be3f6d28ee911fd586be45c4efc9545a96f6c7`; fix 3 alone: `git reset --hard 87983547996dec990c21ed2fd4c9410313343551` (local branch; owner confirmation needed first). Nothing is pushed, so rollback is local only.
+`git checkout dev/chg-pw-002-first-profiles` (or `git branch -D dev/chg-pw-003-batch-2`); pre-change SHA `4a341fedb1c0287b1e7a748d9b2163198b69544e`. Fix 1 alone: `git reset --hard 159542e1e2bc94e767a1ea48e047733089019c6f`; fix 2 alone: `git reset --hard e1be3f6d28ee911fd586be45c4efc9545a96f6c7`; fix 3 alone: `git reset --hard 87983547996dec990c21ed2fd4c9410313343551` (owner confirmation needed first). The branch was pushed as draft PR #3 on 17 Nov 2026, so a reset would need a force-push: prefer `git revert` of the unwanted commits, or close PR #3. After a merge, revert the merge commit.
 
 ## Seen, not touched
 
 - `pwatch/ror.py` imports `datetime` unused (pre-existing).
-- STATUS history row for CHG-PW-001 still says "not pushed" for 15 Nov (historical wording; left as is).
+- STATUS history row for CHG-PW-001 said "not pushed" for 15 Nov; rewritten in the status-wording commit below.
 
 ## Result
 
-Built and checked locally; review round 1 (Cassian) fixed in fix 1; review round 2 (Cavus) fixed in fix 2; review round 3 (Cavus, invented time) fixed in fix 3. **Awaiting** a plain PASS from Cavus and from Cassian on the same head, then an owner GO. Not SUCCEEDED until then.
+Built and checked locally on 17 Nov 2026; review round 1 (Cassian) fixed in fix 1; review round 2 (Cavus) fixed in fix 2; review round 3 (Cavus, invented time) fixed in fix 3; batch-1 `retrieved_at` follow-up at `95426512`. Raised as draft PR #3 at `95426512` on 17 Nov 2026 11:46 SAST, stacked on PR #2. The change counts as SUCCEEDED only after a plain PASS from Cavus and from Cassian on the same head, an owner GO and the merge; see PR #3 for current state.
+
+## Status wording (17 Nov 2026, after PR #3 was raised)
+
+Cassian/Cavus asked that change and PR state be written as past-tense, dated facts that stay true after push and merge. One commit on top of `95426512` (made locally on 17 Nov 2026, as a new commit, not an amend): STATUS.md, the CHG-PW-001/002/003 RFCs, the change log and the batch-2 notes now say when each branch was pushed and each PR raised or merged, and state the merge requirement instead of "awaiting …". Grep of `itil/changes/`, `STATUS.md` and `README.md` for "not pushed", "local only", "no PR", "pending" and "awaiting": every hit about change or PR state was rewritten; hits about right of reply ("Right of reply: pending", RoR `status` `pending`), the "no PROD" type wording (a substring match on "no PR"), plan steps that state a rule ("No push or PR until …", kept with the dated outcome added) and the record of a review finding (CHG-PW-002 review round 2, item a) were kept. No data, code or tests changed. `uv run pytest -q` 40 passed; `uv run pwatch dq` pass (270 + 24, 1 on hold); `uv run pwatch render --check` exit 0.
