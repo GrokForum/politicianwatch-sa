@@ -27,8 +27,8 @@ The owner asked for the allowed-source list to include smaller, independent voic
    - **Rand Desk** — randdesk.co.za. Its about page says some stories go up without an editor. Proposed tier 3; **owner to confirm** whether it belongs in tier 2.
    - **Criteria for adding a tier-3 voice** (owner confirms each): a named, accountable editor or author; about a year of checkable, dated publishing; wide-audience intent (published openly); a publication, not a personal social-media account.
 2. **Registry:** 6 tier-3 entries in `data/sources.json` (thecommonsense.co.za, thecapeindependent.com, capeindependent.com, capeindependent.substack.com, briefly.co.za, randdesk.co.za); 70 entries in total. `pwatch/sources.py` accepts tier `3`.
-3. **DQ rule (`pwatch dq`):** fails an adverse item whose sources (`source_url` and `also_sourced`) are all tier 3, and a profile whose identity link (all non-seat sources) rests only on tier-3 sources. The CHG-PW-004 rules (link-only/not-allowed fail, unknown domain warns) are unchanged.
-4. **Tests:** `tests/test_sources.py` — tier-3-only adverse item fails and passes with tier-2 corroboration; tier-3-only identity link fails; registry check now asserts the tier-3 domains resolve to tier 3.
+3. **DQ rule (`pwatch dq`):** fails an adverse item (`source_url` and `also_sourced`) that cites at least one tier-3 URL and no tier-1 or tier-2 URL, whatever party-statement, unregistered or other URLs sit alongside it; and the same for a profile's identity link (all sources other than the gazetted seat source, including `also_sourced`). Party statements and unregistered domains do not count as corroboration. (Tightened on 17 Nov 2026 after `4b382ee`: the first version failed only when *every* URL was tier 3, so a tier-3 URL plus a party statement or an unregistered domain slipped through.) The CHG-PW-004 rules (link-only/not-allowed fail, unknown domain warns) are unchanged.
+4. **Tests:** `tests/test_sources.py` (13 tests) — tier-3-only adverse item fails and passes with tier-2 corroboration; tier-3-only identity link fails; for both adverse items and identity links: tier 3 + party statement fails, tier 3 + unregistered domain fails, tier 3 + tier 2 passes; party + unregistered without tier 3 is not a tier-3 failure; registry check now asserts the tier-3 domains resolve to tier 3.
 5. AGENTS.md rule 12 mentions tier 3 and the rule.
 
 ## Risk
@@ -37,7 +37,7 @@ Low. No profile cites a tier-3 source today, so the committed data is unaffected
 
 ## Evidence
 
-`uv run pytest -q` 46 passed; `uv run pwatch dq` pass (270 roster + 24 CV profiles, 1 on hold, 0 failures, 0 warnings); `uv run pwatch render --check` exit 0. popia-review on the diff: PASS (publication names, domains, public X handles of publications and their public editor only; no personal information).
+`uv run pytest -q` 46 passed at `4b8dcc5`; 53 passed after the rule was tightened. `uv run pwatch dq` pass (270 roster + 24 CV profiles, 1 on hold, 0 failures, 0 warnings); `uv run pwatch render --check` exit 0. popia-review on the diff: PASS (publication names, domains, public X handles of publications and their public editor only; no personal information).
 
 ## How to revert
 

@@ -90,7 +90,7 @@ Encyclopaedia Britannica (britannica.com). Not SA media; used once, for Zille's 
 ## Tier 3: smaller and independent voices ("separate pen") — Reported only (CHG-PW-005)
 Publications with a known public following and a wide-audience intent that are smaller, newer or editorially narrower than tier 2.
 
-**Rules:** Reported only. A tier-3 source can **never** be the sole source for an adverse item or for an identity link. It always needs corroboration from tier 1 or tier 2. `pwatch dq` fails a profile where an adverse item, or the identity link, rests only on tier-3 sources. Opinion pieces in tier-3 outlets are not facts.
+**Rules:** Reported only. A tier-3 source can **never** be the sole source for an adverse item or for an identity link. It always needs corroboration from tier 1 or tier 2. `pwatch dq` fails an adverse item, or an identity link, that cites at least one tier-3 URL and no tier-1 or tier-2 URL, whatever party-statement, unregistered or other URLs sit alongside it. Opinion pieces in tier-3 outlets are not facts.
 
 | Outlet | Domain / handle | What it is | Note |
 |---|---|---|---|

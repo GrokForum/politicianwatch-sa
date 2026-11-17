@@ -8,7 +8,7 @@ from pwatch.dq import check_source_tiers, run
 from pwatch.schema import fact
 from pwatch.sources import REGISTRY_PATH, TIERS, load_registry, tier_of
 
-REG = {"gazette.test": "1", "bignews.test": "2", "smallvoice.test": "3", "aggregator.test": "not_allowed", "esp.test": "link_only"}
+REG = {"gazette.test": "1", "bignews.test": "2", "smallvoice.test": "3", "aggregator.test": "not_allowed", "esp.test": "link_only", "party.test": "party"}
 GAZ = "https://gazette.test/55741.pdf"
 T2 = "https://www.bignews.test/a"
 T3 = "https://smallvoice.test/b"
@@ -82,3 +82,40 @@ def test_committed_registry_is_valid_and_covers_committed_profiles(repo_root):
     text = "".join(p.read_text(encoding="utf-8") for p in (repo_root / "data" / "profiles").rglob("*.json"))
     urls = set(re.findall(r'"source_url": "([^"]+)"', text))
     assert urls and all(tier_of(u, reg) is not None for u in urls), [u for u in urls if tier_of(u, reg) is None]
+
+
+PARTY = "https://party.test/statement"
+UNREG = "https://unregistered.example/x"
+
+
+def test_adverse_tier3_with_party_statement_fails():
+    fails = check_source_tiers(_profile([T2], adverse_urls=[T3, PARTY]), "p", REG)
+    assert any("adverse item relies only on tier-3 sources" in f for f in fails)
+
+
+def test_adverse_tier3_with_unregistered_domain_fails():
+    fails = check_source_tiers(_profile([T2], adverse_urls=[UNREG, T3]), "p", REG)
+    assert any("adverse item relies only on tier-3 sources" in f for f in fails)
+
+
+def test_adverse_tier3_with_tier2_passes():
+    assert check_source_tiers(_profile([T2], adverse_urls=[T3, PARTY, T2]), "p", REG) == []
+
+
+def test_identity_tier3_with_party_statement_fails():
+    fails = check_source_tiers(_profile([T3, PARTY]), "p", REG)
+    assert any("identity link relies only on tier-3 sources" in f for f in fails)
+
+
+def test_identity_tier3_with_unregistered_domain_fails():
+    fails = check_source_tiers(_profile([UNREG, T3]), "p", REG)
+    assert any("identity link relies only on tier-3 sources" in f for f in fails)
+
+
+def test_identity_tier3_with_tier2_passes():
+    assert check_source_tiers(_profile([T3, PARTY, T2]), "p", REG) == []
+
+
+def test_party_and_unregistered_without_tier3_are_not_a_tier3_failure():
+    fails = check_source_tiers(_profile([PARTY, UNREG], adverse_urls=[PARTY, UNREG]), "p", REG)
+    assert not any("tier-3" in f for f in fails)

@@ -4,8 +4,9 @@ The registry is data/sources.json (domain -> tier); the human-readable list is d
 A domain matches itself and its subdomains ("www." is ignored).
 
 DQ rules built on it (see pwatch.dq):
-- an adverse item whose sources are all tier 3 fails (tier 3 can never be the sole source; CHG-PW-005);
-- a profile whose identity link rests only on tier-3 sources fails;
+- an adverse item that cites a tier-3 URL and no tier-1 or tier-2 URL fails, whatever party, unregistered or
+  other URLs sit alongside it (CHG-PW-005);
+- the same for a profile's identity link (CHG-PW-005);
 - a source on a not_allowed or link_only domain fails;
 - a domain not in the registry is a warning, not a failure.
 """
