@@ -6,7 +6,7 @@ DRAFT PROFILE — not published. Public role only. Every item carries an evidenc
 ## Seat (Government Gazette 55741)
 
 - **Name as gazetted:** YAKOOB KAROLIA · `Confirmed` — [source](https://www.gazettefinder.co.za/gazettes/government-gazette/2026/55741/government-gazette-55741-2026-11-13.pdf) p.45, 2026-11-13 (retrieved 2026-11-15T16:10:03+00:00)
-- **Known as:** Jakes Karolia · `Reported` — [source](https://elections.sabcnews.com/election-news/article/councillors-corner-11-al-jama-ah-cllr-briefs-on-lenasia-ward-9/), 2026-10-08 (retrieved 2026-11-17T11:09:00+02:00)
+- **Known as:** Jakes Karolia · `Reported` — [source](https://elections.sabcnews.com/election-news/article/councillors-corner-11-al-jama-ah-cllr-briefs-on-lenasia-ward-9/), 2026-10-08 (retrieved 2026-11-17, time not logged)
 - **Party:** AL JAMA-AH · `Confirmed` — [source](https://www.gazettefinder.co.za/gazettes/government-gazette/2026/55741/government-gazette-55741-2026-11-13.pdf) p.45, 2026-11-13 (retrieved 2026-11-15T16:10:03+00:00)
 - **Seat type:** ward · `Confirmed` — [source](https://www.gazettefinder.co.za/gazettes/government-gazette/2026/55741/government-gazette-55741-2026-11-13.pdf) p.45, 2026-11-13 (retrieved 2026-11-15T16:10:03+00:00)
 - **Ward:** 9 · `Confirmed` — [source](https://www.gazettefinder.co.za/gazettes/government-gazette/2026/55741/government-gazette-55741-2026-11-13.pdf) p.45, 2026-11-13 (retrieved 2026-11-15T16:10:03+00:00)
@@ -15,13 +15,13 @@ DRAFT PROFILE — not published. Public role only. Every item carries an evidenc
 
 ## Summary
 
-- **Positions:** Al Jama-ah ward 9 councillor in the 2021–2026 council (as described in October 2026) · `Reported` — [source](https://elections.sabcnews.com/election-news/article/councillors-corner-11-al-jama-ah-cllr-briefs-on-lenasia-ward-9/), 2026-10-08 (retrieved 2026-11-17T11:09:00+02:00)
+- **Positions:** Al Jama-ah ward 9 councillor in the 2021–2026 council (as described in October 2026) · `Reported` — [source](https://elections.sabcnews.com/election-news/article/councillors-corner-11-al-jama-ah-cllr-briefs-on-lenasia-ward-9/), 2026-10-08 (retrieved 2026-11-17, time not logged)
 - **Career:** Unknown — not yet sourced (placeholder) · `Unknown`
 - **Education:** Unknown — not yet sourced (placeholder) · `Unknown`
 
 ## CV (public role)
 
-- **Position (2026-10):** Al Jama-ah's Ward 9 councillor in the City of Johannesburg; named deteriorating infrastructure, potholes, informal settlements and electricity problems as the ward's main challenges · `Reported` — [source](https://elections.sabcnews.com/election-news/article/councillors-corner-11-al-jama-ah-cllr-briefs-on-lenasia-ward-9/), 2026-10-08 (retrieved 2026-11-17T11:09:00+02:00)
+- **Position (2026-10):** Al Jama-ah's Ward 9 councillor in the City of Johannesburg; named deteriorating infrastructure, potholes, informal settlements and electricity problems as the ward's main challenges · `Reported` — [source](https://elections.sabcnews.com/election-news/article/councillors-corner-11-al-jama-ah-cllr-briefs-on-lenasia-ward-9/), 2026-10-08 (retrieved 2026-11-17, time not logged)
 
 ## Court matters
 

@@ -39,7 +39,7 @@ Selected as 15, weighted to ward seats (10 ward, 5 PR). After Cassian's blind so
 
 Fact counts across the 14 active profiles after fix 2 (seat facts, summary fields, known-as and CV entries): **Confirmed 81, Reported 43, Unknown 26 — 150 facts.** 70 of the Confirmed facts are gazette seat facts (5 per profile); 11 come from City of Johannesburg statements (Sekwaila, Makhafola, Magwentshu). (Before fix 1: 15 profiles, Confirmed 86, Reported 41, Unknown 29 — 156. Fix 1 removed Mbatha's 8 facts and added 3 Reported first-year facts; fix 2 dropped Raphadu's CV line about a claim he withdrew.)
 
-**Retrieval times (fix 2):** batch-2 facts carry `retrieved_at` 2026-11-17T11:09:00+02:00 (a conservative upper bound; exact times were not logged), the three fix-1 sources their real fetch times (11:29:45, 11:29:46 and 11:29:49 SAST). `pwatch dq` now fails any `retrieved_at` later than the run time.
+**Retrieval times (fix 3):** batch-2 facts carry `retrieved_at` `2026-11-17` (date only: fetched that day, on or before the batch commit; the time was not logged, so none is given). The three fix-1 sources carry their real fetch times (11:29:45, 11:29:46 and 11:29:49 SAST). `pwatch dq` fails any `retrieved_at` later than the run time (a date-only value counts as the end of that day). New sources are fetched with `pwatch fetch-source`, which logs the real time.
 
 **First year in council (fix 1, all Reported, sources fetched and read 17 Nov 2026):** Schay 2021 (SA Jewish Report, 2021-11-04); Chame 2014, ward 57 by-election on 2 Jul 2014 (Southern Courier, 2014-07-11); Magwentshu 2021 (The Citizen, 2023-06-17; already in the profile, re-verified); Makhafola 2023, sworn in 3 Feb 2023 (Sowetan, 2023-02-03).
 

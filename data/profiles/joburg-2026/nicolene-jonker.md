@@ -14,14 +14,14 @@ DRAFT PROFILE — not published. Public role only. Every item carries an evidenc
 
 ## Summary
 
-- **Positions:** DA ward 88 councillor in the 2021–2026 council (as described in July 2026) · `Reported` — [source](https://www.sabcnews.com/sabcnews/councillors-corner-nicolene-jonker-accounts-for-joburgs-ward-88/), 2026-07-31 (retrieved 2026-11-17T11:09:00+02:00)
+- **Positions:** DA ward 88 councillor in the 2021–2026 council (as described in July 2026) · `Reported` — [source](https://www.sabcnews.com/sabcnews/councillors-corner-nicolene-jonker-accounts-for-joburgs-ward-88/), 2026-07-31 (retrieved 2026-11-17, time not logged)
 - **Career:** Unknown — not yet sourced (placeholder) · `Unknown`
 - **Education:** Unknown — not yet sourced (placeholder) · `Unknown`
 
 ## CV (public role)
 
-- **Position (2024-07-23):** Elected DA Region B whip in the Johannesburg caucus · `Reported` — [source](https://dagauteng.org.za/2024/07/johannesburg-region-caucus-elections-official-statement), 2024-07-23 (retrieved 2026-11-17T11:09:00+02:00)
-- **Position (2026-07):** Ward 88 councillor (2021–2026 term); in an SABC interview she named prolonged water outages and resistance to the privatisation of public land as the main issues of her term · `Reported` — [source](https://www.sabcnews.com/sabcnews/councillors-corner-nicolene-jonker-accounts-for-joburgs-ward-88/), 2026-07-31 (retrieved 2026-11-17T11:09:00+02:00)
+- **Position (2024-07-23):** Elected DA Region B whip in the Johannesburg caucus · `Reported` — [source](https://dagauteng.org.za/2024/07/johannesburg-region-caucus-elections-official-statement), 2024-07-23 (retrieved 2026-11-17, time not logged)
+- **Position (2026-07):** Ward 88 councillor (2021–2026 term); in an SABC interview she named prolonged water outages and resistance to the privatisation of public land as the main issues of her term · `Reported` — [source](https://www.sabcnews.com/sabcnews/councillors-corner-nicolene-jonker-accounts-for-joburgs-ward-88/), 2026-07-31 (retrieved 2026-11-17, time not logged)
 
 ## Court matters
 

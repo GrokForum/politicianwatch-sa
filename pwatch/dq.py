@@ -10,7 +10,7 @@ Checks:
 - every non-Unknown fact has retrieved_at (CHG-PW-002)
 - a profile that links non-gazette sources records at least two matching identity details (CHG-PW-002)
 - a CV profile matches its gazetted roster row (CHG-PW-002, when a roster index is given)
-- no retrieved_at anywhere in a profile (facts, also_sourced, adverse items) is later than the run time (CHG-PW-003 fix 2)
+- no retrieved_at anywhere in a profile (facts, also_sourced, adverse items) is later than the run time (CHG-PW-003 fix 2); a date-only value counts as the end of that day, SAST (fix 3)
 """
 
 from __future__ import annotations
@@ -21,7 +21,7 @@ from typing import Any
 
 from pwatch.profiles import check_against_roster, check_identity
 from pwatch.ror import check_right_of_reply
-from pwatch.schema import iter_adverse_items, validate_profile_shape
+from pwatch.schema import iter_adverse_items, retrieved_at_is_future, validate_profile_shape
 from pwatch.settings import LABELS
 
 EXIT_OK = 0
@@ -31,18 +31,15 @@ EXIT_NOT_RELEASABLE = 2
 def check_retrieved_not_future(obj: Any, locator: str, now: datetime) -> list[str]:
     """Every retrieved_at, at any depth (facts, also_sourced, adverse items), must not be later than now.
 
-    Values that are not ISO 8601 datetimes with a UTC offset are reported by the format checks, not here.
+    A date-only value (fetch time not logged) counts as the end of that day in SAST: it fails only if the
+    date is after the run date. Malformed values are reported by the format checks, not here.
     """
     failures: list[str] = []
     if isinstance(obj, dict):
         for key, val in obj.items():
             here = f"{locator}.{key}"
             if key == "retrieved_at" and isinstance(val, str):
-                try:
-                    ts = datetime.fromisoformat(val.replace("Z", "+00:00"))
-                except ValueError:
-                    continue
-                if ts.tzinfo is not None and ts > now:
+                if retrieved_at_is_future(val, now):
                     failures.append(
                         f"{here}: retrieved_at {val} is later than the run time {now.isoformat(timespec='seconds')}"
                     )

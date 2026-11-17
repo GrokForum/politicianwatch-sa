@@ -48,14 +48,14 @@
     "label": "Reported",
     "source_url": "https://www.actionsa.org.za/actionsa-joburg-caucus-congratulates-cllr-sarah-wissler-on-her-appointment-as-the-chairperson-of-section-79-public-safety-committee-approves-r2-8-billion-dbsa-loan/",
     "source_date": "2025-01-31",
-    "retrieved_at": "2026-11-17T11:09:00+02:00"
+    "retrieved_at": "2026-11-17"
   },
   "positions": {
     "value": "Former chairperson of the council's Section 79 Public Safety Committee (elected January 2025; removed August 2025)",
     "label": "Reported",
     "source_url": "https://iol.co.za/news/south-africa/2025-08-29-failed-vote-leaves-johannesburg-council-scrambling-for-new-chief-whip/",
     "source_date": "2025-08-29",
-    "retrieved_at": "2026-11-17T11:09:00+02:00"
+    "retrieved_at": "2026-11-17"
   },
   "career": {
     "value": null,
@@ -77,7 +77,7 @@
       "label": "Reported",
       "source_url": "https://www.actionsa.org.za/actionsa-joburg-caucus-congratulates-cllr-sarah-wissler-on-her-appointment-as-the-chairperson-of-section-79-public-safety-committee-approves-r2-8-billion-dbsa-loan/",
       "source_date": "2025-01-31",
-      "retrieved_at": "2026-11-17T11:09:00+02:00",
+      "retrieved_at": "2026-11-17",
       "field": "position",
       "period": "2025-01"
     },
@@ -86,7 +86,7 @@
       "label": "Reported",
       "source_url": "https://iol.co.za/news/south-africa/2025-08-29-failed-vote-leaves-johannesburg-council-scrambling-for-new-chief-whip/",
       "source_date": "2025-08-29",
-      "retrieved_at": "2026-11-17T11:09:00+02:00",
+      "retrieved_at": "2026-11-17",
       "field": "position",
       "period": "2025-08-28"
     }

@@ -48,14 +48,14 @@
     "label": "Reported",
     "source_url": "https://elections.sabcnews.com/election-news/article/councillors-corner-11-al-jama-ah-cllr-briefs-on-lenasia-ward-9/",
     "source_date": "2026-10-08",
-    "retrieved_at": "2026-11-17T11:09:00+02:00"
+    "retrieved_at": "2026-11-17"
   },
   "positions": {
     "value": "Al Jama-ah ward 9 councillor in the 2021–2026 council (as described in October 2026)",
     "label": "Reported",
     "source_url": "https://elections.sabcnews.com/election-news/article/councillors-corner-11-al-jama-ah-cllr-briefs-on-lenasia-ward-9/",
     "source_date": "2026-10-08",
-    "retrieved_at": "2026-11-17T11:09:00+02:00"
+    "retrieved_at": "2026-11-17"
   },
   "career": {
     "value": null,
@@ -77,7 +77,7 @@
       "label": "Reported",
       "source_url": "https://elections.sabcnews.com/election-news/article/councillors-corner-11-al-jama-ah-cllr-briefs-on-lenasia-ward-9/",
       "source_date": "2026-10-08",
-      "retrieved_at": "2026-11-17T11:09:00+02:00",
+      "retrieved_at": "2026-11-17",
       "field": "position",
       "period": "2026-10"
     }

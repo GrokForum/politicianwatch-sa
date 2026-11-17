@@ -6,7 +6,7 @@ DRAFT PROFILE — not published. Public role only. Every item carries an evidenc
 ## Seat (Government Gazette 55741)
 
 - **Name as gazetted:** ALBERT TEFO RAPHADU · `Confirmed` — [source](https://www.gazettefinder.co.za/gazettes/government-gazette/2026/55741/government-gazette-55741-2026-11-13.pdf) p.44, 2026-11-13 (retrieved 2026-11-15T16:10:03+00:00)
-- **Known as:** Tefo Raphadu · `Reported` — [source](https://iol.co.za/news/south-africa/2025-09-03-joburg-council-finally-elects-new-chief-whip-amid-withdrawal-legal-threats/), 2025-09-03 (retrieved 2026-11-17T11:09:00+02:00)
+- **Known as:** Tefo Raphadu · `Reported` — [source](https://iol.co.za/news/south-africa/2025-09-03-joburg-council-finally-elects-new-chief-whip-amid-withdrawal-legal-threats/), 2025-09-03 (retrieved 2026-11-17, time not logged)
 - **Party:** AFRICAN NATIONAL CONGRESS · `Confirmed` — [source](https://www.gazettefinder.co.za/gazettes/government-gazette/2026/55741/government-gazette-55741-2026-11-13.pdf) p.44, 2026-11-13 (retrieved 2026-11-15T16:10:03+00:00)
 - **Seat type:** ward · `Confirmed` — [source](https://www.gazettefinder.co.za/gazettes/government-gazette/2026/55741/government-gazette-55741-2026-11-13.pdf) p.44, 2026-11-13 (retrieved 2026-11-15T16:10:03+00:00)
 - **Ward:** 105 · `Confirmed` — [source](https://www.gazettefinder.co.za/gazettes/government-gazette/2026/55741/government-gazette-55741-2026-11-13.pdf) p.44, 2026-11-13 (retrieved 2026-11-15T16:10:03+00:00)
@@ -15,13 +15,13 @@ DRAFT PROFILE — not published. Public role only. Every item carries an evidenc
 
 ## Summary
 
-- **Positions:** ANC ward 105 councillor in the 2021–2026 council (as described in September 2025) · `Reported` — [source](https://iol.co.za/news/south-africa/2025-09-03-joburg-council-finally-elects-new-chief-whip-amid-withdrawal-legal-threats/), 2025-09-03 (retrieved 2026-11-17T11:09:00+02:00)
+- **Positions:** ANC ward 105 councillor in the 2021–2026 council (as described in September 2025) · `Reported` — [source](https://iol.co.za/news/south-africa/2025-09-03-joburg-council-finally-elects-new-chief-whip-amid-withdrawal-legal-threats/), 2025-09-03 (retrieved 2026-11-17, time not logged)
 - **Career:** Unknown — not yet sourced (placeholder) · `Unknown`
 - **Education:** Unknown — not yet sourced (placeholder) · `Unknown`
 
 ## CV (public role)
 
-- **Position (2022-10-27):** Voted in as chairperson of the Section 79 Corporate and Shared Services committee (named 'Teffo Raphadu - ANC') · `Reported` — [source](https://www.news24.com/southafrica/news/da-swoops-back-into-joburg-council-but-anc-bags-key-positions-on-committees-20221027), 2022-10-27 (retrieved 2026-11-17T11:09:00+02:00)
+- **Position (2022-10-27):** Voted in as chairperson of the Section 79 Corporate and Shared Services committee (named 'Teffo Raphadu - ANC') · `Reported` — [source](https://www.news24.com/southafrica/news/da-swoops-back-into-joburg-council-but-anc-bags-key-positions-on-committees-20221027), 2022-10-27 (retrieved 2026-11-17, time not logged)
 
 ## Court matters
 

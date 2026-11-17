@@ -24,6 +24,9 @@ data/raw/**/*.xlsx
 data/raw/**/*.xls
 data/raw/**/*.zip
 data/raw/**/*.csv
+# Fetched web pages used as profile sources (news, statements). They can carry personal
+# information, so they stay out of git; the manifest row (URL, sha256, fetch time) is committed.
+data/raw/profile-sources/
 
 # OS
 .DS_Store

@@ -14,13 +14,13 @@ DRAFT PROFILE — not published. Public role only. Every item carries an evidenc
 
 ## Summary
 
-- **Positions:** Chairperson of the City of Johannesburg council's Transport Committee (voted in October 2022) · `Reported` — [source](https://www.news24.com/southafrica/news/da-swoops-back-into-joburg-council-but-anc-bags-key-positions-on-committees-20221027), 2022-10-27 (retrieved 2026-11-17T11:09:00+02:00)
+- **Positions:** Chairperson of the City of Johannesburg council's Transport Committee (voted in October 2022) · `Reported` — [source](https://www.news24.com/southafrica/news/da-swoops-back-into-joburg-council-but-anc-bags-key-positions-on-committees-20221027), 2022-10-27 (retrieved 2026-11-17, time not logged)
 - **Career:** Unknown — not yet sourced (placeholder) · `Unknown`
 - **Education:** Unknown — not yet sourced (placeholder) · `Unknown`
 
 ## CV (public role)
 
-- **Position (2022-10-27):** Voted in as Transport Committee chairperson (named 'Makhosazana Ndlela - ANC') · `Reported` — [source](https://www.news24.com/southafrica/news/da-swoops-back-into-joburg-council-but-anc-bags-key-positions-on-committees-20221027), 2022-10-27 (retrieved 2026-11-17T11:09:00+02:00)
+- **Position (2022-10-27):** Voted in as Transport Committee chairperson (named 'Makhosazana Ndlela - ANC') · `Reported` — [source](https://www.news24.com/southafrica/news/da-swoops-back-into-joburg-council-but-anc-bags-key-positions-on-committees-20221027), 2022-10-27 (retrieved 2026-11-17, time not logged)
 
 ## Court matters
 

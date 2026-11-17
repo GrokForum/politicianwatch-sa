@@ -6,7 +6,7 @@ DRAFT PROFILE — not published. Public role only. Every item carries an evidenc
 ## Seat (Government Gazette 55741)
 
 - **Name as gazetted:** SARAH TERESA JUNE WISSLER · `Confirmed` — [source](https://www.gazettefinder.co.za/gazettes/government-gazette/2026/55741/government-gazette-55741-2026-11-13.pdf) p.43, 2026-11-13 (retrieved 2026-11-15T16:10:03+00:00)
-- **Known as:** Sarah Wissler · `Reported` — [source](https://www.actionsa.org.za/actionsa-joburg-caucus-congratulates-cllr-sarah-wissler-on-her-appointment-as-the-chairperson-of-section-79-public-safety-committee-approves-r2-8-billion-dbsa-loan/), 2025-01-31 (retrieved 2026-11-17T11:09:00+02:00)
+- **Known as:** Sarah Wissler · `Reported` — [source](https://www.actionsa.org.za/actionsa-joburg-caucus-congratulates-cllr-sarah-wissler-on-her-appointment-as-the-chairperson-of-section-79-public-safety-committee-approves-r2-8-billion-dbsa-loan/), 2025-01-31 (retrieved 2026-11-17, time not logged)
 - **Party:** ACTIONSA · `Confirmed` — [source](https://www.gazettefinder.co.za/gazettes/government-gazette/2026/55741/government-gazette-55741-2026-11-13.pdf) p.43, 2026-11-13 (retrieved 2026-11-15T16:10:03+00:00)
 - **Seat type:** PR · `Confirmed` — [source](https://www.gazettefinder.co.za/gazettes/government-gazette/2026/55741/government-gazette-55741-2026-11-13.pdf) p.43, 2026-11-13 (retrieved 2026-11-15T16:10:03+00:00)
 - **Ward:** — (none) · `Confirmed` — [source](https://www.gazettefinder.co.za/gazettes/government-gazette/2026/55741/government-gazette-55741-2026-11-13.pdf) p.43, 2026-11-13 (retrieved 2026-11-15T16:10:03+00:00)
@@ -15,14 +15,14 @@ DRAFT PROFILE — not published. Public role only. Every item carries an evidenc
 
 ## Summary
 
-- **Positions:** Former chairperson of the council's Section 79 Public Safety Committee (elected January 2025; removed August 2025) · `Reported` — [source](https://iol.co.za/news/south-africa/2025-08-29-failed-vote-leaves-johannesburg-council-scrambling-for-new-chief-whip/), 2025-08-29 (retrieved 2026-11-17T11:09:00+02:00)
+- **Positions:** Former chairperson of the council's Section 79 Public Safety Committee (elected January 2025; removed August 2025) · `Reported` — [source](https://iol.co.za/news/south-africa/2025-08-29-failed-vote-leaves-johannesburg-council-scrambling-for-new-chief-whip/), 2025-08-29 (retrieved 2026-11-17, time not logged)
 - **Career:** Unknown — not yet sourced (placeholder) · `Unknown`
 - **Education:** Unknown — not yet sourced (placeholder) · `Unknown`
 
 ## CV (public role)
 
-- **Position (2025-01):** Elected chairperson of the Section 79 Public Safety Committee (party statement) · `Reported` — [source](https://www.actionsa.org.za/actionsa-joburg-caucus-congratulates-cllr-sarah-wissler-on-her-appointment-as-the-chairperson-of-section-79-public-safety-committee-approves-r2-8-billion-dbsa-loan/), 2025-01-31 (retrieved 2026-11-17T11:09:00+02:00)
-- **Position (2025-08-28):** Removed as Public Safety committee chairperson in a council motion of no confidence, one of three ActionSA committee chairs removed that day · `Reported` — [source](https://iol.co.za/news/south-africa/2025-08-29-failed-vote-leaves-johannesburg-council-scrambling-for-new-chief-whip/), 2025-08-29 (retrieved 2026-11-17T11:09:00+02:00)
+- **Position (2025-01):** Elected chairperson of the Section 79 Public Safety Committee (party statement) · `Reported` — [source](https://www.actionsa.org.za/actionsa-joburg-caucus-congratulates-cllr-sarah-wissler-on-her-appointment-as-the-chairperson-of-section-79-public-safety-committee-approves-r2-8-billion-dbsa-loan/), 2025-01-31 (retrieved 2026-11-17, time not logged)
+- **Position (2025-08-28):** Removed as Public Safety committee chairperson in a council motion of no confidence, one of three ActionSA committee chairs removed that day · `Reported` — [source](https://iol.co.za/news/south-africa/2025-08-29-failed-vote-leaves-johannesburg-council-scrambling-for-new-chief-whip/), 2025-08-29 (retrieved 2026-11-17, time not logged)
 
 ## Court matters
 

@@ -76,6 +76,21 @@ def cmd_render(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_fetch_source(args: argparse.Namespace) -> int:
+    from pwatch.http import Fetcher
+    from pwatch.provenance import fetch_source
+    from pwatch.raw import RawStore
+    from pwatch.settings import RAW_DIR
+
+    fetcher = Fetcher()
+    try:
+        out = [fetch_source(u, raw=RawStore(RAW_DIR, resume=False), fetcher=fetcher) for u in args.urls]
+    finally:
+        fetcher.close()
+    print(json.dumps(out, indent=2))
+    return 0
+
+
 def build_parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(prog="pwatch", description="PoliticianWatch SA pipeline")
     p.add_argument("--version", action="version", version=__version__)
@@ -90,6 +105,9 @@ def build_parser() -> argparse.ArgumentParser:
     rd.add_argument("--profiles-dir", help="CV profile JSON directory (default: data/profiles/joburg-2026)")
     rd.add_argument("--check", action="store_true", help="exit 2 if any rendering is missing or stale")
     rd.set_defaults(func=cmd_render)
+    fs = sub.add_parser("fetch-source", help="fetch profile source pages, log them in the raw manifest, print retrieved_at")
+    fs.add_argument("urls", nargs="+", help="source URL(s) to fetch")
+    fs.set_defaults(func=cmd_fetch_source)
     return p
 
 

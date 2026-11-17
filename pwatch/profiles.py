@@ -112,7 +112,9 @@ def _src(f: dict[str, Any]) -> str:
     if f.get("label") == "Unknown":
         return ""
     page = f" p.{f['source_page']}" if f.get("source_page") else ""
-    out = f" — [source]({f.get('source_url')}){page}, {f.get('source_date')} (retrieved {f.get('retrieved_at')})"
+    ret = f.get("retrieved_at")
+    ret_txt = f"{ret}, time not logged" if isinstance(ret, str) and len(ret) == 10 else ret
+    out = f" — [source]({f.get('source_url')}){page}, {f.get('source_date')} (retrieved {ret_txt})"
     for a in f.get("also_sourced") or []:
         out += f"; also [source]({a.get('source_url')}), {a.get('source_date')}"
     return out

@@ -6,7 +6,7 @@ DRAFT PROFILE — not published. Public role only. Every item carries an evidenc
 ## Seat (Government Gazette 55741)
 
 - **Name as gazetted:** MARY JOYCE NTOMBELA · `Confirmed` — [source](https://www.gazettefinder.co.za/gazettes/government-gazette/2026/55741/government-gazette-55741-2026-11-13.pdf) p.43, 2026-11-13 (retrieved 2026-11-15T16:10:03+00:00)
-- **Known as:** Joyce Ntombela · `Reported` — [source](https://iol.co.za/news/south-africa/2025-08-29-failed-vote-leaves-johannesburg-council-scrambling-for-new-chief-whip/), 2025-08-29 (retrieved 2026-11-17T11:09:00+02:00)
+- **Known as:** Joyce Ntombela · `Reported` — [source](https://iol.co.za/news/south-africa/2025-08-29-failed-vote-leaves-johannesburg-council-scrambling-for-new-chief-whip/), 2025-08-29 (retrieved 2026-11-17, time not logged)
 - **Party:** ACTIONSA · `Confirmed` — [source](https://www.gazettefinder.co.za/gazettes/government-gazette/2026/55741/government-gazette-55741-2026-11-13.pdf) p.43, 2026-11-13 (retrieved 2026-11-15T16:10:03+00:00)
 - **Seat type:** PR · `Confirmed` — [source](https://www.gazettefinder.co.za/gazettes/government-gazette/2026/55741/government-gazette-55741-2026-11-13.pdf) p.43, 2026-11-13 (retrieved 2026-11-15T16:10:03+00:00)
 - **Ward:** — (none) · `Confirmed` — [source](https://www.gazettefinder.co.za/gazettes/government-gazette/2026/55741/government-gazette-55741-2026-11-13.pdf) p.43, 2026-11-13 (retrieved 2026-11-15T16:10:03+00:00)
@@ -15,13 +15,13 @@ DRAFT PROFILE — not published. Public role only. Every item carries an evidenc
 
 ## Summary
 
-- **Positions:** ActionSA councillor in Johannesburg; ActionSA's candidate for council chief whip in August 2025 · `Reported` — [source](https://iol.co.za/news/south-africa/2025-08-29-failed-vote-leaves-johannesburg-council-scrambling-for-new-chief-whip/), 2025-08-29 (retrieved 2026-11-17T11:09:00+02:00)
+- **Positions:** ActionSA councillor in Johannesburg; ActionSA's candidate for council chief whip in August 2025 · `Reported` — [source](https://iol.co.za/news/south-africa/2025-08-29-failed-vote-leaves-johannesburg-council-scrambling-for-new-chief-whip/), 2025-08-29 (retrieved 2026-11-17, time not logged)
 - **Career:** Unknown — not yet sourced (placeholder) · `Unknown`
 - **Education:** Unknown — not yet sourced (placeholder) · `Unknown`
 
 ## CV (public role)
 
-- **Candidacy (2025-08-28):** ActionSA candidate for City of Johannesburg council chief whip; received 37 votes in the first vote, which produced no winner · `Reported` — [source](https://iol.co.za/news/south-africa/2025-08-29-failed-vote-leaves-johannesburg-council-scrambling-for-new-chief-whip/), 2025-08-29 (retrieved 2026-11-17T11:09:00+02:00)
+- **Candidacy (2025-08-28):** ActionSA candidate for City of Johannesburg council chief whip; received 37 votes in the first vote, which produced no winner · `Reported` — [source](https://iol.co.za/news/south-africa/2025-08-29-failed-vote-leaves-johannesburg-council-scrambling-for-new-chief-whip/), 2025-08-29 (retrieved 2026-11-17, time not logged)
 
 ## Court matters
 
