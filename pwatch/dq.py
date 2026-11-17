@@ -34,8 +34,8 @@ EXIT_NOT_RELEASABLE = 2
 def check_retrieved_not_future(obj: Any, locator: str, now: datetime) -> list[str]:
     """Every retrieved_at, at any depth (facts, also_sourced, adverse items), must not be later than now.
 
-    A date-only value (fetch time not logged) is future only if that date is after today's date in SAST: it fails only if the
-    date is after the run date. Malformed values are reported by the format checks, not here.
+    A date-only value (fetch time not logged) fails only if that date is after today's date in SAST.
+    Malformed values are reported by the format checks, not here.
     """
     failures: list[str] = []
     if isinstance(obj, dict):
