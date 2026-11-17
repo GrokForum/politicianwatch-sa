@@ -10,7 +10,7 @@
 | Environment | DEV (code, synthetic tests). TEST data (profiles and unsent drafts) on a branch (draft PR #2). Not PROD. |
 | CIs affected | CI-001 schema; CI-004 DQ gate; CI-005 RoR drafts; new CI-009 CV profiles |
 | Linked records | CHG-PW-001; `docs/profiles-joburg-2026-batch-1.md`; `docs/sources-joburg-lge-2026.md` |
-| Branch | `dev/chg-pw-002-first-profiles` (off `dev/chg-pw-001-scaffold`); draft PR #2, opened 15 Nov 2026 20:28 SAST; base changed to `main` after PR #1 merged |
+| Branch | `dev/chg-pw-002-first-profiles` (off `dev/chg-pw-001-scaffold`); draft PR #2, opened 15 Nov 2026 20:28 SAST; base changed to `main` after PR #1 merged; merged as `9492ba9` on 17 Nov 2026 12:03:47 SAST |
 | Pre-change commit (rollback SHA) | `ed801b102d286d4a6ee8bd781e72f4168f722288` (head of `dev/chg-pw-001-scaffold`, draft PR #1) |
 | Head to approve | The tip of `dev/chg-pw-002-first-profiles` after this commit. Reviewers must PASS that exact head. |
 
@@ -75,7 +75,7 @@ Allowed list only: Gazette 55741; City of Johannesburg official statement; a par
 
 ## How to revert
 
-Rollback is git. While unmerged: close PR #2 and revert the branch's commits, or (with the owner's confirmation, as it needs a force-push) reset it to `ed801b102d286d4a6ee8bd781e72f4168f722288`. If it is ever merged, revert the merge commit. Removing a single profile means deleting its JSON, `.md` and draft and re-running `pwatch dq`.
+Rollback is git. PR #2 was merged into `main` as `9492ba96ad29da62b75012d3b5ba7afc754946cc` on 17 Nov 2026 12:03:47 SAST: revert that merge commit (`git revert -m 1 9492ba9`), with the owner's confirmation. Pre-merge state: tag `snapshot-2026-11-17-pre-pw-pr2` on `3f3043a`. Removing a single profile means deleting its JSON, `.md` and draft and re-running `pwatch dq`.
 
 ## Approval
 
@@ -83,8 +83,8 @@ Rollback is git. While unmerged: close PR #2 and revert the branch's commits, or
 |---|---|---|---|---|
 | Author / builder | PoliticianWatch (Grok Bot) | | 2026-11-15 | built locally 15 Nov 2026; draft PR #2 opened 15 Nov 2026 20:28 SAST; review-round-2 head `4a341fe` pushed |
 | Reviewer | Cavus | `4a341fe` | 2026-11-17 | plain PASS |
-| Reviewer | Cassian (review only) | | | no PASS recorded in this RFC as of 17 Nov 2026; see PR #2 |
-| Change authority | Owner | | | no GO recorded in this RFC as of 17 Nov 2026; see PR #2 |
+| Reviewer | Cassian (review only) | | | not recorded in this RFC; see PR #2 (merged 17 Nov 2026 12:03:47 SAST) |
+| Change authority | Owner | `4a341fe` | 2026-11-17 | PR #2 merged into `main` as `9492ba9`, 17 Nov 2026 12:03:47 SAST (per `gh`); GO wording not recorded in this RFC |
 
 ## Review round 1 (Cavus, PASS_WITH_CONCERNS on `5ab0b6e`) — fixes in one new commit
 
@@ -122,7 +122,7 @@ Evidence: `uv run pytest -q` **34 passed**; `uv run pwatch dq` pass (270 + 10, 0
 
 ## Post-implementation review
 
-- Outcome: built and tested locally on 15 Nov 2026 (DEV build SUCCEEDED); raised as draft PR #2 on 15 Nov 2026 20:28 SAST; review rounds 1 and 2 fixed (head `4a341fe`); Cavus plain PASS on `4a341fe` (17 Nov 2026). Not published. Merge requires both reviewers' plain PASS on the same head and an owner GO; see PR #2 for current state.
+- Outcome: built and tested locally on 15 Nov 2026 (DEV build SUCCEEDED); raised as draft PR #2 on 15 Nov 2026 20:28 SAST; review rounds 1 and 2 fixed (head `4a341fe`); Cavus plain PASS on `4a341fe` (17 Nov 2026); merged into `main` at head `4a341fe` as merge commit `9492ba96ad29da62b75012d3b5ba7afc754946cc` on 17 Nov 2026 at 12:03:47 SAST (per `gh`; pre-merge tag `snapshot-2026-11-17-pre-pw-pr2` on `3f3043a`). Not published. Result: SUCCEEDED (merged to `main`; TEST data, nothing published).
 - Follow-ups: refresh roles after the first council sitting (~19 Nov 2026); education and career research; official contact channels for the drafts (owner); later batches (e.g. Ennie Makhafola, Jack Sekwaila).
 
 ## Seen, not touched
