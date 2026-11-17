@@ -35,8 +35,7 @@ def parse_retrieved_at(raw: Any) -> tuple[datetime | date | None, str | None]:
 
 
 def retrieved_at_is_future(raw: Any, now: datetime) -> bool:
-    """True if retrieved_at is later than now. A date-only value counts as the end of that day (SAST),
-    so it is future only if the date is after today's date in SAST."""
+    """True if retrieved_at is later than now. A date-only value is future only if that date is after today's date in SAST."""
     value, err = parse_retrieved_at(raw)
     if err or value is None:
         return False
