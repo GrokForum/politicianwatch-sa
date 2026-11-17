@@ -6,6 +6,10 @@ Checks:
 - every adverse item (court/criminal matter, scandal, allegation) has a right_of_reply
   object, a draft, and owner-recorded fields that match its status
 - no_response is only allowed after the deadline
+- every right-of-reply draft starts with the DRAFT: NOT SENT marker (CHG-PW-002)
+- every non-Unknown fact has retrieved_at (CHG-PW-002)
+- a profile that links non-gazette sources records at least two matching identity details (CHG-PW-002)
+- a CV profile matches its gazetted roster row (CHG-PW-002, when a roster index is given)
 """
 
 from __future__ import annotations
@@ -14,11 +18,28 @@ from datetime import date
 from pathlib import Path
 from typing import Any
 
+from pwatch.profiles import check_against_roster, check_identity
 from pwatch.ror import check_right_of_reply
 from pwatch.schema import iter_adverse_items, validate_profile_shape
+from pwatch.settings import LABELS
 
 EXIT_OK = 0
 EXIT_NOT_RELEASABLE = 2
+
+
+def check_identity_link(item: Any, locator: str) -> list[str]:
+    """An adverse item cannot be more certain than its link to the gazetted person."""
+    if not isinstance(item, dict) or "identity_link_label" not in item:
+        return []
+    link = item.get("identity_link_label")
+    if link not in LABELS:
+        return [f"{locator}: invalid identity_link_label {link!r}"]
+    if link != "Confirmed" and item.get("label") == "Confirmed":
+        return [
+            f"{locator}: item labelled Confirmed but its identity link to the gazetted person is {link}; "
+            "label the item no higher than the link"
+        ]
+    return []
 
 
 def check_profile(
@@ -27,6 +48,7 @@ def check_profile(
     drafts_root: Path | None = None,
     as_of: date | None = None,
     locator: str = "profile",
+    roster: dict[str, Any] | None = None,
 ) -> list[str]:
     """Return DQ failure messages for one profile. Empty means pass."""
     as_of = as_of or date.today()
@@ -39,7 +61,12 @@ def check_profile(
     # Re-tag shape failures with the name when we have it
     if name and locator == "profile":
         failures = [f.replace(locator, loc, 1) if f.startswith(locator) else f for f in failures]
+    if isinstance(profile, dict):
+        failures.extend(check_identity(profile, loc))
+        if roster is not None:
+            failures.extend(check_against_roster(profile, roster, loc))
     for item_loc, item in iter_adverse_items(profile if isinstance(profile, dict) else {}):
+        failures.extend(check_identity_link(item, f"{loc}.{item_loc}"))
         failures.extend(
             check_right_of_reply(
                 item.get("right_of_reply") if isinstance(item, dict) else None,
@@ -56,13 +83,21 @@ def run(
     *,
     drafts_root: Path | None = None,
     as_of: date | None = None,
+    roster: dict[str, Any] | None = None,
+    locator_prefix: str = "profile",
 ) -> dict[str, Any]:
     """Run the gate on a list of profiles. status is pass or fail."""
     as_of = as_of or date.today()
     all_failures: list[str] = []
     for i, profile in enumerate(profiles):
         all_failures.extend(
-            check_profile(profile, drafts_root=drafts_root, as_of=as_of, locator=f"profile[{i}]")
+            check_profile(
+                profile,
+                drafts_root=drafts_root,
+                as_of=as_of,
+                locator=f"{locator_prefix}[{i}]",
+                roster=roster,
+            )
         )
     status = "pass" if not all_failures else "fail"
     return {

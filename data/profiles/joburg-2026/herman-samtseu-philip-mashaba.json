@@ -1,0 +1,150 @@
+{
+  "slug": "herman-samtseu-philip-mashaba",
+  "change": "CHG-PW-002",
+  "name": {
+    "value": "HERMAN SAMTSEU PHILIP MASHABA",
+    "label": "Confirmed",
+    "source_url": "https://www.gazettefinder.co.za/gazettes/government-gazette/2026/55741/government-gazette-55741-2026-11-13.pdf",
+    "source_date": "2026-11-13",
+    "retrieved_at": "2026-11-15T16:10:03+00:00",
+    "source_page": 43
+  },
+  "party": {
+    "value": "ACTIONSA",
+    "label": "Confirmed",
+    "source_url": "https://www.gazettefinder.co.za/gazettes/government-gazette/2026/55741/government-gazette-55741-2026-11-13.pdf",
+    "source_date": "2026-11-13",
+    "retrieved_at": "2026-11-15T16:10:03+00:00",
+    "source_page": 43
+  },
+  "seat_type": {
+    "value": "PR",
+    "label": "Confirmed",
+    "source_url": "https://www.gazettefinder.co.za/gazettes/government-gazette/2026/55741/government-gazette-55741-2026-11-13.pdf",
+    "source_date": "2026-11-13",
+    "retrieved_at": "2026-11-15T16:10:03+00:00",
+    "source_page": 43
+  },
+  "ward_number": {
+    "value": null,
+    "label": "Confirmed",
+    "source_url": "https://www.gazettefinder.co.za/gazettes/government-gazette/2026/55741/government-gazette-55741-2026-11-13.pdf",
+    "source_date": "2026-11-13",
+    "retrieved_at": "2026-11-15T16:10:03+00:00",
+    "source_page": 43
+  },
+  "council": {
+    "value": "City of Johannesburg",
+    "label": "Confirmed",
+    "source_url": "https://www.gazettefinder.co.za/gazettes/government-gazette/2026/55741/government-gazette-55741-2026-11-13.pdf",
+    "source_date": "2026-11-13",
+    "retrieved_at": "2026-11-15T16:10:03+00:00",
+    "source_page": 43
+  },
+  "ward_id": null,
+  "pr_list_rank": 1,
+  "positions": {
+    "value": "Former Executive Mayor of Johannesburg (2016–2019)",
+    "label": "Reported",
+    "source_url": "https://iol.co.za/the-star/news/2024-08-14-timeline-of-joburg-mayors/",
+    "source_date": "2024-08-14",
+    "retrieved_at": "2026-11-15T20:15:00+02:00"
+  },
+  "career": {
+    "value": null,
+    "label": "Unknown",
+    "source_url": null,
+    "source_date": null,
+    "retrieved_at": null
+  },
+  "education": {
+    "value": null,
+    "label": "Unknown",
+    "source_url": null,
+    "source_date": null,
+    "retrieved_at": null
+  },
+  "cv": [
+    {
+      "value": "Executive Mayor of Johannesburg as the DA's candidate; resigned in 2019 after a clash with the DA",
+      "label": "Reported",
+      "source_url": "https://iol.co.za/the-star/news/2024-08-14-timeline-of-joburg-mayors/",
+      "source_date": "2024-08-14",
+      "retrieved_at": "2026-11-15T20:15:00+02:00",
+      "field": "position",
+      "period": "2016–2019"
+    },
+    {
+      "value": "Founded ActionSA after resigning from the DA; ActionSA leader",
+      "label": "Reported",
+      "source_url": "https://mg.co.za/politics/2026-09-03-battle-for-joburg-heats-up/",
+      "source_date": "2026-09-04",
+      "retrieved_at": "2026-11-15T20:15:00+02:00",
+      "field": "position",
+      "period": null
+    },
+    {
+      "value": "ActionSA mayoral candidate for Johannesburg; ActionSA's Johannesburg PR list initially held only his name",
+      "label": "Reported",
+      "source_url": "https://www.ewn.co.za/lge-2026-zille-challenges-parties-over-single-name-proportional-representation-list/",
+      "source_date": "2026-09-21",
+      "retrieved_at": "2026-11-15T20:15:00+02:00",
+      "field": "candidacy",
+      "period": "2026"
+    },
+    {
+      "value": "Offered in a letter dated 7 November 2026 to withdraw from the mayoral race if the DA's candidate also stepped aside (as reported)",
+      "label": "Reported",
+      "source_url": "https://iol.co.za/lge2026/2026-11-11-mashaba-offers-to-drop-johannesburg-mayoral-bid-if-zille-also-steps-aside/",
+      "source_date": "2026-11-11",
+      "retrieved_at": "2026-11-15T20:15:00+02:00",
+      "field": "candidacy",
+      "period": "2026-11"
+    }
+  ],
+  "identity_match": {
+    "matched_details": [
+      "Name: gazette HERMAN SAMTSEU PHILIP MASHABA matches 'Herman Mashaba' (given name and surname).",
+      "Party and list: ActionSA PR rank 1 in the gazette; EWN (2026-09-21) reports ActionSA's Johannesburg PR list held only its mayoral candidate, Herman Mashaba.",
+      "Council role: former Johannesburg mayor 2016–2019 (IOL 2024-08-14; M&G 2026-09-04)."
+    ],
+    "note": null
+  },
+  "court_matters": [
+    {
+      "value": "The Public Protector investigated allegations of maladministration during Mashaba's term as mayor (irregular appointments, irregular salary increases, financial mismanagement, procurement irregularities and conflicts of interest) and made adverse findings against him, which he challenged in court.",
+      "label": "Disputed",
+      "source_url": "https://www.timeslive.co.za/politics/2023-02-01-mashaba-welcomes-court-ruling-against-mkhwebanes-damning-report-during-his-term-mayor/",
+      "source_date": "2023-02-02",
+      "retrieved_at": "2026-11-15T20:15:00+02:00",
+      "matter_status": "cleared",
+      "category": "Public Protector finding (review)",
+      "outcome": "The High Court in Pretoria set the Public Protector's findings aside as unconstitutional, unlawful and invalid on 31 January 2023 (Pretoria) (TimesLIVE, 2 February 2023; ActionSA statement, 31 January 2023). No appeal found in allowed sources as of 15 November 2026. Mashaba said the ruling vindicated him.",
+      "also_sourced": [
+        {
+          "source_url": "https://www.actionsa.org.za/pretoria-high-court-vindicates-herman-mashaba-by-setting-aside-frivolous-public-protector-report/",
+          "source_date": "2023-01-31",
+          "retrieved_at": "2026-11-15T20:15:00+02:00",
+          "publisher": "ActionSA (party statement)"
+        }
+      ],
+      "identity_link_label": "Reported",
+      "right_of_reply": {
+        "status": "pending",
+        "draft_path": "drafts/right-of-reply/CHG-PW-002/herman-samtseu-philip-mashaba.md",
+        "deadline": null,
+        "deadline_rule": "14 days after the owner sends the draft; the owner sets the date on sending",
+        "sent_at": null,
+        "reply_text": null,
+        "recorded_by": null
+      }
+    }
+  ],
+  "scandals": [],
+  "unknown_fields": [
+    "career",
+    "education",
+    "Council office or portfolio for the 2026–2031 term (executive mayor and mayoral committee not yet elected; first sitting expected around 19 November 2026 — not guessed)",
+    "Official council contact channel (owner to confirm from the City's published councillor directory)"
+  ]
+}

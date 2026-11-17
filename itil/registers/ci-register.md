@@ -10,3 +10,4 @@
 | CI-006 | Joburg LGE 2026 roster | data (TEST) | `data/roster/joburg-2026.csv`; public-role fields only |
 | CI-007 | Private git repository | system | `GrokForum/politicianwatch-sa` |
 | CI-008 | Bot box worktree | system | `/workspace/politicianwatch-sa` (DEV) |
+| CI-009 | Joburg CV profiles | data (TEST) | `data/profiles/joburg-2026/*.json` (+ generated `.md`); public role only; CHG-PW-002 |

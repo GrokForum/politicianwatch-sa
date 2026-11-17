@@ -10,8 +10,9 @@ from pathlib import Path
 
 from pwatch import __version__
 from pwatch.dq import exit_code, run
+from pwatch.profiles import load_profile_dir, render_markdown, roster_index
 from pwatch.roster import load_csv, load_joburg_roster
-from pwatch.settings import REPO_ROOT
+from pwatch.settings import PROFILES_DIR, REPO_ROOT
 
 
 def _load_profiles(path: Path | None) -> list[dict]:
@@ -33,8 +34,45 @@ def cmd_dq(args: argparse.Namespace) -> int:
     as_of = date.fromisoformat(args.as_of) if args.as_of else date.today()
     drafts_root = Path(args.drafts_root) if args.drafts_root else REPO_ROOT
     result = run(profiles, drafts_root=drafts_root, as_of=as_of)
+    if path is None:
+        # Default run: the gazetted roster plus the CV profiles, each cross-checked to its roster row.
+        cv_dir = Path(args.profiles_dir) if args.profiles_dir else PROFILES_DIR
+        docs = load_profile_dir(cv_dir)
+        cv_result = run(
+            [d for _, d in docs],
+            drafts_root=drafts_root,
+            as_of=as_of,
+            roster=roster_index(profiles),
+            locator_prefix="cv_profile",
+        )
+        result = {
+            "status": "pass" if result["status"] == "pass" and cv_result["status"] == "pass" else "fail",
+            "profiles": result["profiles"],
+            "cv_profiles": cv_result["profiles"],
+            "failures": result["failures"] + cv_result["failures"],
+            "failure_count": result["failure_count"] + cv_result["failure_count"],
+            "as_of": result["as_of"],
+        }
     print(json.dumps(result, indent=2))
     return exit_code(result)
+
+
+def cmd_render(args: argparse.Namespace) -> int:
+    cv_dir = Path(args.profiles_dir) if args.profiles_dir else PROFILES_DIR
+    stale = []
+    for p, doc in load_profile_dir(cv_dir):
+        md = render_markdown(doc)
+        out = p.with_suffix(".md")
+        if args.check:
+            if not out.is_file() or out.read_text(encoding="utf-8") != md:
+                stale.append(str(out))
+        else:
+            out.write_text(md, encoding="utf-8")
+            print(out)
+    if stale:
+        print("stale renders: " + ", ".join(stale))
+        return 2
+    return 0
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -45,7 +83,12 @@ def build_parser() -> argparse.ArgumentParser:
     dq.add_argument("--profiles", help="CSV or JSON profiles (default: committed Joburg roster)")
     dq.add_argument("--drafts-root", help="repo root used to resolve right-of-reply draft paths")
     dq.add_argument("--as-of", help="YYYY-MM-DD, for no_response deadline checks (default: today)")
+    dq.add_argument("--profiles-dir", help="CV profile JSON directory (default: data/profiles/joburg-2026)")
     dq.set_defaults(func=cmd_dq)
+    rd = sub.add_parser("render", help="write markdown renderings next to CV profile JSON files")
+    rd.add_argument("--profiles-dir", help="CV profile JSON directory (default: data/profiles/joburg-2026)")
+    rd.add_argument("--check", action="store_true", help="exit 2 if any rendering is missing or stale")
+    rd.set_defaults(func=cmd_render)
     return p
 
 

@@ -1,3 +1,5 @@
+DRAFT: NOT SENT. The owner sends personally. The bot never sends.
+
 # Right-of-reply draft (TEMPLATE)
 
 **Status:** DRAFT ONLY — never send this file as-is. The bot does not send right-of-reply messages. The owner sends them personally, through the subject's official council channel, after a reviewer PASS and an owner GO on the exact text.
@@ -5,7 +7,7 @@
 **Profile:** <full name as gazetted, party, council, seat>
 **Official channel (office only):** <public office contact — never a personal phone, personal email, or home address>
 **Draft path:** `drafts/right-of-reply/<id>.md`
-**Reply deadline:** <YYYY-MM-DD>
+**Reply deadline:** [owner sets on sending] — proposed: 14 days after the owner sends
 **Prepared:** <YYYY-MM-DD, SAST>
 
 ---
@@ -38,4 +40,4 @@ Leave these blank in the draft. The owner fills them when recording a send or a 
 - sent_at:
 - reply_text:
 - recorded_by:
-- deadline: <YYYY-MM-DD>
+- deadline: [owner sets on sending]

@@ -10,6 +10,7 @@ RAW_DIR = DATA_DIR / "raw"
 ROSTER_DIR = DATA_DIR / "roster"
 SCHEMA_PATH = REPO_ROOT / "schemas" / "profile.schema.json"
 DRAFTS_ROR_DIR = REPO_ROOT / "drafts" / "right-of-reply"
+PROFILES_DIR = DATA_DIR / "profiles" / "joburg-2026"
 
 USER_AGENT = "PoliticianWatchSA/0.1 public-interest research (politicianwatch.grokforum.site)"
 
@@ -45,3 +46,10 @@ ROR_STATUSES = ("pending", "sent", "replied", "no_response")
 ADVERSE_FIELDS = ("court_matters", "scandals")
 # Owner-only field value for RoR status changes (the bot never records a send or reply).
 ROR_RECORDED_BY_OWNER = "owner"
+
+# Every right-of-reply draft must carry this line at the top (CHG-PW-002).
+DRAFT_MARKER = "DRAFT: NOT SENT. The owner sends personally. The bot never sends."
+CV_FIELDS = ("position", "career", "candidacy", "education")
+OPTIONAL_FACT_FIELDS = ("known_as", "given_names", "full_name_surname")
+# Minimum independent details that must match before a non-gazette source is linked to a person.
+IDENTITY_MIN_DETAILS = 2

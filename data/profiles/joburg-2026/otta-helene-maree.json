@@ -1,0 +1,195 @@
+{
+  "slug": "otta-helene-maree",
+  "change": "CHG-PW-002",
+  "name": {
+    "value": "OTTA HELENE MAREE",
+    "label": "Confirmed",
+    "source_url": "https://www.gazettefinder.co.za/gazettes/government-gazette/2026/55741/government-gazette-55741-2026-11-13.pdf",
+    "source_date": "2026-11-13",
+    "retrieved_at": "2026-11-15T16:10:03+00:00",
+    "source_page": 46
+  },
+  "party": {
+    "value": "DEMOCRATIC ALLIANCE",
+    "label": "Confirmed",
+    "source_url": "https://www.gazettefinder.co.za/gazettes/government-gazette/2026/55741/government-gazette-55741-2026-11-13.pdf",
+    "source_date": "2026-11-13",
+    "retrieved_at": "2026-11-15T16:10:03+00:00",
+    "source_page": 46
+  },
+  "seat_type": {
+    "value": "PR",
+    "label": "Confirmed",
+    "source_url": "https://www.gazettefinder.co.za/gazettes/government-gazette/2026/55741/government-gazette-55741-2026-11-13.pdf",
+    "source_date": "2026-11-13",
+    "retrieved_at": "2026-11-15T16:10:03+00:00",
+    "source_page": 46
+  },
+  "ward_number": {
+    "value": null,
+    "label": "Confirmed",
+    "source_url": "https://www.gazettefinder.co.za/gazettes/government-gazette/2026/55741/government-gazette-55741-2026-11-13.pdf",
+    "source_date": "2026-11-13",
+    "retrieved_at": "2026-11-15T16:10:03+00:00",
+    "source_page": 46
+  },
+  "council": {
+    "value": "City of Johannesburg",
+    "label": "Confirmed",
+    "source_url": "https://www.gazettefinder.co.za/gazettes/government-gazette/2026/55741/government-gazette-55741-2026-11-13.pdf",
+    "source_date": "2026-11-13",
+    "retrieved_at": "2026-11-15T16:10:03+00:00",
+    "source_page": 46
+  },
+  "ward_id": null,
+  "pr_list_rank": 1,
+  "known_as": {
+    "value": "Helen Zille",
+    "label": "Reported",
+    "source_url": "https://www.news24.com/politics/bye-bye-dada-overhang-scuppers-morero-loyiso-masukus-return-to-joburg-council-20261108-0629",
+    "source_date": "2026-11-08",
+    "retrieved_at": "2026-11-15T20:15:00+02:00",
+    "note": "News24 reports the DA's Johannesburg PR list as 'topped by Helen Zille'; the gazette lists OTTA HELENE MAREE at DA PR rank 1."
+  },
+  "given_names": {
+    "value": "Otta Helene",
+    "label": "Reported",
+    "source_url": "https://www.britannica.com/biography/Helen-Zille",
+    "source_date": "2026-11-13",
+    "retrieved_at": "2026-11-15T20:15:00+02:00",
+    "note": "Britannica gives Otta Helene as Helen Zille's given names. Encyclopaedia source, added at reviewer request; not on the default allowed list."
+  },
+  "full_name_surname": {
+    "value": null,
+    "label": "Unknown",
+    "source_url": null,
+    "source_date": null,
+    "retrieved_at": null,
+    "note": "Whether 'Maree' (as printed in the gazette) forms part of her full name is not confirmed by an allowed source. Not recorded as a fact."
+  },
+  "positions": {
+    "value": "Former mayor of Cape Town and former premier of the Western Cape",
+    "label": "Reported",
+    "source_url": "https://mg.co.za/politics/2026-09-03-battle-for-joburg-heats-up/",
+    "source_date": "2026-09-04",
+    "retrieved_at": "2026-11-15T20:15:00+02:00"
+  },
+  "career": {
+    "value": null,
+    "label": "Unknown",
+    "source_url": null,
+    "source_date": null,
+    "retrieved_at": null
+  },
+  "education": {
+    "value": null,
+    "label": "Unknown",
+    "source_url": null,
+    "source_date": null,
+    "retrieved_at": null
+  },
+  "cv": [
+    {
+      "value": "DA mayoral candidate for the City of Johannesburg, 2026 local government elections",
+      "label": "Reported",
+      "source_url": "https://iol.co.za/news/politics/2026-09-06-meet-the-men-and-women-who-want-to-be-your-next-mayor-local-government-elections-2026/",
+      "source_date": "2026-09-06",
+      "retrieved_at": "2026-11-15T20:15:00+02:00",
+      "field": "candidacy",
+      "period": "2026"
+    },
+    {
+      "value": "Chairperson of the DA Federal Council — former (2019–2026). Stepped down in April 2026; Ashor Sarupen was elected chairperson of the Federal Council on 12 April 2026",
+      "label": "Reported",
+      "source_url": "https://witness.co.za/news/2026/04/13/change-sweeps-across-da-federal-leadership-as-kzns-sarupen-rises/",
+      "source_date": "2026-04-13",
+      "retrieved_at": "2026-11-15T20:15:00+02:00",
+      "field": "position",
+      "period": "2019–2026",
+      "also_sourced": [
+        {
+          "source_url": "https://www.da.org.za/2026/04/da-announces-leadership-election-results",
+          "source_date": "2026-04-12",
+          "retrieved_at": "2026-11-15T20:15:00+02:00",
+          "publisher": "Democratic Alliance (party statement)"
+        },
+        {
+          "source_url": "https://www.britannica.com/biography/Helen-Zille",
+          "source_date": "2026-11-13",
+          "retrieved_at": "2026-11-15T20:15:00+02:00",
+          "publisher": "Encyclopaedia Britannica"
+        }
+      ]
+    },
+    {
+      "value": "Mayor of Cape Town (former)",
+      "label": "Reported",
+      "source_url": "https://mg.co.za/politics/2026-09-03-battle-for-joburg-heats-up/",
+      "source_date": "2026-09-04",
+      "retrieved_at": "2026-11-15T20:15:00+02:00",
+      "field": "position",
+      "period": null
+    },
+    {
+      "value": "Premier of the Western Cape (former)",
+      "label": "Reported",
+      "source_url": "https://mg.co.za/politics/2026-09-03-battle-for-joburg-heats-up/",
+      "source_date": "2026-09-04",
+      "retrieved_at": "2026-11-15T20:15:00+02:00",
+      "field": "position",
+      "period": null
+    }
+  ],
+  "identity_match": {
+    "matched_details": [
+      "Party: DEMOCRATIC ALLIANCE in the gazette; reported as the DA's Johannesburg mayoral candidate (IOL 2026-09-06; EWN 2026-09-21).",
+      "List position: gazette DA PR rank 1, City of Johannesburg; News24 (2026-11-08) reports the DA PR list as 'topped by Helen Zille'.",
+      "Council: City of Johannesburg in both the gazette and the reporting.",
+      "Given names: gazette OTTA HELENE matches Britannica's 'Otta Helene' as Helen Zille's given names (Britannica, updated 2026-11-13). The surname MAREE in the gazetted name is not confirmed by an allowed source and is recorded as Unknown."
+    ],
+    "note": "The gazetted name is kept exactly as printed (OTTA HELENE MAREE). The link to Helen Zille rests on party + DA PR rank 1 + council, plus the given names Otta Helene (Britannica). Whether 'Maree' forms part of her full name is Unknown: no allowed source confirms it, and it is not recorded as a fact. No family details are recorded. Adverse court item: the SCA judgment ([2022] ZASCA 16) is a primary court record naming the Premier of the Western Cape (Helen Zille) as appellant, but its link to the gazetted OTTA HELENE MAREE rests on these Reported identity details, so the identity link for that item is Reported and the item is labelled Reported (no Confirmed claim that the gazette person is the court party)."
+  },
+  "court_matters": [
+    {
+      "value": "The Public Protector found that tweets on colonialism made by Zille on 15 March 2017, while she was Western Cape premier, breached the Executive Ethics Code and the Constitution, and recommended remedial action (Report No. 5 of 2018/19). Zille's review application was dismissed by the Gauteng Division of the High Court, Pretoria, and she appealed.",
+      "label": "Reported",
+      "source_url": "https://lawlibrary.org.za/akn/za/judgment/zasca/2022/16/eng@2022-02-07",
+      "source_date": "2022-02-07",
+      "retrieved_at": "2026-11-15T20:15:00+02:00",
+      "matter_status": "cleared",
+      "category": "Public Protector finding (review)",
+      "outcome": "The SCA upheld the appeal and reviewed and set aside the Public Protector's findings and remedial action (Report No. 5 of 2018/19), 7 Feb 2022 (Premier of the Western Cape Province v The Public Protector & Another (771/2020) [2022] ZASCA 16).",
+      "also_sourced": [
+        {
+          "source_url": "https://www.supremecourtofappeal.org.za/images/Media_Summaries_2022/sca2022-16ms.pdf",
+          "source_date": "2022-02-07",
+          "retrieved_at": "2026-11-15T20:15:00+02:00",
+          "publisher": "Supreme Court of Appeal media summary"
+        },
+        {
+          "source_url": "https://www.citizen.co.za/news/south-africa/courts/sca-rules-against-mkhwebane-zille-colonialism-tweets/",
+          "source_date": "2022-02-07",
+          "retrieved_at": "2026-11-15T20:15:00+02:00",
+          "publisher": "The Citizen"
+        }
+      ],
+      "identity_link_label": "Reported",
+      "right_of_reply": {
+        "status": "pending",
+        "draft_path": "drafts/right-of-reply/CHG-PW-002/otta-helene-maree.md",
+        "deadline": null,
+        "deadline_rule": "14 days after the owner sends the draft; the owner sets the date on sending",
+        "sent_at": null,
+        "reply_text": null,
+        "recorded_by": null
+      }
+    }
+  ],
+  "scandals": [],
+  "unknown_fields": [
+    "career",
+    "education",
+    "Council office or portfolio for the 2026–2031 term (executive mayor and mayoral committee not yet elected; first sitting expected around 19 November 2026 — not guessed)",
+    "Official council contact channel (owner to confirm from the City's published councillor directory)"
+  ]
+}
