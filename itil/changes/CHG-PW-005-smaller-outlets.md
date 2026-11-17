@@ -10,7 +10,7 @@
 | Environment | DEV (docs, code, synthetic tests). Not PROD. |
 | CIs affected | CI-004 DQ gate; source policy (`docs/allowed-sources.md`, `data/sources.json`) |
 | Linked records | CHG-PW-004 (mainstream tiers 1 and 2, registry) |
-| Branch | `dev/chg-pw-005-smaller-outlets`, branched on 17 Nov 2026 from the CHG-PW-004 head `d4b01cec7754ad553d580dc9677b44e8e88b0c3d`; committed on 17 Nov 2026 at `4b8dcc5`; CHG-PW-004 head `eb0a831` (which includes PR #3 head `343b994`) merged in on 17 Nov 2026 at `0ffb3f6`, then a status-wording commit. Merge order: PR #3, then CHG-PW-004 (PR #4), then this change. |
+| Branch | `dev/chg-pw-005-smaller-outlets`, branched on 17 Nov 2026 from the CHG-PW-004 head `d4b01cec7754ad553d580dc9677b44e8e88b0c3d`; committed on 17 Nov 2026 at `4b8dcc5`; CHG-PW-004 head `eb0a831` (which includes PR #3 head `343b994`) merged in on 17 Nov 2026 at `0ffb3f6`, then a status-wording commit (`3aa3ca4`); raised as draft PR #5 on 17 Nov 2026 at 12:12:14 SAST (per `gh`; base `dev/chg-pw-004-housekeeping`, at `3aa3ca4`); CHG-PW-004 head `d2ec198` merged in on 17 Nov 2026 (merge commit records this). Merge order: PR #3, then CHG-PW-004 (PR #4), then this change. |
 | Pre-change commit (rollback SHA) | `d4b01cec7754ad553d580dc9677b44e8e88b0c3d` |
 | Head to approve | The tip of `dev/chg-pw-005-smaller-outlets`. Reviewers must PASS that exact head. |
 
@@ -47,9 +47,9 @@ Rollback is git. `git revert` the CHG-PW-005 commit `4b8dcc5` (this removes tier
 
 | Role | Name | Commit approved | Date | Result |
 |---|---|---|---|---|
-| Author / builder | PoliticianWatch (Grok Bot) | | 2026-11-17 | committed on 17 Nov 2026 at `4b8dcc5` |
-| Reviewer | Cavus | | | no PASS recorded in this RFC as of 17 Nov 2026 |
-| Reviewer | Cassian | | | no PASS recorded in this RFC as of 17 Nov 2026 |
-| Change authority | Owner | | | no GO recorded in this RFC as of 17 Nov 2026 |
+| Author / builder | PoliticianWatch (Grok Bot) | | 2026-11-17 | committed on 17 Nov 2026 at `4b8dcc5`; raised as draft PR #5 on 17 Nov 2026 at 12:12:14 SAST (per `gh`; base `dev/chg-pw-004-housekeeping`, at `3aa3ca4`) |
+| Reviewer | Cavus | | | no PASS recorded in this RFC as of 17 Nov 2026; see PR #5 |
+| Reviewer | Cassian | | | no PASS recorded in this RFC as of 17 Nov 2026; see PR #5 |
+| Change authority | Owner | | | no GO recorded in this RFC as of 17 Nov 2026; see PR #5 |
 
 Merge requires a plain PASS from Cavus and from Cassian on the same exact head, then an owner GO.
