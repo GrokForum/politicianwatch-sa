@@ -1,5 +1,5 @@
 {
-  "_about": "Source registry: domain -> tier. Tiers: '1' primary (can support Confirmed); '2' mainstream SA news and reference works (Reported); '3' smaller and independent voices (Reported only; never the sole source for an adverse item or an identity link); 'party' party statements (Reported only); 'link_only' (never fetched or reused); 'not_allowed'. A domain matches itself and its subdomains. Human-readable list: docs/allowed-sources.md. Changes need the owner's confirmation.",
+  "_about": "Source registry: domain -> tier. Tiers: '1' primary (can support Confirmed); '2' mainstream SA news and reference works (Reported); 'party' party statements (Reported only); 'link_only' (never fetched or reused); 'not_allowed'. A domain matches itself and its subdomains. Human-readable list: docs/allowed-sources.md. Changes need the owner's confirmation.",
   "sources": [
     {
       "domain": "elections.org.za",
@@ -324,42 +324,6 @@
       "outlet": "Encyclopaedia Britannica (reference work)",
       "tier": "2",
       "note": "Reference, not SA media; already used for one fact (Zille's given names) on the owner's instruction.",
-      "verified": "2026-11-17"
-    },
-    {
-      "domain": "thecommonsense.co.za",
-      "outlet": "The Common Sense (X @CommonSense_ZA)",
-      "tier": "3",
-      "verified": "2026-11-17"
-    },
-    {
-      "domain": "thecapeindependent.com",
-      "outlet": "The Cape Independent (editor Robert Duigan, X @uMarhobane; redirects to capeindependent.substack.com)",
-      "tier": "3",
-      "verified": "2026-11-17"
-    },
-    {
-      "domain": "capeindependent.com",
-      "outlet": "The Cape Independent (older site; did not respond on 17 Nov 2026)",
-      "tier": "3",
-      "verified": "2026-11-17"
-    },
-    {
-      "domain": "capeindependent.substack.com",
-      "outlet": "The Cape Independent (Substack)",
-      "tier": "3",
-      "verified": "2026-11-17"
-    },
-    {
-      "domain": "briefly.co.za",
-      "outlet": "Briefly News",
-      "tier": "3",
-      "verified": "2026-11-17"
-    },
-    {
-      "domain": "randdesk.co.za",
-      "outlet": "Rand Desk",
-      "tier": "3",
       "verified": "2026-11-17"
     },
     {

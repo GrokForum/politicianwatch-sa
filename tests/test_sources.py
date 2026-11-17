@@ -8,11 +8,10 @@ from pwatch.dq import check_source_tiers, run
 from pwatch.schema import fact
 from pwatch.sources import REGISTRY_PATH, TIERS, load_registry, tier_of
 
-REG = {"gazette.test": "1", "bignews.test": "2", "smallvoice.test": "3", "aggregator.test": "not_allowed", "esp.test": "link_only"}
+REG = {"gazette.test": "1", "bignews.test": "2", "aggregator.test": "not_allowed", "esp.test": "link_only"}
 GAZ = "https://gazette.test/55741.pdf"
 T2 = "https://www.bignews.test/a"
-T3 = "https://smallvoice.test/b"
-T3B = "https://blog.smallvoice.test/c"  # subdomain matches its parent domain
+T2B = "https://city.bignews.test/c"  # subdomain matches its parent domain
 RET = "2026-11-17"
 
 
@@ -32,24 +31,9 @@ def _profile(linked_urls, adverse_urls=None):
 
 def test_tier_of_matches_domain_and_subdomains():
     assert tier_of(T2, REG) == "2"
-    assert tier_of(T3B, REG) == "3"
+    assert tier_of(T2B, REG) == "2"
     assert tier_of("https://notbignews.test/x", REG) is None  # suffix must be a whole label
     assert tier_of("https://unknown.example/x", REG) is None
-
-
-def test_adverse_item_on_tier3_only_fails_and_passes_with_tier2_corroboration():
-    only3 = _profile([T2], adverse_urls=[T3, T3B])
-    fails = check_source_tiers(only3, "p", REG)
-    assert any("adverse item relies only on tier-3 sources" in f for f in fails)
-    corroborated = _profile([T2], adverse_urls=[T3, T2])
-    assert check_source_tiers(corroborated, "p", REG) == []
-
-
-def test_identity_link_on_tier3_only_fails():
-    fails = check_source_tiers(_profile([T3]), "p", REG)
-    assert any("identity link relies only on tier-3 sources" in f for f in fails)
-    assert check_source_tiers(_profile([T3, T2]), "p", REG) == []
-    assert check_source_tiers(_profile([]), "p", REG) == []  # gazette only: nothing linked
 
 
 def test_not_allowed_and_link_only_domains_fail():
@@ -74,8 +58,8 @@ def test_committed_registry_is_valid_and_covers_committed_profiles(repo_root):
     assert all(str(e["tier"]) in TIERS and e.get("outlet") and e.get("verified") for e in data["sources"])
     reg = load_registry()
     assert tier_of("https://www.citizen.co.za/southern-courier/x", reg) == "2"
-    assert tier_of("https://www.thecommonsense.co.za/x", reg) == "3"
-    assert tier_of("https://thecapeindependent.com/x", reg) == "3"
+    assert tier_of("https://www.biznews.com/x", reg) == "2"
+    assert "3" not in set(reg.values())  # smaller outlets are CHG-PW-005, not this change
     # every source URL in the committed CV profiles is in the registry
     import re
 

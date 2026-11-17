@@ -4,8 +4,6 @@ The registry is data/sources.json (domain -> tier); the human-readable list is d
 A domain matches itself and its subdomains ("www." is ignored).
 
 DQ rules built on it (see pwatch.dq):
-- an adverse item whose sources are all tier 3 fails (tier 3 can never be the sole source);
-- a profile whose identity link rests only on tier-3 sources fails;
 - a source on a not_allowed or link_only domain fails;
 - a domain not in the registry is a warning, not a failure.
 """
@@ -21,7 +19,7 @@ from urllib.parse import urlparse
 from pwatch.settings import DATA_DIR
 
 REGISTRY_PATH = DATA_DIR / "sources.json"
-TIERS = ("1", "2", "3", "party", "link_only", "not_allowed")
+TIERS = ("1", "2", "party", "link_only", "not_allowed")
 FAIL_TIERS = ("link_only", "not_allowed")
 
 
