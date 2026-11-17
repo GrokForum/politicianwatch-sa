@@ -10,7 +10,8 @@ Checks:
 - every non-Unknown fact has retrieved_at (CHG-PW-002)
 - a profile that links non-gazette sources records at least two matching identity details (CHG-PW-002)
 - a CV profile matches its gazetted roster row (CHG-PW-002, when a roster index is given)
-- source tiers (CHG-PW-004, data/sources.json): no link_only/not_allowed domains; unknown domains are warnings, not failures
+- source tiers (CHG-PW-004, data/sources.json): no link_only/not_allowed domains; an adverse item or an identity
+  link may not rest only on tier-3 sources (CHG-PW-005); unknown domains are warnings, not failures
 - no retrieved_at anywhere in a profile (facts, also_sourced, adverse items) is later than the run time (CHG-PW-003 fix 2); a date-only value is future only if that date is after today's date in SAST (fix 3)
 """
 
@@ -20,7 +21,7 @@ from datetime import date, datetime, timezone
 from pathlib import Path
 from typing import Any
 
-from pwatch.profiles import check_against_roster, check_identity
+from pwatch.profiles import check_against_roster, check_identity, non_gazette_sources
 from pwatch.ror import check_right_of_reply
 from pwatch.schema import iter_adverse_items, retrieved_at_is_future, validate_profile_shape
 from pwatch.settings import LABELS
@@ -53,16 +54,40 @@ def check_retrieved_not_future(obj: Any, locator: str, now: datetime) -> list[st
     return failures
 
 
+def _tier3_uncorroborated(urls: Any, registry: dict[str, str] | None = None) -> bool:
+    """True if the URLs include at least one tier-3 source and no tier-1 or tier-2 source.
+
+    Party statements, unregistered domains and any other tiers do not count as corroboration.
+    """
+    tiers = {tier_of(u, registry) for u in urls}
+    return "3" in tiers and not tiers & {"1", "2"}
+
+
 def check_source_tiers(profile: dict[str, Any], locator: str, registry: dict[str, str] | None = None) -> list[str]:
     """CHG-PW-004: source-tier rules (registry in data/sources.json).
 
     - A source on a link_only or not_allowed domain fails.
+    - CHG-PW-005: an adverse item that cites at least one tier-3 URL and no tier-1 or tier-2 URL fails
+      (source_url + also_sourced), whatever party, unregistered or other URLs sit alongside it.
+    - CHG-PW-005: the same for the identity link (every source other than the gazetted seat source,
+      including also_sourced): a tier-3 URL with no tier-1 or tier-2 URL fails.
     """
     failures: list[str] = []
     for url in sorted(set(source_urls(profile))):
         tier = tier_of(url, registry)
         if tier in FAIL_TIERS:
             failures.append(f"{locator}: source {url} is on a {tier} domain")
+    for item_loc, item in iter_adverse_items(profile):
+        urls = source_urls(item)
+        if _tier3_uncorroborated(urls, registry):
+            failures.append(
+                f"{locator}.{item_loc}: adverse item relies only on tier-3 sources; corroborate from tier 1 or 2"
+            )
+    linked = set(non_gazette_sources(profile))
+    seat_source = (profile.get("name") or {}).get("source_url")
+    linked |= {u for u in source_urls(profile) if u != seat_source}
+    if _tier3_uncorroborated(linked, registry):
+        failures.append(f"{locator}: identity link relies only on tier-3 sources; corroborate from tier 1 or 2")
     return failures
 
 

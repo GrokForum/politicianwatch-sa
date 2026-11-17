@@ -1,6 +1,6 @@
 # Allowed sources
 
-Status as of 17 November 2026 (SAST). Changes to this list need the owner's confirmation. The machine-readable registry is `data/sources.json` (domain → tier). `pwatch dq` fails a source on a link-only or not-allowed domain and warns about domains that are not in the registry.
+Status as of 17 November 2026 (SAST). Changes to this list need the owner's confirmation. The machine-readable registry is `data/sources.json` (domain → tier). `pwatch dq` fails a source on a link-only or not-allowed domain, fails an adverse item or identity link that rests only on tier-3 sources, and warns about domains that are not in the registry.
 
 Every domain below was checked on 17 Nov 2026: it was reached, or, where our fetcher was refused, confirmed through a search result or a reader fetch. Each was confirmed to be the named outlet. Anything that could not be verified is listed at the end and is **not** on the list.
 
@@ -87,6 +87,24 @@ Southern Courier (owner, 17 Nov 2026), Sandton Chronicle, Randburg Sun, Northcli
 **Reference work (Reported)**
 Encyclopaedia Britannica (britannica.com). Not SA media; used once, for Zille's given names, on the owner's instruction.
 
+## Tier 3: smaller and independent voices ("separate pen") — Reported only (CHG-PW-005)
+Publications with a known public following and a wide-audience intent that are smaller, newer or editorially narrower than tier 2.
+
+**Rules:** Reported only. A tier-3 source can **never** be the sole source for an adverse item or for an identity link. It always needs corroboration from tier 1 or tier 2. `pwatch dq` fails an adverse item, or an identity link, that cites at least one tier-3 URL and no tier-1 or tier-2 URL, whatever party-statement, unregistered or other URLs sit alongside it. Opinion pieces in tier-3 outlets are not facts.
+
+| Outlet | Domain / handle | What it is | Note |
+|---|---|---|---|
+| The Common Sense | thecommonsense.co.za; X @CommonSense_ZA | Independent SA news and analysis site with a daily "Morning Brief" newsletter; its writers include Dr Frans Cronje. X account created Aug 2025, about 8,100 followers on 17 Nov 2026 | **Owner-confirmed** (17 Nov 2026) as the "Common Sense" meant |
+| The Cape Independent | thecapeindependent.com (redirects to capeindependent.substack.com); older site capeindependent.com | Western Cape politics news and opinion site, launched Nov 2023, with an openly stated editorial stance (Cape independence, right of centre) | Founder/editor Robert Duigan, X **@uMarhobane** (about 17,400 followers on 17 Nov 2026; his X profile links thecapeindependent.com). capeindependent.com did not respond on 17 Nov 2026. The current Substack's recent posts are by another writer; who runs it now is unclear. **Owner to confirm** who runs it now. |
+| Briefly News | briefly.co.za | High-traffic SA news site that mainly rewrites social-media posts and other outlets' reports | **Proposed:** tier 3, not tier 2 and not excluded (**owner to confirm** the placement). It is aimed at a wide audience, so it is in the pen, but its stories are mostly second-hand. It can never carry a fact alone; cite the original report instead where possible. |
+| Rand Desk | randdesk.co.za | Business, markets and politics news site that says it reports from primary sources and links to them | **Proposed:** tier 3 for now. Its own about page says some stories go up without an editor when they rest on the official record or on three other publishers. **Owner to confirm** whether to move it to tier 2. |
+
+**Adding a tier-3 voice:** each addition needs the owner's confirmation and must meet all of these:
+1. A named editor or author who is accountable for the content.
+2. A track record of at least about a year of regular publishing that can be checked (an archive of dated articles).
+3. A wide-audience intent: published openly for the public, not a private newsletter or a personal social-media feed.
+4. It is a publication. Posts on a person's own social-media account remain not allowed (see below), even when the person runs a tier-3 outlet.
+
 ## Party statements (Reported only)
 Official party statements (e.g. DA: da.org.za, dagauteng.org.za; ActionSA: actionsa.org.za). A party statement is not an official City record, so it is never labelled Confirmed. The same applies when a statement is republished on Politicsweb.
 
@@ -96,12 +114,12 @@ ElectionSePush (esp.info/elections): link to it, but do not fetch or reuse its d
 ## Not allowed
 Wikipedia and Wikidata, gossip sites, councillor aggregators (e.g. Counted.co.za, Mandate SA, Said in Council), personal social media and professional-network profiles.
 
-## Smaller and independent outlets
-Smaller and independent voices (a separate tier 3) are out of scope for CHG-PW-004 and are proposed in CHG-PW-005. Until that change is merged, they are not on the allowed list.
-
 ## Checked and not added
 | Name given | Finding |
 |---|---|
 | "Scrutinize" | scrutinize.co.za is a "Launching Soon" placeholder (17 Nov 2026), not a publication. "Scrutinize" is otherwise known as a 2009 HIV-prevention campaign. **Deferred: not yet publishing (owner, 17 Nov 2026).** Left off until it publishes. |
 | Ilanga (isiZulu weekly) | ilanga.co.za is a travel site; the newspaper's own domain was not found. Not added. |
 | Joburg East Express (Caxton) | citizen.co.za/joburg-east-express/ returned 404. Not added by name (other Caxton titles at citizen.co.za are covered). |
+
+## The Common Sense: identification
+The owner confirmed on 17 Nov 2026 that "Common Sense" means **The Common Sense** (thecommonsense.co.za, X @CommonSense_ZA): an SA news-and-analysis publication (its X account was created in August 2025) aimed at a general audience, with a daily Morning Brief.
