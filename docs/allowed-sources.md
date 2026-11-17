@@ -102,6 +102,6 @@ Smaller and independent voices (a separate tier 3) are out of scope for CHG-PW-0
 ## Checked and not added
 | Name given | Finding |
 |---|---|
-| "Scrutinize" | scrutinize.co.za is a "Launching Soon" placeholder (17 Nov 2026), not a publication. "Scrutinize" is otherwise known as a 2009 HIV-prevention campaign. Not added. **Owner to confirm:** tell us if you meant a different outlet. |
+| "Scrutinize" | scrutinize.co.za is a "Launching Soon" placeholder (17 Nov 2026), not a publication. "Scrutinize" is otherwise known as a 2009 HIV-prevention campaign. **Deferred: not yet publishing (owner, 17 Nov 2026).** Left off until it publishes. |
 | Ilanga (isiZulu weekly) | ilanga.co.za is a travel site; the newspaper's own domain was not found. Not added. |
 | Joburg East Express (Caxton) | citizen.co.za/joburg-east-express/ returned 404. Not added by name (other Caxton titles at citizen.co.za are covered). |
