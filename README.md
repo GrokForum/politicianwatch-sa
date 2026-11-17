@@ -51,4 +51,4 @@ DEV work happens on a branch. Cavus and Cassian must each give a plain PASS on t
 
 ## Status
 
-See `STATUS.md`. CHG-PW-001 is drafted on `dev/chg-pw-001-scaffold` and is not merged.
+See `STATUS.md`. CHG-PW-001 (PR #1) was merged into `main` as `3f3043a` on 17 Nov 2026 11:00 SAST.

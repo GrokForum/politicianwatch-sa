@@ -6,8 +6,8 @@
 | Author / builder | PoliticianWatch (Grok Bot) |
 | Type | Standard, low (commit 1: documentation and docstrings only). Commits 2–4: normal, low (tiered mainstream source list, source registry and DQ rules with tests, docstring fix, tier-3 scope removal; no profile data changes) |
 | Environment | DEV |
-| Branch | `dev/chg-pw-004-housekeeping`, stacked on CHG-PW-003 (`95426512`, draft PR #3) |
-| Rollback | `git revert` this commit, or reset the branch to `95426512` |
+| Branch | `dev/chg-pw-004-housekeeping`, stacked on CHG-PW-003 (`95426512`, draft PR #3). Raised as draft PR #4 at `5f3cfc1` on 17 Nov 2026 11:51 SAST (base `dev/chg-pw-003-batch-2`); `7b7a0e5` pushed to PR #4 on 17 Nov 2026. Committed on 17 Nov 2026: `e169272` (scope correction), `d4b01ce` (Scrutinize deferred), `c915078` (merge of PR #3 head `343b994`), then this status commit. |
+| Rollback | `git revert` the CHG-PW-004 commits (the branch was pushed as PR #4, so no reset); after a merge, revert the merge commit |
 
 ## Request and reasons
 1. On 17 Nov 2026 the owner confirmed that SA Jewish Report, Southern Courier and Sowetan join the allowed sources. They were first used in CHG-PW-003 fix 1 at reviewer Cassian's suggestion. The allowed list was scattered across the batch notes and RFCs; it is now a single file, `docs/allowed-sources.md`, which AGENTS.md rule 12 references.
@@ -25,12 +25,14 @@
 Low. Commit 1 is documentation only. Commit 2 adds DQ rules that pass on the committed data; the risk is a future profile failing on a tier rule, which is the intent. Tests, `pwatch dq` and `pwatch render --check` must still pass. After commit 2: `uv run pytest -q` 46 passed; `uv run pwatch dq` pass (270 roster + 24 CV profiles, 1 on hold, 0 failures, 0 warnings); `uv run pwatch render --check` exit 0. After the scope correction: `uv run pytest -q` 44 passed; `uv run pwatch dq` pass, 0 warnings; `uv run pwatch render --check` exit 0. popia-review on the commit-2 diff: PASS (outlet names, domains and public X handles of publications or their public editor only; no personal information; the source-list note warns that Caxton local pages carry personal details and only public-role facts may be recorded).
 
 ## Merge order
-PR #2, then PR #3, then this change.
+PR #2 was merged into `main` as `9492ba9` on 17 Nov 2026 12:03:47 SAST. Then PR #3, then this change (PR #4). PR #3's head `343b994` was merged into this branch on 17 Nov 2026 (`c915078`).
 
 ## Approval
 | Role | Name | Commit approved | Date | Result |
 |---|---|---|---|---|
-| Author / builder | PoliticianWatch (Grok Bot) | | 2026-11-17 | drafted |
-| Reviewer | Cavus | | | pending PASS on the exact head |
-| Reviewer | Cassian (Build, review only) | | | pending PASS on the exact head |
-| Change authority | Owner | | | pending GO |
+| Author / builder | PoliticianWatch (Grok Bot) | | 2026-11-17 | committed 17 Nov 2026 (see Branch row for SHAs) |
+| Reviewer | Cavus | | | no PASS recorded in this RFC as of 17 Nov 2026; see PR #4 |
+| Reviewer | Cassian (Build, review only) | | | no PASS recorded in this RFC as of 17 Nov 2026; see PR #4 |
+| Change authority | Owner | | | no GO recorded in this RFC as of 17 Nov 2026; see PR #4 |
+
+Merge requires a plain PASS from Cavus and from Cassian on the same exact head, then an owner GO.
