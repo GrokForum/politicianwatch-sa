@@ -14,14 +14,14 @@ DRAFT PROFILE — not published. Public role only. Every item carries an evidenc
 
 ## Summary
 
-- **Positions:** DA councillor in Johannesburg; DA spokesperson on the council's ethics committee (from July 2024) · `Reported` — [source](https://dagauteng.org.za/2024/07/fit-for-purpose-da-shadow-cabinet-to-hold-anc-eff-pa-al-jama-ah-accountable), 2024-07-23 (retrieved 2026-11-17T11:10:00+02:00)
+- **Positions:** DA councillor in Johannesburg; DA spokesperson on the council's ethics committee (from July 2024) · `Reported` — [source](https://dagauteng.org.za/2024/07/fit-for-purpose-da-shadow-cabinet-to-hold-anc-eff-pa-al-jama-ah-accountable), 2024-07-23 (retrieved 2026-11-17T11:09:00+02:00)
 - **Career:** Unknown — not yet sourced (placeholder) · `Unknown`
 - **Education:** Unknown — not yet sourced (placeholder) · `Unknown`
 
 ## CV (public role)
 
-- **Position (2024-07-23):** Named DA committee spokesperson for Ethics ('Gert Niemand') · `Reported` — [source](https://dagauteng.org.za/2024/07/fit-for-purpose-da-shadow-cabinet-to-hold-anc-eff-pa-al-jama-ah-accountable), 2024-07-23 (retrieved 2026-11-17T11:10:00+02:00)
-- **Position (2025-09-02):** Announced in council that the DA would withdraw from the September 2025 chief-whip election, which it considered unlawful · `Reported` — [source](https://iol.co.za/news/south-africa/2025-09-03-joburg-council-finally-elects-new-chief-whip-amid-withdrawal-legal-threats/), 2025-09-03 (retrieved 2026-11-17T11:10:00+02:00)
+- **Position (2024-07-23):** Named DA committee spokesperson for Ethics ('Gert Niemand') · `Reported` — [source](https://dagauteng.org.za/2024/07/fit-for-purpose-da-shadow-cabinet-to-hold-anc-eff-pa-al-jama-ah-accountable), 2024-07-23 (retrieved 2026-11-17T11:09:00+02:00)
+- **Position (2025-09-02):** Announced in council that the DA would withdraw from the September 2025 chief-whip election, which it considered unlawful · `Reported` — [source](https://iol.co.za/news/south-africa/2025-09-03-joburg-council-finally-elects-new-chief-whip-amid-withdrawal-legal-threats/), 2025-09-03 (retrieved 2026-11-17T11:09:00+02:00)
 
 ## Court matters
 

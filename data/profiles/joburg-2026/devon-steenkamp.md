@@ -14,14 +14,14 @@ DRAFT PROFILE — not published. Public role only. Every item carries an evidenc
 
 ## Summary
 
-- **Positions:** DA Johannesburg region caucus spokesperson and Region C whip (from July 2024) · `Reported` — [source](https://dagauteng.org.za/2024/07/johannesburg-region-caucus-elections-official-statement), 2024-07-23 (retrieved 2026-11-17T11:10:00+02:00)
+- **Positions:** DA Johannesburg region caucus spokesperson and Region C whip (from July 2024) · `Reported` — [source](https://dagauteng.org.za/2024/07/johannesburg-region-caucus-elections-official-statement), 2024-07-23 (retrieved 2026-11-17T11:09:00+02:00)
 - **Career:** Unknown — not yet sourced (placeholder) · `Unknown`
 - **Education:** Unknown — not yet sourced (placeholder) · `Unknown`
 
 ## CV (public role)
 
-- **Position (2024-07-23):** Appointed spokesperson of the DA Johannesburg regional caucus · `Reported` — [source](https://dagauteng.org.za/2024/07/johannesburg-region-caucus-elections-official-statement), 2024-07-23 (retrieved 2026-11-17T11:10:00+02:00)
-- **Position (2024-07-23):** Elected DA Region C whip in the Johannesburg caucus · `Reported` — [source](https://dagauteng.org.za/2024/07/johannesburg-region-caucus-elections-official-statement), 2024-07-23 (retrieved 2026-11-17T11:10:00+02:00)
+- **Position (2024-07-23):** Appointed spokesperson of the DA Johannesburg regional caucus · `Reported` — [source](https://dagauteng.org.za/2024/07/johannesburg-region-caucus-elections-official-statement), 2024-07-23 (retrieved 2026-11-17T11:09:00+02:00)
+- **Position (2024-07-23):** Elected DA Region C whip in the Johannesburg caucus · `Reported` — [source](https://dagauteng.org.za/2024/07/johannesburg-region-caucus-elections-official-statement), 2024-07-23 (retrieved 2026-11-17T11:09:00+02:00)
 
 ## Court matters
 

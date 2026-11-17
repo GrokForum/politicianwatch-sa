@@ -6,7 +6,7 @@ DRAFT PROFILE — not published. Public role only. Every item carries an evidenc
 ## Seat (Government Gazette 55741)
 
 - **Name as gazetted:** BOYBOI JACK SEKWAILA · `Confirmed` — [source](https://www.gazettefinder.co.za/gazettes/government-gazette/2026/55741/government-gazette-55741-2026-11-13.pdf) p.44, 2026-11-13 (retrieved 2026-11-15T16:10:03+00:00)
-- **Known as:** Jack Sekwaila · `Confirmed` — [source](https://joburg.org.za/media_/Pages/Media/Media%20Statements/2023%20Media%20Statements/February/Joburg-Executive-Mayor-announces-new-MMCs.aspx), 2023-02-02 (retrieved 2026-11-17T11:10:00+02:00)
+- **Known as:** Jack Sekwaila · `Confirmed` — [source](https://joburg.org.za/media_/Pages/Media/Media%20Statements/2023%20Media%20Statements/February/Joburg-Executive-Mayor-announces-new-MMCs.aspx), 2023-02-02 (retrieved 2026-11-17T11:09:00+02:00)
 - **Party:** AFRICAN NATIONAL CONGRESS · `Confirmed` — [source](https://www.gazettefinder.co.za/gazettes/government-gazette/2026/55741/government-gazette-55741-2026-11-13.pdf) p.44, 2026-11-13 (retrieved 2026-11-15T16:10:03+00:00)
 - **Seat type:** ward · `Confirmed` — [source](https://www.gazettefinder.co.za/gazettes/government-gazette/2026/55741/government-gazette-55741-2026-11-13.pdf) p.44, 2026-11-13 (retrieved 2026-11-15T16:10:03+00:00)
 - **Ward:** 64 · `Confirmed` — [source](https://www.gazettefinder.co.za/gazettes/government-gazette/2026/55741/government-gazette-55741-2026-11-13.pdf) p.44, 2026-11-13 (retrieved 2026-11-15T16:10:03+00:00)
@@ -15,16 +15,16 @@ DRAFT PROFILE — not published. Public role only. Every item carries an evidenc
 
 ## Summary
 
-- **Positions:** City of Johannesburg MMC for Environment and Infrastructure Services (in office as at 7 January 2026) · `Confirmed` — [source](https://joburg.org.za/media_/Newsroom/Pages/2026-News-Articles/Joburg-probes-acquisition-of-Kelvin%2c-Egoli-Gas-to-secure-energy-future.aspx), 2026-01-07 (retrieved 2026-11-17T11:10:00+02:00)
+- **Positions:** City of Johannesburg MMC for Environment and Infrastructure Services (in office as at 7 January 2026) · `Confirmed` — [source](https://joburg.org.za/media_/Newsroom/Pages/2026-News-Articles/Joburg-probes-acquisition-of-Kelvin%2c-Egoli-Gas-to-secure-energy-future.aspx), 2026-01-07 (retrieved 2026-11-17T11:09:00+02:00)
 - **Career:** Unknown — not yet sourced (placeholder) · `Unknown`
 - **Education:** Unknown — not yet sourced (placeholder) · `Unknown`
 
 ## CV (public role)
 
-- **Position (2023-02-02):** Appointed MMC for Environment and Infrastructure Services by Executive Mayor Thapelo Amad · `Confirmed` — [source](https://joburg.org.za/media_/Pages/Media/Media%20Statements/2023%20Media%20Statements/February/Joburg-Executive-Mayor-announces-new-MMCs.aspx), 2023-02-02 (retrieved 2026-11-17T11:10:00+02:00)
-- **Position (2024-08-16):** Kept the Environment and Infrastructure portfolio in Mayor Dada Morero's mayoral committee · `Reported` — [source](https://www.ewn.co.za/2024/08/17/former-joburg-mayor-gwamanda-appointed-as-community-development-mmc), 2024-08-17 (retrieved 2026-11-17T11:10:00+02:00)
-- **Position (2023-09-22):** As MMC, urged residents to use water sparingly during Johannesburg water shortages · `Reported` — [source](https://iol.co.za/news/south-africa/gauteng/2023-09-22-water-crisis-it-must-be-a-new-norm-to-use-water-sparingly-sekwaila/), 2023-09-22 (retrieved 2026-11-17T11:10:00+02:00)
-- **Position (2026-01):** As MMC, presented the City's exploratory feasibility study on acquiring Kelvin Power Station and Egoli Gas · `Confirmed` — [source](https://joburg.org.za/media_/Newsroom/Pages/2026-News-Articles/Joburg-probes-acquisition-of-Kelvin%2c-Egoli-Gas-to-secure-energy-future.aspx), 2026-01-07 (retrieved 2026-11-17T11:10:00+02:00)
+- **Position (2023-02-02):** Appointed MMC for Environment and Infrastructure Services by Executive Mayor Thapelo Amad · `Confirmed` — [source](https://joburg.org.za/media_/Pages/Media/Media%20Statements/2023%20Media%20Statements/February/Joburg-Executive-Mayor-announces-new-MMCs.aspx), 2023-02-02 (retrieved 2026-11-17T11:09:00+02:00)
+- **Position (2024-08-16):** Kept the Environment and Infrastructure portfolio in Mayor Dada Morero's mayoral committee · `Reported` — [source](https://www.ewn.co.za/2024/08/17/former-joburg-mayor-gwamanda-appointed-as-community-development-mmc), 2024-08-17 (retrieved 2026-11-17T11:09:00+02:00)
+- **Position (2023-09-22):** As MMC, urged residents to use water sparingly during Johannesburg water shortages · `Reported` — [source](https://iol.co.za/news/south-africa/gauteng/2023-09-22-water-crisis-it-must-be-a-new-norm-to-use-water-sparingly-sekwaila/), 2023-09-22 (retrieved 2026-11-17T11:09:00+02:00)
+- **Position (2026-01):** As MMC, presented the City's exploratory feasibility study on acquiring Kelvin Power Station and Egoli Gas · `Confirmed` — [source](https://joburg.org.za/media_/Newsroom/Pages/2026-News-Articles/Joburg-probes-acquisition-of-Kelvin%2c-Egoli-Gas-to-secure-energy-future.aspx), 2026-01-07 (retrieved 2026-11-17T11:09:00+02:00)
 
 ## Court matters
 

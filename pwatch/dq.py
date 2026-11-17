@@ -10,11 +10,12 @@ Checks:
 - every non-Unknown fact has retrieved_at (CHG-PW-002)
 - a profile that links non-gazette sources records at least two matching identity details (CHG-PW-002)
 - a CV profile matches its gazetted roster row (CHG-PW-002, when a roster index is given)
+- no retrieved_at anywhere in a profile (facts, also_sourced, adverse items) is later than the run time (CHG-PW-003 fix 2)
 """
 
 from __future__ import annotations
 
-from datetime import date
+from datetime import date, datetime, timezone
 from pathlib import Path
 from typing import Any
 
@@ -25,6 +26,32 @@ from pwatch.settings import LABELS
 
 EXIT_OK = 0
 EXIT_NOT_RELEASABLE = 2
+
+
+def check_retrieved_not_future(obj: Any, locator: str, now: datetime) -> list[str]:
+    """Every retrieved_at, at any depth (facts, also_sourced, adverse items), must not be later than now.
+
+    Values that are not ISO 8601 datetimes with a UTC offset are reported by the format checks, not here.
+    """
+    failures: list[str] = []
+    if isinstance(obj, dict):
+        for key, val in obj.items():
+            here = f"{locator}.{key}"
+            if key == "retrieved_at" and isinstance(val, str):
+                try:
+                    ts = datetime.fromisoformat(val.replace("Z", "+00:00"))
+                except ValueError:
+                    continue
+                if ts.tzinfo is not None and ts > now:
+                    failures.append(
+                        f"{here}: retrieved_at {val} is later than the run time {now.isoformat(timespec='seconds')}"
+                    )
+            else:
+                failures.extend(check_retrieved_not_future(val, here, now))
+    elif isinstance(obj, list):
+        for i, val in enumerate(obj):
+            failures.extend(check_retrieved_not_future(val, f"{locator}[{i}]", now))
+    return failures
 
 
 def check_identity_link(item: Any, locator: str) -> list[str]:
@@ -49,9 +76,11 @@ def check_profile(
     as_of: date | None = None,
     locator: str = "profile",
     roster: dict[str, Any] | None = None,
+    now: datetime | None = None,
 ) -> list[str]:
     """Return DQ failure messages for one profile. Empty means pass."""
     as_of = as_of or date.today()
+    now = now or datetime.now(timezone.utc)
     failures = validate_profile_shape(profile, locator)
     name = None
     name_fact = profile.get("name") if isinstance(profile, dict) else None
@@ -62,6 +91,7 @@ def check_profile(
     if name and locator == "profile":
         failures = [f.replace(locator, loc, 1) if f.startswith(locator) else f for f in failures]
     if isinstance(profile, dict):
+        failures.extend(check_retrieved_not_future(profile, loc, now))
         failures.extend(check_identity(profile, loc))
         if roster is not None:
             failures.extend(check_against_roster(profile, roster, loc))
@@ -85,9 +115,11 @@ def run(
     as_of: date | None = None,
     roster: dict[str, Any] | None = None,
     locator_prefix: str = "profile",
+    now: datetime | None = None,
 ) -> dict[str, Any]:
     """Run the gate on a list of profiles. status is pass or fail."""
     as_of = as_of or date.today()
+    now = now or datetime.now(timezone.utc)
     all_failures: list[str] = []
     for i, profile in enumerate(profiles):
         all_failures.extend(
@@ -97,6 +129,7 @@ def run(
                 as_of=as_of,
                 locator=f"{locator_prefix}[{i}]",
                 roster=roster,
+                now=now,
             )
         )
     status = "pass" if not all_failures else "fail"

@@ -199,3 +199,39 @@ def test_held_profiles_are_excluded_from_batch_dq_and_render(synthetic_profiles,
     assert main(["render", "--check", "--profiles-dir", str(root)]) == 0
     capsys.readouterr()
     assert check_profile(held_dir, as_of=AS_OF) != []  # the held profile really would fail the gate
+
+
+def test_cli_dq_counts_active_and_held_profiles_in_repo(capsys):
+    """CHG-PW-003 fix 2: on the committed data, `pwatch dq` counts 24 active CV profiles and 1 on hold."""
+    import json
+
+    from pwatch.cli import main
+
+    code = main(["dq"])
+    out = json.loads(capsys.readouterr().out)
+    assert code == 0, out["failures"]
+    assert out["cv_profiles"] == 24
+    assert out["cv_profiles_on_hold"] == 1
+
+
+def test_retrieved_at_later_than_run_time_fails(synthetic_profiles, repo_root):
+    """CHG-PW-003 fix 2: no retrieved_at (fact, also_sourced or adverse item) may be later than the run time."""
+    from datetime import datetime, timezone
+
+    now = datetime(2026, 11, 17, 9, 30, tzinfo=timezone.utc)  # 11:30 SAST
+    roster = roster_index(synthetic_profiles)
+    p = _cv_profile(synthetic_profiles)
+    p["cv"][0]["retrieved_at"] = "2026-11-17T11:29:00+02:00"  # one minute before: fine
+    assert check_profile(p, drafts_root=repo_root, as_of=AS_OF, roster=roster, now=now) == []
+
+    future = deepcopy(p)
+    future["cv"][0]["retrieved_at"] = "2026-11-17T11:45:00+02:00"
+    fails = check_profile(future, drafts_root=repo_root, as_of=AS_OF, roster=roster, now=now)
+    assert any("later than the run time" in f and ".cv[0].retrieved_at" in f for f in fails)
+
+    nested = deepcopy(p)
+    nested["cv"][0]["also_sourced"] = [
+        {"source_url": NEWS, "source_date": "2026-09-06", "retrieved_at": "2026-11-17T09:31:00+00:00"}
+    ]
+    fails = check_profile(nested, drafts_root=repo_root, as_of=AS_OF, roster=roster, now=now)
+    assert any("also_sourced[0].retrieved_at" in f and "later than the run time" in f for f in fails)

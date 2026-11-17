@@ -14,14 +14,14 @@ DRAFT PROFILE — not published. Public role only. Every item carries an evidenc
 
 ## Summary
 
-- **Positions:** DA Region F whip in the Johannesburg caucus (from July 2024) · `Reported` — [source](https://dagauteng.org.za/2024/07/johannesburg-region-caucus-elections-official-statement), 2024-07-23 (retrieved 2026-11-17T11:10:00+02:00)
+- **Positions:** DA Region F whip in the Johannesburg caucus (from July 2024) · `Reported` — [source](https://dagauteng.org.za/2024/07/johannesburg-region-caucus-elections-official-statement), 2024-07-23 (retrieved 2026-11-17T11:09:00+02:00)
 - **Career:** Unknown — not yet sourced (placeholder) · `Unknown`
 - **Education:** Unknown — not yet sourced (placeholder) · `Unknown`
 
 ## CV (public role)
 
-- **Position (2014-07-02):** First year in council: 2014. Won the City of Johannesburg ward 57 by-election for the DA on Wednesday 2 July 2014 (66.09% of the vote, as reported) · `Reported` — [source](https://www.citizen.co.za/southern-courier/news-headlines/2014/07/11/new-da-ward-57-councillor-faeeza-chame/), 2014-07-11 (retrieved 2026-11-17T11:45:00+02:00)
-- **Position (2024-07-23):** Elected DA Region F whip in the Johannesburg caucus · `Reported` — [source](https://dagauteng.org.za/2024/07/johannesburg-region-caucus-elections-official-statement), 2024-07-23 (retrieved 2026-11-17T11:10:00+02:00)
+- **Position (2014-07-02):** First year in council: 2014. Won the City of Johannesburg ward 57 by-election for the DA on Wednesday 2 July 2014 (66.09% of the vote, as reported) · `Reported` — [source](https://www.citizen.co.za/southern-courier/news-headlines/2014/07/11/new-da-ward-57-councillor-faeeza-chame/), 2014-07-11 (retrieved 2026-11-17T11:29:46+02:00)
+- **Position (2024-07-23):** Elected DA Region F whip in the Johannesburg caucus · `Reported` — [source](https://dagauteng.org.za/2024/07/johannesburg-region-caucus-elections-official-statement), 2024-07-23 (retrieved 2026-11-17T11:09:00+02:00)
 
 ## Court matters
 

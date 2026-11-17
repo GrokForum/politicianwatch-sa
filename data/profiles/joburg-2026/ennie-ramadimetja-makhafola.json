@@ -48,14 +48,14 @@
     "label": "Confirmed",
     "source_url": "https://joburg.org.za/media_/Pages/Media/Media%20Statements/2023%20Media%20Statements/February/Joburg-Executive-Mayor-Announces-two-new-MMCS.aspx",
     "source_date": "2023-02-03",
-    "retrieved_at": "2026-11-17T11:10:00+02:00"
+    "retrieved_at": "2026-11-17T11:09:00+02:00"
   },
   "positions": {
     "value": "City of Johannesburg MMC for Health and Social Development (in office as at April 2026)",
     "label": "Confirmed",
     "source_url": "https://joburg.org.za/media_/Newsroom/Pages/2026-News-Articles/Residents%E2%80%99-concerns-take-centre-stage-as-Joburg-charts-inclusive-future.aspx",
     "source_date": "2026-04-20",
-    "retrieved_at": "2026-11-17T11:10:00+02:00"
+    "retrieved_at": "2026-11-17T11:09:00+02:00"
   },
   "career": {
     "value": null,
@@ -77,7 +77,7 @@
       "label": "Confirmed",
       "source_url": "https://joburg.org.za/media_/Pages/Media/Media%20Statements/2023%20Media%20Statements/February/Joburg-Executive-Mayor-Announces-two-new-MMCS.aspx",
       "source_date": "2023-02-03",
-      "retrieved_at": "2026-11-17T11:10:00+02:00",
+      "retrieved_at": "2026-11-17T11:09:00+02:00",
       "field": "position",
       "period": "2023-02-03"
     },
@@ -86,7 +86,7 @@
       "label": "Reported",
       "source_url": "https://www.sowetan.co.za/news/south-africa/2023-02-03-kunene-makhafola-sworn-in-as-councillors/",
       "source_date": "2023-02-03",
-      "retrieved_at": "2026-11-17T11:45:00+02:00",
+      "retrieved_at": "2026-11-17T11:29:49+02:00",
       "field": "position",
       "period": "2023-02-03"
     },
@@ -95,7 +95,7 @@
       "label": "Reported",
       "source_url": "https://iol.co.za/news/politics/2024-08-14-reconfiguring-joburg-leadership-eff-puts-hand-up-wants-to-continue-with-two-mmcs/",
       "source_date": "2024-08-14",
-      "retrieved_at": "2026-11-17T11:10:00+02:00",
+      "retrieved_at": "2026-11-17T11:09:00+02:00",
       "field": "position",
       "period": "2024-08"
     },
@@ -104,7 +104,7 @@
       "label": "Confirmed",
       "source_url": "https://joburg.org.za/media_/Newsroom/Pages/2026-News-Articles/Residents%E2%80%99-concerns-take-centre-stage-as-Joburg-charts-inclusive-future.aspx",
       "source_date": "2026-04-20",
-      "retrieved_at": "2026-11-17T11:10:00+02:00",
+      "retrieved_at": "2026-11-17T11:09:00+02:00",
       "field": "position",
       "period": "2026-04-19"
     }

@@ -21,7 +21,6 @@ DRAFT: NOT SENT. The owner sends personally. The bot never sends.
 > - Seat: ALBERT TEFO RAPHADU, AFRICAN NATIONAL CONGRESS, City of Johannesburg, ward 105 (Government Gazette 55741, p.44) (Confirmed)
 > - ANC ward 105 councillor in the 2021–2026 council (as described in September 2025) (Reported; 2025-09-03, https://iol.co.za/news/south-africa/2025-09-03-joburg-council-finally-elects-new-chief-whip-amid-withdrawal-legal-threats/)
 > - Voted in as chairperson of the Section 79 Corporate and Shared Services committee (named 'Teffo Raphadu - ANC') (Reported; 2022-10-27, https://www.news24.com/southafrica/news/da-swoops-back-into-joburg-council-but-anc-bags-key-positions-on-committees-20221027)
-> - During the September 2025 council chief-whip election he said the DA was collapsing the meeting, then unconditionally withdrew the claim (as reported) (Reported; 2025-09-03, https://iol.co.za/news/south-africa/2025-09-03-joburg-council-finally-elects-new-chief-whip-amid-withdrawal-legal-threats/)
 
 ## Record (owner only)
 

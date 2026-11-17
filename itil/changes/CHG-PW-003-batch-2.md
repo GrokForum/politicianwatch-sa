@@ -10,7 +10,7 @@
 | Environment | DEV (code, synthetic tests). TEST data (profiles and unsent drafts) on a local branch. Not PROD. |
 | CIs affected | CI-001 schema/DQ checks (`also_sourced` formats); CI-005 RoR drafts; CI-009 CV profiles |
 | Linked records | CHG-PW-002 (PR #2); `docs/profiles-joburg-2026-batch-2.md`; `docs/profiles-joburg-2026-batch-1.md` |
-| Branch | `dev/chg-pw-003-batch-2`, stacked on `dev/chg-pw-002-first-profiles` |
+| Branch | `dev/chg-pw-003-batch-2`, **stacked on CHG-PW-002 at `4a341fe`** (`dev/chg-pw-002-first-profiles`, PR #2), **not on `main`**. Merge order: PR #2 first, then batch 2. |
 | Pre-change commit (rollback SHA) | `4a341fedb1c0287b1e7a748d9b2163198b69544e` (local head of the PR #2 branch after review round 2; not yet pushed) |
 | Head to approve | The tip of `dev/chg-pw-003-batch-2`. Reviewers must PASS that exact head. |
 
@@ -75,7 +75,7 @@ Next batch of 15 Johannesburg councillor profiles from the 2026 roster, excludin
 
 ## Review round 1 — Cassian blind source check on `159542e` (17 Nov 2026)
 
-One fix commit on `dev/chg-pw-003-batch-2`, local only (no push, no amend). Every source below was fetched and read on 17 Nov 2026 (~11:45 SAST, `retrieved_at` 2026-11-17T11:45:00+02:00); the publication date is the article's own dateline / `datePublished`.
+One fix commit on `dev/chg-pw-003-batch-2`, local only (no push, no amend). Every source below was fetched and read on 17 Nov 2026 at about 11:29–11:30 SAST (exact `retrieved_at` per source, corrected in fix 2; fix 1 had recorded a future time, 11:45); the publication date is the article's own dateline / `datePublished`.
 
 | # | Finding | Outcome |
 |---|---|---|
@@ -86,7 +86,7 @@ One fix commit on `dev/chg-pw-003-batch-2`, local only (no push, no amend). Ever
 | 2d | Makhafola — sworn in 3 Feb 2023 (Sowetan) | **Added**, Reported: "First year in council: 2023. Sworn in as a City of Johannesburg councillor (EFF) on Friday 3 February 2023". Source: https://www.sowetan.co.za/news/south-africa/2023-02-03-kunene-makhafola-sworn-in-as-councillors/ (2023-02-03; "on Friday" = 3 Feb 2023). Identity: name 'Ennie Makhafola' + EFF + City of Johannesburg councillor (three details). |
 | 3 | DEVON STEENKAMP: Gazette has two councillors surnamed STEENKAMP | **Kept; check passes.** The DA statement (https://dagauteng.org.za/2024/07/johannesburg-region-caucus-elections-official-statement, 2024-07-23) gives the given name Devon and the party (DA, Johannesburg region caucus). Both match DEVON STEENKAMP (DA, ward 98); neither matches RAYMONT ISMAEL STEENKAMP (PA, ward 29). It gives no ward; "Region C" is a DA caucus region and is **not** used as a match (no allowed source maps ward 98 to it). Identity note updated to say so. No facts dropped. |
 
-Counts after fix 1 (14 active batch-2 profiles): Confirmed 81, Reported 44, Unknown 26 — 151 facts; adverse items 0. All 24 active profiles (batch 1 + batch 2): Confirmed 133, Reported 96, Unknown 47, Alleged 2, Disputed 1 — 279; adverse items 6 (unchanged).
+Counts after fix 1 (14 active batch-2 profiles; superseded by fix 2 below): Confirmed 81, Reported 44, Unknown 26 — 151 facts; adverse items 0. All 24 active profiles (batch 1 + batch 2): Confirmed 133, Reported 96, Unknown 47, Alleged 2, Disputed 1 — 279; adverse items 6 (unchanged).
 
 Tests after fix 1: `uv run pytest -q` 36 passed; `uv run pwatch dq` pass (270 roster + 24 CV profiles, 1 on hold, 0 failures); `uv run pwatch render --check` exit 0. popia-review on the fix diff: PASS (see below).
 
@@ -94,9 +94,26 @@ Tests after fix 1: `uv run pytest -q` 36 passed; `uv run pwatch dq` pass (270 ro
 
 **Seen, not touched (fix 1):** The Citizen (2023-06-17) says Gwamanda "recently appointed" Magwentshu as MMC, while the City statement (2023-02-02) records his appointment by Mayor Amad; probably a reappointment after the May 2023 mayoral change, but not checked and not recorded.
 
+## Review round 2 — Cavus PASS_WITH_CONCERNS on `e1be3f6` (17 Nov 2026)
+
+One fix commit (fix 2) on `dev/chg-pw-003-batch-2`, local only (no push, no amend).
+
+| # | Sev. | Finding | Outcome |
+|---|---|---|---|
+| 1 | MEDIUM | `retrieved_at` 2026-11-17T11:45:00+02:00 is in the future (Schay, Chame, Makhafola) | **Fixed.** Set to the real fetch times, taken from the saved fetch files' timestamps: SA Jewish Report `2026-11-17T11:29:45+02:00`, Southern Courier `2026-11-17T11:29:46+02:00`, Sowetan `2026-11-17T11:29:49+02:00` (all before the `e1be3f6` commit at 11:33:25 SAST). **Full scan** of every `retrieved_at` in all profile JSON (active and held) against each commit's own time found a second problem: the batch-2 research time `2026-11-17T11:10:00+02:00` (52 values in 14 profiles) is 12 s later than the `159542e` commit (11:09:48 SAST). The exact fetch times were not logged, so all 52 are set to the conservative upper bound `2026-11-17T11:09:00+02:00`. Batch-1 times (`2026-11-15T20:15:00+02:00`, before the `5ab0b6e` commit at 20:15:47) and the gazette rows (`2026-11-15T16:10:03Z`) are fine. Re-rendered. New DQ check `check_retrieved_not_future`: every `retrieved_at` at any depth of a profile (facts, `also_sourced` — the review's "extra_sources" — and adverse items) must not be later than the run time. New test `test_retrieved_at_later_than_run_time_fails`. Re-checked: the old data fails the new check against its own commit times (3 values at `e1be3f6`, 52 at `159542e`); the fixed data has 0. |
+| 2 | LOW | Raphadu CV entry repeated his withdrawn claim that the DA was "collapsing the meeting" | **Dropped** (owner to note). A neutral rewording ("took part in the September 2025 chief-whip debate") would add almost nothing to his public-role record, and any fuller version still restates a claim he unconditionally withdrew, about another party. His IOL-sourced facts (known-as "Tefo Raphadu", ANC ward 105 councillor) and the identity match stay; the source is unchanged. Batch 2 now has one fewer Reported fact. |
+| 3 | LOW | Hold test lacks a CLI-level count | **Added** `test_cli_dq_counts_active_and_held_profiles_in_repo`: `pwatch dq` on the committed data exits 0 and reports `cv_profiles` = 24 and `cv_profiles_on_hold` = 1. |
+| 4 | — | Branch base and `main` | **Confirmed by `git fetch` (17 Nov 2026 ~11:38 SAST):** `origin/main` is `3f3043a96a83e8df7462d097bc494e662f04e00e`, the merge commit of PR #1 (`dev/chg-pw-001-scaffold`), committed 17 Nov 2026 11:00:51 SAST. Its parents are `cfa7e22` and `ed801b1`, and its tree is identical to `ed801b1`. PR #2's base on GitHub is now `main`; its GitHub head is still `c352484`. This branch is stacked on CHG-PW-002 at `4a341fe`, **not on `main`**: `3f3043a` itself is not an ancestor, but both its parents are, and a trial `git merge-tree` of `origin/main` with this head is clean. **Merge order: PR #2 first, then batch 2.** |
+
+Counts after fix 2 (14 active batch-2 profiles): **Confirmed 81, Reported 43, Unknown 26 — 150 facts**; adverse items 0. All 24 active profiles: Confirmed 133, Reported 95, Unknown 47, Alleged 2, Disputed 1 — 278; adverse items 6 (unchanged).
+
+Tests after fix 2: `uv run pytest -q` 38 passed; `uv run pwatch dq` pass (270 roster + 24 CV profiles, 1 on hold, 0 failures, including the new timestamp check); `uv run pwatch render --check` exit 0. popia-review on the fix-2 diff: **PASS** (timestamps, code, tests and records only; one CV line removed; no personal information added).
+
+Records also corrected: STATUS and the change log said `main` was `cfa7e22` and PR #1 was unmerged; both now record the merge seen on fetch.
+
 ## Rollback
 
-`git checkout dev/chg-pw-002-first-profiles` (or `git branch -D dev/chg-pw-003-batch-2`); pre-change SHA `4a341fedb1c0287b1e7a748d9b2163198b69544e`. Fix 1 alone: `git reset --hard 159542e1e2bc94e767a1ea48e047733089019c6f` on the local branch (owner confirmation needed first). Nothing is pushed, so rollback is local only.
+`git checkout dev/chg-pw-002-first-profiles` (or `git branch -D dev/chg-pw-003-batch-2`); pre-change SHA `4a341fedb1c0287b1e7a748d9b2163198b69544e`. Fix 1 alone: `git reset --hard 159542e1e2bc94e767a1ea48e047733089019c6f`; fix 2 alone: `git reset --hard e1be3f6d28ee911fd586be45c4efc9545a96f6c7` (local branch; owner confirmation needed first). Nothing is pushed, so rollback is local only.
 
 ## Seen, not touched
 
@@ -105,4 +122,4 @@ Tests after fix 1: `uv run pytest -q` 36 passed; `uv run pwatch dq` pass (270 ro
 
 ## Result
 
-Built and checked locally; review round 1 (Cassian) fixed in fix 1. **Awaiting** a plain PASS from Cavus and from Cassian on the same head, then an owner GO. Not SUCCEEDED until then.
+Built and checked locally; review round 1 (Cassian) fixed in fix 1; review round 2 (Cavus) fixed in fix 2. **Awaiting** a plain PASS from Cavus and from Cassian on the same head, then an owner GO. Not SUCCEEDED until then.

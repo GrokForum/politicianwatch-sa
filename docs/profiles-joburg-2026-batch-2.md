@@ -1,6 +1,6 @@
 # Joburg 2026 CV profiles — batch 2 (CHG-PW-003)
 
-**Status:** DRAFT, not published. Local branch `dev/chg-pw-003-batch-2`, stacked on the CHG-PW-002 branch (PR #2). Prepared 17 November 2026 (SAST) by PoliticianWatch (Grok Bot). Public role only.
+**Status:** DRAFT, not published. Local branch `dev/chg-pw-003-batch-2`, stacked on the CHG-PW-002 branch (PR #2) at `4a341fe`, not on `main`. Merge order: PR #2 first, then batch 2. Prepared 17 November 2026 (SAST) by PoliticianWatch (Grok Bot). Public role only.
 
 The executive mayor is **Unknown** (first council sitting expected around 19 November 2026). No 2026–2031 office (mayor, speaker, chief whip, MMC) is guessed for anyone; only past roles are recorded, each with its source.
 
@@ -11,7 +11,7 @@ Selected as 15, weighted to ward seats (10 ward, 5 PR). After Cassian's blind so
 | # | Gazetted name | Known as | Party | Seat | Ward / PR rank | Public record used |
 |---|---|---|---|---|---|---|
 | 1 | BOYBOI JACK SEKWAILA | Jack Sekwaila | ANC | Ward | 64 | MMC Environment and Infrastructure Services since Feb 2023 (City statements, EWN, IOL) |
-| 2 | ALBERT TEFO RAPHADU | Tefo Raphadu | ANC | Ward | 105 | Section 79 Corporate and Shared Services chair (News24 2022); council debate 2025 (IOL) |
+| 2 | ALBERT TEFO RAPHADU | Tefo Raphadu | ANC | Ward | 105 | Section 79 Corporate and Shared Services chair (News24 2022); ward 105 councillor (IOL 2025) |
 | 3 | MAKHOSAZANA CYNTHIA NDLELA | — | ANC | Ward | 131 | Transport Committee chair (News24 2022) |
 | 4 | DANIEL SCHAY | — | DA | Ward | 72 | First elected Nov 2021 (SA Jewish Report); DA shadow MMC Development Planning (TimesLIVE 2023; DA 2024) |
 | 5 | TYRELL MEYERS | — | DA | Ward | 23 | DA shadow MMC Transport (TimesLIVE 2023; DA 2024) |
@@ -37,7 +37,9 @@ Selected as 15, weighted to ward seats (10 ward, 5 PR). After Cassian's blind so
 | Alleged / Disputed | Not used in this batch |
 | Unknown | Not sourced; shown as a visible placeholder |
 
-Fact counts across the 14 active profiles after fix 1 (seat facts, summary fields, known-as and CV entries): **Confirmed 81, Reported 44, Unknown 26 — 151 facts.** 70 of the Confirmed facts are gazette seat facts (5 per profile); 11 come from City of Johannesburg statements (Sekwaila, Makhafola, Magwentshu). (Before fix 1: 15 profiles, Confirmed 86, Reported 41, Unknown 29 — 156. Fix 1 removed Mbatha's 8 facts and added 3 Reported first-year facts.)
+Fact counts across the 14 active profiles after fix 2 (seat facts, summary fields, known-as and CV entries): **Confirmed 81, Reported 43, Unknown 26 — 150 facts.** 70 of the Confirmed facts are gazette seat facts (5 per profile); 11 come from City of Johannesburg statements (Sekwaila, Makhafola, Magwentshu). (Before fix 1: 15 profiles, Confirmed 86, Reported 41, Unknown 29 — 156. Fix 1 removed Mbatha's 8 facts and added 3 Reported first-year facts; fix 2 dropped Raphadu's CV line about a claim he withdrew.)
+
+**Retrieval times (fix 2):** batch-2 facts carry `retrieved_at` 2026-11-17T11:09:00+02:00 (a conservative upper bound; exact times were not logged), the three fix-1 sources their real fetch times (11:29:45, 11:29:46 and 11:29:49 SAST). `pwatch dq` now fails any `retrieved_at` later than the run time.
 
 **First year in council (fix 1, all Reported, sources fetched and read 17 Nov 2026):** Schay 2021 (SA Jewish Report, 2021-11-04); Chame 2014, ward 57 by-election on 2 Jul 2014 (Southern Courier, 2014-07-11); Magwentshu 2021 (The Citizen, 2023-06-17; already in the profile, re-verified); Makhafola 2023, sworn in 3 Feb 2023 (Sowetan, 2023-02-03).
 

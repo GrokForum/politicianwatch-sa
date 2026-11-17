@@ -48,7 +48,7 @@
     "label": "Confirmed",
     "source_url": "https://joburg.org.za/media_/Pages/Media/Media%20Statements/2023%20Media%20Statements/February/Joburg-Executive-Mayor-announces-new-MMCs.aspx",
     "source_date": "2023-02-02",
-    "retrieved_at": "2026-11-17T11:10:00+02:00",
+    "retrieved_at": "2026-11-17T11:09:00+02:00",
     "note": "The City's statements name him 'Cllr. Jack Sekwaila'; JACK is the second given name in the gazette."
   },
   "positions": {
@@ -56,7 +56,7 @@
     "label": "Confirmed",
     "source_url": "https://joburg.org.za/media_/Newsroom/Pages/2026-News-Articles/Joburg-probes-acquisition-of-Kelvin%2c-Egoli-Gas-to-secure-energy-future.aspx",
     "source_date": "2026-01-07",
-    "retrieved_at": "2026-11-17T11:10:00+02:00"
+    "retrieved_at": "2026-11-17T11:09:00+02:00"
   },
   "career": {
     "value": null,
@@ -78,7 +78,7 @@
       "label": "Confirmed",
       "source_url": "https://joburg.org.za/media_/Pages/Media/Media%20Statements/2023%20Media%20Statements/February/Joburg-Executive-Mayor-announces-new-MMCs.aspx",
       "source_date": "2023-02-02",
-      "retrieved_at": "2026-11-17T11:10:00+02:00",
+      "retrieved_at": "2026-11-17T11:09:00+02:00",
       "field": "position",
       "period": "2023-02-02"
     },
@@ -87,7 +87,7 @@
       "label": "Reported",
       "source_url": "https://www.ewn.co.za/2024/08/17/former-joburg-mayor-gwamanda-appointed-as-community-development-mmc",
       "source_date": "2024-08-17",
-      "retrieved_at": "2026-11-17T11:10:00+02:00",
+      "retrieved_at": "2026-11-17T11:09:00+02:00",
       "field": "position",
       "period": "2024-08-16"
     },
@@ -96,7 +96,7 @@
       "label": "Reported",
       "source_url": "https://iol.co.za/news/south-africa/gauteng/2023-09-22-water-crisis-it-must-be-a-new-norm-to-use-water-sparingly-sekwaila/",
       "source_date": "2023-09-22",
-      "retrieved_at": "2026-11-17T11:10:00+02:00",
+      "retrieved_at": "2026-11-17T11:09:00+02:00",
       "field": "position",
       "period": "2023-09-22"
     },
@@ -105,7 +105,7 @@
       "label": "Confirmed",
       "source_url": "https://joburg.org.za/media_/Newsroom/Pages/2026-News-Articles/Joburg-probes-acquisition-of-Kelvin%2c-Egoli-Gas-to-secure-energy-future.aspx",
       "source_date": "2026-01-07",
-      "retrieved_at": "2026-11-17T11:10:00+02:00",
+      "retrieved_at": "2026-11-17T11:09:00+02:00",
       "field": "position",
       "period": "2026-01"
     }

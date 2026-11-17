@@ -48,7 +48,7 @@
     "label": "Reported",
     "source_url": "https://iol.co.za/news/south-africa/2025-09-03-joburg-council-finally-elects-new-chief-whip-amid-withdrawal-legal-threats/",
     "source_date": "2025-09-03",
-    "retrieved_at": "2026-11-17T11:10:00+02:00",
+    "retrieved_at": "2026-11-17T11:09:00+02:00",
     "note": "IOL names 'ANC Ward 105 councillor Tefo Raphadu'; TEFO is the second given name in the gazette. News24 (2022) spells it 'Teffo'."
   },
   "positions": {
@@ -56,7 +56,7 @@
     "label": "Reported",
     "source_url": "https://iol.co.za/news/south-africa/2025-09-03-joburg-council-finally-elects-new-chief-whip-amid-withdrawal-legal-threats/",
     "source_date": "2025-09-03",
-    "retrieved_at": "2026-11-17T11:10:00+02:00"
+    "retrieved_at": "2026-11-17T11:09:00+02:00"
   },
   "career": {
     "value": null,
@@ -78,18 +78,9 @@
       "label": "Reported",
       "source_url": "https://www.news24.com/southafrica/news/da-swoops-back-into-joburg-council-but-anc-bags-key-positions-on-committees-20221027",
       "source_date": "2022-10-27",
-      "retrieved_at": "2026-11-17T11:10:00+02:00",
+      "retrieved_at": "2026-11-17T11:09:00+02:00",
       "field": "position",
       "period": "2022-10-27"
-    },
-    {
-      "value": "During the September 2025 council chief-whip election he said the DA was collapsing the meeting, then unconditionally withdrew the claim (as reported)",
-      "label": "Reported",
-      "source_url": "https://iol.co.za/news/south-africa/2025-09-03-joburg-council-finally-elects-new-chief-whip-amid-withdrawal-legal-threats/",
-      "source_date": "2025-09-03",
-      "retrieved_at": "2026-11-17T11:10:00+02:00",
-      "field": "position",
-      "period": "2025-09-02"
     }
   ],
   "identity_match": {
