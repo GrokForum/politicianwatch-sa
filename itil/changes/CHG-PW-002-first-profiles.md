@@ -7,16 +7,16 @@
 | Reviewers | Cavus; Cassian (review only) |
 | Change authority | Owner (GO on the exact head) |
 | Type | Normal — high (adds adverse items about named people; POPIA-relevant handling). Nothing is published by this change. |
-| Environment | DEV (code, synthetic tests). TEST data (profiles and unsent drafts) on a local branch. Not PROD. |
+| Environment | DEV (code, synthetic tests). TEST data (profiles and unsent drafts) on a branch (draft PR #2). Not PROD. |
 | CIs affected | CI-001 schema; CI-004 DQ gate; CI-005 RoR drafts; new CI-009 CV profiles |
 | Linked records | CHG-PW-001; `docs/profiles-joburg-2026-batch-1.md`; `docs/sources-joburg-lge-2026.md` |
-| Branch | `dev/chg-pw-002-first-profiles` (off `dev/chg-pw-001-scaffold`) |
+| Branch | `dev/chg-pw-002-first-profiles` (off `dev/chg-pw-001-scaffold`); draft PR #2, opened 15 Nov 2026 20:28 SAST; base changed to `main` after PR #1 merged; merged as `9492ba9` on 17 Nov 2026 12:03:47 SAST |
 | Pre-change commit (rollback SHA) | `ed801b102d286d4a6ee8bd781e72f4168f722288` (head of `dev/chg-pw-001-scaffold`, draft PR #1) |
 | Head to approve | The tip of `dev/chg-pw-002-first-profiles` after this commit. Reviewers must PASS that exact head. |
 
 ## Request
 
-Build CV-style public-role profiles for a first batch of 10 City of Johannesburg councillors from the gazetted 2026 roster. Mix parties and seat types, prefer prominent councillors with public records. Public sources only. Label every fact, with `source_url`, `source_date` and `retrieved_at`. Every adverse item gets right of reply `pending` with a blank reply field and an unsent draft. Mayor stays Unknown; no 2026 MMC is guessed. Commit locally only: no push, no PR, no contact.
+Build CV-style public-role profiles for a first batch of 10 City of Johannesburg councillors from the gazetted 2026 roster. Mix parties and seat types, prefer prominent councillors with public records. Public sources only. Label every fact, with `source_url`, `source_date` and `retrieved_at`. Every adverse item gets right of reply `pending` with a blank reply field and an unsent draft. Mayor stays Unknown; no 2026 MMC is guessed. The request was to commit locally only (no push, no PR, no contact); the branch was later pushed and raised as draft PR #2 on 15 Nov 2026 20:28 SAST.
 
 ## What changes
 
@@ -34,7 +34,7 @@ Build CV-style public-role profiles for a first batch of 10 City of Johannesburg
 - The 270-row roster, its counts (270 / 135 / 135) and the gazette/IEC provenance are unchanged.
 - Executive mayor stays Unknown in `data/roster/joburg-2026-council.json`.
 - No dependency added (`jsonschema` was used ad hoc via `uv run --with` for a one-off validation, not added to the project).
-- No push, no PR, no merge, no publish, no domain, no contact with any councillor, party, IEC or anyone else. No email.
+- Not part of the build: push, PR, merge (each needs Cavus's request and the owner's GO; PR #2 was raised 15 Nov 2026), publish, domain, contact with any councillor, party, IEC or anyone else. No email.
 
 ## Sources and rules applied
 
@@ -70,21 +70,21 @@ Allowed list only: Gazette 55741; City of Johannesburg official statement; a par
 1. Branch `dev/chg-pw-002-first-profiles` from `ed801b1`.
 2. Research (allowed sources), build the profiles and drafts, extend the schema and DQ gate with tests.
 3. Run pytest, `pwatch dq`, `pwatch render --check`, a schema validation and popia-review.
-4. Commit locally. **Stop.** No push or PR until Cavus asks and the owner GOes.
+4. Commit locally. **Stop.** No push or PR until Cavus asks and the owner GOes. (Pushed and raised as draft PR #2 on 15 Nov 2026 20:28 SAST.)
 5. Cavus and Cassian each give a plain PASS on the same exact head; the owner GOes in quoted words naming this RFC and that head.
 
 ## How to revert
 
-Rollback is git. The branch is local and unmerged: delete it, or reset it to `ed801b102d286d4a6ee8bd781e72f4168f722288`. If it is ever merged, revert the merge commit. Removing a single profile means deleting its JSON, `.md` and draft and re-running `pwatch dq`.
+Rollback is git. PR #2 was merged into `main` as `9492ba96ad29da62b75012d3b5ba7afc754946cc` on 17 Nov 2026 12:03:47 SAST: revert that merge commit (`git revert -m 1 9492ba9`), with the owner's confirmation. Pre-merge state: tag `snapshot-2026-11-17-pre-pw-pr2` on `3f3043a`. Removing a single profile means deleting its JSON, `.md` and draft and re-running `pwatch dq`.
 
 ## Approval
 
 | Role | Name | Commit approved | Date | Result |
 |---|---|---|---|---|
-| Author / builder | PoliticianWatch (Grok Bot) | | 2026-11-15 | built locally; not pushed |
-| Reviewer | Cavus | | | pending PASS on the exact head |
-| Reviewer | Cassian (review only) | | | pending PASS on the exact head |
-| Change authority | Owner | | | pending GO |
+| Author / builder | PoliticianWatch (Grok Bot) | | 2026-11-15 | built locally 15 Nov 2026; draft PR #2 opened 15 Nov 2026 20:28 SAST; review-round-2 head `4a341fe` pushed |
+| Reviewer | Cavus | `4a341fe` | 2026-11-17 | plain PASS |
+| Reviewer | Cassian (review only) | | | not recorded in this RFC; see PR #2 (merged 17 Nov 2026 12:03:47 SAST) |
+| Change authority | Owner | `4a341fe` | 2026-11-17 | PR #2 merged into `main` as `9492ba9`, 17 Nov 2026 12:03:47 SAST (per `gh`); GO wording not recorded in this RFC |
 
 ## Review round 1 (Cavus, PASS_WITH_CONCERNS on `5ab0b6e`) — fixes in one new commit
 
@@ -122,7 +122,7 @@ Evidence: `uv run pytest -q` **34 passed**; `uv run pwatch dq` pass (270 + 10, 0
 
 ## Post-implementation review
 
-- Outcome: built and tested locally; not pushed, not reviewed, not merged, not published. Result: SUCCEEDED (DEV build); awaiting review.
+- Outcome: built and tested locally on 15 Nov 2026 (DEV build SUCCEEDED); raised as draft PR #2 on 15 Nov 2026 20:28 SAST; review rounds 1 and 2 fixed (head `4a341fe`); Cavus plain PASS on `4a341fe` (17 Nov 2026); merged into `main` at head `4a341fe` as merge commit `9492ba96ad29da62b75012d3b5ba7afc754946cc` on 17 Nov 2026 at 12:03:47 SAST (per `gh`; pre-merge tag `snapshot-2026-11-17-pre-pw-pr2` on `3f3043a`). Not published. Result: SUCCEEDED (merged to `main`; TEST data, nothing published).
 - Follow-ups: refresh roles after the first council sitting (~19 Nov 2026); education and career research; official contact channels for the drafts (owner); later batches (e.g. Ennie Makhafola, Jack Sekwaila).
 
 ## Seen, not touched

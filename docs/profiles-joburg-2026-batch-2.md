@@ -1,6 +1,6 @@
 # Joburg 2026 CV profiles — batch 2 (CHG-PW-003)
 
-**Status:** DRAFT, not published. Local branch `dev/chg-pw-003-batch-2`, stacked on the CHG-PW-002 branch (PR #2) at `4a341fe`, not on `main`. Merge order: PR #2 first, then batch 2. Prepared 17 November 2026 (SAST) by PoliticianWatch (Grok Bot). Public role only.
+**Status:** DRAFT, not published. Branch `dev/chg-pw-003-batch-2`, raised as draft PR #3 at `95426512` on 17 Nov 2026, stacked on PR #2 (`4a341fe`). PR #2 merged into `main` on 17 Nov 2026; PR #3's base is now `main`. Prepared 17 November 2026 (SAST) by PoliticianWatch (Grok Bot). Public role only.
 
 The executive mayor is **Unknown** (first council sitting expected around 19 November 2026). No 2026–2031 office (mayor, speaker, chief whip, MMC) is guessed for anyone; only past roles are recorded, each with its source.
 
