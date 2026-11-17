@@ -121,3 +121,30 @@ def test_unknown_surname_placeholder_renders(synthetic_profiles):
     p["full_name_surname"] = fact(None, "Unknown")
     assert check_profile(p, drafts_root=None, as_of=AS_OF) == []
     assert f"**Surname in full legal name:** {UNKNOWN_PLACEHOLDER}" in render_markdown(p)
+
+
+def test_adverse_item_cannot_outrank_its_identity_link(synthetic_profiles, repo_root):
+    p = deepcopy(synthetic_profiles[2])
+    item = p["scandals"][0]
+    item["identity_link_label"] = "Reported"
+    item["label"] = "Confirmed"
+    failures = check_profile(p, drafts_root=repo_root, as_of=AS_OF)
+    assert any("identity link to the gazetted person is Reported" in f for f in failures)
+    item["label"] = "Reported"
+    assert check_profile(p, drafts_root=repo_root, as_of=AS_OF) == []
+    item["identity_link_label"] = "Probably"
+    assert any("invalid identity_link_label" in f for f in check_profile(p, drafts_root=repo_root, as_of=AS_OF))
+
+
+def test_reported_conviction_status_is_in_schema_and_renders(synthetic_profiles, repo_root):
+    import json
+
+    schema = json.loads((repo_root / "schemas" / "profile.schema.json").read_text(encoding="utf-8"))
+    assert "reported_conviction" in json.dumps(schema)
+    p = deepcopy(synthetic_profiles[2])
+    p["scandals"][0]["matter_status"] = "reported_conviction"
+    p["scandals"][0]["identity_link_label"] = "Reported"
+    assert check_profile(p, drafts_root=repo_root, as_of=AS_OF) == []
+    md = render_markdown(p)
+    assert "`reported_conviction`" in md
+    assert "Identity link to the gazetted person:** Reported" in md

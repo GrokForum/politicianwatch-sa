@@ -111,6 +111,7 @@
       "matter_status": "withdrawn",
       "category": "Criminal charge",
       "outcome": "On 25 February 2025 the National Prosecuting Authority provisionally withdrew all charges against him and a co-accused, saying more complainants had come forward and further investigation was needed; the NPA said that once these investigations were finalised, criminal proceedings would be re-instituted (provisionally withdrawn; NPA said it would re-institute). Gwamanda said the state had no evidence. No re-instituted charges were found in allowed sources as of 15 November 2026.",
+      "identity_link_label": "Reported",
       "right_of_reply": {
         "status": "pending",
         "draft_path": "drafts/right-of-reply/CHG-PW-002/kabelo-gwamanda.md",
@@ -132,6 +133,7 @@
       "matter_status": "unknown",
       "category": "Regulatory allegation",
       "outcome": "The FSCA confirmed an investigation in June 2023 (Citizen, 2025-02-25). A final FSCA outcome was not found in allowed sources as of 15 November 2026: Unknown.",
+      "identity_link_label": "Reported",
       "right_of_reply": {
         "status": "pending",
         "draft_path": "drafts/right-of-reply/CHG-PW-002/kabelo-gwamanda.md",

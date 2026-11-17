@@ -42,7 +42,7 @@ Allowed list only: Gazette 55741; City of Johannesburg official statement; a par
 
 ## Risks
 
-- **Defamation (RSK-004).** Six adverse items. Each is attributed, labelled (as of review round 1: Confirmed ×1 court judgment, Disputed ×1, Alleged ×2, Reported ×2), carries its outcome (two were set aside by courts, one cleared by an external review, one charge provisionally withdrawn), and has RoR `pending` with a blank reply. Not published. Four-eyes + owner GO required.
+- **Defamation (RSK-004).** Six adverse items. Each is attributed, labelled (as of review round 2: Reported ×3, Disputed ×1, Alleged ×2; every item's identity link is Reported), carries its outcome (two were set aside by courts, one cleared by an external review, one charge provisionally withdrawn), and has RoR `pending` with a blank reply. Not published. Four-eyes + owner GO required.
 - **Identity error (new RSK-009).** Gazette legal names differ from public names for Zille (Otta Helene Maree), Kunene and Arnolds. Mitigation: ≥ 2-detail rule enforced by DQ; reasoning recorded per profile; reviewers asked to confirm.
 - **POPIA special personal information (criminal behaviour, s26).** The Kunene conviction and the Gwamanda charges are criminal-behaviour information about public office-holders, drawn from reputable reporting and relevant to public office. Flagged for reviewer judgement before any publish.
 - **Stale facts.** Roles change at the first sitting (~19 Nov 2026). Profiles mark 2026–2031 roles Unknown.
@@ -107,6 +107,18 @@ Every source below was fetched and read on 15 Nov 2026 (~20:20–20:35 SAST). No
 Also added: `also_sourced` on facts (each entry DQ-checked for URL, date and retrieved_at; schema + test), optional `given_names` / `full_name_surname` facts (schema + render + test).
 
 Evidence after the fixes: `uv run pytest -q` **32 passed**; `uv run pwatch dq` **pass** (270 + 10, 0 failures, exit 0); `pwatch render --check` exit 0; JSON Schema validation 0 errors; popia-review **PASS** (scan of added lines: no IDs, phones, emails, addresses; no private person named in text or URLs; the only "Molefe" in the repo is a gazetted councillor surname in the roster; no family details). Labels now: Confirmed 53, Reported 51, Unknown 21, Disputed 1, Alleged 2 (128).
+
+## Review round 2 (Cavus + Cassian, PASS_WITH_CONCERNS on PR #2 head `c352484`) — one new commit
+
+Local commit on `dev/chg-pw-002-first-profiles`; nothing amended, force-pushed or pushed.
+
+| # | Concern | Outcome |
+|---|---|---|
+| a | STATUS.md said CHG-PW-002 was local only with no PR | Done. STATUS.md now says the change is on the branch with PR #2 (draft), not merged, "see the PR for the current head" (stays true after a push). Change-log row fixed the same way. A new STATUS history row records this round. |
+| b | Zille court item claimed Confirmed although its link to OTTA HELENE MAREE is only Reported | Done. New `identity_link_label` on adverse items (schema + DQ: an item may not be labelled higher than its link; test added). Every adverse item has `identity_link_label: Reported`. The Zille item is now **Reported** (the SCA judgment is still cited as the source). Identity note explains it. |
+| c | Kunene `convicted` (1997) rests on a Daily Maverick retelling | Done. No case citation was found in allowed sources (searched 17 Nov 2026: Daily Maverick, Sunday Times 2010, M&G 2011 all retell the conviction without a case number; SAFLII not fetched). `matter_status` is now `reported_conviction` (schema enum extended; test added); outcome reads "Reported: convicted (no judgment citation found)…"; label stays Reported. |
+
+Evidence: `uv run pytest -q` **34 passed**; `uv run pwatch dq` pass (270 + 10, 0 failures); `pwatch render --check` exit 0; JSON Schema 0 errors; popia-review PASS (no IDs, phones, emails, addresses, family or private persons added). Labels: Confirmed 52, Reported 52, Unknown 21, Disputed 1, Alleged 2 (128).
 
 ## Post-implementation review
 

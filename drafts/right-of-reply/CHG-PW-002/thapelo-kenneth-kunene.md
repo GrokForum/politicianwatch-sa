@@ -19,7 +19,7 @@ DRAFT: NOT SENT. The owner sends personally. The bot never sends.
 
 Daily Maverick reported that Kunene was convicted of fraud for running a Ponzi scheme and served six years in jail, giving 1997 as the year.
 
-**Current status / outcome (as reported):** Sentence served (six years, as reported). No further detail from an allowed source was collected.
+**Current status / outcome (as reported):** Reported: convicted (no judgment citation found). Daily Maverick reports a 1997 fraud conviction and six years served; no case number or judgment citation was found in allowed sources (SAFLII not searched).
 
 | Source | Date | URL |
 |---|---|---|
@@ -40,7 +40,7 @@ In July 2025 Kunene resigned as Transport MMC and as a councillor, and the Patri
 
 > We are preparing a public-role profile of you as an elected councillor of the City of Johannesburg on PoliticianWatch SA, a sourced register of South African elected representatives. Before publishing the items below, we invite your response. Please reply by **[owner sets on sending — 14 days after sending]** through this official channel. Your response will be published in full next to the item, subject only to the removal of personal contact details or other private information.
 >
-> **Item 1 (labelled Reported):** Daily Maverick reported that Kunene was convicted of fraud for running a Ponzi scheme and served six years in jail, giving 1997 as the year. Current status as reported: Sentence served (six years, as reported). No further detail from an allowed source was collected.
+> **Item 1 (labelled Reported):** Daily Maverick reported that Kunene was convicted of fraud for running a Ponzi scheme and served six years in jail, giving 1997 as the year. Current status as reported: Reported: convicted (no judgment citation found). Daily Maverick reports a 1997 fraud conviction and six years served; no case number or judgment citation was found in allowed sources (SAFLII not searched).
 >
 > **Source:** 2023-02-08, https://www.dailymaverick.co.za/article/2023-02-08-joburg-should-be-grateful-they-have-me-kenny-kunene/
 >

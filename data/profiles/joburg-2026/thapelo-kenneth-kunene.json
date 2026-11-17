@@ -142,9 +142,10 @@
       "source_url": "https://www.dailymaverick.co.za/article/2023-02-08-joburg-should-be-grateful-they-have-me-kenny-kunene/",
       "source_date": "2023-02-08",
       "retrieved_at": "2026-11-15T20:15:00+02:00",
-      "matter_status": "convicted",
-      "category": "Criminal conviction (historical)",
-      "outcome": "Sentence served (six years, as reported). No further detail from an allowed source was collected.",
+      "matter_status": "reported_conviction",
+      "category": "Criminal conviction (historical, reported)",
+      "outcome": "Reported: convicted (no judgment citation found). Daily Maverick reports a 1997 fraud conviction and six years served; no case number or judgment citation was found in allowed sources (SAFLII not searched).",
+      "identity_link_label": "Reported",
       "right_of_reply": {
         "status": "pending",
         "draft_path": "drafts/right-of-reply/CHG-PW-002/thapelo-kenneth-kunene.md",
@@ -174,6 +175,7 @@
           "publisher": "EWN"
         }
       ],
+      "identity_link_label": "Reported",
       "right_of_reply": {
         "status": "pending",
         "draft_path": "drafts/right-of-reply/CHG-PW-002/thapelo-kenneth-kunene.md",

@@ -21,9 +21,25 @@ from typing import Any
 from pwatch.profiles import check_against_roster, check_identity
 from pwatch.ror import check_right_of_reply
 from pwatch.schema import iter_adverse_items, validate_profile_shape
+from pwatch.settings import LABELS
 
 EXIT_OK = 0
 EXIT_NOT_RELEASABLE = 2
+
+
+def check_identity_link(item: Any, locator: str) -> list[str]:
+    """An adverse item cannot be more certain than its link to the gazetted person."""
+    if not isinstance(item, dict) or "identity_link_label" not in item:
+        return []
+    link = item.get("identity_link_label")
+    if link not in LABELS:
+        return [f"{locator}: invalid identity_link_label {link!r}"]
+    if link != "Confirmed" and item.get("label") == "Confirmed":
+        return [
+            f"{locator}: item labelled Confirmed but its identity link to the gazetted person is {link}; "
+            "label the item no higher than the link"
+        ]
+    return []
 
 
 def check_profile(
@@ -50,6 +66,7 @@ def check_profile(
         if roster is not None:
             failures.extend(check_against_roster(profile, roster, loc))
     for item_loc, item in iter_adverse_items(profile if isinstance(profile, dict) else {}):
+        failures.extend(check_identity_link(item, f"{loc}.{item_loc}"))
         failures.extend(
             check_right_of_reply(
                 item.get("right_of_reply") if isinstance(item, dict) else None,

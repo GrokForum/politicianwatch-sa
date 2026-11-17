@@ -148,6 +148,7 @@ def render_markdown(profile: dict[str, Any]) -> str:
             lines += [
                 _fact_line("Item", item),
                 f"  - **Status / outcome:** {item.get('outcome') or UNKNOWN_PLACEHOLDER} (matter_status: `{item.get('matter_status')}`)",
+                f"  - **Identity link to the gazetted person:** {item.get('identity_link_label') or 'not recorded'}",
                 f"  - **{shown['status_line']}**",
                 f"  - **Reply:** {shown['reply_field'] or BLANK_REPLY}",
             ]

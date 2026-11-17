@@ -31,7 +31,8 @@ DRAFT PROFILE — not published. Public role only. Every item carries an evidenc
 ## Court matters
 
 - **Item:** Daily Maverick reported that Kunene was convicted of fraud for running a Ponzi scheme and served six years in jail, giving 1997 as the year. · `Reported` — [source](https://www.dailymaverick.co.za/article/2023-02-08-joburg-should-be-grateful-they-have-me-kenny-kunene/), 2023-02-08 (retrieved 2026-11-15T20:15:00+02:00)
-  - **Status / outcome:** Sentence served (six years, as reported). No further detail from an allowed source was collected. (matter_status: `convicted`)
+  - **Status / outcome:** Reported: convicted (no judgment citation found). Daily Maverick reports a 1997 fraud conviction and six years served; no case number or judgment citation was found in allowed sources (SAFLII not searched). (matter_status: `reported_conviction`)
+  - **Identity link to the gazetted person:** Reported
   - **Right of reply: pending**
   - **Reply:** _(blank — no reply recorded)_
 
@@ -39,6 +40,7 @@ DRAFT PROFILE — not published. Public role only. Every item carries an evidenc
 
 - **Item:** In July 2025 Kunene resigned as Transport MMC and as a councillor, and the Patriotic Alliance suspended him from party activities, after he was found at the home of a person accused of murder during a police operation. Kunene said he was there to accompany a journalist from his online news agency for an interview. · `Reported` — [source](https://www.sabcnews.com/sabcnews/kunene-sworn-in-as-pr-councillor-after-being-cleared/), 2025-09-26 (retrieved 2026-11-15T20:15:00+02:00); also [source](https://www.ewn.co.za/2025/09/26/after-suspension-and-probe-patriotic-alliances-kenny-kunene-returns-to-johannesburg-council), 2025-09-26
   - **Status / outcome:** An external law firm cleared him of wrongdoing; reinstated and sworn in 26 Sep 2025. (matter_status: `cleared`)
+  - **Identity link to the gazetted person:** Reported
   - **Right of reply: pending**
   - **Reply:** _(blank — no reply recorded)_
 

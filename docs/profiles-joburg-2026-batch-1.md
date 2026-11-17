@@ -27,13 +27,13 @@ Files: `data/profiles/joburg-2026/<slug>.json` (+ generated `<slug>.md`), drafts
 
 | Label | Used for |
 |---|---|
-| Confirmed | Government Gazette 55741; a City of Johannesburg official media statement; a court judgment (SCA [2022] ZASCA 16, from LawLibrary and the SCA's own site) |
+| Confirmed | Government Gazette 55741; a City of Johannesburg official media statement. A court judgment is a primary record, but an adverse item is labelled no higher than its **identity link** to the gazetted person (`identity_link_label`, enforced by DQ since review round 2) |
 | Reported | Reputable news on the allowed list (News24, Daily Maverick, M&G, TimesLIVE/Sunday Times, EWN, IOL, The Citizen, SABC); **party press statements** (DA, ActionSA) — a party statement is not an official City record (fix round 1) |
 | Alleged | An allegation or charge not decided by a court (Gwamanda ×2) |
 | Disputed | An official adverse finding that the person challenged and a court set aside, where only news reporting was available (Mashaba) |
 | Unknown | Not found in an allowed source; value `null`, shown as a visible placeholder |
 
-Fact counts across the 10 profiles (seat facts, summary fields, known-as / given-names / surname, CV entries and adverse items), after fix round 1: **Confirmed 53, Reported 51, Unknown 21, Disputed 1, Alleged 2 — 128 facts.** Of the Confirmed facts, 50 are gazette seat facts (5 per profile), 2 come from the City of Johannesburg's February 2023 statement (Mnisi), and 1 is the SCA judgment (Zille).
+Fact counts across the 10 profiles (seat facts, summary fields, known-as / given-names / surname, CV entries and adverse items), after review round 2: **Confirmed 52, Reported 52, Unknown 21, Disputed 1, Alleged 2 — 128 facts.** Of the Confirmed facts, 50 are gazette seat facts (5 per profile) and 2 come from the City of Johannesburg's February 2023 statement (Mnisi). The Zille SCA item is Reported because its link to the gazetted OTTA HELENE MAREE is Reported.
 
 **Sources outside the default list, used at reviewer request or as party records:** Encyclopaedia Britannica (Zille's given names and Federal Council dates), The Witness (Media24; Sarupen replacing Zille), DA and ActionSA party statements. All are labelled Reported.
 
@@ -41,9 +41,9 @@ Fact counts across the 10 profiles (seat facts, summary fields, known-as / given
 
 | Profile | Type | Label | matter_status | Outcome as reported |
 |---|---|---|---|---|
-| Maree (Zille) | Public Protector finding on 2017 tweets (Report No. 5 of 2018/19) | Confirmed (SCA judgment) | cleared | SCA upheld the appeal and reviewed and set aside the findings and remedial action, 7 Feb 2022 |
+| Maree (Zille) | Public Protector finding on 2017 tweets (Report No. 5 of 2018/19) | Reported (SCA judgment cited; identity link Reported) | cleared | SCA upheld the appeal and reviewed and set aside the findings and remedial action, 7 Feb 2022 |
 | Mashaba | Public Protector findings on his mayoral term | Disputed | cleared | High Court, Pretoria, set findings aside on 31 Jan 2023; no appeal found in allowed sources |
-| Kunene | Historical fraud conviction (1997, per DM) | Reported | convicted | Sentence served |
+| Kunene | Historical fraud conviction (1997, per DM) | Reported | reported_conviction | Reported: convicted (no judgment citation found in allowed sources; SAFLII not searched) |
 | Kunene | 2025 PA suspension after presence at an arrest | Reported (SABC, EWN) | cleared | An external law firm cleared him of wrongdoing; reinstated and sworn in 26 Sep 2025 |
 | Gwamanda | FSCA / funeral-scheme allegations (scheme in 2012; reported 2023) | Alleged | unknown | FSCA investigation confirmed; final outcome not found |
 | Gwamanda | Fraud charges (2024) | Alleged | withdrawn | Provisionally withdrawn 25 Feb 2025; NPA said it would re-institute once investigations were finalised |

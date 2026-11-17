@@ -220,12 +220,14 @@
                 "investigation",
                 "charged",
                 "convicted",
+                "reported_conviction",
                 "acquitted",
                 "withdrawn",
                 "cleared",
                 "unknown",
                 null
-              ]
+              ],
+              "description": "'reported_conviction' = a conviction known only from news reporting, with no judgment citation found in allowed sources."
             },
             "outcome": {
               "type": [
@@ -239,6 +241,17 @@
                 "string",
                 "null"
               ]
+            },
+            "identity_link_label": {
+              "type": "string",
+              "enum": [
+                "Confirmed",
+                "Reported",
+                "Alleged",
+                "Disputed",
+                "Unknown"
+              ],
+              "description": "Label for the link between this item's source and the gazetted person. When it is not Confirmed, the item itself must not be labelled Confirmed."
             }
           }
         }
