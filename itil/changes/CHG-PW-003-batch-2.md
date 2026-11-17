@@ -16,7 +16,7 @@
 
 ## Request
 
-Next batch of 15 Johannesburg councillor profiles from the 2026 roster, excluding the 10 in CHG-PW-002; weighted to ward seats (≥ 8), spread across parties roughly by seats; prefer councillors with a public record. Same standards as CHG-PW-002, enforced by DQ. Plus, as a separate commit, Cavus's nits from the PR #2 review. Commit locally only: no push, no PR, no contact.
+Next batch of 15 Johannesburg councillor profiles from the 2026 roster, excluding the 10 in CHG-PW-002; weighted to ward seats (≥ 8), spread across parties roughly by seats; prefer councillors with a public record. Same standards as CHG-PW-002, enforced by DQ. Plus, as a separate commit, Cavus's nits from the PR #2 review. The request was to commit locally only (no push, no PR, no contact); the branch was later pushed and raised as draft PR #3 on 17 Nov 2026 11:46 SAST.
 
 ## Pre-check (17 Nov 2026, ~10:59 SAST)
 
