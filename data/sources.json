@@ -1,0 +1,426 @@
+{
+  "_about": "Source registry: domain -> tier. Tiers: '1' primary (can support Confirmed); '2' mainstream SA news and reference works (Reported); '3' smaller and independent voices (Reported only; never the sole source for an adverse item or an identity link); 'party' party statements (Reported only); 'link_only' (never fetched or reused); 'not_allowed'. A domain matches itself and its subdomains. Human-readable list: docs/allowed-sources.md. Changes need the owner's confirmation.",
+  "sources": [
+    {
+      "domain": "elections.org.za",
+      "outlet": "Independent Electoral Commission (IEC)",
+      "tier": "1",
+      "verified": "2026-11-17"
+    },
+    {
+      "domain": "results.elections.org.za",
+      "outlet": "IEC results",
+      "tier": "1",
+      "verified": "2026-11-17"
+    },
+    {
+      "domain": "gazettefinder.co.za",
+      "outlet": "Government Gazette (Gazette Finder copy of the GPW issue)",
+      "tier": "1",
+      "verified": "2026-11-17"
+    },
+    {
+      "domain": "gpwonline.co.za",
+      "outlet": "Government Printing Works (Government Gazette)",
+      "tier": "1",
+      "verified": "2026-11-17"
+    },
+    {
+      "domain": "joburg.org.za",
+      "outlet": "City of Johannesburg official statements and newsroom",
+      "tier": "1",
+      "verified": "2026-11-17"
+    },
+    {
+      "domain": "supremecourtofappeal.org.za",
+      "outlet": "Supreme Court of Appeal",
+      "tier": "1",
+      "verified": "2026-11-17"
+    },
+    {
+      "domain": "lawlibrary.org.za",
+      "outlet": "Law Library (court judgments)",
+      "tier": "1",
+      "verified": "2026-11-17"
+    },
+    {
+      "domain": "saflii.org",
+      "outlet": "SAFLII (consulted by hand only; never fetched automatically)",
+      "tier": "1",
+      "verified": "2026-11-17"
+    },
+    {
+      "domain": "news24.com",
+      "outlet": "News24 (also City Press archive at news24.com/citypress; City Press closed 10 May 2026)",
+      "tier": "2",
+      "verified": "2026-11-17"
+    },
+    {
+      "domain": "dailymaverick.co.za",
+      "outlet": "Daily Maverick",
+      "tier": "2",
+      "verified": "2026-11-17"
+    },
+    {
+      "domain": "mg.co.za",
+      "outlet": "Mail & Guardian",
+      "tier": "2",
+      "verified": "2026-11-17"
+    },
+    {
+      "domain": "timeslive.co.za",
+      "outlet": "TimesLIVE / Sunday Times (sundaytimes.timeslive.co.za)",
+      "tier": "2",
+      "verified": "2026-11-17"
+    },
+    {
+      "domain": "sowetan.co.za",
+      "outlet": "Sowetan",
+      "tier": "2",
+      "verified": "2026-11-17"
+    },
+    {
+      "domain": "businessday.co.za",
+      "outlet": "Business Day",
+      "tier": "2",
+      "verified": "2026-11-17"
+    },
+    {
+      "domain": "businesslive.co.za",
+      "outlet": "BusinessLIVE (redirects to businessday.co.za)",
+      "tier": "2",
+      "verified": "2026-11-17"
+    },
+    {
+      "domain": "fm.co.za",
+      "outlet": "Financial Mail",
+      "tier": "2",
+      "verified": "2026-11-17"
+    },
+    {
+      "domain": "ewn.co.za",
+      "outlet": "EWN (Eyewitness News; also carries Primedia radio news)",
+      "tier": "2",
+      "verified": "2026-11-17"
+    },
+    {
+      "domain": "sabcnews.com",
+      "outlet": "SABC News (incl. elections.sabcnews.com)",
+      "tier": "2",
+      "verified": "2026-11-17"
+    },
+    {
+      "domain": "enca.com",
+      "outlet": "eNCA",
+      "tier": "2",
+      "verified": "2026-11-17"
+    },
+    {
+      "domain": "newzroomafrika.tv",
+      "outlet": "Newzroom Afrika",
+      "tier": "2",
+      "verified": "2026-11-17"
+    },
+    {
+      "domain": "iol.co.za",
+      "outlet": "IOL and its titles (The Star, Pretoria News, Cape Times, Cape Argus, Daily News, The Mercury)",
+      "tier": "2",
+      "verified": "2026-11-17"
+    },
+    {
+      "domain": "thestar.co.za",
+      "outlet": "The Star (IOL)",
+      "tier": "2",
+      "verified": "2026-11-17"
+    },
+    {
+      "domain": "pretorianews.co.za",
+      "outlet": "Pretoria News (IOL)",
+      "tier": "2",
+      "verified": "2026-11-17"
+    },
+    {
+      "domain": "capetimes.co.za",
+      "outlet": "Cape Times (IOL)",
+      "tier": "2",
+      "verified": "2026-11-17"
+    },
+    {
+      "domain": "capeargus.co.za",
+      "outlet": "Cape Argus (IOL)",
+      "tier": "2",
+      "verified": "2026-11-17"
+    },
+    {
+      "domain": "dailynews.co.za",
+      "outlet": "Daily News (IOL)",
+      "tier": "2",
+      "verified": "2026-11-17"
+    },
+    {
+      "domain": "themercury.co.za",
+      "outlet": "The Mercury (IOL)",
+      "tier": "2",
+      "verified": "2026-11-17"
+    },
+    {
+      "domain": "isolezwe.co.za",
+      "outlet": "Isolezwe (isiZulu daily, Independent Media)",
+      "tier": "2",
+      "verified": "2026-11-17"
+    },
+    {
+      "domain": "citizen.co.za",
+      "outlet": "The Citizen and the Caxton local titles it hosts (e.g. Southern Courier, Sandton Chronicle, Randburg Sun, Northcliff Melville Times, Rosebank Killarney Gazette, Roodepoort Record, Fourways Review, Alberton Record)",
+      "tier": "2",
+      "verified": "2026-11-17"
+    },
+    {
+      "domain": "netwerk24.com",
+      "outlet": "Netwerk24 (Beeld, Rapport, Volksblad, Die Burger)",
+      "tier": "2",
+      "verified": "2026-11-17"
+    },
+    {
+      "domain": "rapport.co.za",
+      "outlet": "Rapport (redirects to netwerk24.com/rapport)",
+      "tier": "2",
+      "verified": "2026-11-17"
+    },
+    {
+      "domain": "beeld.com",
+      "outlet": "Beeld (redirects to netwerk24.com/beeld)",
+      "tier": "2",
+      "verified": "2026-11-17"
+    },
+    {
+      "domain": "maroelamedia.co.za",
+      "outlet": "Maroela Media",
+      "tier": "2",
+      "verified": "2026-11-17"
+    },
+    {
+      "domain": "moneyweb.co.za",
+      "outlet": "Moneyweb",
+      "tier": "2",
+      "verified": "2026-11-17"
+    },
+    {
+      "domain": "businesstech.co.za",
+      "outlet": "BusinessTech",
+      "tier": "2",
+      "verified": "2026-11-17"
+    },
+    {
+      "domain": "mybroadband.co.za",
+      "outlet": "MyBroadband",
+      "tier": "2",
+      "verified": "2026-11-17"
+    },
+    {
+      "domain": "dailyinvestor.com",
+      "outlet": "Daily Investor",
+      "tier": "2",
+      "verified": "2026-11-17"
+    },
+    {
+      "domain": "biznews.com",
+      "outlet": "BizNews",
+      "tier": "2",
+      "verified": "2026-11-17"
+    },
+    {
+      "domain": "groundup.org.za",
+      "outlet": "GroundUp",
+      "tier": "2",
+      "verified": "2026-11-17"
+    },
+    {
+      "domain": "amabhungane.org",
+      "outlet": "amaBhungane Centre for Investigative Journalism",
+      "tier": "2",
+      "verified": "2026-11-17"
+    },
+    {
+      "domain": "sajr.co.za",
+      "outlet": "SA Jewish Report",
+      "tier": "2",
+      "verified": "2026-11-17"
+    },
+    {
+      "domain": "sundayworld.co.za",
+      "outlet": "Sunday World",
+      "tier": "2",
+      "verified": "2026-11-17"
+    },
+    {
+      "domain": "snl24.com",
+      "outlet": "Daily Sun (dailysun.co.za redirects here)",
+      "tier": "2",
+      "verified": "2026-11-17"
+    },
+    {
+      "domain": "thesouthafrican.com",
+      "outlet": "The South African",
+      "tier": "2",
+      "verified": "2026-11-17"
+    },
+    {
+      "domain": "newsday.co.za",
+      "outlet": "Newsday",
+      "tier": "2",
+      "verified": "2026-11-17"
+    },
+    {
+      "domain": "witness.co.za",
+      "outlet": "The Witness",
+      "tier": "2",
+      "verified": "2026-11-17"
+    },
+    {
+      "domain": "dailydispatch.co.za",
+      "outlet": "Daily Dispatch",
+      "tier": "2",
+      "verified": "2026-11-17"
+    },
+    {
+      "domain": "theherald.co.za",
+      "outlet": "The Herald (Gqeberha)",
+      "tier": "2",
+      "verified": "2026-11-17"
+    },
+    {
+      "domain": "jacarandafm.com",
+      "outlet": "Jacaranda FM news",
+      "tier": "2",
+      "verified": "2026-11-17"
+    },
+    {
+      "domain": "702.co.za",
+      "outlet": "Radio 702 (Primedia; redirects to primediaplus.com)",
+      "tier": "2",
+      "verified": "2026-11-17"
+    },
+    {
+      "domain": "947.co.za",
+      "outlet": "94.7 (Primedia; redirects to primediaplus.com)",
+      "tier": "2",
+      "verified": "2026-11-17"
+    },
+    {
+      "domain": "primediaplus.com",
+      "outlet": "Primedia Plus (702 and 94.7 station sites)",
+      "tier": "2",
+      "verified": "2026-11-17"
+    },
+    {
+      "domain": "politicsweb.co.za",
+      "outlet": "Politicsweb (also republishes party statements: label those as party statements, Reported)",
+      "tier": "2",
+      "verified": "2026-11-17"
+    },
+    {
+      "domain": "britannica.com",
+      "outlet": "Encyclopaedia Britannica (reference work)",
+      "tier": "2",
+      "note": "Reference, not SA media; already used for one fact (Zille's given names) on the owner's instruction.",
+      "verified": "2026-11-17"
+    },
+    {
+      "domain": "thecommonsense.co.za",
+      "outlet": "The Common Sense (X @CommonSense_ZA)",
+      "tier": "3",
+      "verified": "2026-11-17"
+    },
+    {
+      "domain": "thecapeindependent.com",
+      "outlet": "The Cape Independent (editor Robert Duigan, X @uMarhobane; redirects to capeindependent.substack.com)",
+      "tier": "3",
+      "verified": "2026-11-17"
+    },
+    {
+      "domain": "capeindependent.com",
+      "outlet": "The Cape Independent (older site; did not respond on 17 Nov 2026)",
+      "tier": "3",
+      "verified": "2026-11-17"
+    },
+    {
+      "domain": "capeindependent.substack.com",
+      "outlet": "The Cape Independent (Substack)",
+      "tier": "3",
+      "verified": "2026-11-17"
+    },
+    {
+      "domain": "briefly.co.za",
+      "outlet": "Briefly News",
+      "tier": "3",
+      "verified": "2026-11-17"
+    },
+    {
+      "domain": "randdesk.co.za",
+      "outlet": "Rand Desk",
+      "tier": "3",
+      "verified": "2026-11-17"
+    },
+    {
+      "domain": "da.org.za",
+      "outlet": "Democratic Alliance (national)",
+      "tier": "party",
+      "verified": "2026-11-17"
+    },
+    {
+      "domain": "dagauteng.org.za",
+      "outlet": "Democratic Alliance Gauteng",
+      "tier": "party",
+      "verified": "2026-11-17"
+    },
+    {
+      "domain": "actionsa.org.za",
+      "outlet": "ActionSA",
+      "tier": "party",
+      "verified": "2026-11-17"
+    },
+    {
+      "domain": "esp.info",
+      "outlet": "ElectionSePush",
+      "tier": "link_only",
+      "verified": "2026-11-17"
+    },
+    {
+      "domain": "wikipedia.org",
+      "outlet": "Wikipedia",
+      "tier": "not_allowed",
+      "verified": "2026-11-17"
+    },
+    {
+      "domain": "wikidata.org",
+      "outlet": "Wikidata",
+      "tier": "not_allowed",
+      "verified": "2026-11-17"
+    },
+    {
+      "domain": "counted.co.za",
+      "outlet": "Counted.co.za (councillor aggregator)",
+      "tier": "not_allowed",
+      "verified": "2026-11-17"
+    },
+    {
+      "domain": "scrutinize.co.za",
+      "outlet": "scrutinize.co.za (a 'Launching Soon' placeholder on 17 Nov 2026; not a publication)",
+      "tier": "not_allowed",
+      "verified": "2026-11-17"
+    },
+    {
+      "domain": "dispatchlive.co.za",
+      "outlet": "Daily Dispatch (old domain; redirects to dailydispatch.co.za)",
+      "tier": "2",
+      "verified": "2026-11-17"
+    },
+    {
+      "domain": "heraldlive.co.za",
+      "outlet": "The Herald (old domain; redirects to theherald.co.za)",
+      "tier": "2",
+      "verified": "2026-11-17"
+    }
+  ]
+}

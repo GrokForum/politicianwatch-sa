@@ -17,7 +17,7 @@
 9. Before adding a dependency, confirm the package exists on PyPI, is the intended one, and is actively maintained. Update the lockfile.
 10. No secrets in code, the repo, logs or chat. Parameterised SQL only, when SQL is used.
 11. `retrieved_at` comes from fetch provenance, never from memory. Fetch sources with `uv run pwatch fetch-source <url>`, which stores the page in the raw layer, logs the real fetch time in `data/raw/manifest.jsonl` and prints the `retrieved_at` to copy. A fetched file's own timestamp also counts. **Never type a `retrieved_at` time by hand.** If the time was not logged, write the date only (`YYYY-MM-DD`), which is read as "time not logged". `pwatch dq` fails any value later than the run time (a date-only value fails only if that date is after today's date in SAST). Fetched pages under `data/raw/` are gitignored, but `data/raw/manifest.jsonl` is committed and is not gitignored: it is the provenance record.
-12. Use only sources on the allowed list in `docs/allowed-sources.md`. A source not on it needs the owner's confirmation before it is cited.
+12. Use only sources on the allowed list in `docs/allowed-sources.md` (tiers 1, 2 and 3; registry `data/sources.json`). A source not on it needs the owner's confirmation before it is cited. Tier 3 is Reported only and never the sole source for an adverse item or an identity link; `pwatch dq` enforces this and warns about domains that are not in the registry.
 
 **How to verify your work (show the output, don't claim it):** `uv run pytest -q` · `uv run pwatch dq` (exit 0). Docs-only changes need a link check. Run a `popia-review` before a PR or publish.
 
