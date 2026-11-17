@@ -167,3 +167,35 @@ def test_also_sourced_date_and_url_formats_are_checked(synthetic_profiles, repo_
         p["cv"][0]["also_sourced"] = [{**good, **change}]
         failures = check_profile(p, drafts_root=repo_root, as_of=AS_OF)
         assert any(message in f for f in failures), (change, failures)
+
+
+def _write_profile(path, doc):
+    import json
+
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(doc), encoding="utf-8")
+
+
+def test_held_profiles_are_excluded_from_batch_dq_and_render(synthetic_profiles, tmp_path, capsys):
+    """CHG-PW-003 fix 1: a profile in _hold/ or with status on_hold is not counted, rendered or checked."""
+    from pwatch.cli import main
+    from pwatch.profiles import load_held_profiles, load_profile_dir
+
+    root = tmp_path / "profiles"
+    active = _cv_profile(synthetic_profiles)
+    _write_profile(root / "active.json", active)
+    (root / "active.md").write_text(render_markdown(active), encoding="utf-8")
+    held_dir = deepcopy(active)
+    held_dir["slug"] = "held-in-dir"
+    held_dir["identity_match"] = {"matched_details": ["surname only"], "note": None}  # would fail dq if checked
+    _write_profile(root / "_hold" / "held-in-dir.json", held_dir)
+    held_flag = deepcopy(held_dir)
+    held_flag["slug"] = "held-flag"
+    held_flag["status"] = "on_hold"
+    _write_profile(root / "held-flag.json", held_flag)  # no .md: render --check must not ask for one
+
+    assert [d["slug"] for _, d in load_profile_dir(root)] == ["thabo-testward"]
+    assert sorted(d["slug"] for _, d in load_held_profiles(root)) == ["held-flag", "held-in-dir"]
+    assert main(["render", "--check", "--profiles-dir", str(root)]) == 0
+    capsys.readouterr()
+    assert check_profile(held_dir, as_of=AS_OF) != []  # the held profile really would fail the gate

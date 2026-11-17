@@ -21,6 +21,7 @@ DRAFT: NOT SENT. The owner sends personally. The bot never sends.
 > - Seat: ENNIE RAMADIMETJA MAKHAFOLA, ECONOMIC FREEDOM FIGHTERS, City of Johannesburg, PR seat (list rank 14) (Government Gazette 55741, p.46) (Confirmed)
 > - City of Johannesburg MMC for Health and Social Development (in office as at April 2026) (Confirmed; 2026-04-20, https://joburg.org.za/media_/Newsroom/Pages/2026-News-Articles/Residents%E2%80%99-concerns-take-centre-stage-as-Joburg-charts-inclusive-future.aspx)
 > - Appointed MMC for Health and Social Development by Executive Mayor Thapelo Amad after being sworn in as a councillor (Confirmed; 2023-02-03, https://joburg.org.za/media_/Pages/Media/Media%20Statements/2023%20Media%20Statements/February/Joburg-Executive-Mayor-Announces-two-new-MMCS.aspx)
+> - First year in council: 2023. Sworn in as a City of Johannesburg councillor (EFF) on Friday 3 February 2023 (Reported; 2023-02-03, https://www.sowetan.co.za/news/south-africa/2023-02-03-kunene-makhafola-sworn-in-as-councillors/)
 > - EFF MMC for Health and Social Development since February 2023 (as reported in August 2024) (Reported; 2024-08-14, https://iol.co.za/news/politics/2024-08-14-reconfiguring-joburg-leadership-eff-puts-hand-up-wants-to-continue-with-two-mmcs/)
 > - Acting Executive Mayor during a Region E IDP engagement chaired by the council speaker (Confirmed; 2026-04-20, https://joburg.org.za/media_/Newsroom/Pages/2026-News-Articles/Residents%E2%80%99-concerns-take-centre-stage-as-Joburg-charts-inclusive-future.aspx)
 

@@ -75,5 +75,7 @@
     "Any earlier public office or party role",
     "Council office or portfolio for the 2026–2031 term (executive mayor and mayoral committee not yet elected; first sitting expected around 19 November 2026 — not guessed)",
     "Official council contact channel (owner to confirm from the City's published councillor directory)"
-  ]
+  ],
+  "status": "on_hold",
+  "hold_reason": "On hold (CHG-PW-003 fix 1, Cassian blind source check, 17 Nov 2026). Gazette 55741 lists two councillors surnamed MBATHA in the City of Johannesburg (MTHEMBENI SELBY MBATHA, MK, ward 61; PHUMLANI MOSES MBATHA, DA, ward 92), and this profile did not show which one was matched. We need two identifying details from an allowed source before linking anything to a councillor; none was found. The roster row is unchanged. Not part of batch 2."
 }

@@ -13,19 +13,47 @@ from typing import Any
 
 from pwatch.ror import display
 from pwatch.schema import iter_facts
-from pwatch.settings import GAZETTE_PDF_URL, IDENTITY_MIN_DETAILS, PROFILES_DIR
+from pwatch.settings import GAZETTE_PDF_URL, HOLD_DIRNAME, HOLD_STATUS, IDENTITY_MIN_DETAILS, PROFILES_DIR
 
 UNKNOWN_PLACEHOLDER = "Unknown — not yet sourced (placeholder)"
 BLANK_REPLY = "_(blank — no reply recorded)_"
 
 
+def is_on_hold(profile: dict[str, Any]) -> bool:
+    return isinstance(profile, dict) and profile.get("status") == HOLD_STATUS
+
+
 def load_profile_dir(path: Path | None = None) -> list[tuple[Path, dict[str, Any]]]:
+    """Active CV profiles only: top-level *.json, skipping any with status on_hold.
+
+    Held profiles (in the _hold/ subdirectory, or marked on_hold) are not part of a batch,
+    so dq does not count them and render does not write or check them.
+    """
     root = path or PROFILES_DIR
     if not root.is_dir():
         return []
     out = []
     for p in sorted(root.glob("*.json")):
-        out.append((p, json.loads(p.read_text(encoding="utf-8"))))
+        doc = json.loads(p.read_text(encoding="utf-8"))
+        if not is_on_hold(doc):
+            out.append((p, doc))
+    return out
+
+
+def load_held_profiles(path: Path | None = None) -> list[tuple[Path, dict[str, Any]]]:
+    """Profiles on hold: everything in <dir>/_hold/*.json plus any top-level file marked on_hold."""
+    root = path or PROFILES_DIR
+    if not root.is_dir():
+        return []
+    out = []
+    for p in sorted(root.glob("*.json")):
+        doc = json.loads(p.read_text(encoding="utf-8"))
+        if is_on_hold(doc):
+            out.append((p, doc))
+    hold = root / HOLD_DIRNAME
+    if hold.is_dir():
+        for p in sorted(hold.glob("*.json")):
+            out.append((p, json.loads(p.read_text(encoding="utf-8"))))
     return out
 
 

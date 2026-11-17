@@ -66,6 +66,15 @@
   },
   "cv": [
     {
+      "value": "First year in council: 2014. Won the City of Johannesburg ward 57 by-election for the DA on Wednesday 2 July 2014 (66.09% of the vote, as reported)",
+      "label": "Reported",
+      "source_url": "https://www.citizen.co.za/southern-courier/news-headlines/2014/07/11/new-da-ward-57-councillor-faeeza-chame/",
+      "source_date": "2014-07-11",
+      "retrieved_at": "2026-11-17T11:45:00+02:00",
+      "field": "position",
+      "period": "2014-07-02"
+    },
+    {
       "value": "Elected DA Region F whip in the Johannesburg caucus",
       "label": "Reported",
       "source_url": "https://dagauteng.org.za/2024/07/johannesburg-region-caucus-elections-official-statement",
@@ -77,16 +86,18 @@
   ],
   "identity_match": {
     "matched_details": [
-      "Name: 'Faeeza Chame' (DA 2024-07-23) matches the gazette exactly.",
-      "Party and council: DA, Johannesburg region caucus, in both."
+      "Name: 'Faeeza Chame' (DA 2024-07-23; Southern Courier 2014-07-11) matches the gazette exactly.",
+      "Party and council: DA, City of Johannesburg (Johannesburg region caucus), in the gazette and both sources.",
+      "Ward: Southern Courier (2014-07-11) names her the elected DA ward 57 councillor; the gazette lists her for ward 57. (Ward boundaries have been redrawn since 2014; the number matches but the area may differ.)"
     ],
-    "note": "Thin public record: one party statement only (Reported). Ward 57 comes from the gazette only."
+    "note": "Three details match. The 2014 Southern Courier article also carries her age, suburb, family details, a personal phone number and a personal email address; none of these are recorded (public role only). Continuous service from 2014 to 2026 is not confirmed by an allowed source."
   },
   "court_matters": [],
   "scandals": [],
   "unknown_fields": [
     "career",
     "education",
+    "Whether she served continuously as a councillor from 2014 to 2026",
     "Council office or portfolio for the 2026–2031 term (executive mayor and mayoral committee not yet elected; first sitting expected around 19 November 2026 — not guessed)",
     "Official council contact channel (owner to confirm from the City's published councillor directory)"
   ]

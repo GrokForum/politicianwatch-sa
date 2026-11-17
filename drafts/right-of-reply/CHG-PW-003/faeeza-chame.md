@@ -20,6 +20,7 @@ DRAFT: NOT SENT. The owner sends personally. The bot never sends.
 > **Items in the profile:**
 > - Seat: FAEEZA CHAME, DEMOCRATIC ALLIANCE, City of Johannesburg, ward 57 (Government Gazette 55741, p.45) (Confirmed)
 > - DA Region F whip in the Johannesburg caucus (from July 2024) (Reported; 2024-07-23, https://dagauteng.org.za/2024/07/johannesburg-region-caucus-elections-official-statement)
+> - First year in council: 2014. Won the City of Johannesburg ward 57 by-election for the DA on Wednesday 2 July 2014 (66.09% of the vote, as reported) (Reported; 2014-07-11, https://www.citizen.co.za/southern-courier/news-headlines/2014/07/11/new-da-ward-57-councillor-faeeza-chame/)
 > - Elected DA Region F whip in the Johannesburg caucus (Reported; 2024-07-23, https://dagauteng.org.za/2024/07/johannesburg-region-caucus-elections-official-statement)
 
 ## Record (owner only)

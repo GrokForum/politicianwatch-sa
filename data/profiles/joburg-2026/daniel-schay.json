@@ -66,6 +66,15 @@
   },
   "cv": [
     {
+      "value": "First year in council: 2021. Newly elected as the DA's ward 72 councillor in the 1 November 2021 local government elections",
+      "label": "Reported",
+      "source_url": "https://www.sajr.co.za/the-winners-and-losers-in-the-elections/",
+      "source_date": "2021-11-04",
+      "retrieved_at": "2026-11-17T11:45:00+02:00",
+      "field": "position",
+      "period": "2021-11"
+    },
+    {
       "value": "Named DA shadow MMC for Development Planning by caucus leader Belinda Echeozonjoku",
       "label": "Reported",
       "source_url": "https://www.timeslive.co.za/politics/2023-06-09-new-da-joburg-caucus-leader-appoints-her-shadow-mayoral-committee/",
@@ -87,9 +96,10 @@
   "identity_match": {
     "matched_details": [
       "Name: 'Daniel Schay' (TimesLIVE 2023-06-09) and 'Cllr Daniel Schay' (DA 2024-07-23) match the gazette exactly.",
-      "Party and council: DA councillor in the City of Johannesburg in all three."
+      "Party and council: DA councillor in the City of Johannesburg in all three.",
+      "Ward: SA Jewish Report (2021-11-04) names 'Daniel Schay' as the DA's newly elected ward 72 councillor; the gazette lists him for ward 72. (Ward boundaries were redrawn for 2026; the number matches but the area may differ.)"
     ],
-    "note": "Ward 72 comes from the gazette only."
+    "note": "Three details match. The SA Jewish Report article also describes his professional qualification; it is not added in this fix (scope: first year in council only) and career stays Unknown pending review."
   },
   "court_matters": [],
   "scandals": [],

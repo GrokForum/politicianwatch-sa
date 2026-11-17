@@ -22,6 +22,7 @@ DRAFT PROFILE — not published. Public role only. Every item carries an evidenc
 ## CV (public role)
 
 - **Position (2023-02-03):** Appointed MMC for Health and Social Development by Executive Mayor Thapelo Amad after being sworn in as a councillor · `Confirmed` — [source](https://joburg.org.za/media_/Pages/Media/Media%20Statements/2023%20Media%20Statements/February/Joburg-Executive-Mayor-Announces-two-new-MMCS.aspx), 2023-02-03 (retrieved 2026-11-17T11:10:00+02:00)
+- **Position (2023-02-03):** First year in council: 2023. Sworn in as a City of Johannesburg councillor (EFF) on Friday 3 February 2023 · `Reported` — [source](https://www.sowetan.co.za/news/south-africa/2023-02-03-kunene-makhafola-sworn-in-as-councillors/), 2023-02-03 (retrieved 2026-11-17T11:45:00+02:00)
 - **Position (2024-08):** EFF MMC for Health and Social Development since February 2023 (as reported in August 2024) · `Reported` — [source](https://iol.co.za/news/politics/2024-08-14-reconfiguring-joburg-leadership-eff-puts-hand-up-wants-to-continue-with-two-mmcs/), 2024-08-14 (retrieved 2026-11-17T11:10:00+02:00)
 - **Position (2026-04-19):** Acting Executive Mayor during a Region E IDP engagement chaired by the council speaker · `Confirmed` — [source](https://joburg.org.za/media_/Newsroom/Pages/2026-News-Articles/Residents%E2%80%99-concerns-take-centre-stage-as-Joburg-charts-inclusive-future.aspx), 2026-04-20 (retrieved 2026-11-17T11:10:00+02:00)
 
@@ -43,6 +44,6 @@ DRAFT PROFILE — not published. Public role only. Every item carries an evidenc
 ## Identity match (how sources were linked)
 
 - Name: 'Cllr. Ennie Makhafola' (City 2023-02-03; 2026-04-20) matches the gazette's first given name and surname.
-- Party: EFF in the gazette and IOL (2024-08-14).
-- Council role: City of Johannesburg councillor and MMC in all three.
+- Party: EFF in the gazette, IOL (2024-08-14) and Sowetan (2023-02-03, 'EFF councillor Ennie Makhafola').
+- Council role: City of Johannesburg councillor and MMC in all four.
 - Note: Career and education are left Unknown: the only sources found (a party statement on Politicsweb and a personal professional-network profile) are not on the allowed list.

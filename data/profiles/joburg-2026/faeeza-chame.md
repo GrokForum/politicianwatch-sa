@@ -20,6 +20,7 @@ DRAFT PROFILE — not published. Public role only. Every item carries an evidenc
 
 ## CV (public role)
 
+- **Position (2014-07-02):** First year in council: 2014. Won the City of Johannesburg ward 57 by-election for the DA on Wednesday 2 July 2014 (66.09% of the vote, as reported) · `Reported` — [source](https://www.citizen.co.za/southern-courier/news-headlines/2014/07/11/new-da-ward-57-councillor-faeeza-chame/), 2014-07-11 (retrieved 2026-11-17T11:45:00+02:00)
 - **Position (2024-07-23):** Elected DA Region F whip in the Johannesburg caucus · `Reported` — [source](https://dagauteng.org.za/2024/07/johannesburg-region-caucus-elections-official-statement), 2024-07-23 (retrieved 2026-11-17T11:10:00+02:00)
 
 ## Court matters
@@ -34,11 +35,13 @@ DRAFT PROFILE — not published. Public role only. Every item carries an evidenc
 
 - career: Unknown — not yet sourced (placeholder)
 - education: Unknown — not yet sourced (placeholder)
+- Whether she served continuously as a councillor from 2014 to 2026: Unknown — not yet sourced (placeholder)
 - Council office or portfolio for the 2026–2031 term (executive mayor and mayoral committee not yet elected; first sitting expected around 19 November 2026 — not guessed): Unknown — not yet sourced (placeholder)
 - Official council contact channel (owner to confirm from the City's published councillor directory): Unknown — not yet sourced (placeholder)
 
 ## Identity match (how sources were linked)
 
-- Name: 'Faeeza Chame' (DA 2024-07-23) matches the gazette exactly.
-- Party and council: DA, Johannesburg region caucus, in both.
-- Note: Thin public record: one party statement only (Reported). Ward 57 comes from the gazette only.
+- Name: 'Faeeza Chame' (DA 2024-07-23; Southern Courier 2014-07-11) matches the gazette exactly.
+- Party and council: DA, City of Johannesburg (Johannesburg region caucus), in the gazette and both sources.
+- Ward: Southern Courier (2014-07-11) names her the elected DA ward 57 councillor; the gazette lists her for ward 57. (Ward boundaries have been redrawn since 2014; the number matches but the area may differ.)
+- Note: Three details match. The 2014 Southern Courier article also carries her age, suburb, family details, a personal phone number and a personal email address; none of these are recorded (public role only). Continuous service from 2014 to 2026 is not confirmed by an allowed source.

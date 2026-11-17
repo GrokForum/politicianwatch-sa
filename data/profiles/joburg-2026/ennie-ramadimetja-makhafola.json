@@ -82,6 +82,15 @@
       "period": "2023-02-03"
     },
     {
+      "value": "First year in council: 2023. Sworn in as a City of Johannesburg councillor (EFF) on Friday 3 February 2023",
+      "label": "Reported",
+      "source_url": "https://www.sowetan.co.za/news/south-africa/2023-02-03-kunene-makhafola-sworn-in-as-councillors/",
+      "source_date": "2023-02-03",
+      "retrieved_at": "2026-11-17T11:45:00+02:00",
+      "field": "position",
+      "period": "2023-02-03"
+    },
+    {
       "value": "EFF MMC for Health and Social Development since February 2023 (as reported in August 2024)",
       "label": "Reported",
       "source_url": "https://iol.co.za/news/politics/2024-08-14-reconfiguring-joburg-leadership-eff-puts-hand-up-wants-to-continue-with-two-mmcs/",
@@ -103,8 +112,8 @@
   "identity_match": {
     "matched_details": [
       "Name: 'Cllr. Ennie Makhafola' (City 2023-02-03; 2026-04-20) matches the gazette's first given name and surname.",
-      "Party: EFF in the gazette and IOL (2024-08-14).",
-      "Council role: City of Johannesburg councillor and MMC in all three."
+      "Party: EFF in the gazette, IOL (2024-08-14) and Sowetan (2023-02-03, 'EFF councillor Ennie Makhafola').",
+      "Council role: City of Johannesburg councillor and MMC in all four."
     ],
     "note": "Career and education are left Unknown: the only sources found (a party statement on Politicsweb and a personal professional-network profile) are not on the allowed list."
   },

@@ -11,6 +11,10 @@ ROSTER_DIR = DATA_DIR / "roster"
 SCHEMA_PATH = REPO_ROOT / "schemas" / "profile.schema.json"
 DRAFTS_ROR_DIR = REPO_ROOT / "drafts" / "right-of-reply"
 PROFILES_DIR = DATA_DIR / "profiles" / "joburg-2026"
+# Profiles on hold (CHG-PW-003 fix 1) live in this subdirectory and/or carry status "on_hold".
+# They are kept for the record but are not part of any batch: dq and render skip them.
+HOLD_DIRNAME = "_hold"
+HOLD_STATUS = "on_hold"
 
 USER_AGENT = "PoliticianWatchSA/0.1 public-interest research (politicianwatch.grokforum.site)"
 

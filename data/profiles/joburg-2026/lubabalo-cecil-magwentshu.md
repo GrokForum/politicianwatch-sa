@@ -21,7 +21,7 @@ DRAFT PROFILE — not published. Public role only. Every item carries an evidenc
 
 ## CV (public role)
 
-- **Position (2021-11):** Became a councillor in November 2021 · `Reported` — [source](https://www.citizen.co.za/news/lubabalo-magwentshu-mmc-interview/), 2023-06-17 (retrieved 2026-11-17T11:10:00+02:00)
+- **Position (2021-11):** First year in council: 2021. Became a councillor in November 2021 · `Reported` — [source](https://www.citizen.co.za/news/lubabalo-magwentshu-mmc-interview/), 2023-06-17 (retrieved 2026-11-17T11:10:00+02:00)
 - **Position (2022):** Chaired a Section 79 committee of the council · `Reported` — [source](https://www.citizen.co.za/news/lubabalo-magwentshu-mmc-interview/), 2023-06-17 (retrieved 2026-11-17T11:10:00+02:00)
 - **Position (2023-02-02):** Appointed MMC for Community Development by Executive Mayor Thapelo Amad · `Confirmed` — [source](https://joburg.org.za/media_/Pages/Media/Media%20Statements/2023%20Media%20Statements/February/Joburg-Executive-Mayor-announces-new-MMCs.aspx), 2023-02-02 (retrieved 2026-11-17T11:10:00+02:00)
 - **Position (2024-08-16):** Mayor Dada Morero gave the Community Development portfolio to Kabelo Gwamanda on 16 August 2024 · `Reported` — [source](https://www.ewn.co.za/2024/08/17/former-joburg-mayor-gwamanda-appointed-as-community-development-mmc), 2024-08-17 (retrieved 2026-11-17T11:10:00+02:00)

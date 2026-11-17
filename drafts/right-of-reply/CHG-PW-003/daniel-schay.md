@@ -20,6 +20,7 @@ DRAFT: NOT SENT. The owner sends personally. The bot never sends.
 > **Items in the profile:**
 > - Seat: DANIEL SCHAY, DEMOCRATIC ALLIANCE, City of Johannesburg, ward 72 (Government Gazette 55741, p.45) (Confirmed)
 > - DA shadow MMC for Development Planning in Johannesburg (reappointed July 2024) (Reported; 2024-07-23, https://dagauteng.org.za/2024/07/fit-for-purpose-da-shadow-cabinet-to-hold-anc-eff-pa-al-jama-ah-accountable)
+> - First year in council: 2021. Newly elected as the DA's ward 72 councillor in the 1 November 2021 local government elections (Reported; 2021-11-04, https://www.sajr.co.za/the-winners-and-losers-in-the-elections/)
 > - Named DA shadow MMC for Development Planning by caucus leader Belinda Echeozonjoku (Reported; 2023-06-09, https://www.timeslive.co.za/politics/2023-06-09-new-da-joburg-caucus-leader-appoints-her-shadow-mayoral-committee/)
 > - Reappointed DA shadow MMC for Development Planning (Reported; 2024-07-23, https://dagauteng.org.za/2024/07/fit-for-purpose-da-shadow-cabinet-to-hold-anc-eff-pa-al-jama-ah-accountable)
 

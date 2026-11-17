@@ -40,6 +40,6 @@ DRAFT PROFILE — not published. Public role only. Every item carries an evidenc
 
 ## Identity match (how sources were linked)
 
-- Name: 'Devon Steenkamp' (DA 2024-07-23) matches the gazette exactly.
-- Party and council: DA, Johannesburg region caucus, in both.
-- Note: Only a party statement was found (Reported). Ward 98 comes from the gazette only. The roster also has an unrelated RAYMONT ISMAEL STEENKAMP (PA); the given name DEVON distinguishes them.
+- Name: 'Devon Steenkamp' (DA 2024-07-23) matches the gazette's full name DEVON STEENKAMP exactly.
+- Party and council: DA, Johannesburg region caucus (DA 2024-07-23); the gazette lists DEVON STEENKAMP for the DA in the City of Johannesburg.
+- Note: Second-detail check (Cassian blind source check, 17 Nov 2026): the gazette has two councillors surnamed STEENKAMP, DEVON STEENKAMP (DA, ward 98) and RAYMONT ISMAEL STEENKAMP (PA, ward 29). The DA statement gives the given name Devon and the party (DA); both match DEVON STEENKAMP and neither matches the other. The statement gives no ward. 'Region C' is a DA caucus region and is not used as a match: no allowed source maps ward 98 to it. Only a party statement was found (Reported); ward 98 comes from the gazette only.

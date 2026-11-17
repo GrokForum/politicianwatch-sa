@@ -10,7 +10,7 @@ from pathlib import Path
 
 from pwatch import __version__
 from pwatch.dq import exit_code, run
-from pwatch.profiles import load_profile_dir, render_markdown, roster_index
+from pwatch.profiles import load_held_profiles, load_profile_dir, render_markdown, roster_index
 from pwatch.roster import load_csv, load_joburg_roster
 from pwatch.settings import PROFILES_DIR, REPO_ROOT
 
@@ -49,6 +49,7 @@ def cmd_dq(args: argparse.Namespace) -> int:
             "status": "pass" if result["status"] == "pass" and cv_result["status"] == "pass" else "fail",
             "profiles": result["profiles"],
             "cv_profiles": cv_result["profiles"],
+            "cv_profiles_on_hold": len(load_held_profiles(cv_dir)),
             "failures": result["failures"] + cv_result["failures"],
             "failure_count": result["failure_count"] + cv_result["failure_count"],
             "as_of": result["as_of"],
