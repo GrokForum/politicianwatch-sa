@@ -1,0 +1,5 @@
+This is a cover page of a synthetic gazette fixture.
+                                                                    Gauteng   EKU - Ekurhuleni   SYNTHETIC PARTY                         79700001   DECOY                SHOULDIGNORE             MC Ward
+                                                                    Gauteng   JHB - City of Johannesburg   SYNTHETIC PARTY                          79800001  TESTWARD             THABO                    MC Ward
+                                                                    Gauteng   JHB - City of Johannesburg   SYNTHETIC PARTY                          79800002  EXAMPLE              KEVIN                    MC Ward
+                                                                    Gauteng   JHB - City of Johannesburg   SYNTHETIC PARTY                          PR(1)     FIXTURE              NOMVULA                  MC PR
