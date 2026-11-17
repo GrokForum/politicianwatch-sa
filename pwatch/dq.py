@@ -10,7 +10,8 @@ Checks:
 - every non-Unknown fact has retrieved_at (CHG-PW-002)
 - a profile that links non-gazette sources records at least two matching identity details (CHG-PW-002)
 - a CV profile matches its gazetted roster row (CHG-PW-002, when a roster index is given)
-- source tiers (CHG-PW-004, data/sources.json): no link_only/not_allowed domains; unknown domains are warnings, not failures
+- source tiers (CHG-PW-004, data/sources.json): no link_only/not_allowed domains; an adverse item or an identity
+  link may not rest only on tier-3 sources (CHG-PW-005); unknown domains are warnings, not failures
 - no retrieved_at anywhere in a profile (facts, also_sourced, adverse items) is later than the run time (CHG-PW-003 fix 2); a date-only value is future only if that date is after today's date in SAST (fix 3)
 """
 
@@ -20,7 +21,7 @@ from datetime import date, datetime, timezone
 from pathlib import Path
 from typing import Any
 
-from pwatch.profiles import check_against_roster, check_identity
+from pwatch.profiles import check_against_roster, check_identity, non_gazette_sources
 from pwatch.ror import check_right_of_reply
 from pwatch.schema import iter_adverse_items, retrieved_at_is_future, validate_profile_shape
 from pwatch.settings import LABELS
@@ -57,12 +58,26 @@ def check_source_tiers(profile: dict[str, Any], locator: str, registry: dict[str
     """CHG-PW-004: source-tier rules (registry in data/sources.json).
 
     - A source on a link_only or not_allowed domain fails.
+    - An adverse item whose sources (source_url + also_sourced) are all tier 3 fails.
+    - A profile whose identity link rests only on tier-3 sources fails (the non-gazette sources,
+      including also_sourced, are all tier 3).
     """
     failures: list[str] = []
     for url in sorted(set(source_urls(profile))):
         tier = tier_of(url, registry)
         if tier in FAIL_TIERS:
             failures.append(f"{locator}: source {url} is on a {tier} domain")
+    for item_loc, item in iter_adverse_items(profile):
+        urls = source_urls(item)
+        if urls and all(tier_of(u, registry) == "3" for u in urls):
+            failures.append(
+                f"{locator}.{item_loc}: adverse item relies only on tier-3 sources; corroborate from tier 1 or 2"
+            )
+    linked = set(non_gazette_sources(profile))
+    seat_source = (profile.get("name") or {}).get("source_url")
+    linked |= {u for u in source_urls(profile) if u != seat_source}
+    if linked and all(tier_of(u, registry) == "3" for u in linked):
+        failures.append(f"{locator}: identity link relies only on tier-3 sources; corroborate from tier 1 or 2")
     return failures
 
 
