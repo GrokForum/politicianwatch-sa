@@ -52,6 +52,7 @@ def cmd_dq(args: argparse.Namespace) -> int:
             "cv_profiles_on_hold": len(load_held_profiles(cv_dir)),
             "failures": result["failures"] + cv_result["failures"],
             "failure_count": result["failure_count"] + cv_result["failure_count"],
+            "warnings": result.get("warnings", []) + cv_result.get("warnings", []),
             "as_of": result["as_of"],
         }
     print(json.dumps(result, indent=2))

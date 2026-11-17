@@ -1,0 +1,68 @@
+"""CHG-PW-004: source registry and tier rules, on synthetic fixtures (plus a registry sanity check)."""
+
+import json
+from copy import deepcopy
+from datetime import date
+
+from pwatch.dq import check_source_tiers, run
+from pwatch.schema import fact
+from pwatch.sources import REGISTRY_PATH, TIERS, load_registry, tier_of
+
+REG = {"gazette.test": "1", "bignews.test": "2", "aggregator.test": "not_allowed", "esp.test": "link_only"}
+GAZ = "https://gazette.test/55741.pdf"
+T2 = "https://www.bignews.test/a"
+T2B = "https://city.bignews.test/c"  # subdomain matches its parent domain
+RET = "2026-11-17"
+
+
+def _profile(linked_urls, adverse_urls=None):
+    p = {
+        "name": fact("THABO TEST", "Confirmed", GAZ, "2026-11-13", RET),
+        "cv": [{**fact("Former synthetic MMC", "Reported", u, "2026-09-06", RET), "field": "position"} for u in linked_urls],
+        "court_matters": [],
+        "scandals": [],
+    }
+    if adverse_urls is not None:
+        item = fact("A synthetic allegation", "Alleged", adverse_urls[0], "2026-09-06", RET)
+        item["also_sourced"] = [{"source_url": u, "source_date": "2026-09-06", "retrieved_at": RET} for u in adverse_urls[1:]]
+        p["scandals"] = [item]
+    return p
+
+
+def test_tier_of_matches_domain_and_subdomains():
+    assert tier_of(T2, REG) == "2"
+    assert tier_of(T2B, REG) == "2"
+    assert tier_of("https://notbignews.test/x", REG) is None  # suffix must be a whole label
+    assert tier_of("https://unknown.example/x", REG) is None
+
+
+def test_not_allowed_and_link_only_domains_fail():
+    fails = check_source_tiers(_profile([T2, "https://aggregator.test/c", "https://esp.test/w"]), "p", REG)
+    assert any("not_allowed domain" in f for f in fails)
+    assert any("link_only domain" in f for f in fails)
+
+
+def test_unknown_domain_warns_but_does_not_fail(synthetic_profiles, repo_root):
+    p = deepcopy(synthetic_profiles[0])
+    p["cv"] = [{**fact("Synthetic role", "Reported", "https://unknown.example/x", "2026-09-06", RET), "field": "position"}]
+    p["identity_match"] = {"matched_details": ["full name", "party and ward"], "note": None}
+    result = run([p], drafts_root=repo_root, as_of=date(2026, 11, 15))
+    assert any("not in data/sources.json: https://unknown.example/x" in w for w in result["warnings"])
+    assert not any("unknown.example" in f for f in result["failures"])
+
+
+def test_committed_registry_is_valid_and_covers_committed_profiles(repo_root):
+    data = json.loads(REGISTRY_PATH.read_text(encoding="utf-8"))
+    domains = [e["domain"] for e in data["sources"]]
+    assert len(domains) == len(set(domains)), "duplicate domain in data/sources.json"
+    assert all(str(e["tier"]) in TIERS and e.get("outlet") and e.get("verified") for e in data["sources"])
+    reg = load_registry()
+    assert tier_of("https://www.citizen.co.za/southern-courier/x", reg) == "2"
+    assert tier_of("https://www.biznews.com/x", reg) == "2"
+    assert "3" not in set(reg.values())  # smaller outlets are CHG-PW-005, not this change
+    # every source URL in the committed CV profiles is in the registry
+    import re
+
+    text = "".join(p.read_text(encoding="utf-8") for p in (repo_root / "data" / "profiles").rglob("*.json"))
+    urls = set(re.findall(r'"source_url": "([^"]+)"', text))
+    assert urls and all(tier_of(u, reg) is not None for u in urls), [u for u in urls if tier_of(u, reg) is None]

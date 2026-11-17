@@ -10,7 +10,8 @@ Checks:
 - every non-Unknown fact has retrieved_at (CHG-PW-002)
 - a profile that links non-gazette sources records at least two matching identity details (CHG-PW-002)
 - a CV profile matches its gazetted roster row (CHG-PW-002, when a roster index is given)
-- no retrieved_at anywhere in a profile (facts, also_sourced, adverse items) is later than the run time (CHG-PW-003 fix 2); a date-only value counts as the end of that day, SAST (fix 3)
+- source tiers (CHG-PW-004, data/sources.json): no link_only/not_allowed domains; unknown domains are warnings, not failures
+- no retrieved_at anywhere in a profile (facts, also_sourced, adverse items) is later than the run time (CHG-PW-003 fix 2); a date-only value is future only if that date is after today's date in SAST (fix 3)
 """
 
 from __future__ import annotations
@@ -23,6 +24,7 @@ from pwatch.profiles import check_against_roster, check_identity
 from pwatch.ror import check_right_of_reply
 from pwatch.schema import iter_adverse_items, retrieved_at_is_future, validate_profile_shape
 from pwatch.settings import LABELS
+from pwatch.sources import FAIL_TIERS, source_urls, tier_of
 
 EXIT_OK = 0
 EXIT_NOT_RELEASABLE = 2
@@ -31,8 +33,8 @@ EXIT_NOT_RELEASABLE = 2
 def check_retrieved_not_future(obj: Any, locator: str, now: datetime) -> list[str]:
     """Every retrieved_at, at any depth (facts, also_sourced, adverse items), must not be later than now.
 
-    A date-only value (fetch time not logged) counts as the end of that day in SAST: it fails only if the
-    date is after the run date. Malformed values are reported by the format checks, not here.
+    A date-only value (fetch time not logged) fails only if that date is after today's date in SAST.
+    Malformed values are reported by the format checks, not here.
     """
     failures: list[str] = []
     if isinstance(obj, dict):
@@ -49,6 +51,28 @@ def check_retrieved_not_future(obj: Any, locator: str, now: datetime) -> list[st
         for i, val in enumerate(obj):
             failures.extend(check_retrieved_not_future(val, f"{locator}[{i}]", now))
     return failures
+
+
+def check_source_tiers(profile: dict[str, Any], locator: str, registry: dict[str, str] | None = None) -> list[str]:
+    """CHG-PW-004: source-tier rules (registry in data/sources.json).
+
+    - A source on a link_only or not_allowed domain fails.
+    """
+    failures: list[str] = []
+    for url in sorted(set(source_urls(profile))):
+        tier = tier_of(url, registry)
+        if tier in FAIL_TIERS:
+            failures.append(f"{locator}: source {url} is on a {tier} domain")
+    return failures
+
+
+def source_warnings(profile: dict[str, Any], locator: str, registry: dict[str, str] | None = None) -> list[str]:
+    """Warnings (not failures): source domains that are not in the registry."""
+    out = []
+    for url in sorted(set(source_urls(profile))):
+        if tier_of(url, registry) is None:
+            out.append(f"{locator}: source domain not in data/sources.json: {url}")
+    return out
 
 
 def check_identity_link(item: Any, locator: str) -> list[str]:
@@ -90,6 +114,7 @@ def check_profile(
     if isinstance(profile, dict):
         failures.extend(check_retrieved_not_future(profile, loc, now))
         failures.extend(check_identity(profile, loc))
+        failures.extend(check_source_tiers(profile, loc))
         if roster is not None:
             failures.extend(check_against_roster(profile, roster, loc))
     for item_loc, item in iter_adverse_items(profile if isinstance(profile, dict) else {}):
@@ -118,7 +143,10 @@ def run(
     as_of = as_of or date.today()
     now = now or datetime.now(timezone.utc)
     all_failures: list[str] = []
+    all_warnings: list[str] = []
     for i, profile in enumerate(profiles):
+        if isinstance(profile, dict):
+            all_warnings.extend(source_warnings(profile, f"{locator_prefix}[{i}]"))
         all_failures.extend(
             check_profile(
                 profile,
@@ -135,6 +163,7 @@ def run(
         "profiles": len(profiles),
         "failures": all_failures,
         "failure_count": len(all_failures),
+        "warnings": all_warnings,
         "as_of": as_of.isoformat(),
     }
 
