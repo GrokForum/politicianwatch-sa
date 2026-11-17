@@ -9,6 +9,7 @@
 - Pilot council: City of Johannesburg (270 seats, 135 wards). Executive mayor: Unknown (expected around 19 November 2026).
 - Adverse items in the roster: none. Right-of-reply rules are in the schema and the DQ gate for later work.
 - CHG-PW-002 (first 10 CV profiles, DEV/TEST) is on branch `dev/chg-pw-002-first-profiles` (PR #2, draft), branched from `ed801b1`. Not merged, not published. See the PR for the current head. 6 adverse items, all "Right of reply: pending"; 10 drafts in `drafts/right-of-reply/CHG-PW-002/`, none sent. Awaiting a plain PASS from Cavus and from Cassian on the same exact head, then an owner GO.
+- CHG-PW-003 (batch 2: 15 CV profiles, 10 ward / 5 PR, plus PR #2 review nits; DEV/TEST) is committed **locally** on `dev/chg-pw-003-batch-2`, stacked on the CHG-PW-002 branch. No adverse items; 15 optional accuracy-check drafts in `drafts/right-of-reply/CHG-PW-003/`, none sent. Not pushed, not merged, not published. Awaiting two plain PASS reviews on the same head and an owner GO.
 - PROD: not created. Gate locked.
 
 ## History
@@ -18,3 +19,4 @@
 | 2026-11-15 | CHG-PW-001 | DEV + TEST roster | Drafted locally; tests and POPIA check to be recorded on the branch head; not pushed | cfa7e22ff4fc7b12e2e891d1855e17ad261dcd84 |
 | 2026-11-15 | CHG-PW-002 | DEV + TEST profiles | 10 CV profiles + 10 unsent drafts; pytest 29 passed; `pwatch dq` pass (270 + 10); popia-review PASS; first commit | ed801b102d286d4a6ee8bd781e72f4168f722288 |
 | 2026-11-17 | CHG-PW-002 | DEV + TEST profiles | Review round 2 fixes (Cavus + Cassian PASS_WITH_CONCERNS on `c352484`): identity-link label on adverse items (Zille item now Reported), Kunene status `reported_conviction`, status wording; pytest 34 passed; `pwatch dq` pass; render check pass; popia-review PASS. Branch with PR #2 (draft); not merged | ed801b102d286d4a6ee8bd781e72f4168f722288 |
+| 2026-11-17 | CHG-PW-003 | DEV + TEST profiles | Nits commit + 15 batch-2 profiles + 15 unsent optional drafts; pytest 35 passed; `pwatch dq` pass (270 + 25); render check pass; popia-review PASS; committed locally | 4a341fedb1c0287b1e7a748d9b2163198b69544e |

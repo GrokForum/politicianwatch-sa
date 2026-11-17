@@ -1,0 +1,112 @@
+{
+  "slug": "albert-tefo-raphadu",
+  "change": "CHG-PW-003",
+  "name": {
+    "value": "ALBERT TEFO RAPHADU",
+    "label": "Confirmed",
+    "source_url": "https://www.gazettefinder.co.za/gazettes/government-gazette/2026/55741/government-gazette-55741-2026-11-13.pdf",
+    "source_date": "2026-11-13",
+    "retrieved_at": "2026-11-15T16:10:03+00:00",
+    "source_page": 44
+  },
+  "party": {
+    "value": "AFRICAN NATIONAL CONGRESS",
+    "label": "Confirmed",
+    "source_url": "https://www.gazettefinder.co.za/gazettes/government-gazette/2026/55741/government-gazette-55741-2026-11-13.pdf",
+    "source_date": "2026-11-13",
+    "retrieved_at": "2026-11-15T16:10:03+00:00",
+    "source_page": 44
+  },
+  "seat_type": {
+    "value": "ward",
+    "label": "Confirmed",
+    "source_url": "https://www.gazettefinder.co.za/gazettes/government-gazette/2026/55741/government-gazette-55741-2026-11-13.pdf",
+    "source_date": "2026-11-13",
+    "retrieved_at": "2026-11-15T16:10:03+00:00",
+    "source_page": 44
+  },
+  "ward_number": {
+    "value": 105,
+    "label": "Confirmed",
+    "source_url": "https://www.gazettefinder.co.za/gazettes/government-gazette/2026/55741/government-gazette-55741-2026-11-13.pdf",
+    "source_date": "2026-11-13",
+    "retrieved_at": "2026-11-15T16:10:03+00:00",
+    "source_page": 44
+  },
+  "council": {
+    "value": "City of Johannesburg",
+    "label": "Confirmed",
+    "source_url": "https://www.gazettefinder.co.za/gazettes/government-gazette/2026/55741/government-gazette-55741-2026-11-13.pdf",
+    "source_date": "2026-11-13",
+    "retrieved_at": "2026-11-15T16:10:03+00:00",
+    "source_page": 44
+  },
+  "ward_id": "79800105",
+  "pr_list_rank": null,
+  "known_as": {
+    "value": "Tefo Raphadu",
+    "label": "Reported",
+    "source_url": "https://iol.co.za/news/south-africa/2025-09-03-joburg-council-finally-elects-new-chief-whip-amid-withdrawal-legal-threats/",
+    "source_date": "2025-09-03",
+    "retrieved_at": "2026-11-17T11:10:00+02:00",
+    "note": "IOL names 'ANC Ward 105 councillor Tefo Raphadu'; TEFO is the second given name in the gazette. News24 (2022) spells it 'Teffo'."
+  },
+  "positions": {
+    "value": "ANC ward 105 councillor in the 2021–2026 council (as described in September 2025)",
+    "label": "Reported",
+    "source_url": "https://iol.co.za/news/south-africa/2025-09-03-joburg-council-finally-elects-new-chief-whip-amid-withdrawal-legal-threats/",
+    "source_date": "2025-09-03",
+    "retrieved_at": "2026-11-17T11:10:00+02:00"
+  },
+  "career": {
+    "value": null,
+    "label": "Unknown",
+    "source_url": null,
+    "source_date": null,
+    "retrieved_at": null
+  },
+  "education": {
+    "value": null,
+    "label": "Unknown",
+    "source_url": null,
+    "source_date": null,
+    "retrieved_at": null
+  },
+  "cv": [
+    {
+      "value": "Voted in as chairperson of the Section 79 Corporate and Shared Services committee (named 'Teffo Raphadu - ANC')",
+      "label": "Reported",
+      "source_url": "https://www.news24.com/southafrica/news/da-swoops-back-into-joburg-council-but-anc-bags-key-positions-on-committees-20221027",
+      "source_date": "2022-10-27",
+      "retrieved_at": "2026-11-17T11:10:00+02:00",
+      "field": "position",
+      "period": "2022-10-27"
+    },
+    {
+      "value": "During the September 2025 council chief-whip election he said the DA was collapsing the meeting, then unconditionally withdrew the claim (as reported)",
+      "label": "Reported",
+      "source_url": "https://iol.co.za/news/south-africa/2025-09-03-joburg-council-finally-elects-new-chief-whip-amid-withdrawal-legal-threats/",
+      "source_date": "2025-09-03",
+      "retrieved_at": "2026-11-17T11:10:00+02:00",
+      "field": "position",
+      "period": "2025-09-02"
+    }
+  ],
+  "identity_match": {
+    "matched_details": [
+      "Name: 'Tefo Raphadu' (IOL 2025-09-03) and 'Teffo Raphadu' (News24 2022-10-27) match the gazette's second given name TEFO and surname RAPHADU (no other RAPHADU in the roster).",
+      "Party: ANC in the gazette, IOL and News24.",
+      "Ward: IOL describes him as the ANC Ward 105 councillor; the gazette lists him for ward 105. (Ward boundaries were redrawn for 2026; the number matches but the area may differ.)"
+    ],
+    "note": "Three details match. The City's 2025 list of committee chairpersons was seen but not used: it publishes councillors' home addresses and personal phone numbers."
+  },
+  "court_matters": [],
+  "scandals": [],
+  "unknown_fields": [
+    "career",
+    "education",
+    "Whether he still chaired the Corporate and Shared Services committee at the end of the 2021–2026 term",
+    "Council office or portfolio for the 2026–2031 term (executive mayor and mayoral committee not yet elected; first sitting expected around 19 November 2026 — not guessed)",
+    "Official council contact channel (owner to confirm from the City's published councillor directory)"
+  ]
+}

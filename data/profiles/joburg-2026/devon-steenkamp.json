@@ -1,0 +1,102 @@
+{
+  "slug": "devon-steenkamp",
+  "change": "CHG-PW-003",
+  "name": {
+    "value": "DEVON STEENKAMP",
+    "label": "Confirmed",
+    "source_url": "https://www.gazettefinder.co.za/gazettes/government-gazette/2026/55741/government-gazette-55741-2026-11-13.pdf",
+    "source_date": "2026-11-13",
+    "retrieved_at": "2026-11-15T16:10:03+00:00",
+    "source_page": 45
+  },
+  "party": {
+    "value": "DEMOCRATIC ALLIANCE",
+    "label": "Confirmed",
+    "source_url": "https://www.gazettefinder.co.za/gazettes/government-gazette/2026/55741/government-gazette-55741-2026-11-13.pdf",
+    "source_date": "2026-11-13",
+    "retrieved_at": "2026-11-15T16:10:03+00:00",
+    "source_page": 45
+  },
+  "seat_type": {
+    "value": "ward",
+    "label": "Confirmed",
+    "source_url": "https://www.gazettefinder.co.za/gazettes/government-gazette/2026/55741/government-gazette-55741-2026-11-13.pdf",
+    "source_date": "2026-11-13",
+    "retrieved_at": "2026-11-15T16:10:03+00:00",
+    "source_page": 45
+  },
+  "ward_number": {
+    "value": 98,
+    "label": "Confirmed",
+    "source_url": "https://www.gazettefinder.co.za/gazettes/government-gazette/2026/55741/government-gazette-55741-2026-11-13.pdf",
+    "source_date": "2026-11-13",
+    "retrieved_at": "2026-11-15T16:10:03+00:00",
+    "source_page": 45
+  },
+  "council": {
+    "value": "City of Johannesburg",
+    "label": "Confirmed",
+    "source_url": "https://www.gazettefinder.co.za/gazettes/government-gazette/2026/55741/government-gazette-55741-2026-11-13.pdf",
+    "source_date": "2026-11-13",
+    "retrieved_at": "2026-11-15T16:10:03+00:00",
+    "source_page": 45
+  },
+  "ward_id": "79800098",
+  "pr_list_rank": null,
+  "positions": {
+    "value": "DA Johannesburg region caucus spokesperson and Region C whip (from July 2024)",
+    "label": "Reported",
+    "source_url": "https://dagauteng.org.za/2024/07/johannesburg-region-caucus-elections-official-statement",
+    "source_date": "2024-07-23",
+    "retrieved_at": "2026-11-17T11:10:00+02:00"
+  },
+  "career": {
+    "value": null,
+    "label": "Unknown",
+    "source_url": null,
+    "source_date": null,
+    "retrieved_at": null
+  },
+  "education": {
+    "value": null,
+    "label": "Unknown",
+    "source_url": null,
+    "source_date": null,
+    "retrieved_at": null
+  },
+  "cv": [
+    {
+      "value": "Appointed spokesperson of the DA Johannesburg regional caucus",
+      "label": "Reported",
+      "source_url": "https://dagauteng.org.za/2024/07/johannesburg-region-caucus-elections-official-statement",
+      "source_date": "2024-07-23",
+      "retrieved_at": "2026-11-17T11:10:00+02:00",
+      "field": "position",
+      "period": "2024-07-23"
+    },
+    {
+      "value": "Elected DA Region C whip in the Johannesburg caucus",
+      "label": "Reported",
+      "source_url": "https://dagauteng.org.za/2024/07/johannesburg-region-caucus-elections-official-statement",
+      "source_date": "2024-07-23",
+      "retrieved_at": "2026-11-17T11:10:00+02:00",
+      "field": "position",
+      "period": "2024-07-23"
+    }
+  ],
+  "identity_match": {
+    "matched_details": [
+      "Name: 'Devon Steenkamp' (DA 2024-07-23) matches the gazette exactly.",
+      "Party and council: DA, Johannesburg region caucus, in both."
+    ],
+    "note": "Only a party statement was found (Reported). Ward 98 comes from the gazette only. The roster also has an unrelated RAYMONT ISMAEL STEENKAMP (PA); the given name DEVON distinguishes them."
+  },
+  "court_matters": [],
+  "scandals": [],
+  "unknown_fields": [
+    "career",
+    "education",
+    "Council office or portfolio for the 2026–2031 term (executive mayor and mayoral committee not yet elected; first sitting expected around 19 November 2026 — not guessed)",
+    "Official council contact channel (owner to confirm from the City's published councillor directory)"
+  ]
+}

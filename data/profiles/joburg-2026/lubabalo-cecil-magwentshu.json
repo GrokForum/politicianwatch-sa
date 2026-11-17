@@ -1,0 +1,127 @@
+{
+  "slug": "lubabalo-cecil-magwentshu",
+  "change": "CHG-PW-003",
+  "name": {
+    "value": "LUBABALO CECIL MAGWENTSHU",
+    "label": "Confirmed",
+    "source_url": "https://www.gazettefinder.co.za/gazettes/government-gazette/2026/55741/government-gazette-55741-2026-11-13.pdf",
+    "source_date": "2026-11-13",
+    "retrieved_at": "2026-11-15T16:10:03+00:00",
+    "source_page": 45
+  },
+  "party": {
+    "value": "AFRICAN TRANSFORMATION MOVEMENT",
+    "label": "Confirmed",
+    "source_url": "https://www.gazettefinder.co.za/gazettes/government-gazette/2026/55741/government-gazette-55741-2026-11-13.pdf",
+    "source_date": "2026-11-13",
+    "retrieved_at": "2026-11-15T16:10:03+00:00",
+    "source_page": 45
+  },
+  "seat_type": {
+    "value": "PR",
+    "label": "Confirmed",
+    "source_url": "https://www.gazettefinder.co.za/gazettes/government-gazette/2026/55741/government-gazette-55741-2026-11-13.pdf",
+    "source_date": "2026-11-13",
+    "retrieved_at": "2026-11-15T16:10:03+00:00",
+    "source_page": 45
+  },
+  "ward_number": {
+    "value": null,
+    "label": "Confirmed",
+    "source_url": "https://www.gazettefinder.co.za/gazettes/government-gazette/2026/55741/government-gazette-55741-2026-11-13.pdf",
+    "source_date": "2026-11-13",
+    "retrieved_at": "2026-11-15T16:10:03+00:00",
+    "source_page": 45
+  },
+  "council": {
+    "value": "City of Johannesburg",
+    "label": "Confirmed",
+    "source_url": "https://www.gazettefinder.co.za/gazettes/government-gazette/2026/55741/government-gazette-55741-2026-11-13.pdf",
+    "source_date": "2026-11-13",
+    "retrieved_at": "2026-11-15T16:10:03+00:00",
+    "source_page": 45
+  },
+  "ward_id": null,
+  "pr_list_rank": 2,
+  "known_as": {
+    "value": "Lubabalo Magwentshu",
+    "label": "Confirmed",
+    "source_url": "https://joburg.org.za/media_/Pages/Media/Media%20Statements/2023%20Media%20Statements/February/Joburg-Executive-Mayor-announces-new-MMCs.aspx",
+    "source_date": "2023-02-02",
+    "retrieved_at": "2026-11-17T11:10:00+02:00"
+  },
+  "positions": {
+    "value": "Former City of Johannesburg MMC for Community Development (appointed February 2023)",
+    "label": "Confirmed",
+    "source_url": "https://joburg.org.za/media_/Pages/Media/Media%20Statements/2023%20Media%20Statements/February/Joburg-Executive-Mayor-announces-new-MMCs.aspx",
+    "source_date": "2023-02-02",
+    "retrieved_at": "2026-11-17T11:10:00+02:00"
+  },
+  "career": {
+    "value": "Worked in the private sector, including as a rail and port operations manager and as a lecturer, before becoming a councillor",
+    "label": "Reported",
+    "source_url": "https://www.citizen.co.za/news/lubabalo-magwentshu-mmc-interview/",
+    "source_date": "2023-06-17",
+    "retrieved_at": "2026-11-17T11:10:00+02:00"
+  },
+  "education": {
+    "value": "Bachelor of Commerce, Rhodes University",
+    "label": "Reported",
+    "source_url": "https://www.citizen.co.za/news/lubabalo-magwentshu-mmc-interview/",
+    "source_date": "2023-06-17",
+    "retrieved_at": "2026-11-17T11:10:00+02:00"
+  },
+  "cv": [
+    {
+      "value": "Became a councillor in November 2021",
+      "label": "Reported",
+      "source_url": "https://www.citizen.co.za/news/lubabalo-magwentshu-mmc-interview/",
+      "source_date": "2023-06-17",
+      "retrieved_at": "2026-11-17T11:10:00+02:00",
+      "field": "position",
+      "period": "2021-11"
+    },
+    {
+      "value": "Chaired a Section 79 committee of the council",
+      "label": "Reported",
+      "source_url": "https://www.citizen.co.za/news/lubabalo-magwentshu-mmc-interview/",
+      "source_date": "2023-06-17",
+      "retrieved_at": "2026-11-17T11:10:00+02:00",
+      "field": "position",
+      "period": "2022"
+    },
+    {
+      "value": "Appointed MMC for Community Development by Executive Mayor Thapelo Amad",
+      "label": "Confirmed",
+      "source_url": "https://joburg.org.za/media_/Pages/Media/Media%20Statements/2023%20Media%20Statements/February/Joburg-Executive-Mayor-announces-new-MMCs.aspx",
+      "source_date": "2023-02-02",
+      "retrieved_at": "2026-11-17T11:10:00+02:00",
+      "field": "position",
+      "period": "2023-02-02"
+    },
+    {
+      "value": "Mayor Dada Morero gave the Community Development portfolio to Kabelo Gwamanda on 16 August 2024",
+      "label": "Reported",
+      "source_url": "https://www.ewn.co.za/2024/08/17/former-joburg-mayor-gwamanda-appointed-as-community-development-mmc",
+      "source_date": "2024-08-17",
+      "retrieved_at": "2026-11-17T11:10:00+02:00",
+      "field": "position",
+      "period": "2024-08-16"
+    }
+  ],
+  "identity_match": {
+    "matched_details": [
+      "Name: 'Cllr. Lubabalo Magwentshu' (City 2023-02-02) and 'Lubabalo Magwentshu' (Citizen 2023-06-17) match the gazette's first given name and surname.",
+      "Party: ATM in the gazette and The Citizen.",
+      "Council role: City of Johannesburg councillor and Community Development MMC in both."
+    ],
+    "note": "The Citizen interview and the City's MMC page also carry family details and a date of birth; none of these are recorded (public role only). The City MMC page is not cited for that reason."
+  },
+  "court_matters": [],
+  "scandals": [],
+  "unknown_fields": [
+    "Exact end date of the Community Development MMC role (the portfolio had passed to another councillor by 16 August 2024)",
+    "Council office or portfolio for the 2026–2031 term (executive mayor and mayoral committee not yet elected; first sitting expected around 19 November 2026 — not guessed)",
+    "Official council contact channel (owner to confirm from the City's published councillor directory)"
+  ]
+}
