@@ -2,7 +2,9 @@
 
 from __future__ import annotations
 
+from datetime import date, datetime
 from typing import Any
+from urllib.parse import urlparse
 
 from pwatch.settings import ADVERSE_FIELDS, CV_FIELDS, LABELS, OPTIONAL_FACT_FIELDS, SEAT_TYPES
 
@@ -37,6 +39,28 @@ def is_fact(obj: Any) -> bool:
     return isinstance(obj, dict) and "label" in obj and "value" in obj
 
 
+def _source_format_failures(src: dict[str, Any], locator: str) -> list[str]:
+    """Format checks for an extra source: http(s) URL with a host, ISO date, ISO datetime with offset."""
+    failures: list[str] = []
+    url = urlparse(str(src.get("source_url")))
+    if url.scheme not in ("http", "https") or not url.netloc or " " in str(src.get("source_url")):
+        failures.append(f"{locator}: source_url is not a valid http(s) URL")
+    raw_date = str(src.get("source_date"))
+    try:
+        if len(raw_date) != 10:
+            raise ValueError
+        date.fromisoformat(raw_date)
+    except ValueError:
+        failures.append(f"{locator}: source_date must be YYYY-MM-DD, got {raw_date!r}")
+    raw_ts = str(src.get("retrieved_at"))
+    try:
+        if datetime.fromisoformat(raw_ts).tzinfo is None:
+            failures.append(f"{locator}: retrieved_at needs a UTC offset, got {raw_ts!r}")
+    except ValueError:
+        failures.append(f"{locator}: retrieved_at must be an ISO 8601 datetime, got {raw_ts!r}")
+    return failures
+
+
 def fact_failures(obj: Any, locator: str) -> list[str]:
     """Fail if a fact is missing a label, or (when not Unknown) missing a source."""
     if not is_fact(obj):
@@ -62,9 +86,13 @@ def fact_failures(obj: Any, locator: str) -> list[str]:
             failures.append(f"{locator}.also_sourced: must be a list")
         else:
             for i, src in enumerate(extra):
+                missing = False
                 for key in ("source_url", "source_date", "retrieved_at"):
                     if not isinstance(src, dict) or not src.get(key):
                         failures.append(f"{locator}.also_sourced[{i}]: missing {key}")
+                        missing = True
+                if not missing:
+                    failures.extend(_source_format_failures(src, f"{locator}.also_sourced[{i}]"))
     return failures
 
 

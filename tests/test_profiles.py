@@ -148,3 +148,22 @@ def test_reported_conviction_status_is_in_schema_and_renders(synthetic_profiles,
     md = render_markdown(p)
     assert "`reported_conviction`" in md
     assert "Identity link to the gazetted person:** Reported" in md
+
+
+def test_also_sourced_date_and_url_formats_are_checked(synthetic_profiles, repo_root):
+    p = _cv_profile(synthetic_profiles)
+    good = {"source_url": NEWS, "source_date": "2026-09-06", "retrieved_at": "2026-11-17T11:00:00+02:00"}
+    p["cv"][0]["also_sourced"] = [dict(good)]
+    assert check_profile(p, drafts_root=repo_root, as_of=AS_OF) == []
+    bad = [
+        ({"source_url": "example.test/no-scheme"}, "not a valid http(s) URL"),
+        ({"source_url": "ftp://example.test/x"}, "not a valid http(s) URL"),
+        ({"source_date": "6 Sep 2026"}, "source_date must be YYYY-MM-DD"),
+        ({"source_date": "2026-02-30"}, "source_date must be YYYY-MM-DD"),
+        ({"retrieved_at": "yesterday"}, "retrieved_at must be an ISO 8601 datetime"),
+        ({"retrieved_at": "2026-11-17T11:00:00"}, "retrieved_at needs a UTC offset"),
+    ]
+    for change, message in bad:
+        p["cv"][0]["also_sourced"] = [{**good, **change}]
+        failures = check_profile(p, drafts_root=repo_root, as_of=AS_OF)
+        assert any(message in f for f in failures), (change, failures)

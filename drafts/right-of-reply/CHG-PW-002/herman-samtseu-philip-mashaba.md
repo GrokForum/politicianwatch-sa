@@ -19,7 +19,7 @@ DRAFT: NOT SENT. The owner sends personally. The bot never sends.
 
 The Public Protector investigated allegations of maladministration during Mashaba's term as mayor (irregular appointments, irregular salary increases, financial mismanagement, procurement irregularities and conflicts of interest) and made adverse findings against him, which he challenged in court.
 
-**Current status / outcome (as reported):** The High Court in Pretoria set the Public Protector's findings aside as unconstitutional, unlawful and invalid on 31 January 2023 (Pretoria) (TimesLIVE, 2 February 2023; ActionSA statement, 31 January 2023). No appeal found in allowed sources as of 15 November 2026. Mashaba said the ruling vindicated him.
+**Current status / outcome (as reported):** The High Court in Pretoria set the Public Protector's findings aside as unconstitutional, unlawful and invalid on 31 January 2023 (TimesLIVE, 2 February 2023; ActionSA statement, 31 January 2023). No appeal found in allowed sources as of 15 November 2026. Mashaba said the ruling vindicated him.
 
 | Source | Date | URL |
 |---|---|---|
@@ -30,7 +30,7 @@ The Public Protector investigated allegations of maladministration during Mashab
 
 > We are preparing a public-role profile of you as an elected councillor of the City of Johannesburg on PoliticianWatch SA, a sourced register of South African elected representatives. Before publishing the items below, we invite your response. Please reply by **[owner sets on sending — 14 days after sending]** through this official channel. Your response will be published in full next to the item, subject only to the removal of personal contact details or other private information.
 >
-> **Item 1 (labelled Disputed):** The Public Protector investigated allegations of maladministration during Mashaba's term as mayor (irregular appointments, irregular salary increases, financial mismanagement, procurement irregularities and conflicts of interest) and made adverse findings against him, which he challenged in court. Current status as reported: The High Court in Pretoria set the Public Protector's findings aside as unconstitutional, unlawful and invalid on 31 January 2023 (Pretoria) (TimesLIVE, 2 February 2023; ActionSA statement, 31 January 2023). No appeal found in allowed sources as of 15 November 2026. Mashaba said the ruling vindicated him.
+> **Item 1 (labelled Disputed):** The Public Protector investigated allegations of maladministration during Mashaba's term as mayor (irregular appointments, irregular salary increases, financial mismanagement, procurement irregularities and conflicts of interest) and made adverse findings against him, which he challenged in court. Current status as reported: The High Court in Pretoria set the Public Protector's findings aside as unconstitutional, unlawful and invalid on 31 January 2023 (TimesLIVE, 2 February 2023; ActionSA statement, 31 January 2023). No appeal found in allowed sources as of 15 November 2026. Mashaba said the ruling vindicated him.
 >
 > **Source:** 2023-02-02, https://www.timeslive.co.za/politics/2023-02-01-mashaba-welcomes-court-ruling-against-mkhwebanes-damning-report-during-his-term-mayor/
 >

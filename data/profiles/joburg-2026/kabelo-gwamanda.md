@@ -27,7 +27,7 @@ DRAFT PROFILE — not published. Public role only. Every item carries an evidenc
 ## Court matters
 
 - **Item:** Gwamanda handed himself over to police on 18 October 2024 and appeared in the Protea Magistrate's Court on fraud charges linked to the scheme. · `Alleged` — [source](https://www.citizen.co.za/news/south-africa/courts/state-provisionally-withdraws-charges-kabelo-gwamanda/), 2025-02-25 (retrieved 2026-11-15T20:15:00+02:00)
-  - **Status / outcome:** On 25 February 2025 the National Prosecuting Authority provisionally withdrew all charges against him and a co-accused, saying more complainants had come forward and further investigation was needed; the NPA said that once these investigations were finalised, criminal proceedings would be re-instituted (provisionally withdrawn; NPA said it would re-institute). Gwamanda said the state had no evidence. No re-instituted charges were found in allowed sources as of 15 November 2026. (matter_status: `withdrawn`)
+  - **Status / outcome:** On 25 February 2025 the National Prosecuting Authority provisionally withdrew all charges against him and a co-accused, saying more complainants had come forward and further investigation was needed; the NPA said that once these investigations were finalised, criminal proceedings would be re-instituted. Gwamanda said the state had no evidence. No re-instituted charges were found in allowed sources as of 15 November 2026. (matter_status: `withdrawn`)
   - **Identity link to the gazetted person:** Reported
   - **Right of reply: pending**
   - **Reply:** _(blank — no reply recorded)_
