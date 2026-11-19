@@ -1,4 +1,4 @@
-"""Static draft site for politicianwatch.grokforum.site (CHG-PW-006).
+"""Static draft site for politicianwatch.grokforum.site (CHG-PW-006; profiles CHG-PW-007).
 
 `build_site` writes a plain static site (HTML + one CSS file, no scripts) into an output
 directory. That directory is what a publish would copy into the public `politicianwatch-site`
@@ -175,13 +175,19 @@ def placeholder_index_body() -> str:
 
 
 def index_body(profiles: list[tuple[Path, dict[str, Any]]] | None) -> str:
-    """Home page. CHG-PW-006 has no profile pages yet, so this is the labelled placeholder."""
-    return placeholder_index_body()
+    """Home page: the profile list (CHG-PW-007), or the labelled placeholder when there are none."""
+    if not profiles:
+        return placeholder_index_body()
+    from pwatch.site_profiles import index_body as profiles_index
+
+    return profiles_index(profiles, SITE_NAME)
 
 
 def extra_pages(profiles: list[tuple[Path, dict[str, Any]]] | None) -> dict[str, tuple[str, str]]:
-    """Pages beyond the fixed ones: {relative path: (title, body)}. None in CHG-PW-006."""
-    return {}
+    """Pages beyond the fixed ones: {relative path: (title, body)}. One page per active profile."""
+    from pwatch.site_profiles import profile_body, profile_path
+
+    return {profile_path(d["slug"]): (str(d["name"]["value"]), profile_body(d)) for _, d in profiles or []}
 
 
 def _sha256(path: Path) -> str:
@@ -308,8 +314,20 @@ def check_page(rel: str, html: str) -> list[str]:
     return fails
 
 
-def check_site(out: Path) -> list[str]:
-    """Fail-closed checks on a built site directory."""
+def check_site(
+    out: Path,
+    *,
+    profiles: list[tuple[Path, dict[str, Any]]] | None = None,
+    held: list[tuple[Path, dict[str, Any]]] | None = None,
+) -> list[str]:
+    """Fail-closed checks on a built site directory.
+
+    Every page: draft-site rules (`check_page`) and claim rules (`check_claims`: label shown, http(s)
+    source link and source date on every non-Unknown claim, RoR line on adverse items). With
+    `profiles`, also coverage: every active profile and fact is rendered and no held profile is.
+    """
+    from pwatch.site_profiles import check_claims, check_coverage
+
     fails: list[str] = []
     robots = out / "robots.txt"
     if not robots.is_file() or robots.read_text(encoding="utf-8") != ROBOTS_TXT:
@@ -325,7 +343,11 @@ def check_site(out: Path) -> list[str]:
     if not pages:
         fails.append("no HTML pages built")
     for p in pages:
-        fails += check_page(str(p.relative_to(out)), p.read_text(encoding="utf-8"))
+        html = p.read_text(encoding="utf-8")
+        fails += check_page(str(p.relative_to(out)), html)
+        fails += check_claims(str(p.relative_to(out)), html)
+    if profiles is not None:
+        fails += check_coverage(out, profiles, held or [])
     allowed = {".html", ".css", ".svg", ".txt", ".json", ".yml"}
     for p in out.rglob("*"):
         if p.is_file() and ".git" not in p.parts and p.suffix not in allowed and p.name not in ("CNAME", "README.md"):

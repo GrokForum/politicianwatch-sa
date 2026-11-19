@@ -100,15 +100,19 @@ def cmd_site_build(args: argparse.Namespace) -> int:
     return 0
 
 
-def _site_profiles(args: argparse.Namespace) -> list | None:
-    """Profiles for the site. CHG-PW-006 builds the labelled placeholder only."""
-    return None
+def _site_profiles(args: argparse.Namespace) -> list:
+    """Active CV profiles for the site (CHG-PW-007). Held profiles (`_hold/`) are never loaded."""
+    return load_profile_dir(Path(args.profiles_dir) if args.profiles_dir else PROFILES_DIR)
 
 
 def cmd_site_check(args: argparse.Namespace) -> int:
     from pwatch.site import check_site
 
-    fails = check_site(Path(args.dir))
+    if args.no_data:
+        fails = check_site(Path(args.dir))
+    else:
+        cv_dir = Path(args.profiles_dir) if args.profiles_dir else PROFILES_DIR
+        fails = check_site(Path(args.dir), profiles=load_profile_dir(cv_dir), held=load_held_profiles(cv_dir))
     print(json.dumps({"status": "fail" if fails else "pass", "failures": fails}, indent=2))
     return 2 if fails else 0
 
@@ -139,6 +143,8 @@ def build_parser() -> argparse.ArgumentParser:
     sb.set_defaults(func=cmd_site_build)
     sc = st_sub.add_parser("check", help="exit 2 if a built site breaks a draft-site rule")
     sc.add_argument("dir", help="built site directory")
+    sc.add_argument("--profiles-dir", help="CV profile JSON directory to check coverage against (default: data/profiles/joburg-2026)")
+    sc.add_argument("--no-data", action="store_true", help="skip the coverage check (page and claim rules only)")
     sc.set_defaults(func=cmd_site_check)
     return p
 

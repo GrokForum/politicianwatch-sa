@@ -29,6 +29,8 @@ uv sync                          # Python 3.13; pinned deps in uv.lock
 uv run pytest -q                 # synthetic fixture tests
 uv run pwatch dq                 # DQ gate on the Joburg roster and CV profiles (exit 2 = not releasable)
 uv run pwatch render --check     # CV profile markdown renderings are current
+uv run pwatch site build --out _site   # static draft site (24 active profiles, never _hold/); publishes nothing
+uv run pwatch site check _site         # exit 2 if a page lacks noindex/DRAFT/privacy link, or a claim lacks a label, source link or date
 ```
 
 Exit code 2 means a data-quality check failed and the result is not releasable.
