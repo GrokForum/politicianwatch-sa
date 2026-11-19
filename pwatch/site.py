@@ -328,6 +328,6 @@ def check_site(out: Path) -> list[str]:
         fails += check_page(str(p.relative_to(out)), p.read_text(encoding="utf-8"))
     allowed = {".html", ".css", ".svg", ".txt", ".json", ".yml"}
     for p in out.rglob("*"):
-        if p.is_file() and ".git" not in p.parts and p.suffix not in allowed and p.name not in ("CNAME",):
+        if p.is_file() and ".git" not in p.parts and p.suffix not in allowed and p.name not in ("CNAME", "README.md"):
             fails.append(f"unexpected file type in site: {p.relative_to(out)}")
     return fails
