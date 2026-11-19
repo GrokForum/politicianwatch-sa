@@ -41,7 +41,7 @@ Fact counts across the 14 active profiles after fix 2 (seat facts, summary field
 
 **Retrieval times (fix 3):** batch-2 facts carry `retrieved_at` `2026-11-17` (date only: fetched that day, on or before the batch commit; the time was not logged, so none is given). The three fix-1 sources carry their real fetch times (11:29:45, 11:29:46 and 11:29:49 SAST). `pwatch dq` fails any `retrieved_at` later than the run time (a date-only value counts as the end of that day). New sources are fetched with `pwatch fetch-source`, which logs the real time.
 
-**First year in council (fix 1, all Reported, sources fetched and read 17 Nov 2026):** Schay 2021 (SA Jewish Report, 2021-11-04); Chame 2014, ward 57 by-election on 2 Jul 2014 (IOL, 2014-07-03; first sourced to a local report, replaced in CHG-PW-007); Magwentshu 2021 (The Citizen, 2023-06-17; already in the profile, re-verified); Makhafola 2023, sworn in 3 Feb 2023 (Sowetan, 2023-02-03).
+**First year in council (fix 1, all Reported, sources fetched and read 17 Nov 2026):** Schay 2021 (SA Jewish Report, 2021-11-04); Chame 2014, ward 57 by-election on 2 Jul 2014 (IOL, 2014-07-03; first sourced to a local report, replaced in CHG-PW-007); Magwentshu: Unknown from CHG-PW-007 (the only source carries private personal details, so it is not linked); Makhafola 2023, sworn in 3 Feb 2023 (Sowetan, 2023-02-03).
 
 ## Adverse items
 
@@ -79,7 +79,7 @@ Each profile's `identity_match` lists the details. Points worth a reviewer's eye
 
 - **City of Johannesburg "Chairpersons of Committees 2025" PDF:** useful for council roles, but it contains personal details not recorded here; not cited.
 - **City of Johannesburg MMC Community Development page:** contains personal details not recorded here; not cited.
-- **The Citizen interview with Magwentshu (cited for education, career and first year in council):** contains personal details not recorded here. Only public-role facts are recorded. The committee-chair fact is sourced to Sowetan (2022-09-14) from CHG-PW-007.
+- **An interview with Magwentshu (2023):** carries private personal details, so it is not linked (CHG-PW-007). His education, career and first year in council were found only there and in the City's MMC page, so they are Unknown. The committee-chair fact is sourced to Sowetan (2022-09-14).
 - A search snippet contained a councillor's personal details; nothing from it was recorded.
 - Sarah Wissler: the ActionSA statement's personal descriptions are not recorded.
 - **Local news report on Chame's 2014 by-election (cited in fix 1, replaced by IOL 2014-07-03 in CHG-PW-007):** contains personal details not recorded here; no longer cited. Only the by-election result is recorded. The by-election opponent is not named.
