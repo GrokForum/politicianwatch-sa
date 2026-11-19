@@ -37,7 +37,7 @@ DRAFT PROFILE — not published. Public role only. Every item carries an evidenc
 
 - career: Unknown — not yet sourced (placeholder)
 - education: Unknown — not yet sourced (placeholder)
-- First year in council (the only source found carries private personal details, so it is not linked; CHG-PW-007): Unknown — not yet sourced (placeholder)
+- First year in council (a source with personal details was not used): Unknown — not yet sourced (placeholder)
 - Exact end date of the Community Development MMC role (the portfolio had passed to another councillor by 16 August 2024): Unknown — not yet sourced (placeholder)
 - Council office or portfolio for the 2026–2031 term (executive mayor and mayoral committee not yet elected; first sitting expected around 19 November 2026 — not guessed): Unknown — not yet sourced (placeholder)
 - Official council contact channel (owner to confirm from the City's published councillor directory): Unknown — not yet sourced (placeholder)
@@ -47,4 +47,4 @@ DRAFT PROFILE — not published. Public role only. Every item carries an evidenc
 - Name: 'Cllr. Lubabalo Magwentshu' (City 2023-02-02) and 'ATM councillor Lubabalo Magwentshu' (Sowetan 2022-09-14) match the gazette's first given name and surname.
 - Party: ATM in the gazette and Sowetan (2022-09-14).
 - Council role: City of Johannesburg councillor (Sowetan 2022-09-14: chair of the Health and Social Development committee) and Community Development MMC (City 2023-02-02).
-- Note: Sources that carry private personal details (an interview and the City's MMC page) are not linked; facts found only there are Unknown (public role only, CHG-PW-007).
+- Note: Public role only; a source with personal details was not used, and facts found only there are Unknown (CHG-PW-007).
