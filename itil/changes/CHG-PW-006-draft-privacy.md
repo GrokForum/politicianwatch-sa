@@ -2,7 +2,7 @@
 
 | Field | Value |
 |---|---|
-| Requested by / date (SAST) | Phase 0 hardening, relayed by Cavus on 19 Nov 2026 (owner rule t371u: all four test sites must be rock-solid). Audit: `/workspace/cavus/phase0/phase0-audit-2026-11-19.md` (box), PoliticianWatch rows 2, 3, 7 and findings H2, M4, L2, L4 |
+| Requested by / date (SAST) | Phase 0 hardening, relayed by Cavus on 19 Nov 2026 (owner rule t371u: all four test sites must be rock-solid). Phase 0 audit (19 Nov 2026): PoliticianWatch rows 2, 3, 7 and findings H2, M4, L2, L4 |
 | Author / builder | PoliticianWatch (Grok Bot) |
 | Reviewers | Cavus; Janus |
 | Change authority | Owner (GO on the exact heads of both branches) |
