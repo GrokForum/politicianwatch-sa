@@ -67,4 +67,4 @@ IDENTITY_MIN_DETAILS = 2
 # private personal details is not linked and the fact is Unknown. A fact may link such a source
 # only with an explicit per-fact owner approval and exactly this note; no private detail is copied.
 PI_SOURCE_APPROVAL_FIELD = "owner_approved_pi_source"
-PI_SOURCE_NOTE = "Personal details in the source are not recorded here."
+PI_SOURCE_NOTE = "personal details not recorded here"

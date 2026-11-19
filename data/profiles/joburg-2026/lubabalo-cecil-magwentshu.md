@@ -16,12 +16,12 @@ DRAFT PROFILE — not published. Public role only. Every item carries an evidenc
 ## Summary
 
 - **Positions:** Former City of Johannesburg MMC for Community Development (appointed February 2023) · `Confirmed` — [source](https://joburg.org.za/media_/Pages/Media/Media%20Statements/2023%20Media%20Statements/February/Joburg-Executive-Mayor-announces-new-MMCs.aspx), 2023-02-02 (retrieved 2026-11-17, time not logged)
-- **Career:** Worked in the private sector, including as a rail and port operations manager and as a lecturer, before becoming a councillor · `Reported` — [source](https://www.citizen.co.za/news/lubabalo-magwentshu-mmc-interview/), 2023-06-17 (retrieved 2026-11-17, time not logged) — Personal details in the source are not recorded here.
-- **Education:** Bachelor of Commerce, Rhodes University · `Reported` — [source](https://www.citizen.co.za/news/lubabalo-magwentshu-mmc-interview/), 2023-06-17 (retrieved 2026-11-17, time not logged) — Personal details in the source are not recorded here.
+- **Career:** Worked in the private sector, including as a rail and port operations manager and as a lecturer, before becoming a councillor · `Reported` — [source](https://www.citizen.co.za/news/lubabalo-magwentshu-mmc-interview/), 2023-06-17 (retrieved 2026-11-17, time not logged) — personal details not recorded here
+- **Education:** Bachelor of Commerce, Rhodes University · `Reported` — [source](https://www.citizen.co.za/news/lubabalo-magwentshu-mmc-interview/), 2023-06-17 (retrieved 2026-11-17, time not logged) — personal details not recorded here
 
 ## CV (public role)
 
-- **Position (2021-11):** First year in council: 2021. Became a councillor in November 2021 · `Reported` — [source](https://www.citizen.co.za/news/lubabalo-magwentshu-mmc-interview/), 2023-06-17 (retrieved 2026-11-17, time not logged) — Personal details in the source are not recorded here.
+- **Position (2021-11):** First year in council: 2021. Became a councillor in November 2021 · `Reported` — [source](https://www.citizen.co.za/news/lubabalo-magwentshu-mmc-interview/), 2023-06-17 (retrieved 2026-11-17, time not logged) — personal details not recorded here
 - **Position (2022):** Chaired the council's Health and Social Development Section 79 committee (as reported in September 2022) · `Reported` — [source](https://www.sowetan.co.za/news/south-africa/2022-09-14-tables-turn-against-joburg-mayors-foes/), 2022-09-14 (retrieved 2026-11-19T08:09:01+02:00)
 - **Position (2023-02-02):** Appointed MMC for Community Development by Executive Mayor Thapelo Amad · `Confirmed` — [source](https://joburg.org.za/media_/Pages/Media/Media%20Statements/2023%20Media%20Statements/February/Joburg-Executive-Mayor-announces-new-MMCs.aspx), 2023-02-02 (retrieved 2026-11-17, time not logged)
 - **Position (2024-08-16):** Mayor Dada Morero gave the Community Development portfolio to Kabelo Gwamanda on 16 August 2024 · `Reported` — [source](https://www.ewn.co.za/2024/08/17/former-joburg-mayor-gwamanda-appointed-as-community-development-mmc), 2024-08-17 (retrieved 2026-11-17, time not logged)
@@ -45,4 +45,4 @@ DRAFT PROFILE — not published. Public role only. Every item carries an evidenc
 - Name: 'Cllr. Lubabalo Magwentshu' (City 2023-02-02), 'ATM councillor Lubabalo Magwentshu' (Sowetan 2022-09-14) and 'Lubabalo Magwentshu' (Citizen 2023-06-17) match the gazette's first given name and surname.
 - Party: ATM in the gazette, Sowetan (2022-09-14) and The Citizen (2023-06-17).
 - Council role: City of Johannesburg councillor (Sowetan 2022-09-14: chair of the Health and Social Development committee) and Community Development MMC (City 2023-02-02; The Citizen 2023-06-17).
-- Note: Public role only. The Citizen interview (2023-06-17) is linked for education, career and first year in council on the owner's decision of 19 Nov 2026 (CHG-PW-011); personal details in the source are not recorded here. Another source with personal details was not used.
+- Note: Public role only. The Citizen interview (2023-06-17) is linked for education, career and first year in council on the owner's decision of 19 Nov 2026, 16:27 SAST (CHG-PW-011); personal details not recorded here.

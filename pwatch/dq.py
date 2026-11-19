@@ -13,6 +13,7 @@ Checks:
 - source tiers (CHG-PW-004, data/sources.json): no link_only/not_allowed domains; an adverse item or an identity
   link may not rest only on tier-3 sources (CHG-PW-005); unknown domains are warnings, not failures
 - no retrieved_at anywhere in a profile (facts, also_sourced, adverse items) is later than the run time (CHG-PW-003 fix 2); a date-only value is future only if that date is after today's date in SAST (fix 3)
+- a fact that links a source carrying private personal details does so only with an owner-approved exception and the exact note (CHG-PW-011; rule 6 default is in CHG-PW-007)
 """
 
 from __future__ import annotations

@@ -41,7 +41,7 @@ Fact counts across the 14 active profiles after fix 2 (seat facts, summary field
 
 **Retrieval times (fix 3):** batch-2 facts carry `retrieved_at` `2026-11-17` (date only: fetched that day, on or before the batch commit; the time was not logged, so none is given). The three fix-1 sources carry their real fetch times (11:29:45, 11:29:46 and 11:29:49 SAST). `pwatch dq` fails any `retrieved_at` later than the run time (a date-only value counts as the end of that day). New sources are fetched with `pwatch fetch-source`, which logs the real time.
 
-**First year in council (fix 1, all Reported, sources fetched and read 17 Nov 2026):** Schay 2021 (SA Jewish Report, 2021-11-04); Chame 2014, ward 57 by-election on 2 Jul 2014 (IOL, 2014-07-03; a source with personal details was not used); Magwentshu 2021 (The Citizen, 2023-06-17; Unknown in CHG-PW-007, restored by CHG-PW-011 on the owner's decision; personal details in the source are not recorded here); Makhafola 2023, sworn in 3 Feb 2023 (Sowetan, 2023-02-03).
+**First year in council (fix 1, all Reported, sources fetched and read 17 Nov 2026):** Schay 2021 (SA Jewish Report, 2021-11-04); Chame 2014, ward 57 by-election on 2 Jul 2014 (IOL, 2014-07-03; a source with personal details was not used); Magwentshu 2021 (The Citizen, 2023-06-17; Unknown in CHG-PW-007, restored by CHG-PW-011 on the owner's decision; personal details not recorded here); Makhafola 2023, sworn in 3 Feb 2023 (Sowetan, 2023-02-03).
 
 ## Adverse items
 
@@ -78,7 +78,7 @@ Each profile's `identity_match` lists the details. Points worth a reviewer's eye
 ## Sources seen but deliberately not used (POPIA)
 
 - Chame and Raphadu: a source with personal details was not used.
-- Magwentshu: The Citizen interview (2023-06-17) is linked for education, career and first year in council on the owner's decision of 19 Nov 2026 (CHG-PW-011). Personal details in the source are not recorded here. Another source with personal details was not used.
+- Magwentshu: The Citizen interview (2023-06-17) is linked for education, career and first year in council on the owner's decision of 19 Nov 2026, 16:27 SAST (CHG-PW-011); personal details not recorded here.
 - Sarah Wissler: the ActionSA statement's personal descriptions are not recorded.
 - **SA Jewish Report, 4 Nov 2021 (cited for Schay, fix 1):** only the election result is recorded.
 
