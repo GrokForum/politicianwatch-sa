@@ -44,8 +44,8 @@ CSP_META = f'<meta http-equiv="Content-Security-Policy" content="{CSP}">'
 DRAFT_MARK = "DRAFT."
 DRAFT_BANNER = (
     '<div class="draft" role="note"><p><strong>DRAFT.</strong> This site is an unfinished draft. '
-    "Profiles cover elected representatives' public role only. Every item shows an evidence label "
-    'and a dated source. <a href="/privacy/">Privacy and corrections</a></p></div>'
+    "Profiles cover elected representatives' public role only. Every item shows an evidence label; "
+    'every item except an Unknown one links a dated source. <a href="/privacy/">Privacy and corrections</a></p></div>'
 )
 # Jekyll (GitHub Pages "legacy" build) would otherwise turn README.md into a page without the
 # noindex meta. HTML files without front matter are copied unchanged.
@@ -104,7 +104,7 @@ def privacy_body() -> str:
 <section id="data">
 <h2>2. What it shows</h2>
 <p>It shows information about a representative's <strong>public role only</strong>: the name and seat as published in the Government Gazette, party, council, public offices held, career and education as publicly reported, and court matters or reported allegations that concern their public life.</p>
-<p>It uses official public records (such as the Government Gazette, the Electoral Commission, the City of Johannesburg and court judgments) and established news media. Every item shows one of these evidence labels and links to its source with a date:</p>
+<p>It uses official public records (such as the Government Gazette, the Electoral Commission, the City of Johannesburg and court judgments) and established news media. Every item shows one of these evidence labels. Every item except an Unknown one also links to its source with a date; an Unknown item has no source yet:</p>
 <ul>
 <li><strong>Confirmed</strong>: shown in an official or primary record.</li>
 <li><strong>Reported</strong>: reported by established news media or stated by a party.</li>
@@ -121,7 +121,7 @@ def privacy_body() -> str:
 
 <section id="reply">
 <h2>4. Allegations and right of reply</h2>
-<p>Court matters and allegations come only from court records or established news reporting, and carry their label. A news report or a court record is linked to a representative only when at least two details match. Each representative concerned is offered a right of reply. Until a reply is recorded, the item shows "Right of reply: pending".</p>
+<p>Court matters and allegations come only from court records or established news reporting, and carry their label. A news report or a court record is linked to a representative only when at least two details match. Each representative concerned will be offered a right of reply. Until a reply is recorded, the item shows "Right of reply: pending".</p>
 </section>
 
 <section id="purpose">
