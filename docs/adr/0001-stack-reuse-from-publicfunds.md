@@ -4,7 +4,7 @@
 - Deciders: proposed in DEV for the owner; reviewers Cavus and Cassian
 
 ## Context
-PoliticianWatch SA is a neutral, sourced public register of South African elected representatives. The planning packet asked that the stack and repository structure be modelled on PublicFunds (`/workspace/publicfunds`, Python package `thusa`): Python 3.13 + uv, DuckDB, httpx connectors with raw/`.sha256`/`manifest.jsonl` provenance, pdfplumber, a data-quality gate, an ITIL folder, ADRs, `REVIEW.md` and `AGENTS.md`.
+PoliticianWatch SA is a neutral, sourced public register of South African elected representatives. The planning packet asked that the stack and repository structure be modelled on PublicFunds (the PublicFunds repository, Python package `thusa`): Python 3.13 + uv, DuckDB, httpx connectors with raw/`.sha256`/`manifest.jsonl` provenance, pdfplumber, a data-quality gate, an ITIL folder, ADRs, `REVIEW.md` and `AGENTS.md`.
 
 The owner has already chosen City of Johannesburg (270 seats, 135 wards) as the pilot, and a private repository `GrokForum/politicianwatch-sa`.
 
