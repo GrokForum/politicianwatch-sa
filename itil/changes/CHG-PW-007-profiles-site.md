@@ -2,7 +2,7 @@
 
 | Field | Value |
 |---|---|
-| Requested by / date (SAST) | Phase 0 hardening, relayed by Cavus on 19 Nov 2026. Audit `/workspace/cavus/phase0/phase0-audit-2026-11-19.md` (box): PoliticianWatch row 4 and finding B3 (a placeholder does not count; RFC §4 0b) |
+| Requested by / date (SAST) | Phase 0 hardening, relayed by Cavus on 19 Nov 2026. Phase 0 audit (19 Nov 2026): PoliticianWatch row 4 and finding B3 (a placeholder does not count; RFC §4 0b) |
 | Author / builder | PoliticianWatch (Grok Bot) |
 | Reviewers | Cavus; Janus |
 | Change authority | Owner (GO on the exact head) |

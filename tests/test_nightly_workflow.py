@@ -63,7 +63,7 @@ def test_publish_commits_use_the_publisher_identity() -> None:
     steps = wf()["jobs"]["publish"]["steps"]
     script = "\n".join(s.get("run", "") for s in steps)
     assert 'git config user.name "PoliticianWatch publisher"' in script
-    assert 'git config user.email "noreply@grokforum.site"' in script
+    assert 'git config user.email "noreply@politicianwatch.grokforum.site"' in script
     assert script.count("git config user.name") == 1
     assert script.count("git config user.email") == 1
     assert "github-actions[bot]" not in script
@@ -106,7 +106,8 @@ def test_record_script_appends_to_nightly_log_branch(tmp_path: Path) -> None:
     subprocess.run(["git", "init", "--quiet", "--bare", str(remote)], check=True)
     rec = tmp_path / "result.json"
     rec.write_text(json.dumps({"night_sast": "2026-11-19", "result": "red"}), encoding="utf-8")
-    env = dict(os.environ, PW_LOG_REMOTE=str(remote), GITHUB_RUN_ID="111", GIT_CONFIG_GLOBAL="/dev/null")
+    env = {k: v for k, v in os.environ.items() if not k.startswith(("GIT_AUTHOR_", "GIT_COMMITTER_"))}
+    env.update(PW_LOG_REMOTE=str(remote), GITHUB_RUN_ID="111", GIT_CONFIG_GLOBAL="/dev/null")
     for run_id in ("111", "222"):
         env["GITHUB_RUN_ID"] = run_id
         subprocess.run(["bash", str(ROOT / "scripts" / "record-nightly.sh"), str(rec)], check=True, env=env, capture_output=True)
@@ -116,3 +117,5 @@ def test_record_script_appends_to_nightly_log_branch(tmp_path: Path) -> None:
     assert "nightly/2026-11-19-111.json" in files and "nightly/2026-11-19-222.json" in files
     branches = subprocess.run(["git", "--git-dir", str(remote), "branch", "--list"], check=True, capture_output=True, text=True).stdout.split()
     assert branches == ["nightly-log"]
+    who = subprocess.run(["git", "--git-dir", str(remote), "log", "--format=%an <%ae>|%cn <%ce>", "nightly-log"], check=True, capture_output=True, text=True).stdout.split("\n")
+    assert set(filter(None, who)) == {"PoliticianWatch publisher <noreply@politicianwatch.grokforum.site>|PoliticianWatch publisher <noreply@politicianwatch.grokforum.site>"}

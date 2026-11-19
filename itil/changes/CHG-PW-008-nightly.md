@@ -2,7 +2,7 @@
 
 | Field | Value |
 |---|---|
-| Requested by / date (SAST) | Phase 0 hardening, relayed by Cavus on 19 Nov 2026. Audit `/workspace/cavus/phase0/phase0-audit-2026-11-19.md` (box): PoliticianWatch row 5 and finding B2 (no nightly; streak 0); evidence pattern from H4 (one record per night) |
+| Requested by / date (SAST) | Phase 0 hardening, relayed by Cavus on 19 Nov 2026. Phase 0 audit (19 Nov 2026): PoliticianWatch row 5 and finding B2 (no nightly; streak 0); evidence pattern from H4 (one record per night) |
 | Author / builder | PoliticianWatch (Grok Bot) |
 | Reviewers | Cavus; Janus |
 | Change authority | Owner (GO on the exact head; a **separate** GO to turn publishing on) |
@@ -45,9 +45,9 @@ The `publish` job runs only if **all** hold: (a) `needs.build.result == 'success
 - **Outcome:** the workflow references `site-publish` so the owner's settings apply as soon as they exist. What the owner can turn on depends on the plan: on **Pro**, the environment with deployment branches = `main` and the environment secret; **required reviewers only with Enterprise** (or if the repo were public). On **Free**, environment secrets are unavailable in a private repo, so the key would not resolve and the publish job fails closed.
 - **Fallback (if the plan does not allow it):** the gate stays (a) green build, (b) `main` only, (c) `PW_PUBLISH_ENABLED == 'true'`, and the deploy key is stored as a repository secret of the same name (the job reads `secrets.PW_SITE_DEPLOY_KEY`, which falls back to a repository secret). The owner's control is then the variable plus the key, and every merge to `main` needs his GO. This is weaker than a per-run approval: once the flag is on, nightly runs publish without a click.
 
-### Publish commit identity (19 Nov 2026, request relayed by Cavus)
+### Commit identity (19 Nov 2026, requests relayed by Cavus)
 
-Commits the `publish` job makes in the site repo use `git config user.name "PoliticianWatch publisher"` and `git config user.email "noreply@grokforum.site"` (`.github/workflows/nightly.yml`, publish step), the same identity as the site-repo branch. Test: `test_publish_commits_use_the_publisher_identity` (fails against the old `politicianwatch-nightly` identity). Not changed: `scripts/record-nightly.sh` commits to this private repo's `nightly-log` branch and keeps its own identity.
+Commits the `publish` job makes in the site repo, and commits `scripts/record-nightly.sh` makes on this repo's `nightly-log` branch, use `git config user.name "PoliticianWatch publisher"` and `git config user.email "noreply@politicianwatch.grokforum.site"`. Tests: `test_publish_commits_use_the_publisher_identity` (workflow publish step) and `test_record_script_appends_to_nightly_log_branch` (author and committer of every `nightly-log` commit). The address was first set to `noreply@grokforum.site` and changed to `noreply@politicianwatch.grokforum.site` for consistency.
 
 ### Owner-GO setup step (not done by the bot)
 
@@ -72,6 +72,8 @@ No change to profile data, DQ rules, the builder output or the site repo. robots
 Medium. After the flag is on, any merged change to profiles reaches the public site the same night; the gate is the merge GO plus the build checks. GitHub Actions minutes on a private repo (about 3–5 min a night). The publish rewrites the site repo's `main` from the build (no force-push; `CNAME`/README kept).
 
 ## Testing (evidence)
+
+After the CHG-PW-007 squash merge (`origin/main` `c4070e2a` merged in) and the identity fixes: see the STATUS history row for this merge (pytest, dq, render check, site build + check, actionlint).
 
 After the publisher-identity change, with CHG-PW-007 head `7531488` merged in (merge `b6bc1ce`): `uv run pytest -q` 107 passed (1 new test); `uv run pwatch dq` exit 0; `uv run pwatch render --check` exit 0; `pwatch site build` + `pwatch site check` pass; `actionlint` 1.7.7: no findings; popia-review PASS.
 

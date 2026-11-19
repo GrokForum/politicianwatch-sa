@@ -19,8 +19,8 @@ mkdir -p "$dir/nightly"
 python3 -c 'import json,sys;print(json.dumps(json.load(open(sys.argv[1])),separators=(",",":")))' "$rec" >> "$dir/nightly/log.jsonl"
 cp "$rec" "$dir/nightly/${night}-${GITHUB_RUN_ID}.json"
 cd "$dir"
-git config user.name "politicianwatch-nightly"
-git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+git config user.name "PoliticianWatch publisher"
+git config user.email "noreply@politicianwatch.grokforum.site"
 git add -A
 git commit --quiet -m "Nightly record ${night} (run ${GITHUB_RUN_ID})"
 git push --quiet origin HEAD:nightly-log
