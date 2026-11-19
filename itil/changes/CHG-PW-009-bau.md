@@ -2,9 +2,9 @@
 
 | Field | Value |
 |---|---|
-| Requested by / date (SAST) | Relayed by Cavus on 19 Nov 2026 (16:16 SAST), after CHG-PW-008 was squash-merged |
+| Requested by / date (SAST) | Relayed by the orchestrator on 19 Nov 2026 (16:16 SAST), after CHG-PW-008 was squash-merged |
 | Author / builder | PoliticianWatch (Grok Bot) |
-| Reviewers | Cavus; Janus |
+| Reviewers | reviewer (two reviewers) |
 | Change authority | Owner (GO on the exact head) |
 | Type | Standard — low (records wording, one test rename, two workflow hardening lines) |
 | Environment | DEV. Nothing is published; the publish gate and `PW_PUBLISH_ENABLED` are unchanged (publishing stays off) |
@@ -25,7 +25,7 @@ Profiles, DQ rules, the site builder, the publish gate (green build, `main` only
 
 ## Seen, not touched
 
-- `docs/adr/0001-stack-reuse-from-publicfunds.md` still lists "reviewers Cavus and Cassian" (accurate when the ADR was decided, 15 Nov 2026).
+- `docs/adr/0001-stack-reuse-from-publicfunds.md` still lists the then-reviewers by name (accurate when the ADR was decided, 15 Nov 2026).
 - Old commits on `main` and on the merged branches contain machine-local paths and the earlier commit identities; only a fresh repository removes them (CHG-PW-010 plan).
 
 ## Testing (evidence)
@@ -34,8 +34,8 @@ See the STATUS history row for this change: pytest, `pwatch dq`, `pwatch render 
 
 ## How to revert
 
-Before merge: close the PR / delete the branch. After merge: `git revert <merge commit>`; `main` returns to `a0698d20`.
+Before merge: close the PR / delete the branch. After merge: `git revert <merge commit>`; `main` returns to `33b3fb32` (CHG-PW-010).
 
 ## Approval
 
-Plain PASS from Cavus and Janus on the same head, then the owner's GO. Outcome: pending (not merged, not pushed).
+Plain PASS from both reviewers on the same head, then the owner's GO. Outcome: in review (PR #9; not merged).

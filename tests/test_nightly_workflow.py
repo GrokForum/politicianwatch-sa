@@ -71,6 +71,21 @@ def test_build_checkout_does_not_persist_but_publish_checkout_does() -> None:
     assert "git push origin HEAD:main" in "\n".join(s.get("run") or "" for s in jobs["publish"]["steps"])
 
 
+def test_publish_job_does_not_upload_artifacts() -> None:
+    # The inline `# zizmor: ignore[artipacked]` on the publish checkout
+    # (.github/workflows/nightly.yml ~line 99) is valid only because this job
+    # uploads no artifacts. A later actions/upload-artifact step (any version)
+    # would re-open that risk.
+    steps = wf()["jobs"]["publish"]["steps"]
+    uploads = [
+        s
+        for s in steps
+        if (uses := str(s.get("uses") or "")) == "actions/upload-artifact"
+        or uses.startswith("actions/upload-artifact@")
+    ]
+    assert uploads == []
+
+
 def test_publish_runs_in_the_site_publish_environment() -> None:
     job = wf()["jobs"]["publish"]
     assert job["environment"] == "site-publish"
