@@ -1,8 +1,10 @@
-# STATUS (as of 17 November 2026, SAST)
+# STATUS (as of 19 November 2026, SAST)
 
 ## Current
 
-- Private repository `GrokForum/politicianwatch-sa`. No public site. No domain in use. No outward messages have been sent.
+- Private repository `GrokForum/politicianwatch-sa`. No outward messages have been sent.
+- Public site: politicianwatch.grokforum.site, served by GitHub Pages from the public repo `GrokForum/politicianwatch-site` (`main` `8f00b86` on 19 Nov 2026: a "coming soon" page, robots.txt `Disallow: /`, noindex meta; no profiles). On `git fetch` (19 Nov 2026 ~07:46 SAST) `origin/main` of this repo is `ba6fc8734d1961379776c76f9ca69f5fb4d0628f` (PRs #3, #4 and #5 merged).
+- CHG-PW-006 (Phase 0: DRAFT banner, privacy page, robots/noindex test; DEV) on `dev/chg-pw-006-draft-privacy` in both repos, from `main` `ba6fc87` / `8f00b86`; committed locally on 19 Nov 2026, not pushed. Reviewers Cavus and Janus. A merge of the site branch deploys and needs the owner's GO.
 - `main` at `cfa7e22ff4fc7b12e2e891d1855e17ad261dcd84` (README + `.gitignore`) and branch `dev/chg-pw-001-scaffold` were pushed on the owner's GO, 15 November 2026 18:32 SAST. On `git fetch` (17 Nov 2026 ~11:38 SAST), `origin/main` is `3f3043a96a83e8df7462d097bc494e662f04e00e`: PR #1 merged, 17 Nov 2026 11:00 SAST (tree identical to `ed801b1`). On `git fetch` (17 Nov 2026 ~12:10 SAST), `origin/main` is `9492ba96ad29da62b75012d3b5ba7afc754946cc`: PR #2 merged, 17 Nov 2026 12:03:47 SAST.
 - CHG-PW-001 (DEV scaffold + TEST Joburg roster): PR #1 (https://github.com/GrokForum/politicianwatch-sa/pull/1) is **merged** into `main` as `3f3043a` (seen on fetch, 17 Nov 2026). PR #2's base is now `main`.
 - Rollback SHA: `cfa7e22ff4fc7b12e2e891d1855e17ad261dcd84`.
@@ -35,3 +37,4 @@
 | 2026-11-17 | CHG-PW-004 | DEV | RFC registry count corrected to 64 entries and 4 source tests at the 004 head (was 70 / 6 from commit 2); pytest 44 passed; `pwatch dq` pass; render check pass | eb0a8313c30ae1ad642621341840f3f11a8558fb |
 | 2026-11-17 | CHG-PW-005 | DEV | PR #5 raised as draft PR #5 on 17 Nov 2026 at 12:12:14 SAST (per `gh`; base `dev/chg-pw-004-housekeeping`, at `3aa3ca4`); merge of CHG-PW-004 head `d2ec198` (registry count fix); registry 70 entries on this branch; pytest 46 passed; `pwatch dq` pass; render check pass | 3aa3ca465a77b50a18bc219aad6f9638be55b702 |
 | 2026-11-17 | CHG-PW-005 | DEV | Tier-3 DQ rule tightened: an adverse item or identity link fails when it cites a tier-3 URL and no tier-1/2 URL, whatever party or unregistered URLs sit alongside; 7 tests added; pytest 53 passed; `pwatch dq` pass on the real profiles; render check pass | 4b382ee6b601159a321ae7bcadf25e37cc483f14 |
+| 2026-11-19 | CHG-PW-006 | DEV | DRAFT banner, privacy page (privacy@grokforum.site), 404, favicon, CSP meta via `pwatch site build/check`; site branch built from `00b7510`; pytest 68 passed; `pwatch dq` pass; render check pass; site check pass; popia-review PASS; committed locally | ba6fc8734d1961379776c76f9ca69f5fb4d0628f (site: 8f00b8662365ab5e3ed34d3474575cf270638ee8) |
