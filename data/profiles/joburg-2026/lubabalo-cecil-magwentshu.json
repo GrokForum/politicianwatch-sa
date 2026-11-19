@@ -58,29 +58,20 @@
     "retrieved_at": "2026-11-17"
   },
   "career": {
-    "value": "Worked in the private sector, including as a rail and port operations manager and as a lecturer, before becoming a councillor",
-    "label": "Reported",
-    "source_url": "https://www.citizen.co.za/news/lubabalo-magwentshu-mmc-interview/",
-    "source_date": "2023-06-17",
-    "retrieved_at": "2026-11-17"
+    "value": null,
+    "label": "Unknown",
+    "source_url": null,
+    "source_date": null,
+    "retrieved_at": null
   },
   "education": {
-    "value": "Bachelor of Commerce, Rhodes University",
-    "label": "Reported",
-    "source_url": "https://www.citizen.co.za/news/lubabalo-magwentshu-mmc-interview/",
-    "source_date": "2023-06-17",
-    "retrieved_at": "2026-11-17"
+    "value": null,
+    "label": "Unknown",
+    "source_url": null,
+    "source_date": null,
+    "retrieved_at": null
   },
   "cv": [
-    {
-      "value": "First year in council: 2021. Became a councillor in November 2021",
-      "label": "Reported",
-      "source_url": "https://www.citizen.co.za/news/lubabalo-magwentshu-mmc-interview/",
-      "source_date": "2023-06-17",
-      "retrieved_at": "2026-11-17",
-      "field": "position",
-      "period": "2021-11"
-    },
     {
       "value": "Chaired the council's Health and Social Development Section 79 committee (as reported in September 2022)",
       "label": "Reported",
@@ -111,15 +102,18 @@
   ],
   "identity_match": {
     "matched_details": [
-      "Name: 'Cllr. Lubabalo Magwentshu' (City 2023-02-02) and 'Lubabalo Magwentshu' (Citizen 2023-06-17) match the gazette's first given name and surname.",
-      "Party: ATM in the gazette and The Citizen.",
-      "Council role: City of Johannesburg councillor and Community Development MMC in both."
+      "Name: 'Cllr. Lubabalo Magwentshu' (City 2023-02-02) and 'ATM councillor Lubabalo Magwentshu' (Sowetan 2022-09-14) match the gazette's first given name and surname.",
+      "Party: ATM in the gazette and Sowetan (2022-09-14).",
+      "Council role: City of Johannesburg councillor (Sowetan 2022-09-14: chair of the Health and Social Development committee) and Community Development MMC (City 2023-02-02)."
     ],
-    "note": "The Citizen interview cited for his education, career and first year in council, and the City's MMC page, contain personal details not recorded here (public role only). The City MMC page is not cited."
+    "note": "Sources that carry private personal details (an interview and the City's MMC page) are not linked; facts found only there are Unknown (public role only, CHG-PW-007)."
   },
   "court_matters": [],
   "scandals": [],
   "unknown_fields": [
+    "career",
+    "education",
+    "First year in council (the only source found carries private personal details, so it is not linked; CHG-PW-007)",
     "Exact end date of the Community Development MMC role (the portfolio had passed to another councillor by 16 August 2024)",
     "Council office or portfolio for the 2026–2031 term (executive mayor and mayoral committee not yet elected; first sitting expected around 19 November 2026 — not guessed)",
     "Official council contact channel (owner to confirm from the City's published councillor directory)"
