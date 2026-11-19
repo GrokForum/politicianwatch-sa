@@ -98,7 +98,7 @@ def profile_body(p: dict[str, Any]) -> str:
     seat_src = p["name"]
     out = [
         f"<h1>{escape(name)}</h1>",
-        '<p class="note">Draft profile. Public role only. Every item shows an evidence label and a dated source. '
+        '<p class="note">Draft profile. Public role only. Every item shows an evidence label; every item except an Unknown one links a dated source. '
         'To ask for a correction or to send a reply, see <a href="/privacy/#corrections">Privacy and corrections</a>.</p>',
         '<p><a href="/">All profiles</a></p>',
         f"<h2>Seat (Government Gazette {GAZETTE_NUMBER})</h2>",
@@ -194,7 +194,7 @@ def index_body(profiles: list[tuple[Path, dict[str, Any]]], site_name: str) -> s
             f"<p><strong>{len(profiles)} draft profiles.</strong> Seats are as published in Government Gazette "
             f"{GAZETTE_NUMBER} ({GAZETTE_DATE}). Council offices for the 2026–2031 term are shown as Unknown until "
             "they are published. Each profile item shows an evidence label (Confirmed, Reported, Alleged, Disputed or "
-            "Unknown) and links to its source with a date.</p>",
+            "Unknown); every item except an Unknown one links to its source with a date.</p>",
             '<table><thead><tr><th scope="col">Name as gazetted</th><th scope="col">Party</th>'
             '<th scope="col">Seat</th><th scope="col">Seat source</th></tr></thead><tbody>',
             *rows,
