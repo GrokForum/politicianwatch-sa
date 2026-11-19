@@ -43,7 +43,28 @@ def test_default_permissions_read_only_and_only_live_check_writes() -> None:
     doc = wf()
     assert doc["permissions"] == {"contents": "read"}
     writers = {n for n, j in doc["jobs"].items() if j.get("permissions")}
-    assert writers == {"live-check"} and doc["jobs"]["live-check"]["permissions"] == {"contents": "write"}
+    assert writers == {"record"} and doc["jobs"]["record"]["permissions"] == {"contents": "write"}
+    assert "permissions" not in doc["jobs"]["live-check"]
+
+
+def test_checkouts_outside_publish_do_not_persist_credentials() -> None:
+    for name in ("live-check", "record"):
+        co = [s for s in wf()["jobs"][name]["steps"] if str(s.get("uses", "")).startswith("actions/checkout@")]
+        assert co and all((s.get("with") or {}).get("persist-credentials") is False for s in co), name
+
+
+def test_publish_runs_in_the_site_publish_environment() -> None:
+    job = wf()["jobs"]["publish"]
+    assert job["environment"] == "site-publish"
+    assert "secrets.PW_SITE_DEPLOY_KEY" in job["steps"][0]["env"]["KEY"]
+
+
+def test_record_job_is_the_only_nightly_log_writer() -> None:
+    jobs = wf()["jobs"]
+    users = [n for n, j in jobs.items() if any("record-nightly.sh" in (s.get("run") or "") for s in j["steps"])]
+    assert users == ["record"]
+    rec = jobs["record"]
+    assert rec["needs"] == "live-check" and rec["if"] == "${{ always() }}"
 
 
 def test_build_runs_tests_dq_render_site_build_and_check() -> None:
@@ -56,7 +77,7 @@ def test_live_check_always_runs_and_records() -> None:
     job = wf()["jobs"]["live-check"]
     assert job["if"] == "${{ always() }}" and job["needs"] == ["build", "publish"]
     runs = " ".join(s.get("run") or "" for s in job["steps"])
-    assert "pwatch live-check" in runs and "record-nightly.sh" in runs
+    assert "pwatch live-check" in runs
     uploads = [s for s in job["steps"] if str(s.get("uses", "")).startswith("actions/upload-artifact@")]
     assert uploads and uploads[0]["with"]["retention-days"] == 90
 

@@ -3,14 +3,17 @@
 # PUBLISH GATE (owner's GO required): the publish job runs only when ALL of these hold:
 #   1. the run is on main (this file only takes effect once merged with the owner's GO);
 #   2. the repository variable PW_PUBLISH_ENABLED is exactly 'true' (unset by default);
-#   3. the repository secret PW_SITE_DEPLOY_KEY exists (a write deploy key on
-#      GrokForum/politicianwatch-site; not created yet). If the flag is on and the key is
-#      missing, the job fails closed and the night is red.
+#   3. the job runs in the GitHub Environment "site-publish" (owner creates it after the GO:
+#      deployment branches limited to main, required reviewer = owner where the plan allows),
+#      and the secret PW_SITE_DEPLOY_KEY (a write deploy key on GrokForum/politicianwatch-site)
+#      is stored in that environment. Neither exists yet. If the flag is on and the key is
+#      missing, the job fails closed and the night is red. See CHG-PW-008 for plan limits.
 # Until the owner GOes and the flag and key are set, the nightly builds, tests and checks,
 # runs the live check against whatever is live, and records the result, but publishes nothing.
 #
-# Evidence per night: artifact "nightly-<date>-<run id>" (90 days) and one line appended to
-# nightly/log.jsonl on the branch "nightly-log" of this private repo (never main).
+# Evidence per night: artifact "nightly-<run id>" (90 days) and one line appended to
+# nightly/log.jsonl on the branch "nightly-log" of this private repo (never main), pushed by the
+# separate "record" job, the only job with contents: write.
 name: nightly
 
 on:
@@ -78,6 +81,7 @@ jobs:
     if: ${{ needs.build.result == 'success' && github.ref == 'refs/heads/main' && vars.PW_PUBLISH_ENABLED == 'true' }}
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    environment: site-publish
     steps:
       - name: Require the deploy key (fail closed)
         env:
@@ -113,10 +117,10 @@ jobs:
     if: ${{ always() }}
     runs-on: ubuntu-latest
     timeout-minutes: 30
-    permissions:
-      contents: write   # only to append the record to the nightly-log branch
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          persist-credentials: false
       - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
         with:
           python-version: "3.13"
@@ -162,10 +166,27 @@ jobs:
           name: nightly-${{ github.run_id }}
           path: nightly/result.json
           retention-days: 90
+      - name: Night verdict
+        run: test "${{ steps.live.outcome }}" = success
+
+  record:
+    # The only job that can write: it appends tonight's record to the nightly-log branch.
+    needs: live-check
+    if: ${{ always() }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          persist-credentials: false
+          sparse-checkout: scripts
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
+        with:
+          name: nightly-${{ github.run_id }}
+          path: nightly
       - name: Append the record to the nightly-log branch
-        if: always()
         env:
           GH_TOKEN: ${{ github.token }}
         run: scripts/record-nightly.sh nightly/result.json
-      - name: Night verdict
-        run: test "${{ steps.live.outcome }}" = success
