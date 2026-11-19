@@ -6,12 +6,13 @@
 | Author / builder | PoliticianWatch (Grok Bot) |
 | Reviewers | Cavus; Janus |
 | Change authority | Owner (GO on the exact head) |
-| Type | Normal — high (publishes named people's profiles, including 6 adverse items, once deployed) |
-| Environment | DEV (code, synthetic and real-data tests, local preview only). Nothing is published by this change. The first publish is CHG-PW-008's gated job, after the owner's GO. |
+| Type | Normal — high (publishes named people's profiles, including 6 adverse items, once deployed; from the Janus fixes it also changes four profiles and one adverse label) |
+| Environment | DEV (code, synthetic and real-data tests, local preview only) + TEST profiles (four profile files corrected after review). Nothing is published by this change. The first publish is CHG-PW-008's gated job, after the owner's GO. |
 | CIs affected | CI-010 draft-site builder; CI-009 Joburg CV profiles (read only) |
 | Linked records | CHG-PW-006 (site shell, DRAFT banner, privacy page; this branch is stacked on it); CHG-PW-008 (nightly build, live check, gated publish) |
 | Branch | `politicianwatch-sa` `dev/chg-pw-007-profiles-site`, stacked on `dev/chg-pw-006-draft-privacy` at `8cf6c05`. No `politicianwatch-site` branch (see "Why no site-repo branch") |
 | Pre-change commit (rollback SHA) | `8cf6c05c0aa63e4991d37a38f1f8e7d579ee6989` (CHG-PW-006 head); `main` `ba6fc8734d1961379776c76f9ca69f5fb4d0628f` |
+| PR | Draft PR #7, raised at `678d370` on 19 Nov 2026 at 08:01:06 SAST (per `gh`; base `dev/chg-pw-006-draft-privacy`) |
 | Head to approve | The tip of `dev/chg-pw-007-profiles-site`. Merge order: CHG-PW-006, then this change, then CHG-PW-008. |
 
 ## Request
@@ -26,11 +27,11 @@ Replace the "coming soon" placeholder with the real draft profiles rendered from
 4. Tests: `tests/test_site_profiles.py` (15): synthetic build passes with coverage; every claim labelled and every non-Unknown claim sourced and dated; adverse item shows "Right of reply: pending" and a blank reply; every fact rendered; 7 broken-claim cases fail (link removed, date removed, badge removed, invalid label, RoR changed, RoR line removed, `javascript:` URL); coverage fails for a missing fact, a missing profile page and a held page; a fact with no source URL in the data fails the check; the real profiles build 24 pages, pass, never include the held profile, and show 6 "Right of reply: pending" items; CLI check exit codes.
 5. README: the two `pwatch site` commands.
 
-Built from the committed data on 19 Nov 2026: 27 HTML pages (home, privacy, 404, 24 profiles); 430 claims: Confirmed 181, Reported 95, Alleged 2, Disputed 1, Unknown 151; 6 adverse items, all "Right of reply: pending".
+Built from the committed data on 19 Nov 2026: 27 HTML pages (home, privacy, 404, 24 profiles); 430 claims: Confirmed 181, Reported 95, Alleged 2, Disputed 1, Unknown 151 (after the Janus fixes: Reported 94, Disputed 2); 6 adverse items, all "Right of reply: pending".
 
 ## What stays
 
-Profile data, schema, DQ rules and markdown renders are unchanged. robots.txt `Disallow: /`, noindex meta, DRAFT banner and privacy page from CHG-PW-006. No publish, no site-repo change, no DNS or settings change.
+Schema unchanged. Profile data and DQ rules are unchanged except for the review fixes below. robots.txt `Disallow: /`, noindex meta, DRAFT banner and privacy page from CHG-PW-006. No publish, no site-repo change, no DNS or settings change.
 
 ## Why no site-repo branch
 
@@ -45,6 +46,18 @@ Profile data, schema, DQ rules and markdown renders are unchanged. robots.txt `D
 ## Risks
 
 Medium to high on deploy (named people, adverse items); none until deploy. The claim check makes a missing link or date fail the build rather than ship.
+
+## Review fixes (Janus on PR #7 at `678d370`, 19 Nov 2026)
+
+1. **No pointers to private personal information.** `faeeza-chame.json` (note, line 93) and `lubabalo-cecil-magwentshu.json` (note, line 118) listed what kind of personal data their sources print. They now say the source "contains personal details not recorded here". The same rewording applies to `albert-tefo-raphadu.json` (its note described a City PDF's personal data), to the batch-2 notes in `docs/profiles-joburg-2026-batch-2.md`, and to a search-snippet line there.
+2. **Links to PI-bearing documents dropped where a non-PI source exists** (fetched with `pwatch fetch-source` on 19 Nov 2026; logged in `data/raw/manifest.jsonl`):
+   - Chame `cv[0]` (first year in council, ward 57 by-election, 2 Jul 2014): the Southern Courier report (personal details) is replaced by **IOL, 3 Jul 2014** ("With 66 percent of the vote, DA candidate Faeeza Chame scooped Ward 57"); the value now says 66% (was 66.09%, a figure only that report gave). Label Reported, unchanged. The identity-match ward detail now cites IOL and the Electoral Commission's results notice for the 2 Jul 2014 by-elections (an undated page, so it is named in the note, not cited as a dated source). Southern Courier is no longer linked anywhere in the profiles, drafts or site.
+   - Magwentshu `cv[1]` (Section 79 committee chair): The Citizen interview is replaced by **Sowetan, 14 Sep 2022** ("ATM councillor Lubabalo Magwentshu, who is facing the axe as the committee chair for health and social development"); the value now names the committee.
+   - **Not possible:** Magwentshu's education (BCom, Rhodes), career and first year in council (November 2021). The only sources found are The Citizen interview and the City's MMC page (and a copy of it on Egoli Jozi News); all contain personal details. The Citizen link stays for those three facts, and the note no longer describes what the interview contains. If reviewers or the owner prefer, those three facts can become Unknown in a further commit.
+3. **Set-aside Public Protector findings, consistent labels.** Both items are Public Protector findings on PR (party-list) councillors that a court set aside (`matter_status` `cleared`): Mashaba was Disputed, Zille was Reported. Zille's item is now **Disputed** too (the label describes the finding's standing; it is never above the Reported identity link, so the identity-link rule still holds). New DQ rule `check_set_aside_label`: a Public Protector finding with `matter_status` `cleared` must be Disputed. Tests: the rule (4 cases) and the committed profiles (both Disputed). Zille's note, her RoR draft ("labelled Disputed") and `docs/profiles-joburg-2026-batch-1.md` are updated.
+4. Drafts aligned (unsent): Chame and Magwentshu accuracy-check drafts cite the new sources; Zille's draft says Disputed.
+
+Evidence after the fixes, at `ffa062c`: `uv run pytest -q` 85 passed; `uv run pwatch dq` exit 0 (no unknown-domain warnings); `uv run pwatch render --check` exit 0; `pwatch site build` + `pwatch site check` pass (24 profiles); no `southern-courier` link in profiles or the built site. **popia-review: PASS** — the three notes no longer describe or point to personal data; the new sources (IOL, Sowetan) carry only the public-role facts used; no ID, phone, address, family or health data in the diff or the built site. Open point: The Citizen link kept for three Magwentshu facts (see 2).
 
 ## Testing (evidence)
 
