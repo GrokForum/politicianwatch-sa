@@ -2,10 +2,10 @@
 
 Renders the active CV profiles (never `_hold/`) as static HTML. Every claim is an
 `<li class="claim" data-fact=... data-label=...>` that shows its evidence label and, unless it is
-Unknown, links to its source with a `<time datetime>` source date. Adverse items also show the
+Unknown or Withheld (POPIA), links to its source with a `<time datetime>` source date. Adverse items also show the
 right-of-reply line ("Right of reply: pending" until the owner records otherwise) and a blank reply
 field. `check_claims` re-parses built pages and fails any claim that lacks a label, a source link
-or a date; `check_coverage` fails if a profile, or any fact in it, is missing from the build, or if
+or a date (except Unknown and Withheld (POPIA)); `check_coverage` fails if a profile, or any fact in it, is missing from the build, or if
 a held profile was built.
 """
 
@@ -20,7 +20,7 @@ from urllib.parse import urlparse
 
 from pwatch.ror import display
 from pwatch.schema import iter_facts
-from pwatch.settings import GAZETTE_DATE, GAZETTE_NUMBER, LABELS, PI_SOURCE_APPROVAL_FIELD
+from pwatch.settings import GAZETTE_DATE, GAZETTE_NUMBER, LABELS, PI_SOURCE_APPROVAL_FIELD, SOURCELESS_LABELS, WITHHELD_LABEL, WITHHELD_PUBLIC_TEXT
 
 UNKNOWN_TEXT = "Unknown — not yet found in an allowed source"
 BLANK_REPLY = "(blank — no reply recorded)"
@@ -40,7 +40,7 @@ def _safe_url(url: Any) -> str | None:
 
 def _source_html(f: dict[str, Any]) -> str:
     """Source link(s) with dates. Empty for Unknown facts."""
-    if f.get("label") == "Unknown":
+    if f.get("label") in SOURCELESS_LABELS:
         return ""
     parts = []
     url = _safe_url(f.get("source_url"))
@@ -67,13 +67,20 @@ def _source_html(f: dict[str, Any]) -> str:
     return '<span class="src">Source: ' + "; ".join(parts) + "</span>" + note
 
 
+def _label_class(label: str) -> str:
+    slug = re.sub(r"[^A-Za-z0-9]+", "-", label).strip("-")
+    return f"label label-{escape(slug)}"
+
+
 def _label_html(label: str) -> str:
-    return f'<span class="label label-{escape(label)}">{escape(label)}</span>'
+    return f'<span class="{_label_class(label)}">{escape(label)}</span>'
 
 
 def claim(fact_id: str, title: str, f: dict[str, Any], extra: str = "", css: str = "") -> str:
     label = str(f.get("label")) if isinstance(f, dict) else "Unknown"
-    if label == "Unknown" or not isinstance(f, dict):
+    if label == WITHHELD_LABEL and isinstance(f, dict):
+        body = f"<strong>{escape(title)}:</strong> {escape(WITHHELD_PUBLIC_TEXT)}"
+    elif label == "Unknown" or not isinstance(f, dict):
         body = f"<strong>{escape(title)}:</strong> {UNKNOWN_TEXT}"
         label = "Unknown"
     elif f.get("value") is None:
@@ -101,7 +108,7 @@ def profile_body(p: dict[str, Any]) -> str:
     seat_src = p["name"]
     out = [
         f"<h1>{escape(name)}</h1>",
-        '<p class="note">Draft profile. Public role only. Every item shows an evidence label; every item except an Unknown one links a dated source. '
+        '<p class="note">Draft profile. Public role only. Every item shows an evidence label; every item except an Unknown or Withheld (POPIA) one links a dated source. '
         'To ask for a correction or to send a reply, see <a href="/privacy/#corrections">Privacy and corrections</a>.</p>',
         '<p><a href="/">All profiles</a></p>',
         f"<h2>Seat (Government Gazette {GAZETTE_NUMBER})</h2>",
@@ -197,7 +204,7 @@ def index_body(profiles: list[tuple[Path, dict[str, Any]]], site_name: str) -> s
             f"<p><strong>{len(profiles)} draft profiles.</strong> Seats are as published in Government Gazette "
             f"{GAZETTE_NUMBER} ({GAZETTE_DATE}). Council offices for the 2026–2031 term are shown as Unknown until "
             "they are published. Each profile item shows an evidence label (Confirmed, Reported, Alleged, Disputed or "
-            "Unknown); every item except an Unknown one links to its source with a date.</p>",
+            "Unknown or Withheld (POPIA)); every item except an Unknown or Withheld (POPIA) one links to its source with a date.</p>",
             '<table><thead><tr><th scope="col">Name as gazetted</th><th scope="col">Party</th>'
             '<th scope="col">Seat</th><th scope="col">Seat source</th></tr></thead><tbody>',
             *rows,
@@ -287,7 +294,7 @@ def scan_claims(html: str) -> list[dict[str, Any]]:
 
 
 def check_claims(rel: str, html: str) -> list[str]:
-    """Every rendered claim shows a valid label; non-Unknown claims link a source with a date."""
+    """Every rendered claim shows a valid label; non-Unknown, non-withheld claims link a source with a date."""
     fails = []
     for c in scan_claims(html):
         where = f"{rel} [{c['fact'] or 'claim'}]"
@@ -297,6 +304,13 @@ def check_claims(rel: str, html: str) -> list[str]:
         if c["label"] not in c["badge"]:
             fails.append(f"{where}: the {c['label']} label is not shown on the page")
         if c["label"] == "Unknown":
+            continue
+        if c["label"] == WITHHELD_LABEL:
+            if any(_safe_url(h) for h in c["links"]):
+                fails.append(f"{where}: {WITHHELD_LABEL} claim must not have a source link")
+            text = "".join(c.get("text") or [])
+            if WITHHELD_PUBLIC_TEXT not in text:
+                fails.append(f"{where}: {WITHHELD_LABEL} claim does not show the withheld wording")
             continue
         if not any(_safe_url(h) for h in c["links"]):
             fails.append(f"{where}: claim has no http(s) source link")

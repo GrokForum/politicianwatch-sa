@@ -143,9 +143,9 @@ def test_cli_site_check_uses_committed_profiles(tmp_path: Path) -> None:
 def test_home_and_profile_wording_exclude_unknown_items(built: Path) -> None:
     """Janus on PR #6, applied to the CHG-PW-007 pages: Unknown items carry no source link."""
     home = (built / "index.html").read_text(encoding="utf-8")
-    assert "every item except an Unknown one links to its source with a date" in home
+    assert "every item except an Unknown or Withheld (POPIA) one links to its source with a date" in home
     prof = (built / "profiles" / "kevin-example" / "index.html").read_text(encoding="utf-8")
-    assert "every item except an Unknown one links a dated source" in prof
+    assert "every item except an Unknown or Withheld (POPIA) one links a dated source" in prof
     assert "Every item shows an evidence label and a dated source" not in prof
 
 
@@ -158,3 +158,48 @@ def test_owner_approved_pi_source_note_is_rendered_next_to_the_source():
     html = claim("education", "Education", dict(base, note=PI_SOURCE_NOTE, owner_approved_pi_source="2026-11-19 16:27 SAST (CHG-PW-011)"))
     assert f'<span class="src-note">{PI_SOURCE_NOTE}</span>' in html
     assert "src-note" not in claim("education", "Education", dict(base, note="some other note"))
+
+
+def test_withheld_fact_renders_without_a_source_link():
+    from pwatch.settings import WITHHELD_LABEL, WITHHELD_PUBLIC_TEXT
+    from pwatch.site_profiles import check_claims, claim
+
+    fact = {"value": None, "label": WITHHELD_LABEL, "source_url": None, "source_date": None, "retrieved_at": None}
+    html = claim("education", "Education", fact)
+    assert WITHHELD_LABEL in html
+    assert WITHHELD_PUBLIC_TEXT in html
+    assert "Unknown — not yet found" not in html
+    assert "src-link" not in html
+    assert check_claims("edu", f"<ul>{html}</ul>") == []
+
+
+def test_site_check_fails_if_a_withheld_source_url_appears_in_output(tmp_path: Path, built: Path, monkeypatch) -> None:
+    import json
+
+    from pwatch.site import check_site
+    from pwatch import withheld as withheld_mod
+
+    url = "https://news.example.test/held-private"
+    private = tmp_path / "withheld-sources.json"
+    private.write_text(
+        json.dumps(
+            {
+                "entries": [
+                    {
+                        "slug": "anyone",
+                        "fact": "education",
+                        "source_url": url,
+                        "source_date": "2023-06-17",
+                        "title": "Example interview",
+                    }
+                ]
+            }
+        ),
+        encoding="utf-8",
+    )
+    monkeypatch.setattr(withheld_mod, "WITHHELD_SOURCES_PATH", private)
+    planted = built / "profiles" / "kevin-example" / "index.html"
+    html = planted.read_text(encoding="utf-8")
+    planted.write_text(html + f"<p>see {url}</p>", encoding="utf-8")
+    fails = check_site(built)
+    assert any("withheld-source URL" in f for f in fails)

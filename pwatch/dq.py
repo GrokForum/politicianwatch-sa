@@ -2,7 +2,7 @@
 
 Checks:
 - every fact has a label
-- every fact that is not Unknown has a dated source URL
+- every fact that is not Unknown or Withheld (POPIA) has a dated source URL
 - every adverse item (court/criminal matter, scandal, allegation) has a right_of_reply
   object, a draft, and owner-recorded fields that match its status
 - no_response is only allowed after the deadline
@@ -13,7 +13,8 @@ Checks:
 - source tiers (CHG-PW-004, data/sources.json): no link_only/not_allowed domains; an adverse item or an identity
   link may not rest only on tier-3 sources (CHG-PW-005); unknown domains are warnings, not failures
 - no retrieved_at anywhere in a profile (facts, also_sourced, adverse items) is later than the run time (CHG-PW-003 fix 2); a date-only value is future only if that date is after today's date in SAST (fix 3)
-- a fact that links a source carrying private personal details does so only with an owner-approved exception and the exact note (CHG-PW-011; rule 6 default is in CHG-PW-007)
+- a fact that links a source carrying private personal details does so only with an owner-approved exception and the exact note (CHG-PW-011; rule 6 default is Withheld (POPIA), not Unknown)
+- a Withheld (POPIA) fact has a matching private-source entry, no public URL, and is not an adverse item
 """
 
 from __future__ import annotations
@@ -27,6 +28,7 @@ from pwatch.profiles import check_against_roster, check_identity, non_gazette_so
 from pwatch.ror import check_right_of_reply
 from pwatch.schema import iter_adverse_items, iter_facts, retrieved_at_is_future, validate_profile_shape
 from pwatch.settings import LABELS, PI_SOURCE_APPROVAL_FIELD, PI_SOURCE_NOTE
+from pwatch.withheld import check_withheld_entry_format, check_withheld_facts, load_withheld_sources
 from pwatch.sources import FAIL_TIERS, source_urls, tier_of
 
 EXIT_OK = 0
@@ -143,7 +145,7 @@ def check_pi_source_allowance(profile: dict[str, Any], locator: str) -> list[str
     """Rule 6 and its narrow owner-approved exception (CHG-PW-007, amended by CHG-PW-011).
 
     Default: a source that carries private personal details is not linked, and a fact found only
-    there is Unknown. A fact may link such a source only when it carries
+    there is Withheld (POPIA), not Unknown. A fact may link such a source only when it carries
     `owner_approved_pi_source` ("YYYY-MM-DD HH:MM SAST (CHG-PW-NNN)", the owner's decision and the
     change that applied it) and the note exactly `PI_SOURCE_NOTE`. The note is never used without
     the approval, an approved fact is never Unknown, and every fact citing an approved URL in the
@@ -202,6 +204,7 @@ def check_profile(
         failures.extend(check_identity(profile, loc))
         failures.extend(check_source_tiers(profile, loc))
         failures.extend(check_pi_source_allowance(profile, loc))
+        failures.extend(check_withheld_facts(profile, loc))
         if roster is not None:
             failures.extend(check_against_roster(profile, roster, loc))
     for item_loc, item in iter_adverse_items(profile if isinstance(profile, dict) else {}):
@@ -232,6 +235,7 @@ def run(
     now = now or datetime.now(timezone.utc)
     all_failures: list[str] = []
     all_warnings: list[str] = []
+    all_failures.extend(check_withheld_entry_format(load_withheld_sources()))
     for i, profile in enumerate(profiles):
         if isinstance(profile, dict):
             all_warnings.extend(source_warnings(profile, f"{locator_prefix}[{i}]"))

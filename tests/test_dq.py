@@ -131,18 +131,95 @@ def test_pi_source_approval_not_allowed_on_adverse_items():
     assert any("adverse item" in f for f in check_pi_source_allowance(p, "p"))
 
 
-def test_magwentshu_has_no_citizen_interview_link_or_pi_approval(repo_root):
+def test_magwentshu_education_and_career_are_withheld_without_a_public_url(repo_root):
     import json
+
+    from pwatch.settings import WITHHELD_LABEL, WITHHELD_SOURCES_PATH
+    from pwatch.withheld import entries_for, load_withheld_sources
 
     d = json.loads((repo_root / "data/profiles/joburg-2026/lubabalo-cecil-magwentshu.json").read_text(encoding="utf-8"))
     blob = json.dumps(d)
     assert "citizen.co.za/news/lubabalo-magwentshu-mmc-interview" not in blob
+    assert "MMC-Community-Development" not in blob
     assert "owner_approved_pi_source" not in blob
-    assert d["education"]["label"] == "Unknown" and d["education"]["source_url"] is None
-    assert d["career"]["label"] == "Unknown" and d["career"]["source_url"] is None
+    for key in ("education", "career"):
+        assert d[key]["label"] == WITHHELD_LABEL
+        assert d[key]["value"] is None and d[key]["source_url"] is None
+        assert key not in d["unknown_fields"]
+        assert entries_for(d["slug"], key, load_withheld_sources(WITHHELD_SOURCES_PATH))
     first = d["cv"][0]
     assert first["label"] == "Confirmed"
     assert first["source_url"].endswith("government-gazette-45447-2021-11-09.pdf")
     assert first["source_date"] == "2021-11-09" and first.get("source_page") == 50
     assert "2021 local government elections" in first["value"]
     assert len(d["identity_match"]["matched_details"]) >= 2
+
+
+def test_withheld_fact_requires_private_entry_and_rejects_public_url_or_adverse(synthetic_profiles, repo_root, tmp_path, monkeypatch):
+    import json
+    from copy import deepcopy
+
+    from pwatch.dq import check_profile
+    from pwatch.settings import WITHHELD_LABEL
+    from pwatch import withheld as withheld_mod
+
+    private = tmp_path / "withheld-sources.json"
+    slug = "synth-withheld"
+    private.write_text(
+        json.dumps(
+            {
+                "entries": [
+                    {
+                        "slug": slug,
+                        "fact": "education",
+                        "source_url": "https://news.example.test/held",
+                        "source_date": "2023-06-17",
+                        "title": "Example interview",
+                    }
+                ]
+            }
+        ),
+        encoding="utf-8",
+    )
+    monkeypatch.setattr(withheld_mod, "WITHHELD_SOURCES_PATH", private)
+
+    p = deepcopy(synthetic_profiles[0])
+    p["slug"] = slug
+    p["education"] = {
+        "value": None,
+        "label": WITHHELD_LABEL,
+        "source_url": None,
+        "source_date": None,
+        "retrieved_at": None,
+    }
+    assert check_profile(p, drafts_root=repo_root, as_of=date(2026, 11, 15)) == []
+
+    p["education"]["source_url"] = "https://news.example.test/held"
+    assert any("must not carry a public source URL" in f or "must not have a public source URL" in f for f in check_profile(p, drafts_root=repo_root, as_of=date(2026, 11, 15)))
+    p["education"]["source_url"] = None
+
+    p["education"]["value"] = "a degree"
+    assert any("must have a null value" in f for f in check_profile(p, drafts_root=repo_root, as_of=date(2026, 11, 15)))
+    p["education"]["value"] = None
+
+    p2 = deepcopy(p)
+    p2["education"]["label"] = "Unknown"
+    # private entry now points at a fact that is no longer withheld
+    assert any("does not match a" in f for f in check_profile(p2, drafts_root=repo_root, as_of=date(2026, 11, 15)))
+
+    p3 = deepcopy(p)
+    p3["slug"] = "other-slug"
+    assert any("no matching entry" in f for f in check_profile(p3, drafts_root=repo_root, as_of=date(2026, 11, 15)))
+
+    p4 = deepcopy(p)
+    p4["court_matters"] = [
+        {
+            "value": None,
+            "label": WITHHELD_LABEL,
+            "source_url": None,
+            "source_date": None,
+            "retrieved_at": None,
+        }
+    ]
+    fails = check_profile(p4, drafts_root=repo_root, as_of=date(2026, 11, 15))
+    assert any("adverse item" in f for f in fails)

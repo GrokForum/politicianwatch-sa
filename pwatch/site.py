@@ -45,7 +45,7 @@ DRAFT_MARK = "DRAFT."
 DRAFT_BANNER = (
     '<div class="draft" role="note"><p><strong>DRAFT.</strong> This site is an unfinished draft. '
     "Profiles cover elected representatives' public role only. Every item shows an evidence label; "
-    'every item except an Unknown one links a dated source. <a href="/privacy/">Privacy and corrections</a></p></div>'
+    'every item except an Unknown or Withheld (POPIA) one links a dated source. <a href="/privacy/">Privacy and corrections</a></p></div>'
 )
 # Jekyll (GitHub Pages "legacy" build) would otherwise turn README.md into a page without the
 # noindex meta. HTML files without front matter are copied unchanged.
@@ -104,13 +104,14 @@ def privacy_body() -> str:
 <section id="data">
 <h2>2. What it shows</h2>
 <p>It shows information about a representative's <strong>public role only</strong>: the name and seat as published in the Government Gazette, party, council, public offices held, career and education as publicly reported, and court matters or reported allegations that concern their public life.</p>
-<p>It uses official public records (such as the Government Gazette, the Electoral Commission, the City of Johannesburg and court judgments) and established news media. Every item shows one of these evidence labels. Every item except an Unknown one also links to its source with a date; an Unknown item has no source yet:</p>
+<p>It uses official public records (such as the Government Gazette, the Electoral Commission, the City of Johannesburg and court judgments) and established news media. Every item shows one of these evidence labels. Every item except an Unknown or Withheld (POPIA) one also links to its source with a date. An Unknown item has no source yet. A Withheld (POPIA) item is held back because its only source carries personal details, and no source is linked:</p>
 <ul>
 <li><strong>Confirmed</strong>: shown in an official or primary record.</li>
 <li><strong>Reported</strong>: reported by established news media or stated by a party.</li>
 <li><strong>Alleged</strong>: an allegation or charge that no court has decided. An allegation is not a finding.</li>
 <li><strong>Disputed</strong>: sources conflict, or a finding was challenged or set aside.</li>
 <li><strong>Unknown</strong>: not yet found in an allowed source. Nothing is guessed.</li>
+<li><strong>Withheld (POPIA)</strong>: a source exists but carries personal details, so it is not published here. There is no link and the fact value is not shown.</li>
 </ul>
 </section>
 
@@ -323,7 +324,7 @@ def check_site(
     """Fail-closed checks on a built site directory.
 
     Every page: draft-site rules (`check_page`) and claim rules (`check_claims`: label shown, http(s)
-    source link and source date on every non-Unknown claim, RoR line on adverse items). With
+    source link and source date on every non-Unknown, non-withheld claim, RoR line on adverse items). Fails if a withheld-source URL appears in the built output. With
     `profiles`, also coverage: every active profile and fact is rendered and no held profile is.
     """
     from pwatch.site_profiles import check_claims, check_coverage
@@ -348,6 +349,11 @@ def check_site(
         fails += check_claims(str(p.relative_to(out)), html)
     if profiles is not None:
         fails += check_coverage(out, profiles, held or [])
+    from pwatch.withheld import check_tree_for_withheld_urls
+
+    fails += check_tree_for_withheld_urls(out)
+    if (out / "private").exists():
+        fails.append("site output must not contain the private/ directory")
     allowed = {".html", ".css", ".svg", ".txt", ".json", ".yml"}
     for p in out.rglob("*"):
         if p.is_file() and ".git" not in p.parts and p.suffix not in allowed and p.name not in ("CNAME", "README.md"):

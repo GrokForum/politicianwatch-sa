@@ -7,7 +7,7 @@
 **Non-negotiables**
 
 1. Neutral, factual tone. No opinion adjectives such as "corrupt" or "incompetent". Every claim is attributed.
-2. Every fact has a label: `Confirmed`, `Reported`, `Alleged`, `Disputed`, or `Unknown`. A non-Unknown fact has a dated source URL. Missing is `null`, never silently filled.
+2. Every fact has a label: `Confirmed`, `Reported`, `Alleged`, `Disputed`, `Unknown`, or `Withheld (POPIA)`. A fact that is not Unknown or Withheld (POPIA) has a dated source URL. Unknown means no source was found. Withheld (POPIA) means a source exists but carries personal details and is not published here. Missing is `null`, never silently filled.
 3. Public role only. Never collect or store ID numbers, home addresses, personal phones or emails, private family, or health information. Official office contacts only.
 4. Primary sources are the IEC and Government Gazette 55741 (and later official records). **Do not scrape ElectionSePush.** Link only. **Do not fetch SAFLII automatically.**
 5. Right of reply: every adverse item (court or criminal matter, scandal, allegation) has a `right_of_reply` object and a draft in `drafts/right-of-reply/`. Default status is `pending`. The profile shows "Right of reply: pending" with a blank reply field. **The bot never sends a draft. The owner sends them personally.** Status changes only when the owner records `sent_at`, a reply, or `no_response` after the deadline. `recorded_by` on those statuses is `owner`.

@@ -113,10 +113,10 @@ def test_cli_build_and_check(tmp_path: Path) -> None:
 def test_source_wording_excludes_unknown_items_and_reply_is_future(built: Path) -> None:
     """Janus on PR #6: Unknown items have no source, and the right of reply is still to be offered."""
     privacy = (built / "privacy" / "index.html").read_text(encoding="utf-8")
-    assert "Every item except an Unknown one also links to its source with a date" in privacy
+    assert "Every item except an Unknown or Withheld (POPIA) one also links to its source with a date" in privacy
     assert "Every item shows one of these evidence labels and links to its source" not in privacy
     assert "will be offered a right of reply" in privacy and "is offered a right of reply" not in privacy
     for p in html_pages(built):
         html = p.read_text(encoding="utf-8")
-        assert "every item except an Unknown one links a dated source" in html, p
+        assert "every item except an Unknown or Withheld (POPIA) one links a dated source" in html, p
         assert "Every item shows an evidence label and a dated source" not in html, p

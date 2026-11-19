@@ -16,8 +16,8 @@ DRAFT PROFILE — not published. Public role only. Every item carries an evidenc
 ## Summary
 
 - **Positions:** Former City of Johannesburg MMC for Community Development (appointed February 2023) · `Confirmed` — [source](https://joburg.org.za/media_/Pages/Media/Media%20Statements/2023%20Media%20Statements/February/Joburg-Executive-Mayor-announces-new-MMCs.aspx), 2023-02-02 (retrieved 2026-11-17, time not logged)
-- **Career:** Unknown — not yet sourced (placeholder) · `Unknown`
-- **Education:** Unknown — not yet sourced (placeholder) · `Unknown`
+- **Career:** Withheld (POPIA): a source exists but carries personal details, so it is not published here. · `Withheld (POPIA)`
+- **Education:** Withheld (POPIA): a source exists but carries personal details, so it is not published here. · `Withheld (POPIA)`
 
 ## CV (public role)
 
@@ -36,8 +36,6 @@ DRAFT PROFILE — not published. Public role only. Every item carries an evidenc
 
 ## Not yet known (placeholders)
 
-- career: Unknown — not yet sourced (placeholder)
-- education: Unknown — not yet sourced (placeholder)
 - Exact end date of the Community Development MMC role (the portfolio had passed to another councillor by 16 August 2024): Unknown — not yet sourced (placeholder)
 - Council office or portfolio for the 2026–2031 term (executive mayor and mayoral committee not yet elected; first sitting expected around 19 November 2026 — not guessed): Unknown — not yet sourced (placeholder)
 - Official council contact channel (owner to confirm from the City's published councillor directory): Unknown — not yet sourced (placeholder)
@@ -47,4 +45,4 @@ DRAFT PROFILE — not published. Public role only. Every item carries an evidenc
 - Name: 'Cllr. Lubabalo Magwentshu' (City 2023-02-02), 'ATM councillor Lubabalo Magwentshu' (Sowetan 2022-09-14) and 'LUBABALO CECIL MAGWENTSHU' (Electoral Commission elected-councillor list, GG 45447, 2021-11-09, p. 50) match the 2026 gazette's first given name and surname.
 - Party: ATM in the 2026 gazette, Sowetan (2022-09-14) and the 2021 elected-councillor list (GG 45447).
 - Council role: City of Johannesburg councillor (Sowetan 2022-09-14: chair of the Health and Social Development committee; GG 45447, 2021-11-09: ATM PR councillor) and Community Development MMC (City 2023-02-02).
-- Note: Public role only. Education and career: a source with personal details was not used.
+- Note: Public role only.

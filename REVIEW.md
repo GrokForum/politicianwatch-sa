@@ -4,7 +4,7 @@
 
 Check, in this order, citing file:line as evidence:
 
-1. **Labels and sources:** does every new fact have a label? Does every non-Unknown fact have a dated source URL? Are Unknown fields explicit nulls?
+1. **Labels and sources:** does every new fact have a label? Does every fact that is not Unknown or Withheld (POPIA) have a dated source URL? Are Unknown and Withheld (POPIA) fields explicit nulls, with no public URL on a withheld fact?
 2. **Public role only:** no ID numbers, home addresses, personal phones or emails, private family, or health information. Official office contacts only.
 3. **Right of reply:** every adverse item has a `right_of_reply` object, a draft on disk, and legal status fields. Pending shows "Right of reply: pending" and a blank reply field. The bot must not have sent anything.
 4. **Neutrality:** no opinion adjectives; claims are attributed; institutional findings stay on the council unless a source names the person.

@@ -1,6 +1,6 @@
 # PoliticianWatch SA
 
-A **neutral, sourced** public register of South African elected representatives. Every fact carries an evidence label (`Confirmed`, `Reported`, `Alleged`, `Disputed`, or `Unknown`) and, unless it is Unknown, a dated source URL. Missing values are explicit `null`s.
+A **neutral, sourced** public register of South African elected representatives. Every fact carries an evidence label (`Confirmed`, `Reported`, `Alleged`, `Disputed`, `Unknown`, or `Withheld (POPIA)`) and, unless it is Unknown or Withheld (POPIA), a dated source URL. Unknown means no source was found. Withheld (POPIA) means a source exists but carries personal details, so it is not published here. Missing values are explicit `null`s.
 
 This repository is private. Nothing here is published until a named change is reviewed and the owner gives a GO.
 
