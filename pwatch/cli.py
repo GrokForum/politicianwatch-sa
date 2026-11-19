@@ -117,6 +117,32 @@ def cmd_site_check(args: argparse.Namespace) -> int:
     return 2 if fails else 0
 
 
+def cmd_live_check(args: argparse.Namespace) -> int:
+    from pwatch.live_check import _client, record, run_checks, wait_for_build, write_record
+
+    expected = json.loads(Path(args.expect_manifest).read_text(encoding="utf-8")) if args.expect_manifest and Path(args.expect_manifest).is_file() else None
+    dq = json.loads(Path(args.dq).read_text(encoding="utf-8")) if args.dq and Path(args.dq).is_file() else None
+    published = args.publish_result == "success"
+    base = args.url.rstrip("/")
+    with _client() as client:
+        if published and expected and args.wait_seconds:
+            wait_for_build(client, base, expected["build_id"], timeout_s=args.wait_seconds)
+        checks = run_checks(base, expected=expected, published=published, client=client)
+    rec = record(
+        url=base,
+        checks=checks,
+        build_result=args.build_result,
+        publish_result=args.publish_result,
+        publish_enabled=args.publish_enabled == "true",
+        expected=expected,
+        dq=dq,
+        run_url=args.run_url,
+    )
+    write_record(rec, Path(args.out) if args.out else None, Path(args.log) if args.log else None)
+    print(json.dumps(rec, indent=2))
+    return 0 if rec["result"] == "green" else 2
+
+
 def build_parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(prog="pwatch", description="PoliticianWatch SA pipeline")
     p.add_argument("--version", action="version", version=__version__)
@@ -146,6 +172,18 @@ def build_parser() -> argparse.ArgumentParser:
     sc.add_argument("--profiles-dir", help="CV profile JSON directory to check coverage against (default: data/profiles/joburg-2026)")
     sc.add_argument("--no-data", action="store_true", help="skip the coverage check (page and claim rules only)")
     sc.set_defaults(func=cmd_site_check)
+    lc = sub.add_parser("live-check", help="check the deployed draft site and write one nightly record (exit 2 = red)")
+    lc.add_argument("--url", default="https://politicianwatch.grokforum.site", help="site base URL")
+    lc.add_argument("--expect-manifest", help="tonight's built manifest.json (expected profile count and build id)")
+    lc.add_argument("--dq", help="tonight's `pwatch dq` JSON output, summarised into the record")
+    lc.add_argument("--build-result", default="success", help="result of tonight's build job")
+    lc.add_argument("--publish-result", default="skipped", help="result of tonight's publish job (success/skipped/failure)")
+    lc.add_argument("--publish-enabled", default="false", help="value of the PW_PUBLISH_ENABLED flag")
+    lc.add_argument("--wait-seconds", type=int, default=0, help="after a publish, wait up to N s for the live build id")
+    lc.add_argument("--run-url", help="link to the workflow run")
+    lc.add_argument("--out", help="write the record to this JSON file")
+    lc.add_argument("--log", help="append the record to this JSONL log")
+    lc.set_defaults(func=cmd_live_check)
     return p
 
 
