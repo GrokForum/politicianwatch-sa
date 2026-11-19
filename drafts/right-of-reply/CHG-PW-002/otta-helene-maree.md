@@ -15,7 +15,7 @@ DRAFT: NOT SENT. The owner sends personally. The bot never sends.
 
 ## The claims
 
-### 1. Court matter — labelled Reported
+### 1. Court matter — labelled Disputed
 
 The Public Protector found that tweets on colonialism made by Zille on 15 March 2017, while she was Western Cape premier, breached the Executive Ethics Code and the Constitution, and recommended remedial action (Report No. 5 of 2018/19). Zille's review application was dismissed by the Gauteng Division of the High Court, Pretoria, and she appealed.
 
@@ -31,7 +31,7 @@ The Public Protector found that tweets on colonialism made by Zille on 15 March 
 
 > We are preparing a public-role profile of you as an elected councillor of the City of Johannesburg on PoliticianWatch SA, a sourced register of South African elected representatives. Before publishing the items below, we invite your response. Please reply by **[owner sets on sending — 14 days after sending]** through this official channel. Your response will be published in full next to the item, subject only to the removal of personal contact details or other private information.
 >
-> **Item 1 (labelled Reported):** The Public Protector found that tweets on colonialism made by Zille on 15 March 2017, while she was Western Cape premier, breached the Executive Ethics Code and the Constitution, and recommended remedial action (Report No. 5 of 2018/19). Zille's review application was dismissed by the Gauteng Division of the High Court, Pretoria, and she appealed. Current status as reported: The SCA upheld the appeal and reviewed and set aside the Public Protector's findings and remedial action (Report No. 5 of 2018/19), 7 Feb 2022 (Premier of the Western Cape Province v The Public Protector & Another (771/2020) [2022] ZASCA 16).
+> **Item 1 (labelled Disputed):** The Public Protector found that tweets on colonialism made by Zille on 15 March 2017, while she was Western Cape premier, breached the Executive Ethics Code and the Constitution, and recommended remedial action (Report No. 5 of 2018/19). Zille's review application was dismissed by the Gauteng Division of the High Court, Pretoria, and she appealed. Current status as reported: The SCA upheld the appeal and reviewed and set aside the Public Protector's findings and remedial action (Report No. 5 of 2018/19), 7 Feb 2022 (Premier of the Western Cape Province v The Public Protector & Another (771/2020) [2022] ZASCA 16).
 >
 > **Source:** 2022-02-07, https://lawlibrary.org.za/akn/za/judgment/zasca/2022/16/eng@2022-02-07
 >
