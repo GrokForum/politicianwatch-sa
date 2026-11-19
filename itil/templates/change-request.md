@@ -24,7 +24,7 @@
 |---|---|---|---|---|
 | Author | | | | |
 | Reviewer | Cavus | | | |
-| Reviewer | Cassian | | | |
+| Reviewer | Janus | | | |
 | Change authority | Owner | | | |
 
 ## Post-implementation review

@@ -16,4 +16,4 @@
 
 ## Reviewers
 
-Cavus and Cassian must each give a plain PASS on this exact head. The owner GOes before merge.
+Cavus and Janus must each give a plain PASS on this exact head. The owner GOes before merge.
