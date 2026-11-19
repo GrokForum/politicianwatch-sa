@@ -3,8 +3,8 @@
 | Field | Value |
 |---|---|
 | Requested by / date (SAST) | Relayed by the orchestrator on 19 Nov 2026 (16:16 SAST), after CHG-PW-008 was squash-merged |
-| Author / builder | PoliticianWatch (Grok Bot) |
-| Reviewers | reviewer (two reviewers) |
+| Author / builder | author bot |
+| Reviewers | two reviewers |
 | Change authority | Owner (GO on the exact head) |
 | Type | Standard — low (records wording, one test rename, two workflow hardening lines) |
 | Environment | DEV. Nothing is published; the publish gate and `PW_PUBLISH_ENABLED` are unchanged (publishing stays off) |
