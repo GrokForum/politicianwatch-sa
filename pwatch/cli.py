@@ -92,6 +92,27 @@ def cmd_fetch_source(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_site_build(args: argparse.Namespace) -> int:
+    from pwatch.site import build_site
+
+    manifest = build_site(Path(args.out), profiles=_site_profiles(args), commit=args.commit)
+    print(json.dumps({k: v for k, v in manifest.items() if k != "files"}, indent=2))
+    return 0
+
+
+def _site_profiles(args: argparse.Namespace) -> list | None:
+    """Profiles for the site. CHG-PW-006 builds the labelled placeholder only."""
+    return None
+
+
+def cmd_site_check(args: argparse.Namespace) -> int:
+    from pwatch.site import check_site
+
+    fails = check_site(Path(args.dir))
+    print(json.dumps({"status": "fail" if fails else "pass", "failures": fails}, indent=2))
+    return 2 if fails else 0
+
+
 def build_parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(prog="pwatch", description="PoliticianWatch SA pipeline")
     p.add_argument("--version", action="version", version=__version__)
@@ -109,6 +130,16 @@ def build_parser() -> argparse.ArgumentParser:
     fs = sub.add_parser("fetch-source", help="fetch profile source pages, log them in the raw manifest, print retrieved_at")
     fs.add_argument("urls", nargs="+", help="source URL(s) to fetch")
     fs.set_defaults(func=cmd_fetch_source)
+    st = sub.add_parser("site", help="static draft site: build into a directory, or check a built directory")
+    st_sub = st.add_subparsers(dest="site_command", required=True)
+    sb = st_sub.add_parser("build", help="write the static draft site into --out (publishes nothing)")
+    sb.add_argument("--out", required=True, help="output directory, e.g. _site")
+    sb.add_argument("--commit", help="source commit SHA to record in manifest.json")
+    sb.add_argument("--profiles-dir", help="CV profile JSON directory (default: data/profiles/joburg-2026)")
+    sb.set_defaults(func=cmd_site_build)
+    sc = st_sub.add_parser("check", help="exit 2 if a built site breaks a draft-site rule")
+    sc.add_argument("dir", help="built site directory")
+    sc.set_defaults(func=cmd_site_check)
     return p
 
 

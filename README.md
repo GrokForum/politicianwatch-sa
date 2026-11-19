@@ -47,7 +47,7 @@ Every adverse item (a court or criminal matter, a scandal, or an allegation) car
 
 ## Change process
 
-DEV work happens on a branch. Cavus and Cassian must each give a plain PASS on the **same exact head**. The owner then GOes that head before any merge, deploy, publish or outward message. Rollback is git. See `itil/change-enablement.md` and `itil/changes/CHG-PW-001-joburg-pilot-scaffold.md`.
+DEV work happens on a branch. Cavus and Janus must each give a plain PASS on the **same exact head**. The owner then GOes that head before any merge, deploy, publish or outward message. Rollback is git. See `itil/change-enablement.md` and `itil/changes/CHG-PW-001-joburg-pilot-scaffold.md`.
 
 ## Status
 
