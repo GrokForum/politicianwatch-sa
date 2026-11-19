@@ -31,6 +31,7 @@ uv run pwatch dq                 # DQ gate on the Joburg roster and CV profiles 
 uv run pwatch render --check     # CV profile markdown renderings are current
 uv run pwatch site build --out _site   # static draft site (24 active profiles, never _hold/); publishes nothing
 uv run pwatch site check _site         # exit 2 if a page lacks noindex/DRAFT/privacy link, or a claim lacks a label, source link or date
+uv run pwatch live-check --out r.json   # check the deployed site; one nightly record (exit 2 = red). Nightly: .github/workflows/nightly.yml (publish gated, see CHG-PW-008)
 ```
 
 Exit code 2 means a data-quality check failed and the result is not releasable.

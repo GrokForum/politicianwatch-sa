@@ -13,3 +13,5 @@
 | CI-009 | Joburg CV profiles | data (TEST) | `data/profiles/joburg-2026/*.json` (+ generated `.md`); public role only; CHG-PW-002 |
 | CI-010 | Draft-site builder | code | `pwatch/site.py`, `pwatch site build/check`; DRAFT banner, privacy page, robots/noindex/CSP checks; CHG-PW-006 |
 | CI-011 | Public site repository | system (PROD host) | `GrokForum/politicianwatch-site`, GitHub Pages legacy build from `main` /, custom domain politicianwatch.grokforum.site; a merge to `main` deploys |
+| CI-012 | Nightly workflow | control | `.github/workflows/nightly.yml`; build, gated publish (`PW_PUBLISH_ENABLED` + `PW_SITE_DEPLOY_KEY`), live check; CHG-PW-008 |
+| CI-013 | Nightly records | evidence | branch `nightly-log` (`nightly/log.jsonl`, one line per night) + 90-day run artifacts; written by CI-012 only |
