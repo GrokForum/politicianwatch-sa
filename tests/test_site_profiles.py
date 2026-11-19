@@ -143,7 +143,78 @@ def test_cli_site_check_uses_committed_profiles(tmp_path: Path) -> None:
 def test_home_and_profile_wording_exclude_unknown_items(built: Path) -> None:
     """Janus on PR #6, applied to the CHG-PW-007 pages: Unknown items carry no source link."""
     home = (built / "index.html").read_text(encoding="utf-8")
-    assert "every item except an Unknown one links to its source with a date" in home
+    assert "every item except an Unknown or Withheld (POPIA) one links to its source with a date" in home
     prof = (built / "profiles" / "kevin-example" / "index.html").read_text(encoding="utf-8")
-    assert "every item except an Unknown one links a dated source" in prof
+    assert "every item except an Unknown or Withheld (POPIA) one links a dated source" in prof
     assert "Every item shows an evidence label and a dated source" not in prof
+
+
+def test_owner_approved_pi_source_note_is_rendered_next_to_the_source():
+    # CHG-PW-011: the note shows with the link; ordinary fact notes are not rendered.
+    from pwatch.settings import PI_SOURCE_NOTE
+    from pwatch.site_profiles import claim
+
+    base = {"value": "A degree", "label": "Reported", "source_url": "https://news.example.test/i", "source_date": "2023-06-17", "retrieved_at": "2026-11-17"}
+    html = claim("education", "Education", dict(base, note=PI_SOURCE_NOTE, owner_approved_pi_source="2026-11-19 16:27 SAST (CHG-PW-011)"))
+    assert f'<span class="src-note">{PI_SOURCE_NOTE}</span>' in html
+    assert "src-note" not in claim("education", "Education", dict(base, note="some other note"))
+
+
+def test_withheld_fact_renders_without_a_source_link():
+    from pwatch.settings import WITHHELD_LABEL, WITHHELD_PUBLIC_TEXT
+    from pwatch.site_profiles import check_claims, claim
+
+    fact = {"value": None, "label": WITHHELD_LABEL, "source_url": None, "source_date": None, "retrieved_at": None}
+    html = claim("education", "Education", fact)
+    assert WITHHELD_LABEL in html
+    assert WITHHELD_PUBLIC_TEXT in html
+    assert "Unknown — not yet found" not in html
+    assert "src-link" not in html
+    assert check_claims("edu", f"<ul>{html}</ul>") == []
+
+
+def _write_withheld_register(tmp_path: Path, monkeypatch, *, url: str = "https://news.example.test/held/private", title: str = "Example interview") -> None:
+    import json
+
+    from pwatch import withheld as withheld_mod
+
+    private = tmp_path / "withheld-sources.json"
+    private.write_text(
+        json.dumps(
+            {
+                "entries": [
+                    {
+                        "slug": "anyone",
+                        "fact": "education",
+                        "source_url": url,
+                        "source_date": "2023-06-17",
+                        "title": title,
+                    }
+                ]
+            }
+        ),
+        encoding="utf-8",
+    )
+    monkeypatch.setattr(withheld_mod, "WITHHELD_SOURCES_PATH", private)
+
+
+def test_site_check_passes_on_clean_output_when_a_register_exists(tmp_path: Path, built: Path, synth, monkeypatch) -> None:
+    _write_withheld_register(tmp_path, monkeypatch)
+    assert check_site(built, profiles=synth) == []
+
+
+@pytest.mark.parametrize(
+    "planted, expected",
+    [
+        ("HTTPS://NEWS.EXAMPLE.TEST/HELD/PRIVATE", "withheld-source URL"),
+        ("https://news.example.test/held%2Fprivate", "withheld-source URL"),
+        ("https://news.example.test/held&#47;private", "withheld-source URL"),
+        ("See the Example interview for details.", "withheld-source title"),
+    ],
+)
+def test_site_check_fails_on_normalised_url_or_title_leak(tmp_path: Path, built: Path, monkeypatch, planted: str, expected: str) -> None:
+    _write_withheld_register(tmp_path, monkeypatch)
+    page = built / "profiles" / "kevin-example" / "index.html"
+    page.write_text(page.read_text(encoding="utf-8") + f"<p>{planted}</p>", encoding="utf-8")
+    fails = check_site(built)
+    assert any(expected in f for f in fails), fails

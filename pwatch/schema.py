@@ -6,7 +6,7 @@ from datetime import date, datetime, timedelta, timezone
 from typing import Any
 from urllib.parse import urlparse
 
-from pwatch.settings import ADVERSE_FIELDS, CV_FIELDS, LABELS, OPTIONAL_FACT_FIELDS, SAST_OFFSET_HOURS, SEAT_TYPES
+from pwatch.settings import ADVERSE_FIELDS, CV_FIELDS, LABELS, OPTIONAL_FACT_FIELDS, SAST_OFFSET_HOURS, SEAT_TYPES, SOURCELESS_LABELS, WITHHELD_LABEL
 
 SAST = timezone(timedelta(hours=SAST_OFFSET_HOURS), "SAST")
 
@@ -94,7 +94,7 @@ def _source_format_failures(src: dict[str, Any], locator: str) -> list[str]:
 
 
 def fact_failures(obj: Any, locator: str) -> list[str]:
-    """Fail if a fact is missing a label, or (when not Unknown) missing a source."""
+    """Fail if a fact is missing a label, or (when not Unknown or Withheld (POPIA)) missing a source."""
     if not is_fact(obj):
         return [f"{locator}: not a fact object (needs value, label, source_url, source_date, retrieved_at)"]
     failures: list[str] = []
@@ -102,9 +102,11 @@ def fact_failures(obj: Any, locator: str) -> list[str]:
     if label not in LABELS:
         failures.append(f"{locator}: missing or invalid label {label!r}")
         return failures
-    if label == "Unknown":
+    if label in SOURCELESS_LABELS:
         if obj.get("value") is not None:
-            failures.append(f"{locator}: Unknown fact must have a null value")
+            failures.append(f"{locator}: {label} fact must have a null value")
+        if label == WITHHELD_LABEL and obj.get("source_url"):
+            failures.append(f"{locator}: {label} fact must not have a public source URL")
         return failures
     if not obj.get("source_url"):
         failures.append(f"{locator}: fact labelled {label} is missing a source URL")

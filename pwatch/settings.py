@@ -49,7 +49,7 @@ EXPECTED_SEATS = 270
 EXPECTED_WARDS = 135
 MAJORITY = 136
 
-LABELS = ("Confirmed", "Reported", "Alleged", "Disputed", "Unknown")
+LABELS = ("Confirmed", "Reported", "Alleged", "Disputed", "Unknown", "Withheld (POPIA)")
 SEAT_TYPES = ("ward", "PR")
 ROR_STATUSES = ("pending", "sent", "replied", "no_response")
 ADVERSE_FIELDS = ("court_matters", "scandals")
@@ -62,3 +62,20 @@ CV_FIELDS = ("position", "career", "candidacy", "education")
 OPTIONAL_FACT_FIELDS = ("known_as", "given_names", "full_name_surname")
 # Minimum independent details that must match before a non-gazette source is linked to a person.
 IDENTITY_MIN_DETAILS = 2
+
+# CHG-PW-011 (owner decision, 19 Nov 2026 18:25 SAST): rule 6 default is that a source carrying
+# private personal details is not linked and the fact is Withheld (POPIA), not Unknown.
+# Unknown means no source was found. The public profile holds no value and no URL. Private
+# references (URL, title, date, fact key) live in private/withheld-sources.json and are never
+# rendered. A fact may still link such a source only with an explicit per-fact owner approval
+# and exactly this note; that exception currently has no uses.
+PI_SOURCE_APPROVAL_FIELD = "owner_approved_pi_source"
+PI_SOURCE_NOTE = "personal details not recorded here"
+WITHHELD_LABEL = "Withheld (POPIA)"
+WITHHELD_PUBLIC_TEXT = (
+    "Withheld (POPIA): a source exists but carries personal details, so it is not published here."
+)
+PRIVATE_DIR = REPO_ROOT / "private"
+WITHHELD_SOURCES_PATH = PRIVATE_DIR / "withheld-sources.json"
+# Labels that must not carry a public source URL or a public value.
+SOURCELESS_LABELS = ("Unknown", WITHHELD_LABEL)

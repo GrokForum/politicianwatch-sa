@@ -24,7 +24,7 @@ Selected as 15, weighted to ward seats (10 ward, 5 PR). After Cassian's blind so
 | 12 | MARY JOYCE NTOMBELA | Joyce Ntombela | ActionSA | PR | 4 | ActionSA candidate for council chief whip, Aug 2025 (IOL) |
 | 13 | SARAH TERESA JUNE WISSLER | Sarah Wissler | ActionSA | PR | 23 | Section 79 Public Safety chair Jan–Aug 2025 (ActionSA statement; IOL) |
 | 14 | ENNIE RAMADIMETJA MAKHAFOLA | Ennie Makhafola | EFF | PR | 14 | Sworn in 3 Feb 2023 (Sowetan); MMC Health and Social Development since Feb 2023 (City statements; IOL) |
-| 15 | LUBABALO CECIL MAGWENTSHU | Lubabalo Magwentshu | ATM | PR | 2 | MMC Community Development 2023–2024 (City statement; Citizen; EWN) |
+| 15 | LUBABALO CECIL MAGWENTSHU | Lubabalo Magwentshu | ATM | PR | 2 | MMC Community Development 2023–2024 (City statement; EWN) |
 
 **Party spread (as selected):** DA 6, ANC 3, ActionSA 2, EFF 1, MK 1, ATM 1, Al Jama-ah 1. With Mbatha on hold, MK has no active batch-2 profile (batch 1 has Baloyi). Against seats (DA 91, ANC 64, ActionSA 42, EFF 17, MK 15, smaller parties 41), the DA is one above proportion and the ANC one below. Most prominent 2021–2026 ANC councillors were not re-elected (overhang; see batch 1), and the remaining ANC ward councillors searched had little record in allowed sources, so a further DA ward councillor with a public record was chosen rather than padding a thin ANC profile.
 
@@ -35,13 +35,14 @@ Selected as 15, weighted to ward seats (10 ward, 5 PR). After Cassian's blind so
 | Confirmed | Gazette 55741 seat facts; City of Johannesburg official media statements and newsroom articles |
 | Reported | News on the allowed list (News24, TimesLIVE, IOL, EWN, The Citizen, SABC); party statements (DA Gauteng, ActionSA); from fix 1, SA Jewish Report, Southern Courier and Sowetan (named by reviewer Cassian; owner to confirm for the allowed list) |
 | Alleged / Disputed | Not used in this batch |
-| Unknown | Not sourced; shown as a visible placeholder |
+| Unknown | No source found; shown as a visible placeholder |
+| Withheld (POPIA) | A source exists but carries personal details, so it is not published here (CHG-PW-011). No link and no fact value. |
 
 Fact counts across the 14 active profiles after fix 2 (seat facts, summary fields, known-as and CV entries): **Confirmed 81, Reported 43, Unknown 26 — 150 facts.** 70 of the Confirmed facts are gazette seat facts (5 per profile); 11 come from City of Johannesburg statements (Sekwaila, Makhafola, Magwentshu). (Before fix 1: 15 profiles, Confirmed 86, Reported 41, Unknown 29 — 156. Fix 1 removed Mbatha's 8 facts and added 3 Reported first-year facts; fix 2 dropped Raphadu's CV line about a claim he withdrew.)
 
 **Retrieval times (fix 3):** batch-2 facts carry `retrieved_at` `2026-11-17` (date only: fetched that day, on or before the batch commit; the time was not logged, so none is given). The three fix-1 sources carry their real fetch times (11:29:45, 11:29:46 and 11:29:49 SAST). `pwatch dq` fails any `retrieved_at` later than the run time (a date-only value counts as the end of that day). New sources are fetched with `pwatch fetch-source`, which logs the real time.
 
-**First year in council (fix 1, all Reported, sources fetched and read 17 Nov 2026):** Schay 2021 (SA Jewish Report, 2021-11-04); Chame 2014, ward 57 by-election on 2 Jul 2014 (IOL, 2014-07-03; a source with personal details was not used); Magwentshu: Unknown from CHG-PW-007 (a source with personal details was not used); Makhafola 2023, sworn in 3 Feb 2023 (Sowetan, 2023-02-03).
+**First year in council (fix 1, all Reported, sources fetched and read 17 Nov 2026):** Schay 2021 (SA Jewish Report, 2021-11-04); Chame 2014, ward 57 by-election on 2 Jul 2014 (IOL, 2014-07-03; a source with personal details was not used); Magwentshu elected ATM PR councillor, City of Johannesburg, 2021 local government elections (Electoral Commission elected-councillor list, GG 45447, 2021-11-09, p. 50, Confirmed); Makhafola 2023, sworn in 3 Feb 2023 (Sowetan, 2023-02-03).
 
 ## Adverse items
 
@@ -77,7 +78,8 @@ Each profile's `identity_match` lists the details. Points worth a reviewer's eye
 
 ## Sources seen but deliberately not used (POPIA)
 
-- Chame, Magwentshu and Raphadu: a source with personal details was not used.
+- Chame and Raphadu: a source with personal details was not used.
+- Magwentshu: education and career are Withheld (POPIA) (CHG-PW-011). Elected ATM PR councillor (City of Johannesburg), 2021 local government elections, is sourced to the Electoral Commission's 2021 elected-councillor list (GG 45447, 2021-11-09, p. 50).
 - Sarah Wissler: the ActionSA statement's personal descriptions are not recorded.
 - **SA Jewish Report, 4 Nov 2021 (cited for Schay, fix 1):** only the election result is recorded.
 

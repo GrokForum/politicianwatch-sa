@@ -1,0 +1,33 @@
+{
+  "description": "Private source references for facts labelled Withheld (POPIA). Never rendered, never copied into a site build, and never carried to a fresh public repository. Store only slug, fact key, URL, title and date \u2014 no fact values and no personal details.",
+  "entries": [
+    {
+      "slug": "lubabalo-cecil-magwentshu",
+      "fact": "education",
+      "source_url": "https://www.citizen.co.za/news/lubabalo-magwentshu-mmc-interview/",
+      "source_date": "2023-06-17",
+      "title": "The Citizen interview"
+    },
+    {
+      "slug": "lubabalo-cecil-magwentshu",
+      "fact": "education",
+      "source_url": "https://joburg.org.za/about_/government/Pages/Executive/MMCs/MMC-Community-Development.aspx",
+      "source_date": "2026-11-19",
+      "title": "City of Johannesburg MMC for Community Development page"
+    },
+    {
+      "slug": "lubabalo-cecil-magwentshu",
+      "fact": "career",
+      "source_url": "https://www.citizen.co.za/news/lubabalo-magwentshu-mmc-interview/",
+      "source_date": "2023-06-17",
+      "title": "The Citizen interview"
+    },
+    {
+      "slug": "lubabalo-cecil-magwentshu",
+      "fact": "career",
+      "source_url": "https://joburg.org.za/about_/government/Pages/Executive/MMCs/MMC-Community-Development.aspx",
+      "source_date": "2026-11-19",
+      "title": "City of Johannesburg MMC for Community Development page"
+    }
+  ]
+}

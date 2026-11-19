@@ -95,7 +95,16 @@ def cmd_fetch_source(args: argparse.Namespace) -> int:
 def cmd_site_build(args: argparse.Namespace) -> int:
     from pwatch.site import build_site
 
-    manifest = build_site(Path(args.out), profiles=_site_profiles(args), commit=args.commit)
+    out = Path(args.out)
+    manifest = build_site(out, profiles=_site_profiles(args), commit=args.commit)
+    from pwatch.withheld import check_tree_for_withheld_urls
+
+    leak_fails = check_tree_for_withheld_urls(out)
+    if (out / "private").exists():
+        leak_fails.append("site output must not contain the private/ directory")
+    if leak_fails:
+        print(json.dumps({"status": "fail", "failures": leak_fails}, indent=2))
+        return 2
     print(json.dumps({k: v for k, v in manifest.items() if k != "files"}, indent=2))
     return 0
 

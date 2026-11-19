@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://politicianwatch.grokforum.site/schemas/profile.schema.json",
   "title": "PoliticianWatch SA public-role profile",
-  "description": "A sourced, labelled profile of an elected representative in their public role only. No ID numbers, home addresses, personal phones or emails, private family, or health information. Unknown fields are explicit nulls with label Unknown. Every adverse item requires a right_of_reply object.",
+  "description": "A sourced, labelled profile of an elected representative in their public role only. No ID numbers, home addresses, personal phones or emails, private family, or health information. Unknown and Withheld (POPIA) fields are explicit nulls. Unknown means no source was found. Withheld (POPIA) means a source exists but carries personal details and is not published here. Every adverse item requires a right_of_reply object.",
   "type": "object",
   "additionalProperties": true,
   "required": [
@@ -115,7 +115,8 @@
         "Reported",
         "Alleged",
         "Disputed",
-        "Unknown"
+        "Unknown",
+        "Withheld (POPIA)"
       ]
     },
     "fact": {

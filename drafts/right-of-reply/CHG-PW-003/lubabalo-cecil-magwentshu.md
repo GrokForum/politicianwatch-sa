@@ -20,6 +20,9 @@ DRAFT: NOT SENT. The owner sends personally. The bot never sends.
 > **Items in the profile:**
 > - Seat: LUBABALO CECIL MAGWENTSHU, AFRICAN TRANSFORMATION MOVEMENT, City of Johannesburg, PR seat (list rank 2) (Government Gazette 55741, p.45) (Confirmed)
 > - Former City of Johannesburg MMC for Community Development (appointed February 2023) (Confirmed; 2023-02-02, https://joburg.org.za/media_/Pages/Media/Media%20Statements/2023%20Media%20Statements/February/Joburg-Executive-Mayor-announces-new-MMCs.aspx)
+> - Career: Withheld (POPIA): a source exists but carries personal details, so it is not published here.
+> - Education: Withheld (POPIA): a source exists but carries personal details, so it is not published here.
+> - Elected ATM PR councillor (City of Johannesburg), 2021 local government elections (Confirmed; 2021-11-09, https://www.gazettefinder.co.za/gazettes/government-gazette/2021/45447/government-gazette-45447-2021-11-09.pdf, p. 50)
 > - Chaired the council's Health and Social Development Section 79 committee (as reported in September 2022) (Reported; 2022-09-14, https://www.sowetan.co.za/news/south-africa/2022-09-14-tables-turn-against-joburg-mayors-foes/)
 > - Appointed MMC for Community Development by Executive Mayor Thapelo Amad (Confirmed; 2023-02-02, https://joburg.org.za/media_/Pages/Media/Media%20Statements/2023%20Media%20Statements/February/Joburg-Executive-Mayor-announces-new-MMCs.aspx)
 > - Mayor Dada Morero gave the Community Development portfolio to Kabelo Gwamanda on 16 August 2024 (Reported; 2024-08-17, https://www.ewn.co.za/2024/08/17/former-joburg-mayor-gwamanda-appointed-as-community-development-mmc)

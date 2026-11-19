@@ -1,7 +1,7 @@
 """CV-style profile documents (CHG-PW-002): load, roster cross-check, identity rule, markdown render.
 
 Profiles live in data/profiles/joburg-2026/<slug>.json. Public role only. Every fact is labelled
-and sourced. Unknown fields stay null and render as visible placeholders. Adverse items render
+and sourced. Unknown and Withheld (POPIA) fields stay null and render as visible placeholders (no source link). Adverse items render
 "Right of reply: pending" with a blank reply field until the owner records otherwise.
 """
 
@@ -13,7 +13,7 @@ from typing import Any
 
 from pwatch.ror import display
 from pwatch.schema import iter_facts
-from pwatch.settings import GAZETTE_PDF_URL, HOLD_DIRNAME, HOLD_STATUS, IDENTITY_MIN_DETAILS, PROFILES_DIR
+from pwatch.settings import GAZETTE_PDF_URL, HOLD_DIRNAME, HOLD_STATUS, IDENTITY_MIN_DETAILS, PI_SOURCE_APPROVAL_FIELD, PROFILES_DIR, SOURCELESS_LABELS, WITHHELD_LABEL, WITHHELD_PUBLIC_TEXT
 
 UNKNOWN_PLACEHOLDER = "Unknown — not yet sourced (placeholder)"
 BLANK_REPLY = "_(blank — no reply recorded)_"
@@ -109,7 +109,7 @@ def check_identity(profile: dict[str, Any], locator: str) -> list[str]:
 
 
 def _src(f: dict[str, Any]) -> str:
-    if f.get("label") == "Unknown":
+    if f.get("label") in SOURCELESS_LABELS:
         return ""
     page = f" p.{f['source_page']}" if f.get("source_page") else ""
     ret = f.get("retrieved_at")
@@ -117,10 +117,14 @@ def _src(f: dict[str, Any]) -> str:
     out = f" — [source]({f.get('source_url')}){page}, {f.get('source_date')} (retrieved {ret_txt})"
     for a in f.get("also_sourced") or []:
         out += f"; also [source]({a.get('source_url')}), {a.get('source_date')}"
+    if f.get(PI_SOURCE_APPROVAL_FIELD) and f.get("note"):
+        out += f" — {f['note']}"
     return out
 
 
 def _fact_line(title: str, f: dict[str, Any]) -> str:
+    if isinstance(f, dict) and f.get("label") == WITHHELD_LABEL:
+        return f"- **{title}:** {WITHHELD_PUBLIC_TEXT} · `{WITHHELD_LABEL}`"
     if not isinstance(f, dict) or f.get("label") == "Unknown" or f.get("value") is None:
         if isinstance(f, dict) and f.get("label") != "Unknown" and f.get("value") is None:
             return f"- **{title}:** — (none) · `{f.get('label')}`{_src(f)}"
