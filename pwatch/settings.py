@@ -62,3 +62,9 @@ CV_FIELDS = ("position", "career", "candidacy", "education")
 OPTIONAL_FACT_FIELDS = ("known_as", "given_names", "full_name_surname")
 # Minimum independent details that must match before a non-gazette source is linked to a person.
 IDENTITY_MIN_DETAILS = 2
+
+# CHG-PW-011 (owner decision, 19 Nov 2026 16:27 SAST): rule 6 default is that a source carrying
+# private personal details is not linked and the fact is Unknown. A fact may link such a source
+# only with an explicit per-fact owner approval and exactly this note; no private detail is copied.
+PI_SOURCE_APPROVAL_FIELD = "owner_approved_pi_source"
+PI_SOURCE_NOTE = "Personal details in the source are not recorded here."

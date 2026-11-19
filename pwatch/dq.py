@@ -17,14 +17,15 @@ Checks:
 
 from __future__ import annotations
 
+import re
 from datetime import date, datetime, timezone
 from pathlib import Path
 from typing import Any
 
 from pwatch.profiles import check_against_roster, check_identity, non_gazette_sources
 from pwatch.ror import check_right_of_reply
-from pwatch.schema import iter_adverse_items, retrieved_at_is_future, validate_profile_shape
-from pwatch.settings import LABELS
+from pwatch.schema import iter_adverse_items, iter_facts, retrieved_at_is_future, validate_profile_shape
+from pwatch.settings import LABELS, PI_SOURCE_APPROVAL_FIELD, PI_SOURCE_NOTE
 from pwatch.sources import FAIL_TIERS, source_urls, tier_of
 
 EXIT_OK = 0
@@ -134,6 +135,46 @@ def check_set_aside_label(item: Any, locator: str) -> list[str]:
     return []
 
 
+PI_SOURCE_APPROVAL_RE = re.compile(r"^\d{4}-\d{2}-\d{2} \d{2}:\d{2} SAST \(CHG-PW-\d{3}\)$")
+
+
+def check_pi_source_allowance(profile: dict[str, Any], locator: str) -> list[str]:
+    """Rule 6 and its narrow owner-approved exception (CHG-PW-007, amended by CHG-PW-011).
+
+    Default: a source that carries private personal details is not linked, and a fact found only
+    there is Unknown. A fact may link such a source only when it carries
+    `owner_approved_pi_source` ("YYYY-MM-DD HH:MM SAST (CHG-PW-NNN)", the owner's decision and the
+    change that applied it) and the note exactly `PI_SOURCE_NOTE`. The note is never used without
+    the approval, an approved fact is never Unknown, and every fact citing an approved URL in the
+    same profile carries the approval too (no silent reuse). Adverse items may not use it.
+    """
+    failures: list[str] = []
+    approved_urls: set[str] = set()
+    facts = [(k, f) for k, f in iter_facts(profile) if isinstance(f, dict)]
+    adverse = {k for k, _ in iter_adverse_items(profile)}
+    for key, f in facts:
+        approval = f.get(PI_SOURCE_APPROVAL_FIELD)
+        where = f"{locator}.{key}"
+        if approval is None:
+            if f.get("note") == PI_SOURCE_NOTE:
+                failures.append(f"{where}: the personal-details note is set without {PI_SOURCE_APPROVAL_FIELD}")
+            continue
+        if key in adverse:
+            failures.append(f"{where}: {PI_SOURCE_APPROVAL_FIELD} is not allowed on an adverse item")
+        if not isinstance(approval, str) or not PI_SOURCE_APPROVAL_RE.match(approval):
+            failures.append(f"{where}: {PI_SOURCE_APPROVAL_FIELD} must read 'YYYY-MM-DD HH:MM SAST (CHG-PW-NNN)'")
+        if f.get("label") == "Unknown" or not str(f.get("source_url") or "").startswith(("http://", "https://")):
+            failures.append(f"{where}: {PI_SOURCE_APPROVAL_FIELD} needs a labelled fact with an http(s) source link")
+        if f.get("note") != PI_SOURCE_NOTE:
+            failures.append(f"{where}: {PI_SOURCE_APPROVAL_FIELD} needs the note {PI_SOURCE_NOTE!r}")
+        if f.get("source_url"):
+            approved_urls.add(f["source_url"])
+    for key, f in facts:
+        if f.get("source_url") in approved_urls and f.get(PI_SOURCE_APPROVAL_FIELD) is None and f.get("label") != "Unknown":
+            failures.append(f"{locator}.{key}: cites an owner-approved personal-details source without {PI_SOURCE_APPROVAL_FIELD}")
+    return failures
+
+
 def check_profile(
     profile: dict[str, Any],
     *,
@@ -159,6 +200,7 @@ def check_profile(
         failures.extend(check_retrieved_not_future(profile, loc, now))
         failures.extend(check_identity(profile, loc))
         failures.extend(check_source_tiers(profile, loc))
+        failures.extend(check_pi_source_allowance(profile, loc))
         if roster is not None:
             failures.extend(check_against_roster(profile, roster, loc))
     for item_loc, item in iter_adverse_items(profile if isinstance(profile, dict) else {}):

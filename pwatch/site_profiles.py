@@ -20,7 +20,7 @@ from urllib.parse import urlparse
 
 from pwatch.ror import display
 from pwatch.schema import iter_facts
-from pwatch.settings import GAZETTE_DATE, GAZETTE_NUMBER, LABELS
+from pwatch.settings import GAZETTE_DATE, GAZETTE_NUMBER, LABELS, PI_SOURCE_APPROVAL_FIELD
 
 UNKNOWN_TEXT = "Unknown — not yet found in an allowed source"
 BLANK_REPLY = "(blank — no reply recorded)"
@@ -61,7 +61,10 @@ def _source_html(f: dict[str, Any]) -> str:
         ad_html = f'<time datetime="{escape(str(ad))}">{escape(str(ad))}</time>' if ad else "date missing"
         alink = f'<a class="src-link" href="{escape(aurl)}" rel="noopener noreferrer">{escape(ahost)}</a>' if aurl else ahost
         parts.append(f"also {alink}, {ad_html}")
-    return '<span class="src">Source: ' + "; ".join(parts) + "</span>"
+    note = ""
+    if f.get(PI_SOURCE_APPROVAL_FIELD) and f.get("note"):
+        note = f' <span class="src-note">{escape(str(f["note"]))}</span>'
+    return '<span class="src">Source: ' + "; ".join(parts) + "</span>" + note
 
 
 def _label_html(label: str) -> str:

@@ -147,3 +147,14 @@ def test_home_and_profile_wording_exclude_unknown_items(built: Path) -> None:
     prof = (built / "profiles" / "kevin-example" / "index.html").read_text(encoding="utf-8")
     assert "every item except an Unknown one links a dated source" in prof
     assert "Every item shows an evidence label and a dated source" not in prof
+
+
+def test_owner_approved_pi_source_note_is_rendered_next_to_the_source():
+    # CHG-PW-011: the note shows with the link; ordinary fact notes are not rendered.
+    from pwatch.settings import PI_SOURCE_NOTE
+    from pwatch.site_profiles import claim
+
+    base = {"value": "A degree", "label": "Reported", "source_url": "https://news.example.test/i", "source_date": "2023-06-17", "retrieved_at": "2026-11-17"}
+    html = claim("education", "Education", dict(base, note=PI_SOURCE_NOTE, owner_approved_pi_source="2026-11-19 16:27 SAST (CHG-PW-011)"))
+    assert f'<span class="src-note">{PI_SOURCE_NOTE}</span>' in html
+    assert "src-note" not in claim("education", "Education", dict(base, note="some other note"))

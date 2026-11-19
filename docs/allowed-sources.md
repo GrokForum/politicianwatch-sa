@@ -111,6 +111,12 @@ Official party statements (e.g. DA: da.org.za, dagauteng.org.za; ActionSA: actio
 ## Link only, never scraped
 ElectionSePush (esp.info/elections): link to it, but do not fetch or reuse its data (its terms forbid redistribution).
 
+## Sources that carry private personal details (rule 6, CHG-PW-007; amended by CHG-PW-011)
+
+Default: if the only source for a fact also carries private personal details (home address, family, ID number, health, personal phone or email), the source is **not linked** and the fact is **Unknown**.
+
+Exception, only with the owner's approval for named facts: the source may be linked if (1) no private detail from it is reproduced anywhere in the repo or on the site, (2) each such fact carries the note "Personal details in the source are not recorded here.", and (3) each such fact records the approval as `owner_approved_pi_source: "YYYY-MM-DD HH:MM SAST (CHG-PW-NNN)"`. `pwatch dq` fails a fact that has the note without the approval, the approval without the note or a source link, the approval on an adverse item, or a fact citing an approved source without the approval. The approval is recorded in the change's RFC (date and time only, no personal information).
+
 ## Not allowed
 Wikipedia and Wikidata, gossip sites, councillor aggregators (e.g. Counted.co.za, Mandate SA, Said in Council), personal social media and professional-network profiles.
 

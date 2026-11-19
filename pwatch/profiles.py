@@ -13,7 +13,7 @@ from typing import Any
 
 from pwatch.ror import display
 from pwatch.schema import iter_facts
-from pwatch.settings import GAZETTE_PDF_URL, HOLD_DIRNAME, HOLD_STATUS, IDENTITY_MIN_DETAILS, PROFILES_DIR
+from pwatch.settings import GAZETTE_PDF_URL, HOLD_DIRNAME, HOLD_STATUS, IDENTITY_MIN_DETAILS, PI_SOURCE_APPROVAL_FIELD, PROFILES_DIR
 
 UNKNOWN_PLACEHOLDER = "Unknown — not yet sourced (placeholder)"
 BLANK_REPLY = "_(blank — no reply recorded)_"
@@ -117,6 +117,8 @@ def _src(f: dict[str, Any]) -> str:
     out = f" — [source]({f.get('source_url')}){page}, {f.get('source_date')} (retrieved {ret_txt})"
     for a in f.get("also_sourced") or []:
         out += f"; also [source]({a.get('source_url')}), {a.get('source_date')}"
+    if f.get(PI_SOURCE_APPROVAL_FIELD) and f.get("note"):
+        out += f" — {f['note']}"
     return out
 
 
