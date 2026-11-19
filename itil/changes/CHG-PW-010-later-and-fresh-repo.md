@@ -2,9 +2,9 @@
 
 | Field | Value |
 |---|---|
-| Requested by / date (SAST) | Relayed by Cavus on 19 Nov 2026 (16:16 SAST) |
+| Requested by / date (SAST) | Relayed by the orchestrator on 19 Nov 2026 (16:16 SAST) |
 | Author / builder | PoliticianWatch (Grok Bot) |
-| Reviewers | Cavus; Janus |
+| Reviewers | reviewer (two reviewers) |
 | Change authority | Owner (GO on the exact head) |
 | Type | Standard — low (documentation only) |
 | Environment | DEV. No code, data, workflow or site change; nothing is created, pushed or published |
@@ -36,4 +36,4 @@ Delete the branch, or `git revert` after merge.
 
 ## Approval
 
-Plain PASS from Cavus and Janus on the same head, then the owner's GO. Outcome: pending (not merged, not pushed).
+Plain PASS from both reviewers on the same head, then the owner's GO. Outcome: **merged** — PR #10 squash-merged into `main` as `33b3fb32` (pre-merge tag `snapshot-2026-11-19-pre-pw-pr10`).

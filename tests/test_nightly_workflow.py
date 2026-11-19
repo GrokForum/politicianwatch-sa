@@ -39,7 +39,7 @@ def test_publish_is_gated_on_flag_main_and_green_build() -> None:
     assert push_jobs == ["publish"]
 
 
-def test_default_permissions_read_only_and_only_live_check_writes() -> None:
+def test_default_permissions_read_only_and_only_record_job_writes() -> None:
     doc = wf()
     assert doc["permissions"] == {"contents": "read"}
     writers = {n for n, j in doc["jobs"].items() if j.get("permissions")}
@@ -51,6 +51,39 @@ def test_checkouts_outside_publish_do_not_persist_credentials() -> None:
     for name in ("live-check", "record"):
         co = [s for s in wf()["jobs"][name]["steps"] if str(s.get("uses", "")).startswith("actions/checkout@")]
         assert co and all((s.get("with") or {}).get("persist-credentials") is False for s in co), name
+
+
+def test_build_checkout_does_not_persist_but_publish_checkout_does() -> None:
+    # CHG-PW-009: the build job never pushes, so its checkout drops the token. The publish
+    # job's checkout of the site repo MUST keep the persisted deploy key: its later
+    # `git push origin HEAD:main` authenticates with it. Removing it would break publishing.
+    jobs = wf()["jobs"]
+
+    def checkouts(name: str) -> list[dict]:
+        return [s for s in jobs[name]["steps"] if str(s.get("uses", "")).startswith("actions/checkout@")]
+
+    build = checkouts("build")
+    assert build and all((s.get("with") or {}).get("persist-credentials") is False for s in build)
+    publish = checkouts("publish")
+    assert len(publish) == 1
+    w = publish[0]["with"]
+    assert "persist-credentials" not in w and "secrets.PW_SITE_DEPLOY_KEY" in w["ssh-key"]
+    assert "git push origin HEAD:main" in "\n".join(s.get("run") or "" for s in jobs["publish"]["steps"])
+
+
+def test_publish_job_does_not_upload_artifacts() -> None:
+    # The inline `# zizmor: ignore[artipacked]` on the publish checkout
+    # (.github/workflows/nightly.yml ~line 99) is valid only because this job
+    # uploads no artifacts. A later actions/upload-artifact step (any version)
+    # would re-open that risk.
+    steps = wf()["jobs"]["publish"]["steps"]
+    uploads = [
+        s
+        for s in steps
+        if (uses := str(s.get("uses") or "")) == "actions/upload-artifact"
+        or uses.startswith("actions/upload-artifact@")
+    ]
+    assert uploads == []
 
 
 def test_publish_runs_in_the_site_publish_environment() -> None:
@@ -75,7 +108,15 @@ def test_record_job_is_the_only_nightly_log_writer() -> None:
     users = [n for n, j in jobs.items() if any("record-nightly.sh" in (s.get("run") or "") for s in j["steps"])]
     assert users == ["record"]
     rec = jobs["record"]
-    assert rec["needs"] == "live-check" and rec["if"] == "${{ always() }}"
+    assert rec["needs"] == "live-check"
+    assert rec["if"] == "${{ always() && github.ref == 'refs/heads/main' }}"
+
+
+def test_record_job_skips_runs_not_on_main() -> None:
+    # CHG-PW-009: a workflow_dispatch run from another branch must not write to nightly-log.
+    cond = wf()["jobs"]["record"]["if"]
+    assert "github.ref == 'refs/heads/main'" in cond and "always()" in cond
+    assert "||" not in cond
 
 
 def test_build_runs_tests_dq_render_site_build_and_check() -> None:
