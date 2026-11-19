@@ -71,19 +71,26 @@ def test_build_checkout_does_not_persist_but_publish_checkout_does() -> None:
     assert "git push origin HEAD:main" in "\n".join(s.get("run") or "" for s in jobs["publish"]["steps"])
 
 
+def _publish_step_uses_upload(step: dict) -> bool:
+    """True when a step's `uses` contains 'upload', matched case-insensitively."""
+    return "upload" in str(step.get("uses") or "").lower()
+
+
 def test_publish_job_does_not_upload_artifacts() -> None:
     # The inline `# zizmor: ignore[artipacked]` on the publish checkout
     # (.github/workflows/nightly.yml ~line 99) is valid only because this job
-    # uploads no artifacts. A later actions/upload-artifact step (any version)
-    # would re-open that risk.
+    # uploads no artifacts. A later step whose `uses` contains "upload"
+    # (any casing or action name, e.g. Actions/Upload-Artifact@v4) would
+    # re-open that risk.
     steps = wf()["jobs"]["publish"]["steps"]
-    uploads = [
-        s
-        for s in steps
-        if (uses := str(s.get("uses") or "")) == "actions/upload-artifact"
-        or uses.startswith("actions/upload-artifact@")
-    ]
-    assert uploads == []
+    assert [s for s in steps if _publish_step_uses_upload(s)] == []
+
+
+def test_publish_upload_guard_matches_any_upload_uses_case_insensitively() -> None:
+    assert _publish_step_uses_upload({"uses": "Actions/Upload-Artifact@v4"})
+    assert _publish_step_uses_upload({"uses": "example/upload-pages-artifact@v1"})
+    assert not _publish_step_uses_upload({"uses": "actions/checkout@abc"})
+    assert not _publish_step_uses_upload({"run": "echo upload"})
 
 
 def test_publish_runs_in_the_site_publish_environment() -> None:
