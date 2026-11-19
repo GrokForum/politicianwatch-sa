@@ -131,15 +131,18 @@ def test_pi_source_approval_not_allowed_on_adverse_items():
     assert any("adverse item" in f for f in check_pi_source_allowance(p, "p"))
 
 
-def test_magwentshu_restored_facts_carry_owner_approval(repo_root):
+def test_magwentshu_has_no_citizen_interview_link_or_pi_approval(repo_root):
     import json
 
-    from pwatch.settings import PI_SOURCE_NOTE
-
     d = json.loads((repo_root / "data/profiles/joburg-2026/lubabalo-cecil-magwentshu.json").read_text(encoding="utf-8"))
-    facts = [d["education"], d["career"], d["cv"][0]]
-    for f in facts:
-        assert f["label"] == "Reported" and f["source_url"].startswith("https://www.citizen.co.za/")
-        assert f["source_date"] == "2023-06-17" and f["note"] == PI_SOURCE_NOTE
-        assert f["owner_approved_pi_source"] == "2026-11-19 16:27 SAST (CHG-PW-011)"
+    blob = json.dumps(d)
+    assert "citizen.co.za/news/lubabalo-magwentshu-mmc-interview" not in blob
+    assert "owner_approved_pi_source" not in blob
+    assert d["education"]["label"] == "Unknown" and d["education"]["source_url"] is None
+    assert d["career"]["label"] == "Unknown" and d["career"]["source_url"] is None
+    first = d["cv"][0]
+    assert first["label"] == "Confirmed"
+    assert first["source_url"].endswith("government-gazette-45447-2021-11-09.pdf")
+    assert first["source_date"] == "2021-11-09" and first.get("source_page") == 50
+    assert "2021 local government elections" in first["value"]
     assert len(d["identity_match"]["matched_details"]) >= 2

@@ -58,34 +58,29 @@
     "retrieved_at": "2026-11-17"
   },
   "career": {
-    "value": "Worked in the private sector, including as a rail and port operations manager and as a lecturer, before becoming a councillor",
-    "label": "Reported",
-    "source_url": "https://www.citizen.co.za/news/lubabalo-magwentshu-mmc-interview/",
-    "source_date": "2023-06-17",
-    "retrieved_at": "2026-11-17",
-    "note": "personal details not recorded here",
-    "owner_approved_pi_source": "2026-11-19 16:27 SAST (CHG-PW-011)"
+    "value": null,
+    "label": "Unknown",
+    "source_url": null,
+    "source_date": null,
+    "retrieved_at": null
   },
   "education": {
-    "value": "Bachelor of Commerce, Rhodes University",
-    "label": "Reported",
-    "source_url": "https://www.citizen.co.za/news/lubabalo-magwentshu-mmc-interview/",
-    "source_date": "2023-06-17",
-    "retrieved_at": "2026-11-17",
-    "note": "personal details not recorded here",
-    "owner_approved_pi_source": "2026-11-19 16:27 SAST (CHG-PW-011)"
+    "value": null,
+    "label": "Unknown",
+    "source_url": null,
+    "source_date": null,
+    "retrieved_at": null
   },
   "cv": [
     {
-      "value": "First year in council: 2021. Became a councillor in November 2021",
-      "label": "Reported",
-      "source_url": "https://www.citizen.co.za/news/lubabalo-magwentshu-mmc-interview/",
-      "source_date": "2023-06-17",
-      "retrieved_at": "2026-11-17",
+      "value": "First year in council: 2021. Elected as the African Transformation Movement's PR councillor for the City of Johannesburg in the 2021 local government elections",
+      "label": "Confirmed",
+      "source_url": "https://www.gazettefinder.co.za/gazettes/government-gazette/2021/45447/government-gazette-45447-2021-11-09.pdf",
+      "source_date": "2021-11-09",
+      "retrieved_at": "2026-11-19T18:19:22+02:00",
+      "source_page": 50,
       "field": "position",
-      "period": "2021-11",
-      "note": "personal details not recorded here",
-      "owner_approved_pi_source": "2026-11-19 16:27 SAST (CHG-PW-011)"
+      "period": "2021-11"
     },
     {
       "value": "Chaired the council's Health and Social Development Section 79 committee (as reported in September 2022)",
@@ -117,15 +112,17 @@
   ],
   "identity_match": {
     "matched_details": [
-      "Name: 'Cllr. Lubabalo Magwentshu' (City 2023-02-02), 'ATM councillor Lubabalo Magwentshu' (Sowetan 2022-09-14) and 'Lubabalo Magwentshu' (Citizen 2023-06-17) match the gazette's first given name and surname.",
-      "Party: ATM in the gazette, Sowetan (2022-09-14) and The Citizen (2023-06-17).",
-      "Council role: City of Johannesburg councillor (Sowetan 2022-09-14: chair of the Health and Social Development committee) and Community Development MMC (City 2023-02-02; The Citizen 2023-06-17)."
+      "Name: 'Cllr. Lubabalo Magwentshu' (City 2023-02-02), 'ATM councillor Lubabalo Magwentshu' (Sowetan 2022-09-14) and 'LUBABALO CECIL MAGWENTSHU' (Electoral Commission elected-councillor list, GG 45447, 2021-11-09, p. 50) match the 2026 gazette's first given name and surname.",
+      "Party: ATM in the 2026 gazette, Sowetan (2022-09-14) and the 2021 elected-councillor list (GG 45447).",
+      "Council role: City of Johannesburg councillor (Sowetan 2022-09-14: chair of the Health and Social Development committee; GG 45447, 2021-11-09: ATM PR councillor) and Community Development MMC (City 2023-02-02)."
     ],
-    "note": "Public role only. The Citizen interview (2023-06-17) is linked for education, career and first year in council on the owner's decision of 19 Nov 2026, 16:27 SAST (CHG-PW-011); personal details not recorded here."
+    "note": "Public role only. Education and career: a source with personal details was not used."
   },
   "court_matters": [],
   "scandals": [],
   "unknown_fields": [
+    "career",
+    "education",
     "Exact end date of the Community Development MMC role (the portfolio had passed to another councillor by 16 August 2024)",
     "Council office or portfolio for the 2026–2031 term (executive mayor and mayoral committee not yet elected; first sitting expected around 19 November 2026 — not guessed)",
     "Official council contact channel (owner to confirm from the City's published councillor directory)"

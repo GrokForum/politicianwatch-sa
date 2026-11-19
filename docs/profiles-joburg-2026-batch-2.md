@@ -24,7 +24,7 @@ Selected as 15, weighted to ward seats (10 ward, 5 PR). After Cassian's blind so
 | 12 | MARY JOYCE NTOMBELA | Joyce Ntombela | ActionSA | PR | 4 | ActionSA candidate for council chief whip, Aug 2025 (IOL) |
 | 13 | SARAH TERESA JUNE WISSLER | Sarah Wissler | ActionSA | PR | 23 | Section 79 Public Safety chair Jan–Aug 2025 (ActionSA statement; IOL) |
 | 14 | ENNIE RAMADIMETJA MAKHAFOLA | Ennie Makhafola | EFF | PR | 14 | Sworn in 3 Feb 2023 (Sowetan); MMC Health and Social Development since Feb 2023 (City statements; IOL) |
-| 15 | LUBABALO CECIL MAGWENTSHU | Lubabalo Magwentshu | ATM | PR | 2 | MMC Community Development 2023–2024 (City statement; Citizen; EWN) |
+| 15 | LUBABALO CECIL MAGWENTSHU | Lubabalo Magwentshu | ATM | PR | 2 | MMC Community Development 2023–2024 (City statement; EWN) |
 
 **Party spread (as selected):** DA 6, ANC 3, ActionSA 2, EFF 1, MK 1, ATM 1, Al Jama-ah 1. With Mbatha on hold, MK has no active batch-2 profile (batch 1 has Baloyi). Against seats (DA 91, ANC 64, ActionSA 42, EFF 17, MK 15, smaller parties 41), the DA is one above proportion and the ANC one below. Most prominent 2021–2026 ANC councillors were not re-elected (overhang; see batch 1), and the remaining ANC ward councillors searched had little record in allowed sources, so a further DA ward councillor with a public record was chosen rather than padding a thin ANC profile.
 
@@ -41,7 +41,7 @@ Fact counts across the 14 active profiles after fix 2 (seat facts, summary field
 
 **Retrieval times (fix 3):** batch-2 facts carry `retrieved_at` `2026-11-17` (date only: fetched that day, on or before the batch commit; the time was not logged, so none is given). The three fix-1 sources carry their real fetch times (11:29:45, 11:29:46 and 11:29:49 SAST). `pwatch dq` fails any `retrieved_at` later than the run time (a date-only value counts as the end of that day). New sources are fetched with `pwatch fetch-source`, which logs the real time.
 
-**First year in council (fix 1, all Reported, sources fetched and read 17 Nov 2026):** Schay 2021 (SA Jewish Report, 2021-11-04); Chame 2014, ward 57 by-election on 2 Jul 2014 (IOL, 2014-07-03; a source with personal details was not used); Magwentshu 2021 (The Citizen, 2023-06-17; Unknown in CHG-PW-007, restored by CHG-PW-011 on the owner's decision; personal details not recorded here); Makhafola 2023, sworn in 3 Feb 2023 (Sowetan, 2023-02-03).
+**First year in council (fix 1, all Reported, sources fetched and read 17 Nov 2026):** Schay 2021 (SA Jewish Report, 2021-11-04); Chame 2014, ward 57 by-election on 2 Jul 2014 (IOL, 2014-07-03; a source with personal details was not used); Magwentshu 2021 (Electoral Commission elected-councillor list, GG 45447, 2021-11-09, p. 50, Confirmed; a source with personal details was not used); Makhafola 2023, sworn in 3 Feb 2023 (Sowetan, 2023-02-03).
 
 ## Adverse items
 
@@ -78,7 +78,7 @@ Each profile's `identity_match` lists the details. Points worth a reviewer's eye
 ## Sources seen but deliberately not used (POPIA)
 
 - Chame and Raphadu: a source with personal details was not used.
-- Magwentshu: The Citizen interview (2023-06-17) is linked for education, career and first year in council on the owner's decision of 19 Nov 2026, 16:27 SAST (CHG-PW-011); personal details not recorded here.
+- Magwentshu: education and career Unknown (a source with personal details was not used). First year in council is sourced to the Electoral Commission's 2021 elected-councillor list (GG 45447, 2021-11-09, p. 50).
 - Sarah Wissler: the ActionSA statement's personal descriptions are not recorded.
 - **SA Jewish Report, 4 Nov 2021 (cited for Schay, fix 1):** only the election result is recorded.
 
