@@ -17,3 +17,4 @@
 - A scheduled source-refresh check (today the nightly rebuilds and re-checks; it does not re-fetch sources).
 - An automated link-rot check that flags claim source links that stop resolving.
 - A reviewer-facing view of the `nightly-log` streak (green nights in a row).
+- A dq flag for PI-bearing sources (e.g. a per-source flag that warns when a source is marked as carrying private or special personal information).
