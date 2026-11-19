@@ -45,6 +45,10 @@ The `publish` job runs only if **all** hold: (a) `needs.build.result == 'success
 - **Outcome:** the workflow references `site-publish` so the owner's settings apply as soon as they exist. What the owner can turn on depends on the plan: on **Pro**, the environment with deployment branches = `main` and the environment secret; **required reviewers only with Enterprise** (or if the repo were public). On **Free**, environment secrets are unavailable in a private repo, so the key would not resolve and the publish job fails closed.
 - **Fallback (if the plan does not allow it):** the gate stays (a) green build, (b) `main` only, (c) `PW_PUBLISH_ENABLED == 'true'`, and the deploy key is stored as a repository secret of the same name (the job reads `secrets.PW_SITE_DEPLOY_KEY`, which falls back to a repository secret). The owner's control is then the variable plus the key, and every merge to `main` needs his GO. This is weaker than a per-run approval: once the flag is on, nightly runs publish without a click.
 
+### Publish commit identity (19 Nov 2026, request relayed by Cavus)
+
+Commits the `publish` job makes in the site repo use `git config user.name "PoliticianWatch publisher"` and `git config user.email "noreply@grokforum.site"` (`.github/workflows/nightly.yml`, publish step), the same identity as the site-repo branch. Test: `test_publish_commits_use_the_publisher_identity` (fails against the old `politicianwatch-nightly` identity). Not changed: `scripts/record-nightly.sh` commits to this private repo's `nightly-log` branch and keeps its own identity.
+
 ### Owner-GO setup step (not done by the bot)
 
 After the owner's quoted GO naming CHG-PW-008 and PROD, the owner (Settings → Environments) creates **`site-publish`**: deployment branches and tags → selected branches → `main`; required reviewers → the owner, prevent self-review on, admin bypass off (where the plan offers them); environment secret `PW_SITE_DEPLOY_KEY` = the private half of a new **write** deploy key added to `GrokForum/politicianwatch-site`. The bot does not create the environment, key, secret or variable.
@@ -68,6 +72,8 @@ No change to profile data, DQ rules, the builder output or the site repo. robots
 Medium. After the flag is on, any merged change to profiles reaches the public site the same night; the gate is the merge GO plus the build checks. GitHub Actions minutes on a private repo (about 3–5 min a night). The publish rewrites the site repo's `main` from the build (no force-push; `CNAME`/README kept).
 
 ## Testing (evidence)
+
+After the publisher-identity change, with CHG-PW-007 head `7531488` merged in (merge `b6bc1ce`): `uv run pytest -q` 107 passed (1 new test); `uv run pwatch dq` exit 0; `uv run pwatch render --check` exit 0; `pwatch site build` + `pwatch site check` pass; `actionlint` 1.7.7: no findings; popia-review PASS.
 
 After the Janus review (19 Nov 2026), with CHG-PW-007 head `198d6ac` merged in: `uv run pytest -q` 106 passed (3 new workflow tests: checkouts in live-check and record do not persist credentials; publish runs in `site-publish` and reads `secrets.PW_SITE_DEPLOY_KEY`; record is the only nightly-log writer; the permissions test now expects only `record` to write); `uv run pwatch dq` exit 0; `uv run pwatch render --check` exit 0; `pwatch site build` + `site check` pass; `actionlint` 1.7.7: no findings. popia-review: PASS (workflow and records only; no personal data).
 

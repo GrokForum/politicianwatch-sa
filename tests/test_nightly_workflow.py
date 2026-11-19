@@ -59,6 +59,17 @@ def test_publish_runs_in_the_site_publish_environment() -> None:
     assert "secrets.PW_SITE_DEPLOY_KEY" in job["steps"][0]["env"]["KEY"]
 
 
+def test_publish_commits_use_the_publisher_identity() -> None:
+    steps = wf()["jobs"]["publish"]["steps"]
+    script = "\n".join(s.get("run", "") for s in steps)
+    assert 'git config user.name "PoliticianWatch publisher"' in script
+    assert 'git config user.email "noreply@grokforum.site"' in script
+    assert script.count("git config user.name") == 1
+    assert script.count("git config user.email") == 1
+    assert "github-actions[bot]" not in script
+    assert "politicianwatch-nightly" not in script
+
+
 def test_record_job_is_the_only_nightly_log_writer() -> None:
     jobs = wf()["jobs"]
     users = [n for n, j in jobs.items() if any("record-nightly.sh" in (s.get("run") or "") for s in j["steps"])]

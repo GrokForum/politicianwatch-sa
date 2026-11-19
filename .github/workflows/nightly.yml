@@ -105,8 +105,8 @@ jobs:
           set -eu
           rsync -a --delete --exclude .git --exclude CNAME --exclude README.md _site/ site-repo/
           cd site-repo
-          git config user.name "politicianwatch-nightly"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.name "PoliticianWatch publisher"
+          git config user.email "noreply@grokforum.site"
           git add -A
           if git diff --cached --quiet; then echo "no change"; exit 0; fi
           git commit -m "Nightly publish ${BUILD_ID} from politicianwatch-sa@${GITHUB_SHA}"
