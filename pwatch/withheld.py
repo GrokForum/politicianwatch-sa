@@ -11,9 +11,10 @@ from __future__ import annotations
 
 import json
 from datetime import date
+from html import unescape
 from pathlib import Path
 from typing import Any
-from urllib.parse import urlparse
+from urllib.parse import unquote, urlparse
 
 from pwatch.schema import iter_adverse_items, iter_facts
 from pwatch.settings import WITHHELD_LABEL, WITHHELD_SOURCES_PATH
@@ -21,9 +22,13 @@ from pwatch.settings import WITHHELD_LABEL, WITHHELD_SOURCES_PATH
 REQUIRED_KEYS = ("slug", "fact", "source_url", "source_date", "title")
 
 
+def register_path(path: Path | None = None) -> Path:
+    return path or WITHHELD_SOURCES_PATH
+
+
 def load_withheld_sources(path: Path | None = None) -> list[dict[str, Any]]:
-    """Load entries from the private file. Missing file yields an empty list."""
-    p = path or WITHHELD_SOURCES_PATH
+    """Load entries from the private file. Missing file or a non-list payload yields an empty list."""
+    p = register_path(path)
     if not p.is_file():
         return []
     raw = json.loads(p.read_text(encoding="utf-8"))
@@ -39,46 +44,31 @@ def entries_for(slug: str, fact: str, entries: list[dict[str, Any]] | None = Non
     return [e for e in rows if e.get("slug") == slug and e.get("fact") == fact]
 
 
-def leak_needles(url: str) -> set[str]:
-    """URL spellings to search for in public output (path required; bare hosts omitted)."""
-    text = (url or "").strip()
-    if not text:
-        return set()
-    variants = {text, text.rstrip("/")}
-    grown: set[str] = set()
-    for v in variants:
-        grown.add(v)
-        for prefix in ("https://", "http://"):
-            if v.lower().startswith(prefix):
-                rest = v[len(prefix) :]
-                grown.add(rest)
-                grown.add(rest.rstrip("/"))
-                if rest.lower().startswith("www."):
-                    grown.add(prefix + rest[4:])
-                    grown.add(rest[4:])
-                    grown.add((prefix + rest[4:]).rstrip("/"))
-                    grown.add(rest[4:].rstrip("/"))
-                else:
-                    grown.add(prefix + "www." + rest)
-                    grown.add("www." + rest)
-                    grown.add((prefix + "www." + rest).rstrip("/"))
-                    grown.add(("www." + rest).rstrip("/"))
-    out = set()
-    for v in grown:
-        if not v:
-            continue
-        hostpath = v.split("://", 1)[-1]
-        if "/" in hostpath and hostpath.split("/", 1)[1]:
-            out.add(v)
-    return out
+def _decode_text(text: str) -> str:
+    """html.unescape, then urllib.parse.unquote until the value is stable."""
+    s = unescape(text or "")
+    while True:
+        nxt = unquote(s)
+        if nxt == s:
+            return nxt
+        s = nxt
 
 
-def all_leak_needles(entries: list[dict[str, Any]] | None = None) -> set[str]:
-    rows = entries if entries is not None else load_withheld_sources()
-    needles: set[str] = set()
-    for e in rows:
-        needles |= leak_needles(str(e.get("source_url") or ""))
-    return needles
+def normalize_url(text: str) -> str:
+    """Casefold, decode, then strip scheme, a leading www. and a trailing slash."""
+    s = _decode_text(text).casefold().strip()
+    for prefix in ("https://", "http://"):
+        if s.startswith(prefix):
+            s = s[len(prefix) :]
+            break
+    if s.startswith("www."):
+        s = s[4:]
+    return s.rstrip("/")
+
+
+def normalize_title(text: str) -> str:
+    """Casefold, unescape, and collapse whitespace."""
+    return " ".join(unescape(text or "").casefold().split())
 
 
 def _has_public_url(fact: dict[str, Any]) -> bool:
@@ -90,17 +80,37 @@ def _has_public_url(fact: dict[str, Any]) -> bool:
     return False
 
 
+def _profile_has_withheld(profile: dict[str, Any]) -> bool:
+    return any(isinstance(f, dict) and f.get("label") == WITHHELD_LABEL for _, f in iter_facts(profile))
+
+
 def check_withheld_facts(
     profile: dict[str, Any],
     locator: str,
     entries: list[dict[str, Any]] | None = None,
+    *,
+    path: Path | None = None,
 ) -> list[str]:
-    """A withheld fact needs a matching private entry, no public URL, and is not adverse."""
+    """A withheld fact needs a matching private entry, no public URL, and is not adverse.
+
+    If any fact is Withheld (POPIA) and the register file is missing or empty, that is a failure.
+    """
     if not isinstance(profile, dict):
         return []
-    rows = entries if entries is not None else load_withheld_sources()
+    reg = register_path(path)
+    loaded_from_disk = entries is None
+    rows = entries if entries is not None else load_withheld_sources(reg)
     slug = str(profile.get("slug") or "")
     failures: list[str] = []
+    if _profile_has_withheld(profile) and loaded_from_disk:
+        if not reg.is_file():
+            failures.append(
+                f"{locator}: {WITHHELD_LABEL} fact(s) present but the private withheld-sources file is missing"
+            )
+        elif not rows:
+            failures.append(
+                f"{locator}: {WITHHELD_LABEL} fact(s) present but the private withheld-sources file is empty"
+            )
     adverse = {k for k, _ in iter_adverse_items(profile)}
     for key, fact in iter_facts(profile):
         if not isinstance(fact, dict) or fact.get("label") != WITHHELD_LABEL:
@@ -152,26 +162,71 @@ def check_withheld_entry_format(entries: list[dict[str, Any]] | None = None) -> 
     return failures
 
 
-def check_tree_for_withheld_urls(root: Path, entries: list[dict[str, Any]] | None = None) -> list[str]:
-    """Fail if any withheld-source URL (or a close spelling) appears under root."""
-    needles = all_leak_needles(entries)
-    if not needles or not root.exists():
-        return []
-    # Longer needles first so a report is specific.
-    ordered = sorted(needles, key=len, reverse=True)
-    failures: list[str] = []
-    files = [root] if root.is_file() else [p for p in root.rglob("*") if p.is_file() and ".git" not in p.parts]
-    for path in files:
+def _read_text(path: Path) -> str | None:
+    try:
+        return path.read_text(encoding="utf-8")
+    except (UnicodeDecodeError, OSError):
         try:
-            text = path.read_text(encoding="utf-8")
-        except (UnicodeDecodeError, OSError):
-            try:
-                text = path.read_bytes().decode("utf-8", "replace")
-            except OSError:
-                continue
-        for needle in ordered:
-            if needle in text:
-                rel = path.name if root.is_file() else str(path.relative_to(root))
+            return path.read_bytes().decode("utf-8", "replace")
+        except OSError:
+            return None
+
+
+def _iter_tree_files(root: Path) -> list[Path]:
+    if root.is_file():
+        return [root]
+    return [p for p in root.rglob("*") if p.is_file() and ".git" not in p.parts]
+
+
+def check_tree_for_withheld_urls(root: Path, entries: list[dict[str, Any]] | None = None, *, path: Path | None = None) -> list[str]:
+    """Fail if a withheld-source URL or title appears under root, after normalisation.
+
+    Also fails when built output has a Withheld (POPIA) fact and the register is missing or empty.
+    URLs are matched after casefold, repeated unquote, html.unescape, and stripping the scheme,
+    a leading www. and a trailing slash. Titles are matched after casefold, unescape and
+    collapsed whitespace.
+    """
+    if not root.exists():
+        return []
+    reg = register_path(path)
+    loaded_from_disk = entries is None
+    rows = entries if entries is not None else load_withheld_sources(reg)
+    files = _iter_tree_files(root)
+    failures: list[str] = []
+
+    mentions_withheld = False
+    for fp in files:
+        text = _read_text(fp)
+        if text is None:
+            continue
+        if WITHHELD_LABEL in text:
+            mentions_withheld = True
+            break
+    if mentions_withheld and loaded_from_disk:
+        if not reg.is_file():
+            failures.append(
+                "built output has a Withheld (POPIA) fact but the private withheld-sources file is missing"
+            )
+        elif not rows:
+            failures.append(
+                "built output has a Withheld (POPIA) fact but the private withheld-sources file is empty"
+            )
+
+    url_needles = sorted({normalize_url(str(e.get("source_url") or "")) for e in rows} - {""}, key=len, reverse=True)
+    title_needles = sorted({normalize_title(str(e.get("title") or "")) for e in rows} - {""}, key=len, reverse=True)
+    for fp in files:
+        text = _read_text(fp)
+        if text is None:
+            continue
+        rel = fp.name if root.is_file() else str(fp.relative_to(root))
+        url_haystack = _decode_text(text).casefold()
+        for needle in url_needles:
+            if needle in url_haystack:
                 failures.append(f"{rel}: built output contains a withheld-source URL")
+                break
+        title_haystack = normalize_title(text)
+        for needle in title_needles:
+            if needle in title_haystack:
+                failures.append(f"{rel}: built output contains a withheld-source title")
                 break
     return failures

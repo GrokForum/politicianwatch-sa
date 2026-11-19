@@ -173,13 +173,11 @@ def test_withheld_fact_renders_without_a_source_link():
     assert check_claims("edu", f"<ul>{html}</ul>") == []
 
 
-def test_site_check_fails_if_a_withheld_source_url_appears_in_output(tmp_path: Path, built: Path, monkeypatch) -> None:
+def _write_withheld_register(tmp_path: Path, monkeypatch, *, url: str = "https://news.example.test/held/private", title: str = "Example interview") -> None:
     import json
 
-    from pwatch.site import check_site
     from pwatch import withheld as withheld_mod
 
-    url = "https://news.example.test/held-private"
     private = tmp_path / "withheld-sources.json"
     private.write_text(
         json.dumps(
@@ -190,7 +188,7 @@ def test_site_check_fails_if_a_withheld_source_url_appears_in_output(tmp_path: P
                         "fact": "education",
                         "source_url": url,
                         "source_date": "2023-06-17",
-                        "title": "Example interview",
+                        "title": title,
                     }
                 ]
             }
@@ -198,8 +196,25 @@ def test_site_check_fails_if_a_withheld_source_url_appears_in_output(tmp_path: P
         encoding="utf-8",
     )
     monkeypatch.setattr(withheld_mod, "WITHHELD_SOURCES_PATH", private)
-    planted = built / "profiles" / "kevin-example" / "index.html"
-    html = planted.read_text(encoding="utf-8")
-    planted.write_text(html + f"<p>see {url}</p>", encoding="utf-8")
+
+
+def test_site_check_passes_on_clean_output_when_a_register_exists(tmp_path: Path, built: Path, synth, monkeypatch) -> None:
+    _write_withheld_register(tmp_path, monkeypatch)
+    assert check_site(built, profiles=synth) == []
+
+
+@pytest.mark.parametrize(
+    "planted, expected",
+    [
+        ("HTTPS://NEWS.EXAMPLE.TEST/HELD/PRIVATE", "withheld-source URL"),
+        ("https://news.example.test/held%2Fprivate", "withheld-source URL"),
+        ("https://news.example.test/held&#47;private", "withheld-source URL"),
+        ("See the Example interview for details.", "withheld-source title"),
+    ],
+)
+def test_site_check_fails_on_normalised_url_or_title_leak(tmp_path: Path, built: Path, monkeypatch, planted: str, expected: str) -> None:
+    _write_withheld_register(tmp_path, monkeypatch)
+    page = built / "profiles" / "kevin-example" / "index.html"
+    page.write_text(page.read_text(encoding="utf-8") + f"<p>{planted}</p>", encoding="utf-8")
     fails = check_site(built)
-    assert any("withheld-source URL" in f for f in fails)
+    assert any(expected in f for f in fails), fails

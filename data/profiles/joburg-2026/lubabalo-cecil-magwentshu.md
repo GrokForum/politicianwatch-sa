@@ -21,7 +21,7 @@ DRAFT PROFILE — not published. Public role only. Every item carries an evidenc
 
 ## CV (public role)
 
-- **Position (2021-11):** First year in council: 2021. Elected as the African Transformation Movement's PR councillor for the City of Johannesburg in the 2021 local government elections · `Confirmed` — [source](https://www.gazettefinder.co.za/gazettes/government-gazette/2021/45447/government-gazette-45447-2021-11-09.pdf) p.50, 2021-11-09 (retrieved 2026-11-19T18:19:22+02:00)
+- **Position (2021-11):** Elected ATM PR councillor (City of Johannesburg), 2021 local government elections · `Confirmed` — [source](https://www.gazettefinder.co.za/gazettes/government-gazette/2021/45447/government-gazette-45447-2021-11-09.pdf) p.50, 2021-11-09 (retrieved 2026-11-19T18:19:22+02:00)
 - **Position (2022):** Chaired the council's Health and Social Development Section 79 committee (as reported in September 2022) · `Reported` — [source](https://www.sowetan.co.za/news/south-africa/2022-09-14-tables-turn-against-joburg-mayors-foes/), 2022-09-14 (retrieved 2026-11-19T08:09:01+02:00)
 - **Position (2023-02-02):** Appointed MMC for Community Development by Executive Mayor Thapelo Amad · `Confirmed` — [source](https://joburg.org.za/media_/Pages/Media/Media%20Statements/2023%20Media%20Statements/February/Joburg-Executive-Mayor-announces-new-MMCs.aspx), 2023-02-02 (retrieved 2026-11-17, time not logged)
 - **Position (2024-08-16):** Mayor Dada Morero gave the Community Development portfolio to Kabelo Gwamanda on 16 August 2024 · `Reported` — [source](https://www.ewn.co.za/2024/08/17/former-joburg-mayor-gwamanda-appointed-as-community-development-mmc), 2024-08-17 (retrieved 2026-11-17, time not logged)

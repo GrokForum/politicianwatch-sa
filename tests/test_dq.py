@@ -151,7 +151,8 @@ def test_magwentshu_education_and_career_are_withheld_without_a_public_url(repo_
     assert first["label"] == "Confirmed"
     assert first["source_url"].endswith("government-gazette-45447-2021-11-09.pdf")
     assert first["source_date"] == "2021-11-09" and first.get("source_page") == 50
-    assert "2021 local government elections" in first["value"]
+    assert first["value"] == "Elected ATM PR councillor (City of Johannesburg), 2021 local government elections"
+    assert "First year in council" not in first["value"]
     assert len(d["identity_match"]["matched_details"]) >= 2
 
 
@@ -223,3 +224,35 @@ def test_withheld_fact_requires_private_entry_and_rejects_public_url_or_adverse(
     ]
     fails = check_profile(p4, drafts_root=repo_root, as_of=date(2026, 11, 15))
     assert any("adverse item" in f for f in fails)
+
+
+def test_withheld_fact_fails_when_register_is_missing_or_empty(synthetic_profiles, repo_root, tmp_path, monkeypatch):
+    import json
+    from copy import deepcopy
+
+    from pwatch.dq import check_profile
+    from pwatch.settings import WITHHELD_LABEL
+    from pwatch import withheld as withheld_mod
+
+    p = deepcopy(synthetic_profiles[0])
+    p["slug"] = "synth-withheld"
+    p["education"] = {
+        "value": None,
+        "label": WITHHELD_LABEL,
+        "source_url": None,
+        "source_date": None,
+        "retrieved_at": None,
+    }
+
+    missing = tmp_path / "no-such-register.json"
+    monkeypatch.setattr(withheld_mod, "WITHHELD_SOURCES_PATH", missing)
+    fails = check_profile(p, drafts_root=repo_root, as_of=date(2026, 11, 15))
+    assert any("private withheld-sources file is missing" in f for f in fails)
+    assert any("no matching entry" in f for f in fails)
+
+    empty = tmp_path / "empty-register.json"
+    empty.write_text(json.dumps({"entries": []}), encoding="utf-8")
+    monkeypatch.setattr(withheld_mod, "WITHHELD_SOURCES_PATH", empty)
+    fails = check_profile(p, drafts_root=repo_root, as_of=date(2026, 11, 15))
+    assert any("private withheld-sources file is empty" in f for f in fails)
+    assert any("no matching entry" in f for f in fails)
