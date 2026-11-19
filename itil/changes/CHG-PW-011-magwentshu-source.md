@@ -33,7 +33,7 @@ Medium-low. The note tells readers that the linked article carries personal deta
 ## Seen, not touched
 
 - Per-fact `note` fields on other profiles (e.g. `known_as`) are not rendered; unchanged.
-- PRs #9 and #10 (CHG-PW-009, CHG-PW-010) are open on separate branches; this branch does not include them.
+- CHG-PW-009 (merged as ce45d829) and CHG-PW-010 (merged as 33b3fb32) are on main; this branch merges main at ce45d829.
 
 ## Testing (evidence)
 
