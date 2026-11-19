@@ -42,3 +42,27 @@ def test_unknown_placeholder_is_allowed_without_a_source(synthetic_profiles, rep
     assert synthetic_profiles[0]["education"]["label"] == "Unknown"
     assert synthetic_profiles[0]["education"]["value"] is None
     assert synthetic_profiles[0]["education"]["source_url"] is None
+
+
+def test_set_aside_public_protector_finding_must_be_disputed() -> None:
+    """CHG-PW-007 (Janus on PR #7): same label for every set-aside PP finding."""
+    from pwatch.dq import check_set_aside_label
+
+    item = {"category": "Public Protector finding (review)", "matter_status": "cleared", "label": "Reported"}
+    assert check_set_aside_label(item, "x") and "Disputed" in check_set_aside_label(item, "x")[0]
+    assert check_set_aside_label(dict(item, label="Disputed"), "x") == []
+    assert check_set_aside_label(dict(item, matter_status="unknown"), "x") == []
+    assert check_set_aside_label(dict(item, category="Criminal charge"), "x") == []
+
+
+def test_committed_set_aside_pp_items_are_consistent() -> None:
+    from pwatch.profiles import load_profile_dir
+    from pwatch.schema import iter_adverse_items
+
+    labels = {
+        d["slug"]: it["label"]
+        for _, d in load_profile_dir()
+        for _, it in iter_adverse_items(d)
+        if str(it.get("category", "")).startswith("Public Protector finding") and it.get("matter_status") == "cleared"
+    }
+    assert labels == {"herman-samtseu-philip-mashaba": "Disputed", "otta-helene-maree": "Disputed"}

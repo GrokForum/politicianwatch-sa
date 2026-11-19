@@ -115,6 +115,25 @@ def check_identity_link(item: Any, locator: str) -> list[str]:
     return []
 
 
+SET_ASIDE_CATEGORY_PREFIX = "Public Protector finding"
+SET_ASIDE_LABEL = "Disputed"
+
+
+def check_set_aside_label(item: Any, locator: str) -> list[str]:
+    """A Public Protector finding that a court set aside (matter_status `cleared`) is labelled Disputed.
+
+    CHG-PW-007 (Janus on PR #7): Zille and Mashaba carried different labels for the same kind of
+    item. The label describes the finding's standing (challenged and set aside), so it is the same
+    for every profile. Disputed is never higher than any identity link, so this cannot break that rule.
+    """
+    if not isinstance(item, dict):
+        return []
+    if str(item.get("category") or "").startswith(SET_ASIDE_CATEGORY_PREFIX) and item.get("matter_status") == "cleared":
+        if item.get("label") != SET_ASIDE_LABEL:
+            return [f"{locator}: a Public Protector finding set aside by a court must be labelled {SET_ASIDE_LABEL}, not {item.get('label')}"]
+    return []
+
+
 def check_profile(
     profile: dict[str, Any],
     *,
@@ -144,6 +163,7 @@ def check_profile(
             failures.extend(check_against_roster(profile, roster, loc))
     for item_loc, item in iter_adverse_items(profile if isinstance(profile, dict) else {}):
         failures.extend(check_identity_link(item, f"{loc}.{item_loc}"))
+        failures.extend(check_set_aside_label(item, f"{loc}.{item_loc}"))
         failures.extend(
             check_right_of_reply(
                 item.get("right_of_reply") if isinstance(item, dict) else None,

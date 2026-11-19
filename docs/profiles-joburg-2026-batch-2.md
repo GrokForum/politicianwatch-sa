@@ -16,7 +16,7 @@ Selected as 15, weighted to ward seats (10 ward, 5 PR). After Cassian's blind so
 | 4 | DANIEL SCHAY | — | DA | Ward | 72 | First elected Nov 2021 (SA Jewish Report); DA shadow MMC Development Planning (TimesLIVE 2023; DA 2024) |
 | 5 | TYRELL MEYERS | — | DA | Ward | 23 | DA shadow MMC Transport (TimesLIVE 2023; DA 2024) |
 | 6 | DEVON STEENKAMP | — | DA | Ward | 98 | DA caucus spokesperson, Region C whip (DA 2024) |
-| 7 | FAEEZA CHAME | — | DA | Ward | 57 | Won ward 57 by-election 2 Jul 2014 (Southern Courier); DA Region F whip (DA 2024) |
+| 7 | FAEEZA CHAME | — | DA | Ward | 57 | Won ward 57 by-election 2 Jul 2014 (IOL); DA Region F whip (DA 2024) |
 | 8 | NICOLENE JONKER | — | DA | Ward | 88 | Ward 88 councillor 2021–2026 (SABC 2026); DA Region B whip (DA 2024) |
 | 9 | MTHEMBENI SELBY MBATHA | — | MK | Ward | 61 | **ON HOLD** (fix 1): two MBATHA councillors in the gazette; no source with two identifying details. Not part of the batch |
 | 10 | YAKOOB KAROLIA | Jakes Karolia | Al Jama-ah | Ward | 9 | Ward 9 councillor 2021–2026 (SABC 2026) |
@@ -41,7 +41,7 @@ Fact counts across the 14 active profiles after fix 2 (seat facts, summary field
 
 **Retrieval times (fix 3):** batch-2 facts carry `retrieved_at` `2026-11-17` (date only: fetched that day, on or before the batch commit; the time was not logged, so none is given). The three fix-1 sources carry their real fetch times (11:29:45, 11:29:46 and 11:29:49 SAST). `pwatch dq` fails any `retrieved_at` later than the run time (a date-only value counts as the end of that day). New sources are fetched with `pwatch fetch-source`, which logs the real time.
 
-**First year in council (fix 1, all Reported, sources fetched and read 17 Nov 2026):** Schay 2021 (SA Jewish Report, 2021-11-04); Chame 2014, ward 57 by-election on 2 Jul 2014 (Southern Courier, 2014-07-11); Magwentshu 2021 (The Citizen, 2023-06-17; already in the profile, re-verified); Makhafola 2023, sworn in 3 Feb 2023 (Sowetan, 2023-02-03).
+**First year in council (fix 1, all Reported, sources fetched and read 17 Nov 2026):** Schay 2021 (SA Jewish Report, 2021-11-04); Chame 2014, ward 57 by-election on 2 Jul 2014 (IOL, 2014-07-03; first sourced to a local report, replaced in CHG-PW-007); Magwentshu 2021 (The Citizen, 2023-06-17; already in the profile, re-verified); Makhafola 2023, sworn in 3 Feb 2023 (Sowetan, 2023-02-03).
 
 ## Adverse items
 
@@ -62,7 +62,7 @@ Each profile's `identity_match` lists the details. Points worth a reviewer's eye
 - **Karolia:** SABC "Jakes Karolia" — linked on unique surname + Al Jama-ah + ward 9. "Jakes" is not used as a match for YAKOOB.
 - **Ntombela / Wissler / Makhafola / Magwentshu:** given name + surname + party + council role.
 - **Steenkamp (fix 1 check):** the gazette has two STEENKAMPs, DEVON STEENKAMP (DA, ward 98) and RAYMONT ISMAEL STEENKAMP (PA, ward 29). The DA statement (2024-07-23) gives the given name Devon and the party DA, which match only the first. It gives no ward, and "Region C" (a DA caucus region) is not used as a match. Kept, Reported.
-- **Schay / Chame (fix 1):** ward number now matches in a news source as well (SA Jewish Report ward 72; Southern Courier ward 57).
+- **Schay / Chame (fix 1):** ward number now matches in a news source as well (SA Jewish Report ward 72; IOL and the IEC's 2014 by-election results notice ward 57).
 
 ### Not linked (insufficient match or not usable)
 
@@ -77,12 +77,12 @@ Each profile's `identity_match` lists the details. Points worth a reviewer's eye
 
 ## Sources seen but deliberately not used (POPIA)
 
-- **City of Johannesburg "Chairpersons of Committees 2025" PDF** (joburg.org.za): useful for council roles, but it publishes councillors' home addresses, personal cellphone numbers and personal email addresses. Not cited, not stored.
-- **City of Johannesburg MMC Community Development page:** carries family details; the full name is not needed from it, so it is not cited.
-- **The Citizen interview with Magwentshu (cited):** also contains a date of birth and family details. Only public-role facts (party, councillor since 2021, committee chair, career, degree) are recorded.
-- A search snippet surfaced a councillor's personal phone number and email; nothing from it was recorded.
+- **City of Johannesburg "Chairpersons of Committees 2025" PDF:** useful for council roles, but it contains personal details not recorded here; not cited.
+- **City of Johannesburg MMC Community Development page:** contains personal details not recorded here; not cited.
+- **The Citizen interview with Magwentshu (cited for education, career and first year in council):** contains personal details not recorded here. Only public-role facts are recorded. The committee-chair fact is sourced to Sowetan (2022-09-14) from CHG-PW-007.
+- A search snippet contained a councillor's personal details; nothing from it was recorded.
 - Sarah Wissler: the ActionSA statement's personal descriptions are not recorded.
-- **Southern Courier, 11 Jul 2014 (cited for Chame, fix 1):** also prints her age, suburb, family details, a personal cellphone number and a personal email address. Only the by-election result is recorded. The by-election opponent is not named.
+- **Local news report on Chame's 2014 by-election (cited in fix 1, replaced by IOL 2014-07-03 in CHG-PW-007):** contains personal details not recorded here; no longer cited. Only the by-election result is recorded. The by-election opponent is not named.
 - **SA Jewish Report, 4 Nov 2021 (cited for Schay, fix 1):** only the election result is recorded.
 
 ## Gaps

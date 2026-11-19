@@ -22,7 +22,7 @@ DRAFT PROFILE — not published. Public role only. Every item carries an evidenc
 ## CV (public role)
 
 - **Position (2021-11):** First year in council: 2021. Became a councillor in November 2021 · `Reported` — [source](https://www.citizen.co.za/news/lubabalo-magwentshu-mmc-interview/), 2023-06-17 (retrieved 2026-11-17, time not logged)
-- **Position (2022):** Chaired a Section 79 committee of the council · `Reported` — [source](https://www.citizen.co.za/news/lubabalo-magwentshu-mmc-interview/), 2023-06-17 (retrieved 2026-11-17, time not logged)
+- **Position (2022):** Chaired the council's Health and Social Development Section 79 committee (as reported in September 2022) · `Reported` — [source](https://www.sowetan.co.za/news/south-africa/2022-09-14-tables-turn-against-joburg-mayors-foes/), 2022-09-14 (retrieved 2026-11-19T08:09:01+02:00)
 - **Position (2023-02-02):** Appointed MMC for Community Development by Executive Mayor Thapelo Amad · `Confirmed` — [source](https://joburg.org.za/media_/Pages/Media/Media%20Statements/2023%20Media%20Statements/February/Joburg-Executive-Mayor-announces-new-MMCs.aspx), 2023-02-02 (retrieved 2026-11-17, time not logged)
 - **Position (2024-08-16):** Mayor Dada Morero gave the Community Development portfolio to Kabelo Gwamanda on 16 August 2024 · `Reported` — [source](https://www.ewn.co.za/2024/08/17/former-joburg-mayor-gwamanda-appointed-as-community-development-mmc), 2024-08-17 (retrieved 2026-11-17, time not logged)
 
@@ -45,4 +45,4 @@ DRAFT PROFILE — not published. Public role only. Every item carries an evidenc
 - Name: 'Cllr. Lubabalo Magwentshu' (City 2023-02-02) and 'Lubabalo Magwentshu' (Citizen 2023-06-17) match the gazette's first given name and surname.
 - Party: ATM in the gazette and The Citizen.
 - Council role: City of Johannesburg councillor and Community Development MMC in both.
-- Note: The Citizen interview and the City's MMC page also carry family details and a date of birth; none of these are recorded (public role only). The City MMC page is not cited for that reason.
+- Note: The Citizen interview cited for his education, career and first year in council, and the City's MMC page, contain personal details not recorded here (public role only). The City MMC page is not cited.

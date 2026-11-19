@@ -138,3 +138,12 @@ def test_cli_site_check_uses_committed_profiles(tmp_path: Path) -> None:
     next((out / "profiles").glob("*/index.html")).unlink()
     assert main(["site", "check", str(out)]) == 2
     assert main(["site", "check", "--no-data", str(out)]) == 0
+
+
+def test_home_and_profile_wording_exclude_unknown_items(built: Path) -> None:
+    """Janus on PR #6, applied to the CHG-PW-007 pages: Unknown items carry no source link."""
+    home = (built / "index.html").read_text(encoding="utf-8")
+    assert "every item except an Unknown one links to its source with a date" in home
+    prof = (built / "profiles" / "kevin-example" / "index.html").read_text(encoding="utf-8")
+    assert "every item except an Unknown one links a dated source" in prof
+    assert "Every item shows an evidence label and a dated source" not in prof
