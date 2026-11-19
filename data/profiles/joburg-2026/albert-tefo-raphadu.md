@@ -44,4 +44,4 @@ DRAFT PROFILE — not published. Public role only. Every item carries an evidenc
 - Name: 'Tefo Raphadu' (IOL 2025-09-03) and 'Teffo Raphadu' (News24 2022-10-27) match the gazette's second given name TEFO and surname RAPHADU (no other RAPHADU in the roster).
 - Party: ANC in the gazette, IOL and News24.
 - Ward: IOL describes him as the ANC Ward 105 councillor; the gazette lists him for ward 105. (Ward boundaries were redrawn for 2026; the number matches but the area may differ.)
-- Note: Three details match. The City's 2025 list of committee chairpersons was seen but not used: it publishes councillors' home addresses and personal phone numbers.
+- Note: Three details match; a source with personal details was not used.

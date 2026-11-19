@@ -66,11 +66,11 @@
   },
   "cv": [
     {
-      "value": "First year in council: 2014. Won the City of Johannesburg ward 57 by-election for the DA on Wednesday 2 July 2014 (66.09% of the vote, as reported)",
+      "value": "First year in council: 2014. Won the City of Johannesburg ward 57 by-election for the DA on 2 July 2014 (66% of the vote, as reported)",
       "label": "Reported",
-      "source_url": "https://www.citizen.co.za/southern-courier/news-headlines/2014/07/11/new-da-ward-57-councillor-faeeza-chame/",
-      "source_date": "2014-07-11",
-      "retrieved_at": "2026-11-17T11:29:46+02:00",
+      "source_url": "https://iol.co.za/news/politics/2014-07-03-da-anc-react-to-by-elections/",
+      "source_date": "2014-07-03",
+      "retrieved_at": "2026-11-19T08:08:59+02:00",
       "field": "position",
       "period": "2014-07-02"
     },
@@ -86,11 +86,11 @@
   ],
   "identity_match": {
     "matched_details": [
-      "Name: 'Faeeza Chame' (DA 2024-07-23; Southern Courier 2014-07-11) matches the gazette exactly.",
+      "Name: 'Faeeza Chame' (DA 2024-07-23; IOL 2014-07-03) matches the gazette exactly.",
       "Party and council: DA, City of Johannesburg (Johannesburg region caucus), in the gazette and both sources.",
-      "Ward: Southern Courier (2014-07-11) names her the elected DA ward 57 councillor; the gazette lists her for ward 57. (Ward boundaries have been redrawn since 2014; the number matches but the area may differ.)"
+      "Ward: IOL (2014-07-03) and the Electoral Commission's results notice for the 2 July 2014 municipal by-elections name her as the DA winner of City of Johannesburg ward 57; the gazette lists her for ward 57. (Ward boundaries have been redrawn since 2014; the number matches but the area may differ.)"
     ],
-    "note": "Three details match. The 2014 Southern Courier article also carries her age, suburb, family details, a personal phone number and a personal email address; none of these are recorded (public role only). Continuous service from 2014 to 2026 is not confirmed by an allowed source."
+    "note": "Three details match; a source with personal details was not used. Continuous service from 2014 to 2026 is not confirmed by an allowed source."
   },
   "court_matters": [],
   "scandals": [],

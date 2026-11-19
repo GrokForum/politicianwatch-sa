@@ -20,7 +20,7 @@ DRAFT PROFILE — not published. Public role only. Every item carries an evidenc
 
 ## CV (public role)
 
-- **Position (2014-07-02):** First year in council: 2014. Won the City of Johannesburg ward 57 by-election for the DA on Wednesday 2 July 2014 (66.09% of the vote, as reported) · `Reported` — [source](https://www.citizen.co.za/southern-courier/news-headlines/2014/07/11/new-da-ward-57-councillor-faeeza-chame/), 2014-07-11 (retrieved 2026-11-17T11:29:46+02:00)
+- **Position (2014-07-02):** First year in council: 2014. Won the City of Johannesburg ward 57 by-election for the DA on 2 July 2014 (66% of the vote, as reported) · `Reported` — [source](https://iol.co.za/news/politics/2014-07-03-da-anc-react-to-by-elections/), 2014-07-03 (retrieved 2026-11-19T08:08:59+02:00)
 - **Position (2024-07-23):** Elected DA Region F whip in the Johannesburg caucus · `Reported` — [source](https://dagauteng.org.za/2024/07/johannesburg-region-caucus-elections-official-statement), 2024-07-23 (retrieved 2026-11-17, time not logged)
 
 ## Court matters
@@ -41,7 +41,7 @@ DRAFT PROFILE — not published. Public role only. Every item carries an evidenc
 
 ## Identity match (how sources were linked)
 
-- Name: 'Faeeza Chame' (DA 2024-07-23; Southern Courier 2014-07-11) matches the gazette exactly.
+- Name: 'Faeeza Chame' (DA 2024-07-23; IOL 2014-07-03) matches the gazette exactly.
 - Party and council: DA, City of Johannesburg (Johannesburg region caucus), in the gazette and both sources.
-- Ward: Southern Courier (2014-07-11) names her the elected DA ward 57 councillor; the gazette lists her for ward 57. (Ward boundaries have been redrawn since 2014; the number matches but the area may differ.)
-- Note: Three details match. The 2014 Southern Courier article also carries her age, suburb, family details, a personal phone number and a personal email address; none of these are recorded (public role only). Continuous service from 2014 to 2026 is not confirmed by an allowed source.
+- Ward: IOL (2014-07-03) and the Electoral Commission's results notice for the 2 July 2014 municipal by-elections name her as the DA winner of City of Johannesburg ward 57; the gazette lists her for ward 57. (Ward boundaries have been redrawn since 2014; the number matches but the area may differ.)
+- Note: Three details match; a source with personal details was not used. Continuous service from 2014 to 2026 is not confirmed by an allowed source.
