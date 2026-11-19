@@ -44,4 +44,4 @@ DRAFT PROFILE — not published. Public role only. Every item carries an evidenc
 - Name: 'Faeeza Chame' (DA 2024-07-23; IOL 2014-07-03) matches the gazette exactly.
 - Party and council: DA, City of Johannesburg (Johannesburg region caucus), in the gazette and both sources.
 - Ward: IOL (2014-07-03) and the Electoral Commission's results notice for the 2 July 2014 municipal by-elections name her as the DA winner of City of Johannesburg ward 57; the gazette lists her for ward 57. (Ward boundaries have been redrawn since 2014; the number matches but the area may differ.)
-- Note: Three details match. A 2014 local news report on the by-election contains personal details not recorded here; it is not cited (public role only). Continuous service from 2014 to 2026 is not confirmed by an allowed source.
+- Note: Three details match; a source with personal details was not used. Continuous service from 2014 to 2026 is not confirmed by an allowed source.
