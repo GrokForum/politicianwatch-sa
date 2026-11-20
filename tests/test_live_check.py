@@ -41,9 +41,17 @@ def site(tmp_path_factory) -> tuple[Path, dict]:
     return out, m
 
 
-def check(root: Path, expected: dict, *, published=True, now=NOW + timedelta(minutes=5), override=None):
+def check(root: Path, expected: dict, *, published=True, publish_enabled=True, now=NOW + timedelta(minutes=5), override=None):
     with _client(serve(root, override=override)) as c:
-        return run_checks(BASE, expected=expected, published=published, now=now, client=c, delay_s=0)
+        return run_checks(
+            BASE,
+            expected=expected,
+            published=published,
+            publish_enabled=publish_enabled,
+            now=now,
+            client=c,
+            delay_s=0,
+        )
 
 
 def test_good_live_site_is_all_green(site) -> None:
@@ -51,15 +59,57 @@ def test_good_live_site_is_all_green(site) -> None:
     checks = check(root, m)
     assert checks and all(c["ok"] for c in checks), [c for c in checks if not c["ok"]]
     pages = next(c for c in checks if "live pages pass" in c["name"])
-    assert pages["name"].startswith("26 live pages")  # home + privacy + 24 profiles
+    assert "live pages pass" in pages["name"]
+    # home + privacy + every active profile page
+    from pwatch.profiles import load_profile_dir
+    from pwatch.settings import PROFILES_DIR
+
+    n = 2 + len(load_profile_dir(PROFILES_DIR))
+    assert pages["name"].startswith(f"{n} live pages"), pages["name"]
 
 
 def test_placeholder_site_is_red(tmp_path: Path, site) -> None:
     _, m = site
     ph = tmp_path / "ph"
     build_site(ph, now=NOW)
-    failed = {c["name"] for c in check(ph, m, published=False) if not c["ok"]}
+    failed = {c["name"] for c in check(ph, m, published=False, publish_enabled=True) if not c["ok"]}
     assert "live profile count matches tonight's build" in failed
+
+
+def test_pre_publish_placeholder_is_not_red(tmp_path: Path, site) -> None:
+    """When publishing is off, live 0 vs build N is reported as pre-publish and stays green."""
+    from pwatch.live_check import record
+
+    _, m = site
+    ph = tmp_path / "ph"
+    build_site(ph, now=NOW)
+    checks = check(ph, m, published=False, publish_enabled=False)
+    failed = [c for c in checks if not c["ok"]]
+    assert failed == [], failed
+    count = next(c for c in checks if c["name"] == "live profile count matches tonight's build")
+    assert count["ok"] and count["detail"].startswith("pre-publish")
+    rec = record(
+        url=BASE,
+        checks=checks,
+        build_result="success",
+        publish_result="skipped",
+        publish_enabled=False,
+        expected=m,
+        dq={"status": "pass", "failure_count": 0, "warnings": []},
+        run_url=None,
+        now=NOW,
+    )
+    assert rec["result"] == "green" and rec["pre_publish"] is True
+
+
+def test_pre_publish_stale_placeholder_is_not_red(tmp_path: Path, site) -> None:
+    _, m = site
+    ph = tmp_path / "ph"
+    build_site(ph, now=NOW)
+    checks = check(ph, m, published=False, publish_enabled=False, now=NOW + timedelta(hours=49))
+    assert all(c["ok"] for c in checks), [c for c in checks if not c["ok"]]
+    fresh = next(c for c in checks if "fresh" in c["name"])
+    assert fresh["detail"].startswith("pre-publish")
 
 
 @pytest.mark.parametrize(

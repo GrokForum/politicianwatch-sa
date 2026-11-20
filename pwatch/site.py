@@ -324,8 +324,10 @@ def check_site(
     """Fail-closed checks on a built site directory.
 
     Every page: draft-site rules (`check_page`) and claim rules (`check_claims`: label shown, http(s)
-    source link and source date on every non-Unknown, non-withheld claim, RoR line on adverse items). Fails if a withheld-source URL appears in the built output. With
-    `profiles`, also coverage: every active profile and fact is rendered and no held profile is.
+    source link and source date on every non-Unknown, non-withheld claim, RoR line on adverse items). Fails if a withheld-source URL or title appears in the built output. With
+    `profiles`, also coverage: every active profile and fact is rendered and no held profile is,
+    and every Withheld (POPIA) fact has a matching private-register entry. The missing-register
+    guard keys off those fact labels, not the wording on the privacy page.
     """
     from pwatch.site_profiles import check_claims, check_coverage
 
@@ -349,8 +351,10 @@ def check_site(
         fails += check_claims(str(p.relative_to(out)), html)
     if profiles is not None:
         fails += check_coverage(out, profiles, held or [])
-    from pwatch.withheld import check_tree_for_withheld_urls
+    from pwatch.withheld import check_tree_for_withheld_urls, check_withheld_register_for_profiles
 
+    if profiles is not None:
+        fails += check_withheld_register_for_profiles(profiles)
     fails += check_tree_for_withheld_urls(out)
     if (out / "private").exists():
         fails.append("site output must not contain the private/ directory")

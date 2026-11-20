@@ -12,7 +12,7 @@
   "executive_mayor": {
     "value": null,
     "label": "Unknown",
-    "note": "The council elects an executive mayor at its first sitting, expected around 19 November 2026. No mayor had been elected as of 15 November 2026.",
+    "note": "The council elects an executive mayor at its first sitting, expected around 19 November 2026. No mayor had been elected as of 15 November 2026. Re-checked 20 November 2026: the City's councillor, Executive Mayor / Mayoral Committee and Office of the Speaker directory pages returned HTTP 404. Not guessed.",
     "source_url": null,
     "source_date": null,
     "retrieved_at": "2026-11-15T16:10:03+00:00"

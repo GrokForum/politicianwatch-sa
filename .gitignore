@@ -31,3 +31,7 @@ data/raw/profile-sources/
 # OS
 .DS_Store
 .popia-names.local
+
+# Collector TLS/certificate error evidence (source, URL, error). Not committed.
+data/raw/**/tls-errors.jsonl
+data/raw/tls-errors.jsonl

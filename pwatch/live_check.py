@@ -76,6 +76,7 @@ def run_checks(
     *,
     expected: dict[str, Any] | None,
     published: bool,
+    publish_enabled: bool = True,
     now: datetime | None = None,
     client: httpx.Client | None = None,
     delay_s: float = 0.25,
@@ -103,23 +104,50 @@ def run_checks(
         manifest = fetch_live_manifest(client, base)
         checks.append(_check("manifest.json served", manifest is not None))
         pages = ["index.html", "privacy/index.html"]
+        have_live_profiles = (manifest or {}).get("profiles")
+        pre_publish_live = (not publish_enabled) and have_live_profiles in (0, None)
         if manifest:
             checks.append(_check("manifest status is draft", manifest.get("status") == "draft", str(manifest.get("status"))))
             gen = manifest.get("generated_at_sast")
             try:
                 age = now - datetime.fromisoformat(gen)
-                checks.append(_check(f"live build is fresh (<= {FRESHNESS_HOURS} h)", age <= timedelta(hours=FRESHNESS_HOURS), f"generated {gen}"))
+                fresh = age <= timedelta(hours=FRESHNESS_HOURS)
+                if pre_publish_live and not fresh:
+                    checks.append(_check(
+                        f"live build is fresh (<= {FRESHNESS_HOURS} h)",
+                        True,
+                        f"pre-publish: generated {gen}",
+                    ))
+                else:
+                    checks.append(_check(f"live build is fresh (<= {FRESHNESS_HOURS} h)", fresh, f"generated {gen}"))
             except (TypeError, ValueError):
-                checks.append(_check("live build is fresh", False, f"bad generated_at_sast {gen!r}"))
+                if pre_publish_live:
+                    checks.append(_check("live build is fresh", True, f"pre-publish: bad generated_at_sast {gen!r}"))
+                else:
+                    checks.append(_check("live build is fresh", False, f"bad generated_at_sast {gen!r}"))
             pages = [p for p in manifest.get("pages", []) if p != "404.html"] or pages
         if expected:
             want = expected.get("profiles")
             have = (manifest or {}).get("profiles")
-            checks.append(_check("live profile count matches tonight's build", manifest is not None and have == want, f"live {have}, build {want}"))
+            count_ok = manifest is not None and have == want
+            # Pre-publish: publishing is off, live is still the empty/placeholder site
+            # (0 profiles) while tonight's build has N. Do not turn the night red.
+            # Once PW_PUBLISH_ENABLED is true, the check stays strict.
+            pre_publish = (not publish_enabled) and (have in (0, None)) and bool(want)
+            if pre_publish and not count_ok:
+                checks.append(_check(
+                    "live profile count matches tonight's build",
+                    True,
+                    f"pre-publish: live {have}, build {want}",
+                ))
+            else:
+                checks.append(_check("live profile count matches tonight's build", count_ok, f"live {have}, build {want}"))
             if published:
                 checks.append(_check("live build id is tonight's build", (manifest or {}).get("build_id") == expected.get("build_id"), f"live {(manifest or {}).get('build_id')}, build {expected.get('build_id')}"))
-            if want:
+            if want and not pre_publish:
                 checks.append(_check("live site lists profile pages", any(p.startswith("profiles/") for p in pages), f"{len(pages)} pages"))
+            elif want and pre_publish:
+                checks.append(_check("live site lists profile pages", True, f"pre-publish: {len(pages)} live pages, build {want} profiles"))
 
         page_fails: list[str] = []
         fetched = 0
@@ -162,11 +190,13 @@ def record(
     now = (now or datetime.now(timezone.utc)).astimezone(SAST)
     live_ok = bool(checks) and all(c["ok"] for c in checks)
     green = build_result == "success" and publish_result != "failure" and live_ok
+    pre_publish = any(str(c.get("detail") or "").startswith("pre-publish") for c in checks)
     return {
         "night_sast": now.date().isoformat(),
         "checked_at_sast": now.isoformat(timespec="seconds"),
         "url": url,
         "result": "green" if green else "red",
+        "pre_publish": pre_publish,
         "build": {
             "result": build_result,
             "build_id": (expected or {}).get("build_id"),

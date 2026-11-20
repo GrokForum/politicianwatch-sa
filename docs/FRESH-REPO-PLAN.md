@@ -6,7 +6,7 @@ Status: **plan only**. Nothing here creates a repository, pushes, publishes or c
 
 ### Remaining scope we would call done
 
-1. **Profiles.** Every active CV profile passes `pwatch dq` with zero failures. Each fact is labelled and dated, with an allowed source, Unknown (no source found), or Withheld (POPIA) (a source exists but is not published here), and has public-role information only. The owner decides the pilot's target number (24 of 270 today) and records it. Held profiles stay held or return only through a change record.
+1. **Profiles.** Every active CV profile passes `pwatch dq` with zero failures. Each fact is labelled and dated, with an allowed source, Unknown (no source found), or Withheld (POPIA) (a source exists but is not published here), and has public-role information only. The owner decides the pilot's target number (269 active of 270 as of CHG-PW-013, plus one held) and records it. Held profiles stay held or return only through a change record.
 2. **Council offices.** The 2026–2031 executive mayor, speaker and mayoral committee are recorded from an allowed source, or kept Unknown with a dated note.
 3. **Right of reply.** For every adverse item (6 items on 4 profiles today, all "Right of reply: pending"), the owner has recorded the state: sent and date, reply received, or a decision not to send. No adverse item goes public without that record.
 4. **Site.** The DRAFT banner, privacy and corrections page (privacy@grokforum.site), 404, noindex meta and robots `Disallow: /` are all present. `pwatch site check` passes. Publishing has been turned on only after the owner's GO (CHG-PW-008 gate).
@@ -28,6 +28,35 @@ Status: **plan only**. Nothing here creates a repository, pushes, publishes or c
 - [ ] The secret-scan and workflow scan (gitleaks, actionlint, zizmor) are clean on `main`.
 
 The streak restarts at zero after any red night, any POPIA hit, or any unreviewed change on `main`.
+
+### Progress as of 20 November 2026 (CHG-PW-013)
+
+This is a status note, not a claim that the pilot is finished or that the 14-day streak has started.
+
+| End-of-road item | State |
+|---|---|
+| 1. Profiles | **Partial.** 269 active CV profiles pass `pwatch dq` (name, party, seat, council Confirmed from Gazette 55741; other CV fields Unknown or, for one profile, Withheld (POPIA)). One profile stays on hold. The owner has not yet recorded a new target number. |
+| 2. Council offices | **Open.** Executive mayor, speaker and MMC remain Unknown. On 20 Nov 2026 the City's councillor / mayor / speaker directory pages returned HTTP 404. Not guessed. |
+| 3. Right of reply | **Open.** 6 adverse items on 4 of the original profiles, all still "Right of reply: pending". The owner has not recorded sent / reply / decision-not-to-send. The 245 new profiles have no adverse items. |
+| 4. Site | **In place on the current site** (DRAFT banner, privacy page, 404, noindex, robots `Disallow: /`, `pwatch site check`). Publishing was turned on by the owner (20 Nov 2026) for the then-24 profiles; this change does not itself publish the 245 new pages. |
+| 5. Operations | **In place.** The nightly runs on `main`, records to `nightly-log`, and live-check verifies the deployed build. CHG-PW-013 stops a pre-publish night (live 0, build N, publish disabled) from going red; the check stays strict once publishing is on. |
+| 6. Records | **In place as a practice** (RFC, change-log, STATUS, reviewer PASS, owner GO). Ongoing. |
+| 7. 14-day stability checklist | **Open.** The items that already have tooling are marked below; the 14-night streak is not claimed. |
+
+14-day checklist — tooling vs streak:
+
+- [ ] Nightly green every night with one `nightly-log` record per night (streak not yet 14).
+- [ ] Live checks green (pages 200, build id, DRAFT, noindex, robots, privacy). In place as a check; streak not yet 14.
+- [ ] Zero POPIA / personal-information scan hits on the built site and the tree. Must be re-run each night; not ticked here.
+- [x] Tooling for `pwatch dq`, `pwatch render --check` and `pwatch site check` is in place and passing on this change. The 14-night repetition is not ticked.
+- [ ] Every claim's source link resolves, or is flagged. Still needs the link-check in LATER.md; until then it is a manual weekly check.
+- [x] Tooling for the DRAFT banner, noindex meta and robots `Disallow: /` is in place. The 14-night repetition is not ticked.
+- [ ] No unreviewed change on `main` (process in place; ongoing).
+- [ ] Right-of-reply state recorded by the owner (still pending).
+- [ ] Unexplained incidents resolved; no open high or medium risk without an owner decision (ongoing).
+- [ ] gitleaks, actionlint and zizmor clean on `main` (checked on this change's workflow if it changed; streak not ticked).
+
+**Withheld-register contract for a fresh public repository.** Site build and site check require a private register only when a profile fact is labelled Withheld (POPIA). The words on the privacy page do not by themselves require a register (`WITHHELD_REGISTER_REQUIRED`, default True; the check is keyed off fact labels). A seed that does not carry `private/` must omit Withheld facts, or point `WITHHELD_SOURCES_PATH` at a sidecar store outside the public tree. Where that sidecar lives is still a LATER item.
 
 ## 2. What must NOT carry over to a fresh public repository
 

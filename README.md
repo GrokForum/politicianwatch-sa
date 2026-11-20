@@ -2,9 +2,9 @@
 
 A **neutral, sourced** public register of South African elected representatives. Every fact carries an evidence label (`Confirmed`, `Reported`, `Alleged`, `Disputed`, `Unknown`, or `Withheld (POPIA)`) and, unless it is Unknown or Withheld (POPIA), a dated source URL. Unknown means no source was found. Withheld (POPIA) means a source exists but carries personal details, so it is not published here. Missing values are explicit `null`s.
 
-This repository is private. Nothing here is published until a named change is reviewed and the owner gives a GO.
+This repository is public. Sites stay labelled DRAFT. Nothing new is published until a named change is reviewed and the owner gives a GO.
 
-**Pilot:** City of Johannesburg, 2026 local government elections — 270 seats, 135 wards. The executive mayor is **Unknown** (expected around 19 November 2026).
+**Pilot:** City of Johannesburg, 2026 local government elections — 270 seats, 135 wards. The executive mayor is **Unknown** (first sitting expected around 19 November 2026; City directory pages returned 404 on 20 November 2026 — not guessed). **269** active CV profiles and 1 on hold, of 270 gazetted seats.
 
 ## Contents
 
@@ -29,7 +29,7 @@ uv sync                          # Python 3.13; pinned deps in uv.lock
 uv run pytest -q                 # synthetic fixture tests
 uv run pwatch dq                 # DQ gate on the Joburg roster and CV profiles (exit 2 = not releasable)
 uv run pwatch render --check     # CV profile markdown renderings are current
-uv run pwatch site build --out _site   # static draft site (24 active profiles, never _hold/); publishes nothing
+uv run pwatch site build --out _site   # static draft site (269 active profiles, never _hold/); publishes nothing
 uv run pwatch site check _site         # exit 2 if a page lacks noindex/DRAFT/privacy link, or a claim lacks a label, source link or date
 uv run pwatch live-check --out r.json   # check the deployed site; one nightly record (exit 2 = red). Nightly: .github/workflows/nightly.yml (publish gated, see CHG-PW-008)
 ```
