@@ -6,7 +6,7 @@ Status: **plan only**. Nothing here creates a repository, pushes, publishes or c
 
 ### Remaining scope we would call done
 
-1. **Profiles.** Every active CV profile passes `pwatch dq` with zero failures. Each fact is labelled and dated, with an allowed source, Unknown (no source found), or Withheld (POPIA) (a source exists but is not published here), and has public-role information only. The owner decides the pilot's target number (269 active of 270 as of CHG-PW-013, plus one held) and records it. Held profiles stay held or return only through a change record.
+1. **Profiles.** Every active CV profile passes `pwatch dq` with zero failures. Each fact is labelled and dated, with an allowed source, Unknown (no source found), or Withheld (POPIA) (a source exists but is not published here), and has public-role information only. The owner recorded the pilot's target as MET on 20 Nov 2026: 269 active of 270, plus one held. Held profiles stay held or return only through a change record.
 2. **Council offices.** The 2026–2031 executive mayor, speaker and mayoral committee are recorded from an allowed source, or kept Unknown with a dated note.
 3. **Right of reply.** For every adverse item (6 items on 4 profiles today, all "Right of reply: pending"), the owner has recorded the state: sent and date, reply received, or a decision not to send. No adverse item goes public without that record.
 4. **Site.** The DRAFT banner, privacy and corrections page (privacy@grokforum.site), 404, noindex meta and robots `Disallow: /` are all present. `pwatch site check` passes. Publishing has been turned on only after the owner's GO (CHG-PW-008 gate).
@@ -35,7 +35,7 @@ This is a status note, not a claim that the pilot is finished or that the 14-day
 
 | End-of-road item | State |
 |---|---|
-| 1. Profiles | **Partial.** 269 active CV profiles pass `pwatch dq` (name, party, seat, council Confirmed from Gazette 55741; other CV fields Unknown or, for one profile, Withheld (POPIA)). One profile stays on hold. The owner has not yet recorded a new target number. |
+| 1. Profiles | **Pilot target MET** (owner, 20 Nov 2026): 269 active + 1 on hold, of 270 gazetted seats. Every active profile passes `pwatch dq` (name, party, seat, council Confirmed from Gazette 55741; other CV fields Unknown or, for one profile, Withheld (POPIA)). Filling remaining Unknown fields is depth work for the next milestone (`docs/ROADMAP.md`), not a miss of the target. The held profile stays held. |
 | 2. Council offices | **Open.** Executive mayor, speaker and MMC remain Unknown. On 20 Nov 2026 the City's councillor / mayor / speaker directory pages returned HTTP 404. Not guessed. |
 | 3. Right of reply | **Open.** 6 adverse items on 4 of the original profiles, all still "Right of reply: pending". The owner has not recorded sent / reply / decision-not-to-send. The 245 new profiles have no adverse items. |
 | 4. Site | **In place on the current site** (DRAFT banner, privacy page, 404, noindex, robots `Disallow: /`, `pwatch site check`). Publishing was turned on by the owner (20 Nov 2026) for the then-24 profiles; this change does not itself publish the 245 new pages. |

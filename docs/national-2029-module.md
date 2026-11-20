@@ -2,7 +2,7 @@
 
 Status: **plan only** (CHG-PW-013). No collector, profile, schema change or site page for national MPs, NCOP delegates or MPLs is in this change. The Johannesburg 2026 local-government pilot remains the built coverage.
 
-This note records sources that were reached on 20 November 2026 (SAST) so a later named change can use them, after the owner's confirmation of any new `data/sources.json` rows and a POPIA review of each fact.
+This note records sources that were reached on 20 November 2026 (SAST) so a later named change can use them, after a POPIA review of each fact. Parliament (`parliament.gov.za`) and PMG (`pmg.org.za`, `static.pmg.org.za`) were added to `data/sources.json` as tier 1 on the owner's decision of 20 November 2026.
 
 ## Why 2029, not now
 

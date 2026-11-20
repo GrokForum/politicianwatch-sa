@@ -5,7 +5,7 @@
 | Requested by / date (SAST) | Owner direction, 20 November 2026 at 20:21 SAST, relayed by the orchestrator: take the website to its next major milestone (fold in the source pack, clear the LATER items from the #11 reviews, expand coverage beyond the first 24 Joburg profiles, and work through the end-of-road plus 14-green-nights checklist). |
 | Author / builder | author bot |
 | Reviewers | two reviewers |
-| Change authority | Owner (GO on the exact head to push or merge). This branch is local only until that GO. |
+| Change authority | Owner (GO on the exact head to merge). Draft [PR #13](https://github.com/GrokForum/politicianwatch-sa/pull/13) is open; it is not merged. |
 | Type | Normal — medium (gate fixes, source notes, and 245 new gazette-only CV profiles) |
 | Environment | DEV + TEST profiles. Publishes nothing: the publish gate and `PW_PUBLISH_ENABLED` are unchanged by this change, and no push, merge or deploy is made here. |
 | CIs affected | CI-009 Joburg CV profiles; DQ and site-check withheld-register gates; CI-010 draft-site builder (coverage of the new profiles); live-check (pre-publish nights); collectors (TLS error logging) |
@@ -41,7 +41,7 @@ The 24 existing CV profiles (facts, sources, withheld entries, adverse items and
 
 ## Risks
 
-Medium-low. The 245 new profiles contain only public-role facts already in the committed gazette roster. The withheld-register change is fail-closed and removes a false failure that would have bitten a fresh repo. Live-check is looser only while publishing is off; it stays strict once the gate is on. TLS errors are more visible, not less. New source domains are documented but not added to `data/sources.json` until the owner confirms them.
+Medium-low. The 245 new profiles contain only public-role facts already in the committed gazette roster. The withheld-register change is fail-closed and removes a false failure that would have bitten a fresh repo. Live-check is looser only while publishing is off; it stays strict once the gate is on. TLS errors are more visible, not less. New source domains were documented first, then added to `data/sources.json` as tier 1 after the owner's decision of 20 Nov 2026: "Yes, add the five official sources."
 
 ## Seen, not touched
 
@@ -59,8 +59,17 @@ Recorded in the STATUS history row and the PR body (local, not opened): `uv run 
 
 ## How to revert
 
-Before merge: delete the local branch (nothing has been pushed). After a future merge: `git revert <merge commit>`; `main` returns to `df258cff`. The 245 new profile files come out with the revert.
+Before merge: close the PR or leave it unmerged. After merge: `git revert <merge commit>`; `main` returns to `df258cff`. The 245 new profile files and the registry additions come out with the revert.
+
+## Follow-up (20 Nov 2026, after draft PR #13 opened)
+
+On the owner's GO, head `f1499b837e05193912cbce6d8695f98343c06c43` was pushed and draft PR #13 was opened. The owner then decided, verbatim: "Yes, add the five official sources" and "Pilot target met." This follow-up records those decisions:
+
+1. The five official sources are in `data/sources.json` as tier 1, verified 2026-11-20: PMG (`pmg.org.za`, `static.pmg.org.za`), National Treasury municipal data (`municipaldata.treasury.gov.za`), Parliament (`parliament.gov.za`), Justice (`justice.gov.za`) and the Presidency (`thepresidency.gov.za`). Terms and POPIA notes are in `docs/allowed-sources.md`.
+2. The Johannesburg pilot target is recorded as MET: 269 active CV profiles plus 1 on hold (owner, 20 Nov 2026), in STATUS, this RFC, the change log and `docs/FRESH-REPO-PLAN.md`. Filling remaining Unknown CV fields, council offices and right-of-reply states is depth work for the next milestone, not a miss of the target.
+3. Stale status lines now state the real state: draft PR #13 is open and is not merged; merge needs the owner's GO naming the exact head.
+4. The next milestone is planned (docs only) in `docs/ROADMAP.md`.
 
 ## Approval
 
-Plain PASS from two reviewers on the same head, then the owner's GO naming that head before any push, and a further GO before merge. Outcome: pending (local branch only).
+Draft [PR #13](https://github.com/GrokForum/politicianwatch-sa/pull/13) is open and is not merged. A plain PASS from two reviewers on the same head, then the owner's GO naming that head, is required to merge.
