@@ -13,6 +13,7 @@ from pwatch.withheld import (
     check_withheld_register_for_profiles,
     normalize_title,
     normalize_url,
+    title_is_leaked,
 )
 
 
@@ -128,7 +129,40 @@ def test_register_guard_can_be_disabled(tmp_path: Path) -> None:
 def test_title_leak_catches_tag_split_and_en_dash(tmp_path: Path) -> None:
     site = tmp_path / "site"
     site.mkdir()
-    (site / "index.html").write_text("<p>See the Exam<b>ple inter</b>view — full text.</p>", encoding="utf-8")
+    # The title is its own phrase (tag-split, en dash). It must not rely on a raw substring
+    # of a longer clause.
+    (site / "index.html").write_text("<p>Exam<b>ple inter</b>view.</p><p>Example–interview.</p>", encoding="utf-8")
     entries = [{"source_url": "https://news.example.test/x", "title": "Example interview"}]
     fails = check_tree_for_withheld_urls(site, entries)
     assert any("withheld-source title" in f for f in fails)
+
+
+def test_title_leak_uses_phrase_boundaries_not_a_raw_substring(tmp_path: Path) -> None:
+    """A short register title must not match inside a longer clause (CHG-PW-013 review)."""
+    needle = normalize_title("The Citizen")
+    assert not title_is_leaked(needle, "a 2019 The Citizen interview")
+    # True positives: the title as a whole phrase, including with punctuation around it.
+    assert title_is_leaked(needle, "The Citizen")
+    assert title_is_leaked(needle, "The Citizen.")
+    assert title_is_leaked(needle, "See also: The Citizen.")
+
+    site = tmp_path / "site"
+    site.mkdir()
+    entries = [{"source_url": "https://news.example.test/held/private", "title": "The Citizen"}]
+    (site / "ok.html").write_text("<p>a 2019 The Citizen interview</p>", encoding="utf-8")
+    assert check_tree_for_withheld_urls(site, entries) == []
+    (site / "leak.html").write_text("<p>The Citizen.</p>", encoding="utf-8")
+    fails = check_tree_for_withheld_urls(site, entries)
+    assert any("withheld-source title" in f for f in fails), fails
+
+
+def test_url_leak_strips_html_tags_in_the_haystack(tmp_path: Path) -> None:
+    site = tmp_path / "site"
+    site.mkdir()
+    (site / "index.html").write_text(
+        "<p>https://news.example.test/held/<b>private</b></p>",
+        encoding="utf-8",
+    )
+    entries = [{"source_url": "https://news.example.test/held/private", "title": "Unrelated unique title xyz"}]
+    fails = check_tree_for_withheld_urls(site, entries)
+    assert any("withheld-source URL" in f for f in fails), fails

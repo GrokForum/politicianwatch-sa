@@ -122,6 +122,33 @@ def normalize_title(text: str) -> str:
     return " ".join(s.split())
 
 
+# Punctuation ends a phrase. A register title must match a whole phrase, not a
+# run of words inside a longer clause (for example "The Citizen" must not match
+# "a 2019 The Citizen interview").
+_PHRASE_BREAKS = re.compile("[" + re.escape(".!?;:()[]{},") + "'\"“”‘’«»]+")
+
+
+def title_phrases(text: str) -> list[str]:
+    """Normalise text and split it into punctuation-bounded phrases."""
+    s = _strip_html(text or "")
+    s = unicodedata.normalize("NFKC", s)
+    s = s.translate(_HYPHEN_FOLD)
+    s = unescape(s).casefold().replace("-", " ")
+    out: list[str] = []
+    for part in _PHRASE_BREAKS.split(s):
+        phrase = " ".join(part.split())
+        if phrase:
+            out.append(phrase)
+    return out
+
+
+def title_is_leaked(needle: str, haystack: str) -> bool:
+    """True if the already-normalised register title equals a phrase in haystack."""
+    if not needle:
+        return False
+    return needle in title_phrases(haystack)
+
+
 def _has_public_url(fact: dict[str, Any]) -> bool:
     if str(fact.get("source_url") or "").strip():
         return True
@@ -271,9 +298,10 @@ def check_tree_for_withheld_urls(root: Path, entries: list[dict[str, Any]] | Non
     This is the leak check only. Missing-register coverage is `check_withheld_register_for_profiles`,
     which must be given the profiles so it can key off fact labels rather than HTML wording.
 
-    URLs are matched after casefold, repeated unquote, html.unescape, and stripping the scheme,
-    a leading www. and a trailing slash. Titles are matched after tag-stripping, NFKC, hyphen
-    folding, casefold, unescape and whitespace normalisation.
+    URLs are matched after HTML tags are stripped, then casefold, repeated unquote, html.unescape,
+    and stripping the scheme, a leading www. and a trailing slash. Titles are matched after tag-stripping, NFKC, hyphen
+    folding, casefold, unescape and whitespace normalisation, then compared as a whole
+    punctuation-bounded phrase (not as a raw substring).
     """
     if not root.exists():
         return []
@@ -289,14 +317,14 @@ def check_tree_for_withheld_urls(root: Path, entries: list[dict[str, Any]] | Non
         if text is None:
             continue
         rel = fp.name if root.is_file() else str(fp.relative_to(root))
-        url_haystack = _decode_text(text).casefold()
+        # Strip tags so a URL split across elements still matches, then decode and casefold.
+        url_haystack = _decode_text(_strip_html(text)).casefold()
         for needle in url_needles:
             if needle in url_haystack:
                 failures.append(f"{rel}: built output contains a withheld-source URL")
                 break
-        title_haystack = normalize_title(text)
         for needle in title_needles:
-            if needle in title_haystack:
+            if title_is_leaked(needle, text):
                 failures.append(f"{rel}: built output contains a withheld-source title")
                 break
     return failures

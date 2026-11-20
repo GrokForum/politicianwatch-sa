@@ -180,3 +180,27 @@ def test_record_verdict_and_log(tmp_path: Path, site) -> None:
     write_record(green, None, log)
     lines = log.read_text(encoding="utf-8").splitlines()
     assert len(lines) == 2 and json.loads(lines[0])["result"] == "green"
+
+
+
+def test_publish_enabled_defaults_are_false_and_aligned(tmp_path: Path, site) -> None:
+    """CLI --publish-enabled and run_checks both default to False (fail closed / aligned)."""
+    import inspect
+
+    from pwatch.cli import build_parser
+    from pwatch.live_check import run_checks
+    from pwatch.site import build_site
+
+    assert inspect.signature(run_checks).parameters["publish_enabled"].default is False
+    ns = build_parser().parse_args(["live-check", "--url", BASE])
+    assert ns.publish_enabled == "false"
+
+    _, m = site
+    ph = tmp_path / "ph"
+    build_site(ph, now=NOW)
+    # Omitting publish_enabled must match the CLI default: pre-publish, not red.
+    with _client(serve(ph)) as c:
+        checks = run_checks(BASE, expected=m, published=False, now=NOW + timedelta(minutes=5), client=c, delay_s=0)
+    assert all(c["ok"] for c in checks), [c for c in checks if not c["ok"]]
+    count = next(c for c in checks if c["name"] == "live profile count matches tonight's build")
+    assert count["detail"].startswith("pre-publish")

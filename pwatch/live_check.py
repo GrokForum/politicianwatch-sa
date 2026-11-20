@@ -76,7 +76,7 @@ def run_checks(
     *,
     expected: dict[str, Any] | None,
     published: bool,
-    publish_enabled: bool = True,
+    publish_enabled: bool = False,  # aligned with CLI default "false"; omit for pre-publish, True stays strict
     now: datetime | None = None,
     client: httpx.Client | None = None,
     delay_s: float = 0.25,

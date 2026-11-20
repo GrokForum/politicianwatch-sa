@@ -70,6 +70,16 @@ On the owner's GO, head `f1499b837e05193912cbce6d8695f98343c06c43` was pushed an
 3. Stale status lines now state the real state: draft PR #13 is open and is not merged; merge needs the owner's GO naming the exact head.
 4. The next milestone is planned (docs only) in `docs/ROADMAP.md`.
 
+## Review round (PR #13)
+
+Fixes from the PR review, on top of `3c37427cfbe59d8844e236c721b73c9691293d86` (that commit is left as it is):
+
+1. Title leak matching uses a punctuation-bounded phrase match on the normalised text, not a raw substring. "a 2019 The Citizen interview" does not match the register title "The Citizen". A title that stands as its own phrase still matches.
+2. Stale status lines were already corrected in `3c37427c` (STATUS current row, this RFC change-authority row, change-log outcome) and are unchanged here.
+3. `cmd_site_build` has a test that fails if the `leak_fails` handling is removed.
+4. The URL leak haystack strips HTML tags before the URL guard runs, so a URL split across elements is still caught.
+5. `run_checks(publish_enabled=...)` now defaults to `False`, matching the CLI `--publish-enabled` default of `"false"`. Omitting the flag is pre-publish (0 vs N is not red). Passing `True` stays strict.
+
 ## Approval
 
 Draft [PR #13](https://github.com/GrokForum/politicianwatch-sa/pull/13) is open and is not merged. A plain PASS from two reviewers on the same head, then the owner's GO naming that head, is required to merge.
