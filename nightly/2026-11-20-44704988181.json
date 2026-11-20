@@ -1,0 +1,67 @@
+{
+  "night_sast": "2026-11-20",
+  "checked_at_sast": "2026-11-20T10:45:16+02:00",
+  "url": "https://politicianwatch.grokforum.site",
+  "result": "red",
+  "build": {
+    "result": "success",
+    "build_id": "B20261120T084500Z",
+    "commit": "df258cff054920d4dd749e4f0e6409287af25437",
+    "profiles": 24
+  },
+  "dq": {
+    "status": "pass",
+    "failure_count": 0,
+    "warnings": 0
+  },
+  "publish": {
+    "enabled": false,
+    "result": "skipped"
+  },
+  "live": {
+    "ok": false,
+    "checks": [
+      {
+        "name": "robots.txt is Disallow: /",
+        "ok": true,
+        "detail": "HTTP 200"
+      },
+      {
+        "name": "manifest.json served",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "manifest status is draft",
+        "ok": true,
+        "detail": "draft"
+      },
+      {
+        "name": "live build is fresh (<= 48 h)",
+        "ok": true,
+        "detail": "generated 2026-11-19T08:07:05+02:00"
+      },
+      {
+        "name": "live profile count matches tonight's build",
+        "ok": false,
+        "detail": "live 0, build 24"
+      },
+      {
+        "name": "live site lists profile pages",
+        "ok": false,
+        "detail": "2 pages"
+      },
+      {
+        "name": "2 live pages pass draft and claim rules",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "unknown path returns the DRAFT 404 page",
+        "ok": true,
+        "detail": "HTTP 404"
+      }
+    ]
+  },
+  "run_url": "https://github.com/GrokForum/politicianwatch-sa/actions/runs/44704988181"
+}
