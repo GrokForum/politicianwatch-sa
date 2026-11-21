@@ -2,12 +2,12 @@
 
 Status: **plan only** (CHG-PW-013 follow-up, 20 November 2026). Nothing here is an RFC, a collector, a profile fact or a publish step. Each item below needs its own named change and, where the rules require it, the owner's GO.
 
-The Johannesburg **pilot target is MET** (owner, 20 Nov 2026): 269 active CV profiles plus 1 on hold, of 270 gazetted seats. Draft [PR #13](https://github.com/GrokForum/politicianwatch-sa/pull/13) is open and is not merged. The end-of-road checklist and the 14-green-nights streak are still open; see `docs/FRESH-REPO-PLAN.md`.
+The Johannesburg **pilot target is MET** (owner, 20 Nov 2026): 269 active CV profiles plus 1 on hold, of 270 gazetted seats. [PR #13](https://github.com/GrokForum/politicianwatch-sa/pull/13) was squash-merged into `main` as `7c741222` on 21 Nov 2026 12:47 SAST (verified 25 Nov 2026). The end-of-road checklist and the 14-green-nights streak are still open; see `docs/FRESH-REPO-PLAN.md`.
 
 ## 1. Joburg depth
 
 - **Unknown CV fields.** Research positions, career and education for the 245 gazette-only stubs, and any remaining Unknowns on the original 24, from already-allowed sources only. Link a court or news item to a person only when at least two details match. A fact whose only source carries personal details is Withheld (POPIA), not Unknown.
-- **Council offices.** Record the 2026–2031 executive mayor, speaker, chief whip and mayoral committee when the City (or another allowed source) publishes them. The City directory pages returned HTTP 404 on 20 November 2026; do not guess. Municipal Money may lag the election and needs a POPIA filter (elected office-bearers' official channels only).
+- **Council offices.** Record the 2026–2031 executive mayor, speaker, chief whip and mayoral committee when the City (or another allowed source) publishes them. Re-checked 21 November 2026 (CHG-PW-014): the four City `/about_/Pages/...` directory URLs still returned HTTP 404. The Council legislature page (`/about_/government/Pages/Council/Council.aspx`, HTTP 200) states that information on the new Council will be published once it has been formally constituted. Do not guess. Municipal Money may lag the election and needs a POPIA filter (elected office-bearers' official channels only).
 - **Right of reply.** Six adverse items on four of the original profiles still show "Right of reply: pending". Drafts stay drafts; the owner sends them and records the state (sent and date, reply received, or a decision not to send). No adverse item should go to a non-draft site without that record.
 - **Held profile.** Return the one held profile to the batch only through a new change, once two identifying details exist in an allowed source.
 
@@ -17,7 +17,7 @@ After Joburg depth is in hand, expand by gazette to the other metropolitan munic
 
 ## 3. Fourteen green nights, end of road, and a fresh repository
 
-The 14-day stability checklist in `docs/FRESH-REPO-PLAN.md` is still open. The streak starts from a green night on `main` after this change is merged and the nightly has published the 269 profiles (the owner already turned publishing on for the earlier 24). A red night, a POPIA hit, or an unreviewed change on `main` restarts the count. The fresh public repository is seeded only when the owner judges the Joburg pilot at end of road and the 14 nights have been green, and only after a named change and a quoted GO. The do-not-carry list and the withheld-register sidecar decision remain as in that plan.
+The 14-day stability checklist in `docs/FRESH-REPO-PLAN.md` is still open. The streak starts from a green night on `main` after PR #13 merged (as `7c741222`) and the nightly has published the 269 profiles (the owner already turned publishing on for the earlier 24). A red night, a POPIA hit, or an unreviewed change on `main` restarts the count. The fresh public repository is seeded only when the owner judges the Joburg pilot at end of road and the 14 nights have been green, and only after a named change and a quoted GO. The do-not-carry list and the withheld-register sidecar decision remain as in that plan.
 
 ## 4. National and provincial 2029 module
 
