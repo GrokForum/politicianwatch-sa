@@ -115,3 +115,18 @@ class RawStore:
 
     def path_of(self, rf: RawFile) -> Path:
         return self.dir / rf.path
+
+    def record_tls_error(self, *, source_id: str, url: str, error: str) -> Path:
+        """Append a TLS/certificate error to gitignored evidence (tls-errors.jsonl)."""
+        now = self.now()
+        rec = {
+            "source_id": source_id,
+            "url": url,
+            "error": error,
+            "checked_at_utc": now.isoformat() if hasattr(now, "isoformat") else str(now),
+        }
+        dest = self.dir / "tls-errors.jsonl"
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        with dest.open("a", encoding="utf-8") as fh:
+            fh.write(json.dumps(rec, sort_keys=True) + "\n")
+        return dest

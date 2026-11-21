@@ -76,6 +76,16 @@ def test_committed_registry_is_valid_and_covers_committed_profiles(repo_root):
     assert tier_of("https://www.citizen.co.za/southern-courier/x", reg) == "2"
     assert tier_of("https://www.thecommonsense.co.za/x", reg) == "3"
     assert tier_of("https://thecapeindependent.com/x", reg) == "3"
+    # Five official sources added on the owner's decision, 20 Nov 2026 (CHG-PW-013).
+    for url, domain in (
+        ("https://api.pmg.org.za/member/", "pmg.org.za"),
+        ("https://static.pmg.org.za/55741_13-11_ElectoralComm_Final.pdf", "static.pmg.org.za"),
+        ("https://municipaldata.treasury.gov.za/api/cubes/officials/facts", "municipaldata.treasury.gov.za"),
+        ("https://www.parliament.gov.za/register-members-interests", "parliament.gov.za"),
+        ("https://www.justice.gov.za/tribunal/index.html", "justice.gov.za"),
+        ("https://www.thepresidency.gov.za/tso/siu-reports", "thepresidency.gov.za"),
+    ):
+        assert tier_of(url, reg) == "1", domain
     # every source URL in the committed CV profiles is in the registry
     import re
 

@@ -10,14 +10,26 @@ build, and must not be carried to a fresh public repository.
 from __future__ import annotations
 
 import json
+import logging
+import re
+import unicodedata
 from datetime import date
 from html import unescape
+from html.parser import HTMLParser
 from pathlib import Path
 from typing import Any
 from urllib.parse import unquote, urlparse
 
 from pwatch.schema import iter_adverse_items, iter_facts
-from pwatch.settings import WITHHELD_LABEL, WITHHELD_SOURCES_PATH
+from pwatch.settings import WITHHELD_LABEL, WITHHELD_REGISTER_REQUIRED, WITHHELD_SOURCES_PATH
+
+logger = logging.getLogger("pwatch.withheld")
+
+# Non-ASCII dashes/hyphens folded to ASCII hyphen (some already collapse under NFKC).
+_HYPHEN_FOLD = dict.fromkeys(
+    map(ord, "‐‑‒–—―−⁃﹘﹣－"),
+    "-",
+)
 
 REQUIRED_KEYS = ("slug", "fact", "source_url", "source_date", "title")
 
@@ -66,9 +78,75 @@ def normalize_url(text: str) -> str:
     return s.rstrip("/")
 
 
+class _HTMLText(HTMLParser):
+    """Collect visible text, so a title split across tags still matches."""
+
+    def __init__(self) -> None:
+        super().__init__(convert_charrefs=True)
+        self.parts: list[str] = []
+
+    def handle_data(self, data: str) -> None:
+        self.parts.append(data)
+
+    def handle_starttag(self, tag: str, attrs: list) -> None:
+        if tag in {"br", "p", "div", "li", "tr", "h1", "h2", "h3", "td", "th"}:
+            self.parts.append(" ")
+
+    def handle_endtag(self, tag: str) -> None:
+        if tag in {"p", "div", "li", "tr", "h1", "h2", "h3", "td", "th"}:
+            self.parts.append(" ")
+
+
+def _strip_html(text: str) -> str:
+    try:
+        parser = _HTMLText()
+        parser.feed(text or "")
+        parser.close()
+        return "".join(parser.parts)
+    except Exception:
+        logger.debug("HTML title parse failed; falling back to a tag strip", exc_info=True)
+        return re.sub(r"<[^>]+>", " ", text or "")
+
+
 def normalize_title(text: str) -> str:
-    """Casefold, unescape, and collapse whitespace."""
-    return " ".join(unescape(text or "").casefold().split())
+    """Casefold, strip tags, NFKC, fold hyphens, unescape, and collapse whitespace.
+
+    Hyphens (including non-ASCII dashes folded to ASCII hyphen) count as spaces, so
+    matching is whitespace-normalised rather than a raw substring of the original.
+    """
+    s = _strip_html(text or "")
+    s = unicodedata.normalize("NFKC", s)
+    s = s.translate(_HYPHEN_FOLD)
+    s = unescape(s).casefold()
+    s = s.replace("-", " ")
+    return " ".join(s.split())
+
+
+# Punctuation ends a phrase. A register title must match a whole phrase, not a
+# run of words inside a longer clause (for example "The Citizen" must not match
+# "a 2019 The Citizen interview").
+_PHRASE_BREAKS = re.compile("[" + re.escape(".!?;:()[]{},") + "'\"“”‘’«»]+")
+
+
+def title_phrases(text: str) -> list[str]:
+    """Normalise text and split it into punctuation-bounded phrases."""
+    s = _strip_html(text or "")
+    s = unicodedata.normalize("NFKC", s)
+    s = s.translate(_HYPHEN_FOLD)
+    s = unescape(s).casefold().replace("-", " ")
+    out: list[str] = []
+    for part in _PHRASE_BREAKS.split(s):
+        phrase = " ".join(part.split())
+        if phrase:
+            out.append(phrase)
+    return out
+
+
+def title_is_leaked(needle: str, haystack: str) -> bool:
+    """True if the already-normalised register title equals a phrase in haystack."""
+    if not needle:
+        return False
+    return needle in title_phrases(haystack)
 
 
 def _has_public_url(fact: dict[str, Any]) -> bool:
@@ -178,39 +256,59 @@ def _iter_tree_files(root: Path) -> list[Path]:
     return [p for p in root.rglob("*") if p.is_file() and ".git" not in p.parts]
 
 
+def check_withheld_register_for_profiles(
+    profiles: list[Any] | None,
+    *,
+    path: Path | None = None,
+    require_register: bool | None = None,
+) -> list[str]:
+    """Fail if a profile has a Withheld fact and the register is missing, empty, or has no entry.
+
+    Uses each profile's fact labels, not the words appearing in built HTML. The privacy
+    page always names the Withheld (POPIA) label, so an HTML scan would fail a fresh
+    repository that has no withheld facts and no private register.
+
+    When `require_register` is False (or `WITHHELD_REGISTER_REQUIRED` is False and the
+    argument is omitted), this check is skipped. That is for tests and for a documented
+    seed that has been confirmed to contain no Withheld facts. Default is
+    `WITHHELD_REGISTER_REQUIRED` (True).
+    """
+    if require_register is None:
+        require_register = WITHHELD_REGISTER_REQUIRED
+    if not require_register or not profiles:
+        return []
+    docs: list[dict[str, Any]] = []
+    for item in profiles:
+        if isinstance(item, tuple) and len(item) >= 2 and isinstance(item[1], dict):
+            docs.append(item[1])
+        elif isinstance(item, dict):
+            docs.append(item)
+    if not any(_profile_has_withheld(p) for p in docs):
+        return []
+    failures: list[str] = []
+    for profile in docs:
+        slug = str(profile.get("slug") or "profile")
+        failures.extend(check_withheld_facts(profile, slug, path=path))
+    return failures
+
+
 def check_tree_for_withheld_urls(root: Path, entries: list[dict[str, Any]] | None = None, *, path: Path | None = None) -> list[str]:
     """Fail if a withheld-source URL or title appears under root, after normalisation.
 
-    Also fails when built output has a Withheld (POPIA) fact and the register is missing or empty.
-    URLs are matched after casefold, repeated unquote, html.unescape, and stripping the scheme,
-    a leading www. and a trailing slash. Titles are matched after casefold, unescape and
-    collapsed whitespace.
+    This is the leak check only. Missing-register coverage is `check_withheld_register_for_profiles`,
+    which must be given the profiles so it can key off fact labels rather than HTML wording.
+
+    URLs are matched after HTML tags are stripped, then casefold, repeated unquote, html.unescape,
+    and stripping the scheme, a leading www. and a trailing slash. Titles are matched after tag-stripping, NFKC, hyphen
+    folding, casefold, unescape and whitespace normalisation, then compared as a whole
+    punctuation-bounded phrase (not as a raw substring).
     """
     if not root.exists():
         return []
     reg = register_path(path)
-    loaded_from_disk = entries is None
     rows = entries if entries is not None else load_withheld_sources(reg)
     files = _iter_tree_files(root)
     failures: list[str] = []
-
-    mentions_withheld = False
-    for fp in files:
-        text = _read_text(fp)
-        if text is None:
-            continue
-        if WITHHELD_LABEL in text:
-            mentions_withheld = True
-            break
-    if mentions_withheld and loaded_from_disk:
-        if not reg.is_file():
-            failures.append(
-                "built output has a Withheld (POPIA) fact but the private withheld-sources file is missing"
-            )
-        elif not rows:
-            failures.append(
-                "built output has a Withheld (POPIA) fact but the private withheld-sources file is empty"
-            )
 
     url_needles = sorted({normalize_url(str(e.get("source_url") or "")) for e in rows} - {""}, key=len, reverse=True)
     title_needles = sorted({normalize_title(str(e.get("title") or "")) for e in rows} - {""}, key=len, reverse=True)
@@ -219,14 +317,14 @@ def check_tree_for_withheld_urls(root: Path, entries: list[dict[str, Any]] | Non
         if text is None:
             continue
         rel = fp.name if root.is_file() else str(fp.relative_to(root))
-        url_haystack = _decode_text(text).casefold()
+        # Strip tags so a URL split across elements still matches, then decode and casefold.
+        url_haystack = _decode_text(_strip_html(text)).casefold()
         for needle in url_needles:
             if needle in url_haystack:
                 failures.append(f"{rel}: built output contains a withheld-source URL")
                 break
-        title_haystack = normalize_title(text)
         for needle in title_needles:
-            if needle in title_haystack:
+            if title_is_leaked(needle, text):
                 failures.append(f"{rel}: built output contains a withheld-source title")
                 break
     return failures

@@ -7,13 +7,17 @@ ElectionSePush is never fetched. SAFLII is never fetched automatically.
 
 from __future__ import annotations
 
+import logging
 import random
+import ssl
 import time
 from typing import Callable
 
 import httpx
 
 from pwatch.settings import USER_AGENT
+
+logger = logging.getLogger("pwatch.http")
 
 RETRY_STATUS = {429, 500, 502, 503, 504}
 BLOCK_STATUS = {401, 403, 451}
@@ -27,6 +31,31 @@ class SourceBlocked(FetchError):
     """Source refused access (auth/WAF). Never retried or circumvented."""
 
 
+class TlsError(FetchError):
+    """Certificate or TLS failure. Logged with source, URL and error; never swallowed."""
+
+    def __init__(self, url: str, error: str, *, source: str | None = None) -> None:
+        self.url = url
+        self.tls_error = error
+        self.source = source
+        prefix = f"source={source} " if source else ""
+        super().__init__(f"TLS error {prefix}url={url} error={error}")
+
+
+def is_tls_error(exc: BaseException | None) -> bool:
+    """True if this exception or its cause/context is a certificate or TLS failure."""
+    seen: set[int] = set()
+    cur: BaseException | None = exc
+    while cur is not None and id(cur) not in seen:
+        seen.add(id(cur))
+        name = type(cur).__name__
+        msg = str(cur)
+        if isinstance(cur, ssl.SSLError) or "ssl" in name.lower() or "TLS" in name or "certificate" in (name + msg).lower():
+            return True
+        cur = cur.__cause__ or cur.__context__
+    return False
+
+
 class Fetcher:
     def __init__(
         self,
@@ -35,10 +64,13 @@ class Fetcher:
         backoff: float = 2.0,
         sleep: Callable[[float], None] = time.sleep,
         transport: httpx.BaseTransport | None = None,
+        source: str | None = None,
     ) -> None:
         self.retries = retries
         self.backoff = backoff
         self.sleep = sleep
+        self.source = source
+        self.tls_errors: list[dict[str, str]] = []
         self.client = httpx.Client(
             timeout=timeout,
             follow_redirects=True,
@@ -61,6 +93,10 @@ class Fetcher:
             except (httpx.TransportError, httpx.TimeoutException) as exc:
                 last_err = f"{type(exc).__name__}: {exc}"
                 retry_after = None
+                if is_tls_error(exc):
+                    self._log_tls(url, last_err)
+                    # Certificate failures are not a transient timeout; do not keep retrying.
+                    raise TlsError(url, last_err, source=self.source) from exc
             else:
                 if resp.status_code in BLOCK_STATUS:
                     raise SourceBlocked(f"HTTP {resp.status_code} from {url}")
@@ -73,6 +109,11 @@ class Fetcher:
             if attempt < self.retries:
                 self.sleep(self._delay(attempt, retry_after))
         raise FetchError(f"{url} failed after {self.retries + 1} attempts: {last_err}")
+
+    def _log_tls(self, url: str, error: str) -> None:
+        record = {"source": self.source or "", "url": url, "error": error}
+        self.tls_errors.append(record)
+        logger.warning("TLS error source=%s url=%s error=%s", self.source or "-", url, error)
 
     def close(self) -> None:
         self.client.close()

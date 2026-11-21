@@ -203,7 +203,7 @@ def test_held_profiles_are_excluded_from_batch_dq_and_render(synthetic_profiles,
 
 
 def test_cli_dq_counts_active_and_held_profiles_in_repo(capsys):
-    """CHG-PW-003 fix 2: on the committed data, `pwatch dq` counts 24 active CV profiles and 1 on hold."""
+    """On the committed data, `pwatch dq` counts every active CV profile and 1 on hold."""
     import json
 
     from pwatch.cli import main
@@ -211,7 +211,7 @@ def test_cli_dq_counts_active_and_held_profiles_in_repo(capsys):
     code = main(["dq"])
     out = json.loads(capsys.readouterr().out)
     assert code == 0, out["failures"]
-    assert out["cv_profiles"] == 24
+    assert out["cv_profiles"] == 269
     assert out["cv_profiles_on_hold"] == 1
 
 

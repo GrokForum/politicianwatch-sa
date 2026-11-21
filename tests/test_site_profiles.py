@@ -110,15 +110,15 @@ def test_source_missing_in_data_fails_the_build_check(tmp_path: Path, synth) -> 
     assert any("[party]: claim has no http(s) source link" in f for f in check_site(out, profiles=broken))
 
 
-def test_real_profiles_build_24_pages_and_pass(tmp_path: Path) -> None:
+def test_real_profiles_build_pages_and_pass(tmp_path: Path) -> None:
     active = load_profile_dir(PROFILES_DIR)
     held_real = load_held_profiles(PROFILES_DIR)
-    assert len(active) == 24 and held_real
+    assert len(active) == 269 and held_real
     out = tmp_path / "s"
     m = build_site(out, profiles=active, now=NOW)
-    assert m["profiles"] == 24
+    assert m["profiles"] == 269
     assert check_site(out, profiles=active, held=held_real) == []
-    assert len(list((out / "profiles").glob("*/index.html"))) == 24
+    assert len(list((out / "profiles").glob("*/index.html"))) == 269
     for _, d in held_real:
         assert not (out / "profiles" / d["slug"]).exists()
         assert d["name"]["value"] not in (out / "index.html").read_text(encoding="utf-8")
@@ -209,7 +209,7 @@ def test_site_check_passes_on_clean_output_when_a_register_exists(tmp_path: Path
         ("HTTPS://NEWS.EXAMPLE.TEST/HELD/PRIVATE", "withheld-source URL"),
         ("https://news.example.test/held%2Fprivate", "withheld-source URL"),
         ("https://news.example.test/held&#47;private", "withheld-source URL"),
-        ("See the Example interview for details.", "withheld-source title"),
+        ("Standalone. Example interview.", "withheld-source title"),
     ],
 )
 def test_site_check_fails_on_normalised_url_or_title_leak(tmp_path: Path, built: Path, monkeypatch, planted: str, expected: str) -> None:
@@ -218,3 +218,90 @@ def test_site_check_fails_on_normalised_url_or_title_leak(tmp_path: Path, built:
     page.write_text(page.read_text(encoding="utf-8") + f"<p>{planted}</p>", encoding="utf-8")
     fails = check_site(built)
     assert any(expected in f for f in fails), fails
+
+
+
+def test_site_check_fails_if_private_dir_is_in_output(tmp_path: Path, built: Path, synth, monkeypatch) -> None:
+    _write_withheld_register(tmp_path, monkeypatch)
+    private = built / "private"
+    private.mkdir()
+    (private / "secret.json").write_text("{}", encoding="utf-8")
+    fails = check_site(built, profiles=synth)
+    assert any("private/" in f for f in fails)
+
+
+def test_site_check_fails_when_a_withheld_fact_has_no_register_entry(tmp_path: Path, monkeypatch) -> None:
+    """Passing the profiles in, not the privacy-page wording, is what requires a register entry."""
+    import json
+    from datetime import datetime, timezone
+
+    from pwatch import withheld as withheld_mod
+    from pwatch.schema import fact, unknown_fact
+    from pwatch.site import build_site
+
+    now = datetime(2026, 11, 19, 1, 0, tzinfo=timezone.utc)
+    monkeypatch.setattr(withheld_mod, "WITHHELD_SOURCES_PATH", tmp_path / "no-such-register.json")
+    person = {
+        "slug": "synth-withheld",
+        "name": fact("SYNTH WITHHELD", "Confirmed", "https://example.test/g.pdf", "2026-11-13", "2026-11-15", 43),
+        "party": fact("SYNTHETIC PARTY", "Confirmed", "https://example.test/g.pdf", "2026-11-13", "2026-11-15", 43),
+        "seat_type": fact("ward", "Confirmed", "https://example.test/g.pdf", "2026-11-13", "2026-11-15", 43),
+        "ward_number": fact(1, "Confirmed", "https://example.test/g.pdf", "2026-11-13", "2026-11-15", 43),
+        "council": fact("City of Johannesburg", "Confirmed", "https://example.test/g.pdf", "2026-11-13", "2026-11-15", 43),
+        "ward_id": "79800001",
+        "pr_list_rank": None,
+        "positions": unknown_fact(),
+        "career": unknown_fact(),
+        "education": {"value": None, "label": "Withheld (POPIA)", "source_url": None, "source_date": None, "retrieved_at": None},
+        "cv": [],
+        "court_matters": [],
+        "scandals": [],
+    }
+    profiles = [(tmp_path / "synth-withheld.json", person)]
+    out = tmp_path / "site"
+    build_site(out, profiles=profiles, now=now)
+    fails = check_site(out, profiles=profiles)
+    assert any("missing" in f or "no matching entry" in f for f in fails), fails
+
+
+def test_site_check_does_not_require_a_register_when_no_fact_is_withheld(tmp_path: Path, built: Path, synth, monkeypatch) -> None:
+    from pwatch import withheld as withheld_mod
+
+    monkeypatch.setattr(withheld_mod, "WITHHELD_SOURCES_PATH", tmp_path / "no-such-register.json")
+    # The built synthetic site names the label on the privacy page, but no fact is withheld.
+    assert check_site(built, profiles=synth) == []
+
+
+
+def test_cli_site_build_fails_when_the_withheld_register_is_missing(tmp_path: Path, monkeypatch) -> None:
+    """cmd_site_build must surface leak_fails (exit 2). Removing that handling fails this test."""
+    import json
+    from datetime import datetime, timezone
+
+    from pwatch import withheld as withheld_mod
+    from pwatch.cli import main
+    from pwatch.schema import fact, unknown_fact
+
+    monkeypatch.setattr(withheld_mod, "WITHHELD_SOURCES_PATH", tmp_path / "no-such-register.json")
+    profiles_dir = tmp_path / "profiles"
+    profiles_dir.mkdir()
+    person = {
+        "slug": "synth-withheld",
+        "name": fact("SYNTH WITHHELD", "Confirmed", "https://example.test/g.pdf", "2026-11-13", "2026-11-15", 43),
+        "party": fact("SYNTHETIC PARTY", "Confirmed", "https://example.test/g.pdf", "2026-11-13", "2026-11-15", 43),
+        "seat_type": fact("ward", "Confirmed", "https://example.test/g.pdf", "2026-11-13", "2026-11-15", 43),
+        "ward_number": fact(1, "Confirmed", "https://example.test/g.pdf", "2026-11-13", "2026-11-15", 43),
+        "council": fact("City of Johannesburg", "Confirmed", "https://example.test/g.pdf", "2026-11-13", "2026-11-15", 43),
+        "ward_id": "79800001",
+        "pr_list_rank": None,
+        "positions": unknown_fact(),
+        "career": unknown_fact(),
+        "education": {"value": None, "label": "Withheld (POPIA)", "source_url": None, "source_date": None, "retrieved_at": None},
+        "cv": [],
+        "court_matters": [],
+        "scandals": [],
+    }
+    (profiles_dir / "synth-withheld.json").write_text(json.dumps(person), encoding="utf-8")
+    out = tmp_path / "site"
+    code = main(["site", "build", "--out", str(out), "--profiles-dir", str(profiles_dir)])
+    assert code == 2

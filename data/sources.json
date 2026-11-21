@@ -50,6 +50,42 @@
       "verified": "2026-11-17"
     },
     {
+      "domain": "pmg.org.za",
+      "outlet": "Parliamentary Monitoring Group (public parliamentary records)",
+      "tier": "1",
+      "verified": "2026-11-20"
+    },
+    {
+      "domain": "static.pmg.org.za",
+      "outlet": "Parliamentary Monitoring Group (official-document and Gazette mirror)",
+      "tier": "1",
+      "verified": "2026-11-20"
+    },
+    {
+      "domain": "municipaldata.treasury.gov.za",
+      "outlet": "National Treasury Municipal Money data API",
+      "tier": "1",
+      "verified": "2026-11-20"
+    },
+    {
+      "domain": "parliament.gov.za",
+      "outlet": "Parliament of South Africa (including the Register of Members' Interests)",
+      "tier": "1",
+      "verified": "2026-11-20"
+    },
+    {
+      "domain": "justice.gov.za",
+      "outlet": "Department of Justice (including the Special Tribunal)",
+      "tier": "1",
+      "verified": "2026-11-20"
+    },
+    {
+      "domain": "thepresidency.gov.za",
+      "outlet": "The Presidency (including SIU reports)",
+      "tier": "1",
+      "verified": "2026-11-20"
+    },
+    {
       "domain": "news24.com",
       "outlet": "News24 (also City Press archive at news24.com/citypress; City Press closed 10 May 2026)",
       "tier": "2",

@@ -11,7 +11,7 @@ from __future__ import annotations
 from pathlib import Path
 
 from pwatch.connectors.base import IngestResult
-from pwatch.http import FetchError, Fetcher, SourceBlocked
+from pwatch.http import FetchError, Fetcher, SourceBlocked, TlsError
 from pwatch.raw import RawStore
 from pwatch.settings import (
     GAZETTE_PDF_URL,
@@ -33,7 +33,7 @@ def ingest(
 ) -> list[IngestResult]:
     """Download the gazette PDF and the JHB seat-calculation PDF into the raw store."""
     own = fetcher is None
-    fetcher = fetcher or Fetcher()
+    fetcher = fetcher or Fetcher(source="iec_gazette")
     try:
         return [
             _fetch_one(raw, fetcher, SOURCE_GAZETTE, GAZETTE_FILENAME, GAZETTE_PDF_URL, refresh),
@@ -69,6 +69,12 @@ def _fetch_one(
     except SourceBlocked as exc:
         result.status = "blocked"
         result.errors.append(str(exc))
+        result.requests = fetcher.requests_made
+    except TlsError as exc:
+        result.status = "failed"
+        result.errors.append(str(exc))
+        result.notes.append("TLS error logged to evidence")
+        raw.record_tls_error(source_id=source_id, url=url, error=exc.tls_error)
         result.requests = fetcher.requests_made
     except FetchError as exc:
         result.status = "failed"

@@ -62,3 +62,36 @@ def test_source_blocked_is_not_retried(tmp_path: Path):
     results = ingest(raw, fetcher, refresh=True)
     assert all(r.status == "blocked" for r in results)
     assert calls["n"] == 2  # one request per source, no retries on 403
+
+
+
+def test_tls_error_is_logged_and_not_swallowed(tmp_path, caplog):
+    """A certificate failure is labelled TLS, written to evidence, and not retried."""
+    import json
+    import logging
+    import ssl
+
+    import httpx
+
+    from pwatch.http import Fetcher, TlsError
+    from pwatch.raw import RawStore
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        err = ssl.SSLCertVerificationError("certificate verify failed: self-signed certificate")
+        raise httpx.ConnectError("[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed") from err
+
+    fetcher = Fetcher(transport=httpx.MockTransport(handler), retries=3, sleep=lambda _d: None, source="iec_gazette")
+    raw = _store(tmp_path)
+    with caplog.at_level(logging.WARNING, logger="pwatch.http"):
+        results = ingest(raw, fetcher, refresh=True)
+    assert results and all(r.status == "failed" for r in results)
+    assert all(any("TLS error" in e for e in r.errors) for r in results)
+    assert all(any("TLS error logged to evidence" in n for n in r.notes) for r in results)
+    # One attempt per source, no retries on a certificate failure.
+    assert fetcher.requests_made == 2
+    assert fetcher.tls_errors and all("SSL" in e["error"] or "certificate" in e["error"].lower() for e in fetcher.tls_errors)
+    evidence = raw.dir / "tls-errors.jsonl"
+    assert evidence.is_file()
+    lines = [json.loads(ln) for ln in evidence.read_text(encoding="utf-8").splitlines() if ln.strip()]
+    assert lines and all(row["source_id"] and row["url"] and row["error"] for row in lines)
+    assert any("TLS error" in rec.message for rec in caplog.records)

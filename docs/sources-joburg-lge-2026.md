@@ -1,9 +1,9 @@
 # City of Johannesburg LGE 2026 — source notes
 
-**Environment:** TEST roster, built in DEV on 15 November 2026 (SAST). Not published.
-**Retrieved:** 15 November 2026, 18:10 SAST (16:10 UTC).
-**CVs:** not built. Education, career, positions, court matters and scandals are empty / Unknown placeholders.
-**Executive mayor:** Unknown. The council elects an executive mayor at its first sitting, expected around 19 November 2026. No mayor had been elected as of 15 November 2026.
+**Environment:** TEST roster, built in DEV on 15 November 2026 (SAST). CV profiles expanded in CHG-PW-013 (20 November 2026).
+**Retrieved:** 15 November 2026, 18:10 SAST (16:10 UTC). Re-checked 20 November 2026 (SAST): local PDF SHA-256 unchanged; pages 43–47 re-parsed and still match the 270-row roster exactly.
+**CVs:** 269 active gazette-sourced CV profiles (24 richer profiles from CHG-PW-002/003 plus 245 gazette-only stubs from CHG-PW-013) and 1 on hold. On the stubs, education, career, positions, court matters and scandals are Unknown / none recorded.
+**Executive mayor:** Unknown. The council elects an executive mayor at its first sitting, expected around 19 November 2026. No mayor had been elected as of 15 November 2026. Re-checked 20 November 2026: the City's councillor, Executive Mayor / Mayoral Committee and Office of the Speaker directory pages returned HTTP 404. Not guessed.
 
 ## Primary sources used
 
@@ -18,6 +18,7 @@
 | Landing page | https://www.gazettefinder.co.za/gazettes/government-gazette/2026/55741/ |
 | SHA-256 | `cd544faf2a703a81eb4466bbfcd3618f5ade03c7b456538116b385c266058798` |
 | Joburg pages | 43–47 (PDF page numbers) |
+| PMG mirror (20 Nov 2026) | https://static.pmg.org.za/55741_13-11_ElectoralComm_Final.pdf — HTTP 200, **byte-identical** to the Gazette Finder copy (same SHA-256 and length). Not used as the cited `source_url`. |
 
 Gazette Finder published the same SHA-256 for a copy it reports having fetched from the Government Printing Works on 13 November 2026. A stable `gov.za` or `gpwonline.co.za` direct URL for gazette 55741 was not found on 15 November 2026. The gazette itself states that it is also available free online at www.gpwonline.co.za. The IEC announced the gazetting on 13 November 2026: [IEC news](https://www.elections.org.za/pw/News-And-Media/News-List/News/IECNews/5726), also reported by [SAnews](https://www.sanews.gov.za/south-africa/iec-gazettes-names-councillors-elected-2026-local-government-polls).
 
@@ -90,4 +91,4 @@ Democratic Alliance 91, EFF 17 and MK 15 agree across the official files and tho
 
 ## Parse method and residual risk
 
-The gazette PDF was produced with Adobe Acrobat Paper Capture (OCR). Text was extracted with `pdftotext -layout`. All 270 Johannesburg lines matched a single pattern (municipality, party, ward ID or `PR(rank)`, surname, full names, `MC Ward` / `MC PR`). Five names contain diacritics (GÜNTHER, ZONÉ, ANDRÉ, DESIRÉ, RENÉ), which were preserved. Residual OCR risk remains on individual spellings; the page number on each row is the way back to the source image. No curriculum vitae was built from this parse.
+The gazette PDF was produced with Adobe Acrobat Paper Capture (OCR). Text was extracted with `pdftotext -layout`. All 270 Johannesburg lines matched a single pattern (municipality, party, ward ID or `PR(rank)`, surname, full names, `MC Ward` / `MC PR`). Five names contain diacritics (GÜNTHER, ZONÉ, ANDRÉ, DESIRÉ, RENÉ), which were preserved. Residual OCR risk remains on individual spellings; the page number on each row is the way back to the source image. CHG-PW-013 built gazette-only CV stubs for the 245 roster rows that did not already have a profile; it did not add education, career or other non-gazette facts.

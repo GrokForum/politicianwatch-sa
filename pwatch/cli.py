@@ -96,10 +96,12 @@ def cmd_site_build(args: argparse.Namespace) -> int:
     from pwatch.site import build_site
 
     out = Path(args.out)
-    manifest = build_site(out, profiles=_site_profiles(args), commit=args.commit)
-    from pwatch.withheld import check_tree_for_withheld_urls
+    profiles = _site_profiles(args)
+    manifest = build_site(out, profiles=profiles, commit=args.commit)
+    from pwatch.withheld import check_tree_for_withheld_urls, check_withheld_register_for_profiles
 
-    leak_fails = check_tree_for_withheld_urls(out)
+    leak_fails = check_withheld_register_for_profiles(profiles)
+    leak_fails += check_tree_for_withheld_urls(out)
     if (out / "private").exists():
         leak_fails.append("site output must not contain the private/ directory")
     if leak_fails:
@@ -136,7 +138,13 @@ def cmd_live_check(args: argparse.Namespace) -> int:
     with _client() as client:
         if published and expected and args.wait_seconds:
             wait_for_build(client, base, expected["build_id"], timeout_s=args.wait_seconds)
-        checks = run_checks(base, expected=expected, published=published, client=client)
+        checks = run_checks(
+            base,
+            expected=expected,
+            published=published,
+            publish_enabled=args.publish_enabled == "true",
+            client=client,
+        )
     rec = record(
         url=base,
         checks=checks,

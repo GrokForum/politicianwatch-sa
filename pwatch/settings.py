@@ -77,5 +77,14 @@ WITHHELD_PUBLIC_TEXT = (
 )
 PRIVATE_DIR = REPO_ROOT / "private"
 WITHHELD_SOURCES_PATH = PRIVATE_DIR / "withheld-sources.json"
+# Fail closed: if any profile has a Withheld (POPIA) fact, the private register
+# must exist, be non-empty, and contain a matching entry. Site build and site
+# check use the profiles' fact labels for this, not the words "Withheld (POPIA)"
+# on the privacy page (that wording is always present). A fresh public repository
+# that does not carry private/ must either omit Withheld facts from the seed, or
+# point WITHHELD_SOURCES_PATH at a sidecar store outside the public tree. See
+# docs/FRESH-REPO-PLAN.md. Set this to False only in tests, or in a confirmed
+# seed that contains no Withheld facts.
+WITHHELD_REGISTER_REQUIRED = True
 # Labels that must not carry a public source URL or a public value.
 SOURCELESS_LABELS = ("Unknown", WITHHELD_LABEL)

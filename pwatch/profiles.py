@@ -8,15 +8,68 @@ and sourced. Unknown and Withheld (POPIA) fields stay null and render as visible
 from __future__ import annotations
 
 import json
+import re
+import unicodedata
 from pathlib import Path
 from typing import Any
 
 from pwatch.ror import display
+from pwatch.roster import row_to_profile
 from pwatch.schema import iter_facts
 from pwatch.settings import GAZETTE_PDF_URL, HOLD_DIRNAME, HOLD_STATUS, IDENTITY_MIN_DETAILS, PI_SOURCE_APPROVAL_FIELD, PROFILES_DIR, SOURCELESS_LABELS, WITHHELD_LABEL, WITHHELD_PUBLIC_TEXT
 
 UNKNOWN_PLACEHOLDER = "Unknown — not yet sourced (placeholder)"
 BLANK_REPLY = "_(blank — no reply recorded)_"
+
+# Same placeholders as the CHG-PW-002/003 profiles, so the site wording stays uniform.
+STUB_UNKNOWN_FIELDS = [
+    "career",
+    "education",
+    "Council office or portfolio for the 2026–2031 term (executive mayor and mayoral committee not yet elected; first sitting expected around 19 November 2026 — not guessed)",
+    "Official council contact channel (owner to confirm from the City's published councillor directory)",
+]
+
+
+def slug_from_gazetted_name(name: str) -> str:
+    """Stable URL slug from a gazetted name: fold diacritics, drop apostrophes, hyphenate."""
+    s = unicodedata.normalize("NFKD", name or "")
+    s = "".join(c for c in s if not unicodedata.combining(c))
+    for mark in ("'", "’", "‘", "`"):
+        s = s.replace(mark, "")
+    s = s.casefold()
+    return re.sub(r"[^a-z0-9]+", "-", s).strip("-")
+
+
+def stub_cv_profile(row: dict[str, Any], *, change: str = "CHG-PW-013") -> dict[str, Any]:
+    """Build a gazette-only CV profile from a roster CSV row (Unknown placeholders, no adverse items)."""
+    if isinstance((row.get("name") or None), dict):
+        # Already a roster profile object.
+        base = {k: v for k, v in row.items()}
+        name = (base.get("name") or {}).get("value") or ""
+    else:
+        base = row_to_profile(row)
+        name = (base.get("name") or {}).get("value") or row.get("name") or ""
+    slug = slug_from_gazetted_name(str(name))
+    if not slug:
+        raise ValueError("cannot build a stub profile without a gazetted name")
+    return {
+        "slug": slug,
+        "change": change,
+        "name": base["name"],
+        "party": base["party"],
+        "seat_type": base["seat_type"],
+        "ward_number": base["ward_number"],
+        "council": base["council"],
+        "ward_id": base.get("ward_id"),
+        "pr_list_rank": base.get("pr_list_rank"),
+        "positions": base.get("positions") or {"value": None, "label": "Unknown", "source_url": None, "source_date": None, "retrieved_at": None},
+        "career": base.get("career") or {"value": None, "label": "Unknown", "source_url": None, "source_date": None, "retrieved_at": None},
+        "education": base.get("education") or {"value": None, "label": "Unknown", "source_url": None, "source_date": None, "retrieved_at": None},
+        "cv": [],
+        "court_matters": list(base.get("court_matters") or []),
+        "scandals": list(base.get("scandals") or []),
+        "unknown_fields": list(STUB_UNKNOWN_FIELDS),
+    }
 
 
 def is_on_hold(profile: dict[str, Any]) -> bool:
