@@ -1,6 +1,6 @@
 # Allowed sources
 
-Status as of 20 November 2026 (SAST). The machine-readable registry was extended on 20 November 2026 after the owner's decision: "Yes, add the five official sources." Changes to this list need the owner's confirmation. The machine-readable registry is `data/sources.json` (domain → tier). `pwatch dq` fails a source on a link-only or not-allowed domain, fails an adverse item or identity link that rests only on tier-3 sources, and warns about domains that are not in the registry.
+Status as of 25 November 2026 (SAST). The machine-readable registry was extended on 20 November 2026 after the owner's decision: "Yes, add the five official sources," and again on 25 November 2026 after the owner's decision: "Yes, dpsa.gov.za is tier 1." Changes to this list need the owner's confirmation. The machine-readable registry is `data/sources.json` (domain → tier). `pwatch dq` fails a source on a link-only or not-allowed domain, fails an adverse item or identity link that rests only on tier-3 sources, and warns about domains that are not in the registry.
 
 Every domain below was checked on 17 Nov 2026: it was reached, or, where our fetcher was refused, confirmed through a search result or a reader fetch. Each was confirmed to be the named outlet. Anything that could not be verified is listed at the end and is **not** on the list.
 
@@ -16,6 +16,7 @@ Every domain below was checked on 17 Nov 2026: it was reached, or, where our fet
 | Parliament of South Africa (owner, 20 Nov 2026) | parliament.gov.za, including the Register of Members' Interests. Planned 2029 module. **POPIA:** publish only the office-bearer's own public disclosure; omit family or dependent details and private addresses. |
 | Department of Justice (owner, 20 Nov 2026) | justice.gov.za, including the Special Tribunal. Official court and inquiry records for `Court matters`, with the two-detail identity rule and right of reply. |
 | The Presidency (owner, 20 Nov 2026) | thepresidency.gov.za, including SIU reports. Official inquiry records; same rules as the Special Tribunal. |
+| Department of Public Service and Administration (owner, 25 Nov 2026) | dpsa.gov.za. Official source for the 2022 Guide for Members of the Executive. Entitlements in that Guide are listed as official provisions, not a second cash total. No collector is added in this change, and no package figures or entitlements are published here. |
 
 ## Tier 2: mainstream SA news (Reported)
 Outlets aimed at a wide audience, with an editor and a public complaints route. Each can support a Reported fact on its own. An adverse item still follows the right-of-reply rules.
@@ -157,3 +158,10 @@ The City remains an allowed tier-1 source (`joburg.org.za`). These directory URL
 
 The same four `/about_/Pages/...` directory URLs still returned **HTTP 404**. The homepage again returned HTTP 200 (redirects to `/Pages/homepage.aspx`) with no 2026–2031 office announcement. A current Council legislature page, `https://joburg.org.za/about_/government/Pages/Council/Council.aspx`, returned HTTP 200 and states that it reflects the previous Legislature (former Speaker, Chief Whip, Councillors and Section 79 Committees), that that term has concluded, and that information on the new Council will be published once it has been formally constituted. Newsroom and media-statements indexes (`/media_/Newsroom/Pages/default.aspx`, `/media_/Newsroom/Pages/Newsroom.aspx`, `/media_/MediaStatements/Pages/default.aspx`) returned HTTP 200 and did not publish the 2026–2031 executive mayor, speaker, chief whip or mayoral committee. A councillors contact-details PDF and a previous-term declaration-of-interests PDF were linked from the Council page and were not fetched (POPIA). Offices stay Unknown until an allowed source confirms them. The URL list is in `itil/changes/CHG-PW-014-joburg-depth.md`.
 
+## Added to the registry 25 November 2026 (CHG-PW-016) — owner approved
+
+The owner decided, on 25 November 2026 at 16:37 SAST: "Yes, dpsa.gov.za is tier 1." The domain is in `data/sources.json` as tier 1, verified 2026-11-25, as the official source for the 2022 Guide for Members of the Executive. The Guide was fetched and read for CHG-PW-015 on 25 November 2026 (SAST). No new collector uses it in this change, and no profile fact or package figure is sourced from it here. The owner's separate decision that the first pay build covers only Joburg / Gazette 55749 is recorded on [PR #15](https://github.com/GrokForum/politicianwatch-sa/pull/15) and is not implemented in this change.
+
+| Source | URL checked | HTTP | Tier | Terms / notes |
+|---|---|---|---|---|
+| 2022 Guide for Members of the Executive (DPSA) | https://www.dpsa.gov.za/dpsa2g/documents/acts&regulations/Guide_for_members_of_the_executive/Guide%20for%20Members%20of%20the%20Executive%202022.pdf | 200, 32 pages, 829,996 bytes, SHA-256 `7ffd4ce3a56260d703e714378152a18b3d6b143e1b309ff1982eb4062653dae6` (fetched 25 Nov 2026, SAST, for CHG-PW-015) | 1 (official executive entitlements instrument) | Covers Ministers, Deputy Ministers, Premiers and MECs only (effective 13 April 2022). List entitlements as official provisions, not a second personal cash total. Not ingested in this change. |
