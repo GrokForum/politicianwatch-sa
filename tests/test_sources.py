@@ -76,7 +76,8 @@ def test_committed_registry_is_valid_and_covers_committed_profiles(repo_root):
     assert tier_of("https://www.citizen.co.za/southern-courier/x", reg) == "2"
     assert tier_of("https://www.thecommonsense.co.za/x", reg) == "3"
     assert tier_of("https://thecapeindependent.com/x", reg) == "3"
-    # Five official sources added on the owner's decision, 20 Nov 2026 (CHG-PW-013).
+    # Official sources added on the owner's decisions: five on 20 Nov 2026 (CHG-PW-013),
+    # and dpsa.gov.za on 25 Nov 2026 (CHG-PW-016).
     for url, domain in (
         ("https://api.pmg.org.za/member/", "pmg.org.za"),
         ("https://static.pmg.org.za/55741_13-11_ElectoralComm_Final.pdf", "static.pmg.org.za"),
@@ -84,6 +85,7 @@ def test_committed_registry_is_valid_and_covers_committed_profiles(repo_root):
         ("https://www.parliament.gov.za/register-members-interests", "parliament.gov.za"),
         ("https://www.justice.gov.za/tribunal/index.html", "justice.gov.za"),
         ("https://www.thepresidency.gov.za/tso/siu-reports", "thepresidency.gov.za"),
+        ("https://www.dpsa.gov.za/dpsa2g/documents/acts&regulations/Guide_for_members_of_the_executive/Guide%20for%20Members%20of%20the%20Executive%202022.pdf", "dpsa.gov.za"),
     ):
         assert tier_of(url, reg) == "1", domain
     # every source URL in the committed CV profiles is in the registry
