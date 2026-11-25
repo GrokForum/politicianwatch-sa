@@ -67,7 +67,7 @@ On the owner's GO, head `f1499b837e05193912cbce6d8695f98343c06c43` was pushed an
 
 1. The five official sources are in `data/sources.json` as tier 1, verified 2026-11-20: PMG (`pmg.org.za`, `static.pmg.org.za`), National Treasury municipal data (`municipaldata.treasury.gov.za`), Parliament (`parliament.gov.za`), Justice (`justice.gov.za`) and the Presidency (`thepresidency.gov.za`). Terms and POPIA notes are in `docs/allowed-sources.md`.
 2. The Johannesburg pilot target is recorded as MET: 269 active CV profiles plus 1 on hold (owner, 20 Nov 2026), in STATUS, this RFC, the change log and `docs/FRESH-REPO-PLAN.md`. Filling remaining Unknown CV fields, council offices and right-of-reply states is depth work for the next milestone, not a miss of the target.
-3. Stale status lines now state the real state: draft PR #13 is open and is not merged; merge needs the owner's GO naming the exact head.
+3. Stale status lines now state the real state: draft PR #13 is open and is not merged; merge needs the owner's GO naming the exact head. Squash-merged as `7c741222` on 21 Nov 2026 12:47 SAST.
 4. The next milestone is planned (docs only) in `docs/ROADMAP.md`.
 
 ## Review round (PR #13)

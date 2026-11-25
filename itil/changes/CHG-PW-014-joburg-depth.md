@@ -80,11 +80,13 @@ Before any merge: leave the branch off origin, or delete it. After a later merge
 SUCCEEDED in DEV (tests and records). No profile facts were added. The 2026–2031 council offices remain Unknown. Push and merge need the owner's GO naming the exact head.
 
 
-## Review round (after critic PASS_WITH_CONCERNS on `da3d07eb`)
+## Review round (after PASS_WITH_CONCERNS on `da3d07eb`)
 
-1. `itil/changes/CHG-PW-013-next-milestone.md` change-authority and Approval lines now end with a closure: squash-merged as `7c741222` on 21 Nov 2026 12:47 SAST (commit date of `7c741222`; `gh pr view 13 --json mergedAt` is empty). The dated follow-up history in that RFC is unchanged.
-2. The 19 Nov 2026 CHG-PW-006 STATUS history row uses the role word "critic" in place of the agent name.
+1. `itil/changes/CHG-PW-013-next-milestone.md` change-authority, Approval, and the dated 20 Nov 2026 follow-up item 3 now end with a closure: squash-merged as `7c741222` on 21 Nov 2026 12:47 SAST (commit date of `7c741222`; `gh pr view 13 --json mergedAt` is empty).
+2. The 19 Nov 2026 CHG-PW-006 STATUS history row uses the role word "critic" in place of the agent name. The same row now says the site branch was re-committed with the project's neutral publisher identity.
+3. This RFC's Approval line and the change-log outcome keep the standing rule (push and merge need the owner's GO naming the exact head) and no longer use current-state "pending" or "awaits" wording, so they stay true after a later merge.
+4. STATUS and the PR body no longer say this commit was placed on `main`. The branch is based on `origin/main` `7c741222`.
 
 ## Approval
 
-Pending review and the owner's GO on the exact head before any push or merge.
+Push and merge need the owner's GO naming the exact head.
