@@ -22,3 +22,7 @@ The 14-day stability checklist in `docs/FRESH-REPO-PLAN.md` is still open. The s
 ## 4. National and provincial 2029 module
 
 Plan only, as in `docs/national-2029-module.md`. Parliament's Register of Members' Interests and the PMG API are now allowed tier-1 sources; they are not ingested until a later named change, and any fact still needs a POPIA review (no family, addresses or private contacts). IEC and the Government Gazette remain the primary record of who was elected.
+
+## 5. Pay context (plan only)
+
+Role tiers and gazetted remuneration packages ([CHG-PW-015](../itil/changes/CHG-PW-015-mp-pay-context.md), RFC only): municipal councillors from Government Gazette 55749 (upper limits, from 1 July 2026); the national executive, MPs and permanent NCOP delegates, and provincial upper limits, from Government Gazette 55765 (from 1 April 2026). Neutral package explainer; executive entitlements from the 2022 Guide for Members of the Executive. Figures are gazetted packages or upper limits for the role, not a claim about any person's actual pay. Implementation needs its own named change and the owner's GO.
