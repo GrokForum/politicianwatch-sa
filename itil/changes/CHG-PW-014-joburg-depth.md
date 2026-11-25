@@ -79,6 +79,12 @@ Before any merge: leave the branch off origin, or delete it. After a later merge
 
 SUCCEEDED in DEV (tests and records). No profile facts were added. The 2026–2031 council offices remain Unknown. Push and merge need the owner's GO naming the exact head.
 
+
+## Review round (after critic PASS_WITH_CONCERNS on `da3d07eb`)
+
+1. `itil/changes/CHG-PW-013-next-milestone.md` change-authority and Approval lines now end with a closure: squash-merged as `7c741222` on 21 Nov 2026 12:47 SAST (commit date of `7c741222`; `gh pr view 13 --json mergedAt` is empty). The dated follow-up history in that RFC is unchanged.
+2. The 19 Nov 2026 CHG-PW-006 STATUS history row uses the role word "critic" in place of the agent name.
+
 ## Approval
 
 Pending review and the owner's GO on the exact head before any push or merge.

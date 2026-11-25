@@ -5,7 +5,7 @@
 | Requested by / date (SAST) | Owner direction, 20 November 2026 at 20:21 SAST, relayed by the orchestrator: take the website to its next major milestone (fold in the source pack, clear the LATER items from the #11 reviews, expand coverage beyond the first 24 Joburg profiles, and work through the end-of-road plus 14-green-nights checklist). |
 | Author / builder | author bot |
 | Reviewers | two reviewers |
-| Change authority | Owner (GO on the exact head to merge). Draft [PR #13](https://github.com/GrokForum/politicianwatch-sa/pull/13) is open; it is not merged. |
+| Change authority | Owner (GO on the exact head to merge). Draft [PR #13](https://github.com/GrokForum/politicianwatch-sa/pull/13) is open; it is not merged. Squash-merged as `7c741222` on 21 Nov 2026 12:47 SAST. |
 | Type | Normal — medium (gate fixes, source notes, and 245 new gazette-only CV profiles) |
 | Environment | DEV + TEST profiles. Publishes nothing: the publish gate and `PW_PUBLISH_ENABLED` are unchanged by this change, and no push, merge or deploy is made here. |
 | CIs affected | CI-009 Joburg CV profiles; DQ and site-check withheld-register gates; CI-010 draft-site builder (coverage of the new profiles); live-check (pre-publish nights); collectors (TLS error logging) |
@@ -82,4 +82,4 @@ Fixes from the PR review, on top of `3c37427cfbe59d8844e236c721b73c9691293d86` (
 
 ## Approval
 
-Draft [PR #13](https://github.com/GrokForum/politicianwatch-sa/pull/13) is open and is not merged. A plain PASS from two reviewers on the same head, then the owner's GO naming that head, is required to merge.
+Draft [PR #13](https://github.com/GrokForum/politicianwatch-sa/pull/13) is open and is not merged. A plain PASS from two reviewers on the same head, then the owner's GO naming that head, is required to merge. Squash-merged as `7c741222` on 21 Nov 2026 12:47 SAST.
