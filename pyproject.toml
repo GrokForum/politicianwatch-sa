@@ -5,15 +5,15 @@ description = "PoliticianWatch SA: a neutral, sourced public register of South A
 readme = "README.md"
 requires-python = ">=3.13,<3.14"
 dependencies = [
-  "duckdb==1.4.1",
+  "duckdb==1.4.5",
   "httpx==0.28.1",
-  "pdfplumber==0.11.7",
+  "pdfplumber==0.11.11",
   "pyyaml==6.0.3",
   "pytz==2025.2",
 ]
 
 [dependency-groups]
-dev = ["pytest==8.4.2"]
+dev = ["pytest==9.2.0"]
 
 [project.scripts]
 pwatch = "pwatch.cli:main"
