@@ -51,6 +51,11 @@ def test_every_page_has_noindex_draft_banner_csp_and_privacy_link(built: Path) -
         assert s.csp and "default-src 'none'" in s.csp[0], p
         assert not s.has_script, p
         assert "<title>DRAFT · " in html, p
+        assert 'href="https://watch.grokforum.site/"' in html, p
+        assert (
+            '<p><a href="https://watch.grokforum.site/">'
+            "Part of the Watch network — watch.grokforum.site</a></p>"
+        ) in html, p
 
 
 def test_privacy_page_role_contact_and_popia_wording(built: Path) -> None:

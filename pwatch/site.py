@@ -30,6 +30,10 @@ ASSETS_DIR = Path(__file__).resolve().parent / "site_assets"
 
 SITE_NAME = "PoliticianWatch SA"
 SITE_URL = "https://politicianwatch.grokforum.site"
+WATCH_DIRECTORY_URL = "https://watch.grokforum.site/"
+WATCH_BACKLINK = (
+    f'<p><a href="{WATCH_DIRECTORY_URL}">Part of the Watch network — watch.grokforum.site</a></p>'
+)
 PRIVACY_EMAIL = "privacy@grokforum.site"
 RESPONSIBLE_PARTY = "GrokForum"
 INFO_REGULATOR_URL = "https://inforegulator.org.za/"
@@ -83,7 +87,8 @@ def page(title: str, body: str, *, canonical_path: str, build_id: str | None = N
             body,
             "</main>",
             f'<footer><p>{SITE_NAME} (draft) · <a href="/">Home</a> · '
-            f'<a href="/privacy/">Privacy and corrections</a>{stamp}</p></footer>',
+            f'<a href="/privacy/">Privacy and corrections</a>{stamp}</p>'
+            f"{WATCH_BACKLINK}</footer>",
             "</body>",
             "</html>",
             "",
